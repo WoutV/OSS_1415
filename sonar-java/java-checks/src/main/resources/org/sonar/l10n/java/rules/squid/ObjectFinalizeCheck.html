@@ -1,0 +1,14 @@
+<p>
+According to the official Java documentation, <code>Object.finalize()</code> is called by the garbage collector on an object when garbage collection determines that there are no more references to the object.
+Calling this method explicitly breaks this contract and so is misleading.
+</p>
+
+<p>
+The following code snippet illustrates this rule:
+</p>
+
+<pre>
+public void dispose() throws Throwable {
+  this.finalize();                       // Non-Compliant
+}
+</pre>

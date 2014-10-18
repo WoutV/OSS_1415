@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+  <id>distribution</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <includeBaseDirectory>true</includeBaseDirectory>
+  <dependencySets>
+    <!-- Libraries -->
+    <dependencySet>
+      <outputDirectory>lib</outputDirectory>
+      <useTransitiveFiltering>true</useTransitiveFiltering>
+      <excludes>
+        <exclude>org.codehaus.sonar:sonar-server</exclude>
+        <exclude>mysql:mysql-connector-java</exclude>
+        <exclude>com.h2database:h2</exclude>
+        <exclude>postgresql:postgresql</exclude>
+        <exclude>net.sourceforge.jtds:jtds</exclude>
+        <exclude>org.codehaus.sonar.plugins:*</exclude>
+        <exclude>org.codehaus.sonar-plugins.*:*</exclude>
+      </excludes>
+    </dependencySet>
+    <!-- Plugins -->
+    <dependencySet>
+      <outputDirectory>lib/core-plugins</outputDirectory>
+      <useTransitiveDependencies>false</useTransitiveDependencies>
+      <includes>
+        <include>org.codehaus.sonar.plugins:*</include>
+      </includes>
+    </dependencySet>
+    <dependencySet>
+      <outputDirectory>extensions/downloads</outputDirectory>
+      <useTransitiveDependencies>false</useTransitiveDependencies>
+      <includes>
+        <include>org.codehaus.sonar-plugins.*:sonar-*-plugin</include>
+      </includes>
+    </dependencySet>
+    <!-- Server -->
+    <dependencySet>
+      <outputDirectory>war/sonar-server</outputDirectory>
+      <includes>
+        <include>org.codehaus.sonar:sonar-server</include>
+      </includes>
+      <unpack>true</unpack>
+    </dependencySet>
+    <!-- JDBC drivers -->
+    <dependencySet>
+      <outputDirectory>extensions/jdbc-driver/mysql/</outputDirectory>
+      <includes>
+        <include>mysql:mysql-connector-java</include>
+      </includes>
+      <unpack>false</unpack>
+      <scope>runtime</scope>
+    </dependencySet>
+    <dependencySet>
+      <outputDirectory>extensions/jdbc-driver/h2/</outputDirectory>
+      <includes>
+        <include>com.h2database:h2</include>
+      </includes>
+      <unpack>false</unpack>
+      <scope>runtime</scope>
+    </dependencySet>
+    <dependencySet>
+      <outputDirectory>extensions/jdbc-driver/postgresql/</outputDirectory>
+      <includes>
+        <include>postgresql:postgresql</include>
+      </includes>
+      <unpack>false</unpack>
+      <scope>runtime</scope>
+    </dependencySet>
+    <dependencySet>
+      <outputDirectory>extensions/jdbc-driver/mssql/</outputDirectory>
+      <includes>
+        <include>net.sourceforge.jtds:jtds</include>
+      </includes>
+      <unpack>false</unpack>
+      <scope>runtime</scope>
+    </dependencySet>
+    <!-- Java Service Wrapper -->
+    <dependencySet>
+      <outputDirectory>bin</outputDirectory>
+      <includes>
+        <include>org.sonatype.jsw-binaries:jsw-binaries</include>
+      </includes>
+      <unpack>true</unpack>
+      <scope>provided</scope>
+      <unpackOptions>
+        <excludes>
+          <exclude>**/app</exclude>
+          <exclude>**/*.bat</exclude>
+          <exclude>**/sample*/**</exclude>
+        </excludes>
+      </unpackOptions>
+      <fileMode>0755</fileMode>
+    </dependencySet>
+  </dependencySets>
+
+  <fileSets>
+    <!-- Configuration Files -->
+    <fileSet>
+      <directory>src/main/assembly</directory>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>conf/**</include>
+      </includes>
+      <!-- See SONAR-2580 - for better readability of configuration files on Windows: -->
+      <lineEnding>dos</lineEnding>
+      <fileMode>0644</fileMode>
+    </fileSet>
+    <!-- Windows Scripts -->
+    <fileSet>
+      <directory>src/main/assembly</directory>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>**/*.bat</include>
+        <include>**/*.cmd</include>
+      </includes>
+      <lineEnding>dos</lineEnding>
+      <fileMode>0644</fileMode>
+    </fileSet>
+    <!-- Linux Scripts -->
+    <fileSet>
+      <directory>src/main/assembly</directory>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>**/*.sh</include>
+        <include>**/ant</include>
+        <include>**/antRun</include>
+      </includes>
+      <lineEnding>unix</lineEnding>
+      <fileMode>0755</fileMode>
+    </fileSet>
+    <!-- Other stuff -->
+    <fileSet>
+      <directory>src/main/assembly</directory>
+      <outputDirectory>/</outputDirectory>
+      <excludes>
+        <exclude>conf/**</exclude>
+        <exclude>**/*.bat</exclude>
+        <exclude>**/*.cmd</exclude>
+        <exclude>**/*.sh</exclude>
+        <exclude>**/ant</exclude>
+        <exclude>**/antRun</exclude>
+      </excludes>
+      <fileMode>0644</fileMode>
+    </fileSet>
+    <!-- Empty directories -->
+    <fileSet>
+      <directory>src/main/assembly</directory>
+      <outputDirectory>extensions/jdbc-driver/oracle/</outputDirectory>
+      <excludes>
+        <exclude>**/*</exclude>
+      </excludes>
+    </fileSet>
+    <fileSet>
+      <directory>src/main/assembly</directory>
+      <outputDirectory>logs/</outputDirectory>
+      <excludes>
+        <exclude>**/*</exclude>
+      </excludes>
+    </fileSet>
+  </fileSets>
+</assembly>

@@ -1,0 +1,40 @@
+<p>
+Public class variable fields do not respect the encapsulation principle and has two main disadvantages:
+</p>
+
+<ul>
+  <li>Additional behavior such as validation cannot be added.</li>
+  <li>The internal representation is exposed, and cannot be changed afterwards.</li>
+</ul>
+
+<p>The following code:</p>
+
+<pre>
+public class MyClass {
+
+  public static final int SOME_CONSTANT = 0;     // Compliant - constants are not checked
+
+  public String firstName;                       // Non-Compliant
+
+}
+</pre>
+
+<p>should be refactored into:</p>
+
+<pre>
+public class MyClass {
+
+  public static final int SOME_CONSTANT = 0;     // Compliant - constants are not checked
+
+  private String firstName;                      // Compliant
+
+  public String getFirstName() {
+    return firstName;
+  }
+
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+}
+</pre>

@@ -1,0 +1,37 @@
+<p>There are three reasons for a method not to have a method body:</p>
+
+<ul>
+  <li>It is an unintentional omission, and should be fixed.</li>
+  <li>It is not yet, or never will be, supported. In this case an <code>UnsupportedOperationException</code> should be thrown.</li>
+  <li>The method is an intentionally-blank override. In this case a nested comment should explain the reason for the blank override.</li>
+</ul>
+
+<p>The following code snippet:</p>
+
+<pre>
+// Non-Compliant
+public void doSomething() {
+}
+</pre>
+
+should be refactored into:
+
+<pre>
+// Compliant
+@Override
+public void doSomethingElse() {
+  // Do nothing because of X and Y.
+}
+</pre>
+
+or:
+
+<pre>
+// Compliant
+@Override
+public void doSomethingElse() {
+  throw new UnsupportedOperationException();
+}
+</pre>
+
+<p>Empty methods not having any nested comments are tolerated in Abstract classes as those empty methods are usual when implementing the visitor pattern.</p>

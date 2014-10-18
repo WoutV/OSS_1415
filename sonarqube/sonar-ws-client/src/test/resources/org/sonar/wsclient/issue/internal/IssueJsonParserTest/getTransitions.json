@@ -1,0 +1,6 @@
+{
+  "transitions": [
+    "resolve",
+    "falsepositive"
+  ]
+}

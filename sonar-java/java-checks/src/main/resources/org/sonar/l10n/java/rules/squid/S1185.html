@@ -1,0 +1,25 @@
+<p>Overriding a method just to call the same method from the super class without performing any other actions is useless and misleading.</p>
+
+<p>The following code snippet illustrates this rule:</p>
+
+<pre>
+public void doSomething() {                     // Non-Compliant
+  super.doSomething();
+}
+
+@Override
+public boolean isLegal(Action action) {         // Non-Compliant
+  return super.isLegal(action);
+}
+
+@Override
+public boolean isLegal(Action action) {         // Compliant - not simply forwarding the call
+  return super.isLegal(new Action(/* ... */));
+}
+
+@Id
+@Override
+public int getId() {                            // Compliant - there is annotation different from @Override
+  return super.getId();
+}
+</pre>

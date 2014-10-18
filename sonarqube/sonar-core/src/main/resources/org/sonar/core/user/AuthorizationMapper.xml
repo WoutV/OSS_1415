@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.sonar.core.user.AuthorizationMapper">
+
+  <select id="keepAuthorizedComponentIdsForUser" parameterType="map" resultType="long">
+    SELECT s.project_id
+    FROM group_roles gr, snapshots s
+    WHERE
+      gr.role=#{role}
+      and (gr.group_id is null or gr.group_id in (select gu.group_id from groups_users gu where gu.user_id=#{userId}))
+      and gr.resource_id = s.root_project_id and
+      <foreach collection="componentIds" open="(" close=")" item="element" index="index" separator=" or " >project_id=#{element}</foreach>
+      and s.islast = ${_true}
+    UNION
+    SELECT s.project_id
+    FROM user_roles ur, snapshots s
+    WHERE
+      ur.role=#{role}
+      and ur.user_id=#{userId} and
+      <foreach collection="componentIds" open="(" close=")" item="element" index="index" separator=" or " >project_id=#{element}</foreach>
+      and s.islast = ${_true}
+  </select>
+
+  <select id="keepAuthorizedComponentIdsForAnonymous" parameterType="map" resultType="long">
+      SELECT s.project_id
+      FROM group_roles gr, snapshots s
+      WHERE
+        gr.role=#{role}
+        and gr.group_id is null
+        and gr.resource_id = s.root_project_id and
+        <foreach collection="componentIds" open="(" close=")" item="element" index="index" separator=" or " >project_id=#{element}</foreach>
+  </select>
+
+  <select id="selectAuthorizedRootProjectsIds" parameterType="map" resultType="long">
+    <include refid="selectAuthorizedRootProjectsIdsQuery" />
+  </select>
+
+  <sql id="selectAuthorizedRootProjectsIdsQuery">
+    <choose>
+      <when test="userId != null">
+        SELECT p.id as root_project_id
+        FROM group_roles gr
+        INNER JOIN projects p on p.id = gr.resource_id AND p.scope = 'PRJ' AND p.qualifier = 'TRK'
+        <where>
+          and gr.role=#{role}
+          and (gr.group_id is null or gr.group_id in (select gu.group_id from groups_users gu where gu.user_id=#{userId}))
+        </where>
+        UNION
+        SELECT p.id as root_project_id
+        FROM user_roles ur
+        INNER JOIN projects p on p.id = ur.resource_id AND p.scope = 'PRJ' AND p.qualifier = 'TRK'
+        <where>
+          and ur.role=#{role}
+          and ur.user_id = #{userId}
+        </where>
+      </when>
+      <otherwise>
+        SELECT p.id as root_project_id
+        FROM group_roles gr
+        INNER JOIN projects p on p.id = gr.resource_id AND p.scope = 'PRJ' AND p.qualifier = 'TRK'
+        <where>
+          and gr.role=#{role}
+          and gr.group_id is null
+        </where>
+      </otherwise>
+    </choose>
+  </sql>
+
+  <select id="selectGlobalPermissions" parameterType="map" resultType="String">
+    <choose>
+      <when test="userLogin != null">
+        SELECT gr.role
+        FROM group_roles gr
+        INNER JOIN groups_users gu on gu.group_id=gr.group_id
+        INNER JOIN users u on u.id=gu.user_id
+        <where>
+          and u.login=#{userLogin}
+          and gr.resource_id is null
+        </where>
+        UNION
+        SELECT gr.role
+        FROM group_roles gr
+        WHERE gr.group_id IS NULL AND gr.resource_id IS NULL
+        UNION
+        SELECT ur.role
+        FROM user_roles ur
+        INNER JOIN users u on u.id=ur.user_id
+        <where>
+          and u.login=#{userLogin}
+          and ur.resource_id is null
+        </where>
+      </when>
+      <otherwise>
+        SELECT gr.role
+        FROM group_roles gr
+        <where>
+          and gr.resource_id is null
+          and gr.group_id is null
+        </where>
+      </otherwise>
+    </choose>
+  </select>
+
+</mapper>

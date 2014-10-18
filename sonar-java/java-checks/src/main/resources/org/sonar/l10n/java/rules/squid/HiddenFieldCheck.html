@@ -1,0 +1,23 @@
+<p>
+Shadowing fields with a local variable is a bad practice reducing code readability: It makes it confusing to know whether the field or the variable is and should be accessed.
+</p>
+
+<p>
+The following code illustrates this rule:
+</p>
+
+<pre>
+class Foo {
+  public int myField;
+
+  public Foo(int myField) {                   // Compliant - method parameters are not checked
+    this.myField = myField;
+  }
+
+  @Override
+  public String toString() {
+    int myField = 0;                          // Non-Compliant - should be renamed
+    return "Foo{MyField: " + myField + "}";
+  }
+}
+</pre>
