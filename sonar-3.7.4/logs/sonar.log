@@ -2097,3 +2097,14 @@ INFO   | jvm 1    | 2014/10/20 20:13:27 | JRuby limited openssl loaded. http://j
 INFO   | jvm 1    | 2014/10/20 20:13:27 | gem install jruby-openssl for full support.
 INFO   | jvm 1    | 2014/10/20 20:13:35 | 2014-10-20 20:13:35.232:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
 INFO   | jvm 1    | 2014/10/20 20:13:35 | 2014-10-20 20:13:35.321:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+WARN   | wrapper  | 2014/10/20 22:15:02 | JVM process was still running after receiving a SIGCHLD signal.
+WARN   | wrapper  | 2014/10/20 22:15:02 | JVM process was still running after receiving a SIGCHLD signal.
+STATUS | wrapper  | 2014/10/20 22:15:02 | TERM trapped.  Shutting down.
+INFO   | jvm 1    | 2014/10/20 22:15:03 | 2014-10-20 22:15:03.176:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@0.0.0.0:9000
+INFO   | jvm 1    | 2014/10/20 22:15:03 | 2014-10-20 22:15:03.177:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+WARN   | wrapper  | 2014/10/20 22:15:03 | JVM process was still running after receiving a SIGCHLD signal.
+2014.10.20 22:15:04 INFO  org.sonar.INFO  Stop sonar...
+2014.10.20 22:15:04 INFO  o.s.s.n.NotificationService  Notification service stopped
+2014.10.20 22:15:04 INFO  org.sonar.INFO  Stop sonar done: 23 ms
+INFO   | jvm 1    | 2014/10/20 22:15:04 | 2014-10-20 22:15:04.249:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+STATUS | wrapper  | 2014/10/20 22:15:04 | <-- Wrapper Stopped
