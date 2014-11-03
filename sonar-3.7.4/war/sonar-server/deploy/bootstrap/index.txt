@@ -19,8 +19,8 @@ commons-lang-2.6.jar|4d5c1693079575b362edf41500630bbd
 mybatis-3.1.1.jar|a2ebda40a5ddd197ebcb6b6b67bb686c
 maven-artifact-manager-2.2.0.jar|bbca0411736f3ed4bac4d26a938a8726
 commons-digester-1.8.jar|cf89c593f0378e9509a06fce7030aeba
-gson-2.2.4.jar|2f54fc24807a4cad7297012dd8cebf3d
 commons-dbcp-1.4.jar|b004158fab904f37f5831860898b3cd9
+gson-2.2.4.jar|2f54fc24807a4cad7297012dd8cebf3d
 stax2-api-3.0.1.jar|75d19a6c6649d42b601c84dd39fb9fda
 guava-10.0.1.jar|d05cd8b0a7ee4466994d64779eb28190
 wagon-provider-api-1.0-beta-6.jar|63826e38e44f08e7935c1d173667ed8c
@@ -28,16 +28,16 @@ sonar-check-api-3.7.4.jar|0bb6ab669b04f6bcb8f5810549053236
 sonar-duplications-3.7.4.jar|5e80b2b92a15c9b00e5b0e97235fda40
 backport-util-concurrent-3.1.jar|748bb0cbf4780b2e3121dc9c12e10cd9
 antlr-2.7.6.jar|97c6bb68108a3d68094eab0f67157962
-staxmate-2.0.0.jar|1bb27d527c48c1dd7586865ce919bab9
 json-simple-1.1.1.jar|5cc2c478d73e8454b4c369cee66c5bc7
+staxmate-2.0.0.jar|1bb27d527c48c1dd7586865ce919bab9
 plexus-container-default-1.0-alpha-9-stable-1.jar|99533a9d3e0fa3280cd0bd3426c5f99b
 sonar-graph-3.7.4.jar|8ff2c1a1d1a0fe7f201080de5efd735c
 commons-io-2.4.jar|7f97854dc04c119d461fed14f5d8bb96
 commons-configuration-1.6.jar|b099d9f9b4b99071cc52b259308df69a
 sonar-channel-3.7.4.jar|110f54819ba16f36fd28a7295652e84d
 dom4j-1.6.1.jar|4d8f51d3fe3900efc6e395be48030d6d
-hibernate-entitymanager-3.4.0.GA.jar|464026df9b0dd042e61abefadcc8294b
 logback-classic-0.9.30.jar|e84b3c00d540b7ec14f0a942533fe1a8
+hibernate-entitymanager-3.4.0.GA.jar|464026df9b0dd042e61abefadcc8294b
 xpp3-1.1.3.3.jar|c6c59f46371f23e6af7207fbd9591d22
 maven-plugin-registry-2.2.0.jar|cdfc2ed834d936075581bd3603ef8404
 jsr305-1.3.9.jar|1d5a772e400b04bb67a7ef4a0e0996d8
@@ -54,8 +54,8 @@ commons-dbutils-1.5.jar|82e2d385b50a6728c980adfadb063036
 commons-beanutils-1.8.3.jar|b45be74134796c89db7126083129532f
 h2-1.3.172.jar|a05f6a5ebc62b2c3d8960ff83f66c5a0
 sonar-plugin-api-3.7.4.jar|7f5ecf8480392c25100cf21015406ec2
-woodstox-core-lgpl-4.0.4.jar|8494db6c74d5aeb14092c5f7346f6174
 sonar-batch-maven-compat-3.7.4.jar|7c80d3904f529124dbd4c0d9844e0d8b
+woodstox-core-lgpl-4.0.4.jar|8494db6c74d5aeb14092c5f7346f6174
 sonar-markdown-3.7.4.jar|97f655cb5fbc96b50da4e3b2287a5eef
 sonar-batch-3.7.4.jar|31268d628637f993e652918990f7c699
 maven-settings-2.2.0.jar|9c02ea2acca9fabc06e65c0d943804d9
@@ -70,6 +70,6 @@ hamcrest-core-1.1.jar|b66d0c48e1f1dc54d4227db52512c15b
 sonar-colorizer-3.7.4.jar|46bb97919b8fa4f9dbede765a0983a46
 xalan-2.7.1.jar|d43aad24f2c143b675292ccfef487f9c
 commons-collections-3.2.1.jar|13bc641afd7fd95e09b260f69c1e4c91
-sonar-deprecated-3.7.4.jar|02c60cd9003b661066c25f9ce30bb77b
 jcommon-1.0.12.jar|99bc885bb5c68be1c09ed23c997df5ac
+sonar-deprecated-3.7.4.jar|02c60cd9003b661066c25f9ce30bb77b
 log4j-over-slf4j-1.6.2.jar|fddedef0acff7abcdb57756526f575ec
