@@ -1,0 +1,9 @@
+testing in SonarQube
+
+*op het eerste zicht meestal unit testing. 
+
+*geen zotte scenario's opgebouwd .
+
+volgens mij is da geen goed idee, alles apart werkt wel, maar misschien is de communicatie tussen de verschillende componenten van het programme niet helemaal correct geïmplementeerd, en werken scenario tests dus niet. cfr end-to-end checksum. (mss zijn de routers gewoon kapot). 
+
+Er zijn wel extreem veel testen (da gevoel heb ik toch), du volgens mij wordt wel ongeveer elke methode gecoverd. 
