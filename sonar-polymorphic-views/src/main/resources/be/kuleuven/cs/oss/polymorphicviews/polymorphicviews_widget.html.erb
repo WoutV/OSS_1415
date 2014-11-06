@@ -1,0 +1,14 @@
+
+<%
+query = "ck=polymorphic&resources=classes&parent="+ u(@project.key) +"&type=scatter&xmetric=lines&ymetric=comment_lines"
+%>
+<div class="dashbox">
+  <h3>Polymorphic View</h3>
+
+  <p>
+    <div id="chart_polymorphicview" class="chart" style="display: block">
+      <%= chart(query, :id => 'chart_img_polymorphic_view', :alt => 'Polymorphic View') -%>
+    </div>
+  </p>
+
+</div>
