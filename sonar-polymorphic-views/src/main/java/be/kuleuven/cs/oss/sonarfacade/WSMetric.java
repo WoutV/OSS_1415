@@ -24,7 +24,7 @@ public class WSMetric implements Metric {
 		
 		this.metric = metric;
 	}
-	// comment derp derp
+	
 	/**
 	 * {@inheritDoc}
 	 */
