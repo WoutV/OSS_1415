@@ -1,0 +1,588 @@
+STATUS | wrapper  | 2014/11/06 10:08:59 | --> Wrapper Started as Daemon
+STATUS | wrapper  | 2014/11/06 10:08:59 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/06 10:09:00 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/06 10:09:00 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/06 10:09:00 | 
+INFO   | jvm 1    | 2014/11/06 10:09:00 | 2014-11-06 10:09:00.442:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.06 10:09:02 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:09:02 INFO  o.s.s.d.EmbeddedDatabase  Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
+2014.11.06 10:09:02 INFO  o.s.s.d.EmbeddedDatabase  Embedded database started. Data stored in: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/data
+2014.11.06 10:09:02 WARN  o.s.c.p.DefaultDatabase  H2 database should be used for evaluation purpose only
+2014.11.06 10:09:02 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:h2:tcp://localhost:9092/sonar
+2014.11.06 10:09:04 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4
+2014.11.06 10:09:04 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy
+2014.11.06 10:09:04 INFO  org.sonar.INFO  Install plugins...
+2014.11.06 10:09:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:09:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:09:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:09:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:09:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:09:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:09:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:09:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:09:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:09:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:09:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:09:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:09:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:09:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:09:04 INFO  org.sonar.INFO  Install plugins done: 123 ms
+2014.11.06 10:09:04 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.06 10:09:04 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (OpenJDK 64-Bit Server VM 1.7.0_65) [linux-amd64-java]
+2014.11.06 10:09:04 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/06 10:09:08 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/06 10:09:08 | gem install jruby-openssl for full support.
+2014.11.06 10:09:13 INFO  o.s.s.d.m.DatabaseMigrator  Create database
+2014.11.06 10:09:14 INFO  org.sonar.INFO  Start components...
+2014.11.06 10:09:14 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.06 10:09:15 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.06 10:09:15 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.06 10:09:15 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.06 10:09:15 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy/gwt
+2014.11.06 10:09:15 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy/gwt
+2014.11.06 10:09:15 INFO  org.sonar.INFO  Deploy GWT plugins done: 21 ms
+2014.11.06 10:09:15 INFO  org.sonar.INFO  Load metrics...
+2014.11.06 10:09:16 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.06 10:09:16 INFO  org.sonar.INFO  Load metrics done: 446 ms
+2014.11.06 10:09:16 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.06 10:09:16 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 704 ms
+2014.11.06 10:09:16 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.06 10:09:17 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 525 ms
+2014.11.06 10:09:17 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.06 10:09:18 INFO  org.sonar.INFO  Register rules [pmd/java] done: 759 ms
+2014.11.06 10:09:18 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.06 10:09:18 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 36 ms
+2014.11.06 10:09:18 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.06 10:09:18 INFO  org.sonar.INFO  Register rules [squid/java] done: 224 ms
+2014.11.06 10:09:18 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.06 10:09:18 INFO  org.sonar.INFO  Register rules [common-java/java] done: 12 ms
+2014.11.06 10:09:18 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.06 10:09:18 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.06 10:09:20 INFO  o.s.s.s.RegisterNewProfiles  Register java profile: Sonar way with Findbugs
+2014.11.06 10:09:21 INFO  o.s.s.s.RegisterNewProfiles  Register java profile: Sonar way
+2014.11.06 10:09:21 INFO  o.s.s.s.RegisterNewProfiles  Set default java profile: Sonar way
+2014.11.06 10:09:21 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 3053 ms
+2014.11.06 10:09:21 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.06 10:09:21 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.11.06 10:09:21 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.06 10:09:21 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filter: Projects
+2014.11.06 10:09:21 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filter: My favourites
+2014.11.06 10:09:21 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 37 ms
+2014.11.06 10:09:21 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.06 10:09:21 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: Dashboard
+2014.11.06 10:09:21 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: Home
+2014.11.06 10:09:21 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: Hotspots
+2014.11.06 10:09:21 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: Issues
+2014.11.06 10:09:21 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: TimeMachine
+2014.11.06 10:09:22 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 186 ms
+2014.11.06 10:09:22 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.06 10:09:22 INFO  o.s.s.s.RegisterPermissionTemplates  Set default permission template: default_template
+2014.11.06 10:09:22 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 29 ms
+2014.11.06 10:09:22 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.06 10:09:22 INFO  org.sonar.INFO  Start components done: 7689 ms
+INFO   | jvm 1    | 2014/11/06 10:09:22 | 2014-11-06 10:09:22.102:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/06 10:09:22 | 2014-11-06 10:09:22.240:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+STATUS | wrapper  | 2014/11/06 10:13:01 | TERM trapped.  Shutting down.
+INFO   | jvm 1    | 2014/11/06 10:13:01 | 2014-11-06 10:13:01.859:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@0.0.0.0:9000
+INFO   | jvm 1    | 2014/11/06 10:13:01 | 2014-11-06 10:13:01.860:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+2014.11.06 10:13:02 INFO  org.sonar.INFO  Stop sonar...
+2014.11.06 10:13:02 INFO  o.s.s.n.NotificationService  Notification service stopped
+2014.11.06 10:13:02 INFO  o.s.s.d.EmbeddedDatabase  Embedded database stopped
+2014.11.06 10:13:02 INFO  org.sonar.INFO  Stop sonar done: 9 ms
+INFO   | jvm 1    | 2014/11/06 10:13:02 | 2014-11-06 10:13:02.901:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+STATUS | wrapper  | 2014/11/06 10:13:02 | <-- Wrapper Stopped
+STATUS | wrapper  | 2014/11/06 10:13:05 | --> Wrapper Started as Daemon
+STATUS | wrapper  | 2014/11/06 10:13:05 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/06 10:13:05 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/06 10:13:05 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/06 10:13:05 | 
+INFO   | jvm 1    | 2014/11/06 10:13:06 | 2014-11-06 10:13:06.012:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.06 10:13:08 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:13:08 INFO  o.s.s.d.EmbeddedDatabase  Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
+2014.11.06 10:13:08 INFO  o.s.s.d.EmbeddedDatabase  Embedded database started. Data stored in: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/data
+2014.11.06 10:13:08 WARN  o.s.c.p.DefaultDatabase  H2 database should be used for evaluation purpose only
+2014.11.06 10:13:08 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:h2:tcp://localhost:9092/sonar
+2014.11.06 10:13:10 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4
+2014.11.06 10:13:10 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy
+2014.11.06 10:13:10 INFO  org.sonar.INFO  Install plugins...
+2014.11.06 10:13:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:13:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:13:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:13:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:13:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:13:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:13:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:13:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:13:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:13:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:13:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.06 10:13:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:13:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:13:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:13:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:13:10 INFO  org.sonar.INFO  Install plugins done: 116 ms
+2014.11.06 10:13:10 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.06 10:13:10 INFO  org.sonar.INFO  Start components...
+2014.11.06 10:13:10 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.06 10:13:12 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.06 10:13:12 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.06 10:13:12 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.06 10:13:12 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy/gwt
+2014.11.06 10:13:12 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy/gwt
+2014.11.06 10:13:12 INFO  org.sonar.INFO  Deploy GWT plugins done: 29 ms
+2014.11.06 10:13:12 INFO  org.sonar.INFO  Load metrics...
+2014.11.06 10:13:12 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.06 10:13:12 INFO  org.sonar.INFO  Load metrics done: 445 ms
+2014.11.06 10:13:13 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.06 10:13:13 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 678 ms
+2014.11.06 10:13:13 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.06 10:13:14 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 402 ms
+2014.11.06 10:13:14 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.06 10:13:14 INFO  org.sonar.INFO  Register rules [pmd/java] done: 569 ms
+2014.11.06 10:13:14 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.06 10:13:14 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 21 ms
+2014.11.06 10:13:14 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.06 10:13:15 INFO  org.sonar.INFO  Register rules [squid/java] done: 158 ms
+2014.11.06 10:13:15 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.06 10:13:15 INFO  org.sonar.INFO  Register rules [common-java/java] done: 12 ms
+2014.11.06 10:13:15 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.06 10:13:15 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.06 10:13:17 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 2126 ms
+2014.11.06 10:13:17 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.06 10:13:17 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.11.06 10:13:18 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.06 10:13:18 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 8 ms
+2014.11.06 10:13:18 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.06 10:13:18 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 24 ms
+2014.11.06 10:13:18 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.06 10:13:18 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 2 ms
+2014.11.06 10:13:18 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.06 10:13:18 INFO  org.sonar.INFO  Start components done: 7713 ms
+2014.11.06 10:13:18 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (OpenJDK 64-Bit Server VM 1.7.0_65) [linux-amd64-java]
+2014.11.06 10:13:18 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/06 10:13:22 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/06 10:13:22 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/06 10:13:27 | 2014-11-06 10:13:27.685:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/06 10:13:27 | 2014-11-06 10:13:27.728:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.06 10:13:28 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.06 10:13:28 ERROR o.s.s.c.ChartsServlet  Generating chart be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart
+java.lang.IllegalArgumentException: Null 'image' argument.
+	at org.jfree.chart.encoders.KeypointPNGEncoderAdapter.encode(KeypointPNGEncoderAdapter.java:132) ~[jfreechart-1.0.9.jar:na]
+	at org.sonar.server.charts.ChartsServlet.exportAsPNG(ChartsServlet.java:92) ~[classes/:na]
+	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:66) ~[classes/:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) [javax.servlet-2.5.0.v201103041518.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820) [javax.servlet-2.5.0.v201103041518.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65) [jruby-rack-1.1.10.jar:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137) [jetty-continuation-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556) [jetty-security-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.Server.handle(Server.java:369) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at java.lang.Thread.run(Thread.java:745) [na:1.7.0_65]
+2014.11.06 10:13:33 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.06 10:13:33 ERROR o.s.s.c.ChartsServlet  Generating chart be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart
+java.lang.IllegalArgumentException: Null 'image' argument.
+	at org.jfree.chart.encoders.KeypointPNGEncoderAdapter.encode(KeypointPNGEncoderAdapter.java:132) ~[jfreechart-1.0.9.jar:na]
+	at org.sonar.server.charts.ChartsServlet.exportAsPNG(ChartsServlet.java:92) ~[classes/:na]
+	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:66) ~[classes/:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) [javax.servlet-2.5.0.v201103041518.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820) [javax.servlet-2.5.0.v201103041518.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65) [jruby-rack-1.1.10.jar:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137) [jetty-continuation-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556) [jetty-security-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.Server.handle(Server.java:369) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at java.lang.Thread.run(Thread.java:745) [na:1.7.0_65]
+STATUS | wrapper  | 2014/11/06 10:20:22 | TERM trapped.  Shutting down.
+INFO   | jvm 1    | 2014/11/06 10:20:23 | 2014-11-06 10:20:23.024:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@0.0.0.0:9000
+INFO   | jvm 1    | 2014/11/06 10:20:23 | 2014-11-06 10:20:23.025:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+2014.11.06 10:20:24 INFO  org.sonar.INFO  Stop sonar...
+2014.11.06 10:20:24 INFO  o.s.s.n.NotificationService  Notification service stopped
+2014.11.06 10:20:24 INFO  o.s.s.d.EmbeddedDatabase  Embedded database stopped
+2014.11.06 10:20:24 INFO  org.sonar.INFO  Stop sonar done: 12 ms
+INFO   | jvm 1    | 2014/11/06 10:20:24 | 2014-11-06 10:20:24.070:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+STATUS | wrapper  | 2014/11/06 10:20:24 | <-- Wrapper Stopped
+STATUS | wrapper  | 2014/11/06 10:21:07 | --> Wrapper Started as Daemon
+STATUS | wrapper  | 2014/11/06 10:21:07 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/06 10:21:07 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/06 10:21:07 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/06 10:21:07 | 
+INFO   | jvm 1    | 2014/11/06 10:21:07 | 2014-11-06 10:21:07.864:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.06 10:21:09 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:21:09 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.06 10:21:10 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4
+2014.11.06 10:21:10 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy
+2014.11.06 10:21:10 INFO  org.sonar.INFO  Install plugins...
+2014.11.06 10:21:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:21:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:21:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:21:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:21:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:21:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:21:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:21:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:21:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:21:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:21:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.06 10:21:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:21:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.06 10:21:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:21:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.06 10:21:10 INFO  org.sonar.INFO  Install plugins done: 115 ms
+2014.11.06 10:21:10 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.06 10:21:11 INFO  org.sonar.INFO  Start components...
+2014.11.06 10:21:11 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.06 10:21:12 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.06 10:21:12 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.06 10:21:12 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.06 10:21:12 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy/gwt
+2014.11.06 10:21:12 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy/gwt
+2014.11.06 10:21:12 INFO  org.sonar.INFO  Deploy GWT plugins done: 22 ms
+2014.11.06 10:21:12 INFO  org.sonar.INFO  Load metrics...
+2014.11.06 10:21:13 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.06 10:21:13 INFO  org.sonar.INFO  Load metrics done: 459 ms
+2014.11.06 10:21:13 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.06 10:21:14 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 656 ms
+2014.11.06 10:21:14 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.06 10:21:14 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 442 ms
+2014.11.06 10:21:14 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.06 10:21:15 INFO  org.sonar.INFO  Register rules [pmd/java] done: 540 ms
+2014.11.06 10:21:15 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.06 10:21:15 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 29 ms
+2014.11.06 10:21:15 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.06 10:21:15 INFO  org.sonar.INFO  Register rules [squid/java] done: 152 ms
+2014.11.06 10:21:15 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.06 10:21:15 INFO  org.sonar.INFO  Register rules [common-java/java] done: 8 ms
+2014.11.06 10:21:15 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.06 10:21:15 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.06 10:21:18 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 2279 ms
+2014.11.06 10:21:18 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.06 10:21:18 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.11.06 10:21:18 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.06 10:21:18 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 7 ms
+2014.11.06 10:21:18 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.06 10:21:18 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 33 ms
+2014.11.06 10:21:18 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.06 10:21:18 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 4 ms
+2014.11.06 10:21:18 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.06 10:21:18 INFO  org.sonar.INFO  Start components done: 7410 ms
+2014.11.06 10:21:18 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (OpenJDK 64-Bit Server VM 1.7.0_65) [linux-amd64-java]
+2014.11.06 10:21:18 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/06 10:21:22 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/06 10:21:22 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/06 10:21:27 | 2014-11-06 10:21:27.857:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/06 10:21:27 | 2014-11-06 10:21:27.909:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.06 10:35:06 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.06 10:35:07 ERROR o.s.s.c.ChartsServlet  Generating chart be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart
+java.lang.IllegalArgumentException: Null 'image' argument.
+	at org.jfree.chart.encoders.KeypointPNGEncoderAdapter.encode(KeypointPNGEncoderAdapter.java:132) ~[jfreechart-1.0.9.jar:na]
+	at org.sonar.server.charts.ChartsServlet.exportAsPNG(ChartsServlet.java:92) ~[classes/:na]
+	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:66) ~[classes/:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) [javax.servlet-2.5.0.v201103041518.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820) [javax.servlet-2.5.0.v201103041518.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65) [jruby-rack-1.1.10.jar:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137) [jetty-continuation-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556) [jetty-security-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.Server.handle(Server.java:369) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at java.lang.Thread.run(Thread.java:745) [na:1.7.0_65]
+2014.11.06 10:35:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.06 10:35:24 ERROR o.s.s.c.ChartsServlet  Generating chart be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart
+java.lang.IllegalArgumentException: Null 'image' argument.
+	at org.jfree.chart.encoders.KeypointPNGEncoderAdapter.encode(KeypointPNGEncoderAdapter.java:132) ~[jfreechart-1.0.9.jar:na]
+	at org.sonar.server.charts.ChartsServlet.exportAsPNG(ChartsServlet.java:92) ~[classes/:na]
+	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:66) ~[classes/:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) [javax.servlet-2.5.0.v201103041518.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820) [javax.servlet-2.5.0.v201103041518.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65) [jruby-rack-1.1.10.jar:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137) [jetty-continuation-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556) [jetty-security-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.Server.handle(Server.java:369) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at java.lang.Thread.run(Thread.java:745) [na:1.7.0_65]
+2014.11.06 10:35:27 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.06 10:35:27 ERROR o.s.s.c.ChartsServlet  Generating chart be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart
+java.lang.IllegalArgumentException: Null 'image' argument.
+	at org.jfree.chart.encoders.KeypointPNGEncoderAdapter.encode(KeypointPNGEncoderAdapter.java:132) ~[jfreechart-1.0.9.jar:na]
+	at org.sonar.server.charts.ChartsServlet.exportAsPNG(ChartsServlet.java:92) ~[classes/:na]
+	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:66) ~[classes/:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) [javax.servlet-2.5.0.v201103041518.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820) [javax.servlet-2.5.0.v201103041518.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65) [jruby-rack-1.1.10.jar:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137) [jetty-continuation-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556) [jetty-security-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.Server.handle(Server.java:369) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at java.lang.Thread.run(Thread.java:745) [na:1.7.0_65]
+2014.11.06 10:36:46 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.06 10:36:46 ERROR o.s.s.c.ChartsServlet  Generating chart be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart
+java.lang.IllegalArgumentException: Null 'image' argument.
+	at org.jfree.chart.encoders.KeypointPNGEncoderAdapter.encode(KeypointPNGEncoderAdapter.java:132) ~[jfreechart-1.0.9.jar:na]
+	at org.sonar.server.charts.ChartsServlet.exportAsPNG(ChartsServlet.java:92) ~[classes/:na]
+	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:66) ~[classes/:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) [javax.servlet-2.5.0.v201103041518.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820) [javax.servlet-2.5.0.v201103041518.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65) [jruby-rack-1.1.10.jar:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137) [jetty-continuation-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556) [jetty-security-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.Server.handle(Server.java:369) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at java.lang.Thread.run(Thread.java:745) [na:1.7.0_65]
+2014.11.06 10:37:53 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.06 10:37:53 ERROR o.s.s.c.ChartsServlet  Generating chart be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart
+java.lang.IllegalArgumentException: Null 'image' argument.
+	at org.jfree.chart.encoders.KeypointPNGEncoderAdapter.encode(KeypointPNGEncoderAdapter.java:132) ~[jfreechart-1.0.9.jar:na]
+	at org.sonar.server.charts.ChartsServlet.exportAsPNG(ChartsServlet.java:92) ~[classes/:na]
+	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:66) ~[classes/:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) [javax.servlet-2.5.0.v201103041518.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820) [javax.servlet-2.5.0.v201103041518.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65) [jruby-rack-1.1.10.jar:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137) [jetty-continuation-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556) [jetty-security-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.Server.handle(Server.java:369) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at java.lang.Thread.run(Thread.java:745) [na:1.7.0_65]
