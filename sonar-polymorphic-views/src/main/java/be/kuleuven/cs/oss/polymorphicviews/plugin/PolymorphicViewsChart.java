@@ -2,6 +2,9 @@ package be.kuleuven.cs.oss.polymorphicviews.plugin;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,10 +35,16 @@ public class PolymorphicViewsChart implements Chart {
 	public BufferedImage generateImage(ChartParameters params) {
 		LOG.info("PolymorphicViewsChart generateImage() called!");
 		//TODO
-		File img = new File("poesje.jpg");
+		BufferedImage buff = null;
 
-		BufferedImage buffImg = new BufferedImage(240, 240, BufferedImage.TYPE_INT_ARGB);
-		return buffImg;
+		try {
+			buff = ImageIO.read(new File("/home/wout/Desktop/poesje.jpg"));
+			return buff;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 	public SonarFacade getSonar() {
