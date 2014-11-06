@@ -1,6 +1,7 @@
 package be.kuleuven.cs.oss.polymorphicviews.plugin;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,8 +31,11 @@ public class PolymorphicViewsChart implements Chart {
 	@Override
 	public BufferedImage generateImage(ChartParameters params) {
 		LOG.info("PolymorphicViewsChart generateImage() called!");
-		// TODO: implement
-		return null;
+		//TODO
+		File img = new File("poesje.jpg");
+
+		BufferedImage buffImg = new BufferedImage(240, 240, BufferedImage.TYPE_INT_ARGB);
+		return buffImg;
 	}
 	
 	public SonarFacade getSonar() {
