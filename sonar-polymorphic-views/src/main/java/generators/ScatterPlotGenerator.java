@@ -4,6 +4,8 @@ import java.awt.image.BufferedImage;
 
 import org.sonar.api.charts.ChartParameters;
 
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
+
 public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 
 	public ScatterPlotGenerator(PolymorphicChartParameters params) {
@@ -11,7 +13,7 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 	}
 
 	@Override
-	public BufferedImage getImage() {
+	public BufferedImage generateImage() {
 		// TODO Auto-generated method stub
 		return builder.getImage();
 	}

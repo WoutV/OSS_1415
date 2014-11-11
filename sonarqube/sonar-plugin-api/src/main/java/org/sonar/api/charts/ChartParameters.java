@@ -19,16 +19,16 @@
  */
 package org.sonar.api.charts;
 
-import org.apache.commons.lang.CharEncoding;
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.text.StrTokenizer;
-import org.sonar.api.utils.SonarException;
-
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+
+import org.apache.commons.lang.CharEncoding;
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.text.StrTokenizer;
+import org.sonar.api.utils.SonarException;
 
 /**
  * The class to hold parameters to configure a chart
@@ -50,6 +50,10 @@ public class ChartParameters {
 
 
   private Map<String, String> params;
+  
+  public Map<String,String> getParams() { 
+	  return params;
+  }
 
   /**
    * Creates a ChartParameter based on a list of parameters

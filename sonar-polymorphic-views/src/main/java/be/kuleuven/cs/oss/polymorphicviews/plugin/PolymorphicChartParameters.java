@@ -6,7 +6,7 @@ import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.sonarfacade.ResourceQualifier;
 
-public class PolymorphicChartParamaters extends ChartParameters {
+public class PolymorphicChartParameters extends ChartParameters {
 
 	public static final String PARAM_RESOURCES = "resources";
 	public static final String PARAM_PARENT = "parent";
@@ -29,10 +29,10 @@ public class PolymorphicChartParamaters extends ChartParameters {
 
 
 	//Constructors
-	public PolymorphicChartParamaters(Map<String, String> params) {
+	public PolymorphicChartParameters(Map<String, String> params) {
 		super(params);
 	}
-	public PolymorphicChartParamaters(String queryString) {
+	public PolymorphicChartParameters(String queryString) {
 		super(queryString);
 	}
 
