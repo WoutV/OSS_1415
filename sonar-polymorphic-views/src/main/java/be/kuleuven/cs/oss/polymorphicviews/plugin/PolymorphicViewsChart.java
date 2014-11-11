@@ -31,6 +31,10 @@ public class PolymorphicViewsChart implements Chart {
 		return "polymorphic";
 	}
 
+	/**
+	 * @param params arguments passed by end-user in URL
+	 * @return the image that should be displayed in the browser
+	 */
 	@Override
 	public BufferedImage generateImage(ChartParameters params) {
 		LOG.info("PolymorphicViewsChart generateImage() called!");
