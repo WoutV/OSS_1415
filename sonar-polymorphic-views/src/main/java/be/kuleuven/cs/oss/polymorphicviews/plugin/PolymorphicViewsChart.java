@@ -35,15 +35,6 @@ public class PolymorphicViewsChart implements Chart {
 	public BufferedImage generateImage(ChartParameters params) {
 		LOG.info("PolymorphicViewsChart generateImage() called!");
 		//TODO
-		BufferedImage buff = null;
-
-		try {
-			buff = ImageIO.read(new File("/home/wout/Desktop/poesje.jpg"));
-			return buff;
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		return null;
 	}
 	
