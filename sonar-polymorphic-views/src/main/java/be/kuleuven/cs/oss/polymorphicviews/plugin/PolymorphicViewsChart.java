@@ -1,10 +1,10 @@
 package be.kuleuven.cs.oss.polymorphicviews.plugin;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import generators.PolymorphicChartGenerator;
+import generators.ScatterPlotGenerator;
+import generators.SystemComplexityGenerator;
 
-import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,17 +37,18 @@ public class PolymorphicViewsChart implements Chart {
 	 */
 	@Override
 	public BufferedImage generateImage(ChartParameters params) {
+		PolymorphicChartParameters polyParams = (PolymorphicChartParameters) params;
 		LOG.info("PolymorphicViewsChart generateImage() called!");
-		//TODO
-		BufferedImage buff = null;
-
-		try {
-			buff = ImageIO.read(new File("/home/wout/Desktop/poesje.jpg"));
-			return buff;
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		String type = polyParams.getType();
+		PolymorphicChartGenerator generator = null;
+		switch(type) { 
+			case "scatter" : generator = new ScatterPlotGenerator(polyParams);
+			break;
+			case "syscomp" : generator = new SystemComplexityGenerator(polyParams);
+			break;
 		}
+		//BufferedImage buff = generator.getImage();
+		//TODO return statement
 		return null;
 	}
 	
