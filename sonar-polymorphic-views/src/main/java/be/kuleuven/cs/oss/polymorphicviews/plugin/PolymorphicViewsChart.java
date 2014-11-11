@@ -31,6 +31,7 @@ public class PolymorphicViewsChart implements Chart {
 	public BufferedImage generateImage(ChartParameters params) {
 		LOG.info("PolymorphicViewsChart generateImage() called!");
 		// TODO: implement
+		// moet een chart maken (roept hier normaal duizend andere klasses aan)
 		return null;
 	}
 	
