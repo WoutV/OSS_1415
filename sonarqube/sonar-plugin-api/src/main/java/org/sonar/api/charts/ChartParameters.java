@@ -48,7 +48,6 @@ public class ChartParameters {
 
   public static final int DEFAULT_HEIGHT = 200;
 
-  //TODO voor alle parameters een default value maken, hier toevoegen
 
   private Map<String, String> params;
 
@@ -159,7 +158,6 @@ public class ChartParameters {
     return Math.min(height, MAX_HEIGHT);
   }
   
-  //TODO getters voor alle parameters uit tabel in opgave. 
 
   /**
    * Get the Locale
