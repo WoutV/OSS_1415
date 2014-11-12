@@ -7,6 +7,7 @@ import org.sonar.api.charts.ChartParameters;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import be.kuleuven.cs.oss.sonarfacade.ResourceQualifier;
 import chartbuilder.ChartBuilder;
+import chartbuilder.Java2DBuilder;
 
 public abstract class PolymorphicChartGenerator {
 	protected ChartBuilder builder;

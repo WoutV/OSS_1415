@@ -13,7 +13,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	@Override
 	public BufferedImage generateImage() {
 		// TODO Auto-generated method stub
-		return builder.generateImage();
+		return builder.getImage();
 	}
 
 }
