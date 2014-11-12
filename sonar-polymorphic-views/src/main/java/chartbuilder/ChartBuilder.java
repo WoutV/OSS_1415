@@ -7,9 +7,9 @@ public interface ChartBuilder {
 	
 	public void blankImage(int height, int width, int imageType);
 	
-	public void createXAxis(String name, int min, int max);
+	public void createXAxis(String label, int xStart, int xStop, int xMin, int xMax, int y);
 	
-	public void createYAxis(String name, int min, int max);
+	public void createYAxis(String label, int yStart, int yStop, int yMin, int yMax, int x);
 	
 	public void createLine(int x1, int y1, int x2, int y2);
 	
@@ -17,5 +17,4 @@ public interface ChartBuilder {
 	
 	public BufferedImage getImage();
 
-	
 }
