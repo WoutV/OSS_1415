@@ -47,7 +47,7 @@ public class PolymorphicViewsChart implements Chart {
 			break;
 			case "syscomp" : generator = new SystemComplexityGenerator(polyParams,sonar);
 			break;
-			default : generator = new ScatterPlotGenerator(polyParams);
+			default : generator = new ScatterPlotGenerator(polyParams,sonar);
 		}
 		BufferedImage buff = generator.generateImage();
 		return buff;

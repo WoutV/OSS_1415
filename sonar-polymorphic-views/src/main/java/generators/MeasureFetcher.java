@@ -1,5 +1,6 @@
 package generators;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -56,5 +57,17 @@ public class MeasureFetcher {
 		default:
 			return sonar.findPackages(parent);	
 		}
+	}
+
+	public int getNumberOfResources() {
+		return this.resources.size();
+	}
+	
+	public List<String> getResourceNames() {
+		List<String> result = new ArrayList<String>();
+		for(Resource r : resources) {
+			result.add(r.getName());
+		}
+		return result;
 	}
 }
