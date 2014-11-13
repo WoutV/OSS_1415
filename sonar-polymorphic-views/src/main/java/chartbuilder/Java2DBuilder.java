@@ -52,8 +52,11 @@ public class Java2DBuilder implements ChartBuilder {
 	 * @param imageType The type of the image, e.g. BufferedImage.TYPE_INT_RGB.
 	 */
 	@Override
-	public void blankImage(int height, int width, int imageType) {
+	public void createCanvas(int height, int width, int imageType) {
 		BufferedImage img = new BufferedImage(width, height, imageType);
+		Graphics2D graphics = img.createGraphics();
+		graphics.setColor(Color.WHITE);
+		graphics.fillRect(0, 0, width, height);
 		setCanvas(img);
 	}
 

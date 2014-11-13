@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 
 public interface ChartBuilder {
 	
-	public void blankImage(int height, int width, int imageType);
+	public void createCanvas(int height, int width, int imageType);
 	
 	public void createXAxis(String label, int xStart, int xStop, int xMin, int xMax, int y);
 	
