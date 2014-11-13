@@ -20,6 +20,9 @@ public abstract class PolymorphicChartGenerator {
 	
 	public PolymorphicChartGenerator(PolymorphicChartParameters params) {
 		this.params = params;
+		
+		//TODO use a data object to encapsulate all these fields. 
+		// why can't this class hold all these variables ?!
 		this.resources = params.getResources();
 		this.parent = params.getParent();
 		this.boxWidth = params.getBoxWidth();
