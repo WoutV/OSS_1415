@@ -43,9 +43,9 @@ public class PolymorphicViewsChart implements Chart {
 		String type = polyParams.getType();
 		PolymorphicChartGenerator generator = null;
 		switch(type) { 
-			case "scatter" : generator = new ScatterPlotGenerator(polyParams);
+			case "scatter" : generator = new ScatterPlotGenerator(polyParams,sonar);
 			break;
-			case "syscomp" : generator = new SystemComplexityGenerator(polyParams);
+			case "syscomp" : generator = new SystemComplexityGenerator(polyParams,sonar);
 			break;
 			default : generator = new ScatterPlotGenerator(polyParams);
 		}
