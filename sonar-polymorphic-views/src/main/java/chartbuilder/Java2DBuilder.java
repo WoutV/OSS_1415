@@ -102,8 +102,8 @@ public class Java2DBuilder implements ChartBuilder {
 		drawVerticalAxis(yStart, yStop, x);
 		int pos = graphics.getFontMetrics().getMaxDescent();
 		drawVerticalString(label, x-pos, yStart+(yStop-yStart)/2, -Math.PI/2);
-		drawVerticalString(""+yMin, x-pos, yMax, -Math.PI/2);
-		drawVerticalString(""+yMax, x-pos, yMin, -Math.PI/2);
+		drawVerticalString(""+yMin, x-pos, yStop-yMin, -Math.PI/2);
+		drawVerticalString(""+yMax, x-pos, yStop-yMax, -Math.PI/2);
 	}
 
 	/**
@@ -249,10 +249,14 @@ public class Java2DBuilder implements ChartBuilder {
 		arrowHead.addPoint(5,0);
 		arrowHead.addPoint( -5, 5);
 		arrowHead.addPoint( -5,-5);
-		graphics.fill(arrowHead);
 	    double angle = Math.atan2(line.getY2()-line.getY1(), line.getX2()-line.getX1());
 	    graphics.translate(line.getX2(), line.getY2());
+	    System.out.println("" + line.getX2());
+	    System.out.println("" + line.getY2());
+	    System.out.println("" + angle);
 	    graphics.rotate(angle);  
+	    graphics.draw(arrowHead);
+		graphics.fill(arrowHead);
 		graphics.setTransform(original);
 	}
 

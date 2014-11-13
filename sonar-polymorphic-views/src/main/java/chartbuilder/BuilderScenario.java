@@ -24,8 +24,8 @@ public class BuilderScenario {
 	
 	public void testScenarioA() throws IOException{
 		builder.createCanvas(512,512, BufferedImage.TYPE_INT_RGB);
-		builder.createXAxis("Lines of code", 50, 462, 20, 300, 462);
-		builder.createYAxis("Number of methods", 462, 50, 0, 100, 50);
+		builder.createXAxis("Lines of code", 50, 462, 80, 400, 462);
+		builder.createYAxis("Number of methods", 50, 462, 50, 100, 50);
 		builder.createRectangle(50, 70, 12, 15, Color.blue, "sonar.random");
 		builder.createRectangle(100, 50, 12, 15, Color.blue, "sonarTest");
 		builder.createRectangle(200, 222, 20, 15, Color.blue, "sonar Stuff");
