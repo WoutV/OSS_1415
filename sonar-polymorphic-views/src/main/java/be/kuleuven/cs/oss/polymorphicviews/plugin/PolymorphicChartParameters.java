@@ -24,6 +24,7 @@ public class PolymorphicChartParameters extends ChartParameters {
 	public static final String DEFAULT_BOXWIDTH = "20"; //TODO AANPASSSEN
 	public static final String DEFAULT_BOXHEIGHT = "20"; // TODO aanpassen
 	public static final String DEFAULT_BOXCOLOR = "255255255";
+	public static final String DEFAULT_SIZE = "480x480"; //TODO aanpassen
 
 
 
@@ -83,19 +84,23 @@ public class PolymorphicChartParameters extends ChartParameters {
 		return Integer.parseInt(heigth);
 	}
 
-	public int getBoxWidth(){
+	public String getBoxWidth(){
 		String result = getValue(PARAM_BOXWIDTH, DEFAULT_BOXWIDTH, false);
-		return Integer.parseInt(result);
+		return result;
 	}
 	
-	public int getBoxHeight(){
+	public String getSize(){
+		String result = getValue(PARAM_SIZE, DEFAULT_SIZE,false);
+		return result;
+	}
+	
+	public String getBoxHeight(){
 		String result = getValue(PARAM_BOXHEIGHT, DEFAULT_BOXHEIGHT, false);
-		return Integer.parseInt(result);
+		return result;
 	}
 	
-	//TODO uitbreiden naar grijstinten
-	public int getBoxColor(){
+	public String getBoxColor(){
 		String result = getValue(PARAM_BOXCOLOR, DEFAULT_BOXCOLOR, false);
-		return Integer.parseInt(result);
+		return result;
 	}
 }
