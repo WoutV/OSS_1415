@@ -40,12 +40,7 @@ public class BoxGenerator {
 	 *            defines the sizes and colors of the boxes
 	 * @return an array of boxes with the given dimension/color
 	 */
-	public Box[] getBoxes(PolymorphicChartParameters params) {
-		
-		String width = params.getBoxWidth();
-		String height = params.getBoxHeight();
-		String color = params.getBoxColor();
-
+	public Box[] getBoxes(String width, String height, String color) {
 		List<Double> widthList = getBoxDimension(width);
 		List<Double> heightList = getBoxDimension(height);
 		List<Color> colorList = getBoxColors(color);

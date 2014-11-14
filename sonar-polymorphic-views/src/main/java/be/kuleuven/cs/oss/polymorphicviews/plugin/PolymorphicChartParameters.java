@@ -4,8 +4,6 @@ import java.util.Map;
 
 import org.sonar.api.charts.ChartParameters;
 
-import be.kuleuven.cs.oss.sonarfacade.ResourceQualifier;
-
 public class PolymorphicChartParameters extends ChartParameters {
 
 	public static final String PARAM_RESOURCES = "resources";
@@ -41,8 +39,8 @@ public class PolymorphicChartParameters extends ChartParameters {
 	/**
 	 * @return resources
 	 */
-	public ResourceQualifier getResources() {
-		ResourceQualifier result = ResourceQualifier.fromString(getValue(PARAM_RESOURCES,DEFAULT_RESOURCES,false));
+	public String getResources() {
+		String result = getValue(PARAM_RESOURCES,DEFAULT_RESOURCES,false);
 		return result;
 	}
 

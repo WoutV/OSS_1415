@@ -8,7 +8,6 @@ import java.util.Map;
 import be.kuleuven.cs.oss.sonarfacade.Measure;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
-import be.kuleuven.cs.oss.sonarfacade.ResourceQualifier;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 /**
@@ -20,7 +19,7 @@ public class MeasureFetcher {
 	private SonarFacade sonar;
 	private List<Resource> resources;
 
-	public MeasureFetcher(ResourceQualifier resourceType, String parent, SonarFacade sonar){
+	public MeasureFetcher(String resourceType, String parent, SonarFacade sonar){
 		this.sonar = sonar;
 		Resource ancestor = sonar.findResource(parent);
 		this.resources = findResources(resourceType,ancestor);
@@ -46,12 +45,12 @@ public class MeasureFetcher {
 	 * @param parent - Ancestor of the resources that are returned
 	 * @return All the resources of the given type below the given parent.
 	 */
-	private List<Resource> findResources(ResourceQualifier resourceType, Resource parent){
+	private List<Resource> findResources(String resourceType, Resource parent){
 		switch (resourceType){
-		case PACKAGE:
+		case "packages":
 			 return sonar.findPackages(parent);
 		
-		case CLASS:
+		case "classes":
 			 return sonar.findClasses(parent);
 	
 		default:

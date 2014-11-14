@@ -18,20 +18,17 @@ import chartbuilder.Java2DBuilder;
  */
 public abstract class PolymorphicChartGenerator {
 	protected ChartBuilder builder;
-	protected int boxWidth;
-	protected int boxHeight;
-	protected int boxColor;
 	protected MeasureFetcher measureFetcher;
 	protected BoxGenerator boxGenerator;
 	protected Box[] boxes;
 	public PolymorphicChartGenerator(PolymorphicChartParameters params, SonarFacade sonar) {
 		this.builder = new Java2DBuilder();
 		
-		ResourceQualifier resources = params.getResources();
+		String resourceType = params.getResources();
 		String parent = params.getParent();
-		this.measureFetcher = new MeasureFetcher(resources,parent,sonar);
+		this.measureFetcher = new MeasureFetcher(resourceType,parent,sonar);
 		this.boxGenerator = new BoxGenerator(measureFetcher);
-		this.boxes = boxGenerator.getBoxes(params);
+		this.boxes = boxGenerator.getBoxes(params.getBoxWidth(),params.getBoxHeight(),params.getBoxColor());
 	}
 
 	public abstract BufferedImage generateImage();

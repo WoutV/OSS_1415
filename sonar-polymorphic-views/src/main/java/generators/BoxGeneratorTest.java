@@ -34,7 +34,7 @@ public class BoxGeneratorTest {
 		ChartParameters params = new ChartParameters(inputParams);
 		PolymorphicChartParameters polyParams = new PolymorphicChartParameters(params.getParams());
 		
-		Box[] boxes = bg.getBoxes(polyParams);
+		Box[] boxes = bg.getBoxes(polyParams.getBoxWidth(),polyParams.getBoxHeight(),polyParams.getBoxColor());
 		assertTrue(2 == boxes[0].getWidth());
 		assertTrue(2 == boxes[1].getWidth());
 		assertTrue(2 == boxes[2].getWidth());
@@ -53,7 +53,7 @@ public class BoxGeneratorTest {
 		ChartParameters params = new ChartParameters(inputParams);
 		PolymorphicChartParameters polyParams = new PolymorphicChartParameters(params.getParams());
 		
-		Box[] boxes = bg.getBoxes(polyParams);
+		Box[] boxes = bg.getBoxes(polyParams.getBoxWidth(),polyParams.getBoxHeight(),polyParams.getBoxColor());
 		assertTrue(boxes[0].getWidth() == Double.parseDouble(PolymorphicChartParameters.DEFAULT_BOXWIDTH));
 		assertTrue(boxes[1].getWidth() == Double.parseDouble(PolymorphicChartParameters.DEFAULT_BOXWIDTH));
 		assertTrue(boxes[2].getWidth() == Double.parseDouble(PolymorphicChartParameters.DEFAULT_BOXWIDTH));
