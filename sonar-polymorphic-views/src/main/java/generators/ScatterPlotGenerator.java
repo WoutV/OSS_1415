@@ -3,6 +3,8 @@ package generators;
 import java.awt.image.BufferedImage;
 import java.util.Map;
 
+import org.sonar.api.charts.ChartParameters;
+
 import chartbuilder.ChartBuilder;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
@@ -14,14 +16,14 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 	private String xMetric;
 	private String yMetric;
 
-	public ScatterPlotGenerator(PolymorphicChartParameters params, SonarFacade sonar) {
+	public ScatterPlotGenerator(ChartParameters params, SonarFacade sonar) {
 		super(params,sonar);
-		this.xMetric = params.getXMetric();
-		this.yMetric = params.getYMetric();
-		parseSize(params.getSize());
-
+		this.xMetric = params.getValue("xmetric");
+		this.yMetric = params.getValue("ymetric");
+		parseSize(params.getValue("size"));
 	}
 
+	
 	@Override
 	public BufferedImage generateImage() {
 		Map<String,Double> xValues = measureFetcher.getMeasureValues(xMetric);

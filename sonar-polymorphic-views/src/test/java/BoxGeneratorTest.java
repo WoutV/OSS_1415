@@ -1,6 +1,7 @@
-package generators;
+import static org.junit.Assert.*;
 
-import static org.junit.Assert.assertTrue;
+import generators.Box;
+import generators.BoxGenerator;
 
 import java.awt.Color;
 import java.util.HashMap;

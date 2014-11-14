@@ -14,11 +14,13 @@ import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
  *
  */
 public class BoxGenerator {
-	private Box[] boxes = new Box[3];
+	private Box[] boxes;
 	private MeasureFetcher measureFetcher;
 
 	public BoxGenerator(MeasureFetcher measureFetcher) {
 		this.measureFetcher = measureFetcher;
+		int numberOfBoxes = measureFetcher.getNumberOfResources();
+		this.boxes= new Box[numberOfBoxes];
 		initBoxes();
 		if(measureFetcher!=null) {
 			nameBoxes();
@@ -44,6 +46,14 @@ public class BoxGenerator {
 		List<Double> widthList = getBoxDimension(width);
 		List<Double> heightList = getBoxDimension(height);
 		List<Color> colorList = getBoxColors(color);
+		//TODO fix this!
+		if(width == null){
+			width = "80";
+		}
+		if(height == null){
+			height = "80";
+		}
+		//TODO end fix this
 		for (int i = 0; i < boxes.length; i++) {
 			boxes[i].setHeight(heightList.get(i));
 			boxes[i].setWidth(widthList.get(i));
@@ -68,7 +78,7 @@ public class BoxGenerator {
 			Color rgb = parseColor(color);
 			result = new ArrayList<Color>(Collections.nCopies(
 					boxes.length, rgb));
-			
+
 		} catch (IllegalArgumentException e) {
 			// TODO kleur met metrics en overgang en shizzle
 		}
@@ -86,16 +96,21 @@ public class BoxGenerator {
 	 * @return
 	 * @throws IllegalArgumentException
 	 */
-	private Color parseColor(String color) throws IllegalArgumentException {
+	static Color parseColor(String color) throws IllegalArgumentException {
 		Integer[] result = new Integer[3];
-			try {
-				result[0] = Integer.parseInt(color.split("r")[1].split("g")[0]);
-				
-				result[1] = Integer.parseInt(color.split("g")[1].split("b")[0]);
-				result[2] = Integer.parseInt(color.split("b")[1]);
-			} catch (NumberFormatException e) {
-				throw new IllegalArgumentException();
-			}
+		try {
+			result[0] = Integer.parseInt(color.split("r")[1].split("g")[0]);				
+			result[1] = Integer.parseInt(color.split("g")[1].split("b")[0]);
+			result[2] = Integer.parseInt(color.split("b")[1]);
+		} catch (NumberFormatException e) {
+			throw new IllegalArgumentException();
+		}
+		catch(IndexOutOfBoundsException e){
+			//TODO static finals van maken
+			result[0] = 255;			
+			result[1] = 255;
+			result[2] = 255;
+		}
 		return new Color(result[0], result[1], result[2]);
 	}
 

@@ -2410,3 +2410,971 @@ INFO   | jvm 1    | 2014/11/10 21:52:23 | JRuby limited openssl loaded. http://j
 INFO   | jvm 1    | 2014/11/10 21:52:23 | gem install jruby-openssl for full support.
 INFO   | jvm 1    | 2014/11/10 21:52:36 | 2014-11-10 21:52:36.045:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
 INFO   | jvm 1    | 2014/11/10 21:52:36 | 2014-11-10 21:52:36.283:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+STATUS | wrapper  | 2014/11/14 14:58:01 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/14 14:58:02 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/14 14:58:02 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/14 14:58:02 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/14 14:58:02 | 
+INFO   | jvm 1    | 2014/11/14 14:58:05 | 2014-11-14 14:58:05.801:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.14 14:58:08 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 14:58:08 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.14 14:58:10 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4
+2014.11.14 14:58:10 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy
+2014.11.14 14:58:10 INFO  org.sonar.INFO  Install plugins...
+2014.11.14 14:58:10 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 14:58:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 14:58:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 14:58:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 14:58:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 14:58:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 14:58:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 14:58:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 14:58:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 14:58:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 14:58:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.14 14:58:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 14:58:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 14:58:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 14:58:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 14:58:11 INFO  org.sonar.INFO  Install plugins done: 571 ms
+2014.11.14 14:58:11 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.14 14:58:11 INFO  org.sonar.INFO  Start components...
+2014.11.14 14:58:11 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.14 14:58:14 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.14 14:58:14 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.14 14:58:14 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.14 14:58:14 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.14 14:58:15 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.14 14:58:15 INFO  org.sonar.INFO  Deploy GWT plugins done: 627 ms
+2014.11.14 14:58:15 INFO  org.sonar.INFO  Load metrics...
+2014.11.14 14:58:16 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.14 14:58:16 INFO  org.sonar.INFO  Load metrics done: 882 ms
+2014.11.14 14:58:16 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.14 14:58:17 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 502 ms
+2014.11.14 14:58:17 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.14 14:58:17 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 418 ms
+2014.11.14 14:58:17 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.14 14:58:18 INFO  org.sonar.INFO  Register rules [pmd/java] done: 595 ms
+2014.11.14 14:58:18 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.14 14:58:18 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 26 ms
+2014.11.14 14:58:18 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.14 14:58:18 INFO  org.sonar.INFO  Register rules [squid/java] done: 169 ms
+2014.11.14 14:58:18 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.14 14:58:18 INFO  org.sonar.INFO  Register rules [common-java/java] done: 3 ms
+2014.11.14 14:58:18 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.14 14:58:18 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.14 14:58:20 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 2112 ms
+2014.11.14 14:58:20 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.14 14:58:20 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.11.14 14:58:22 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.14 14:58:22 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 4 ms
+2014.11.14 14:58:22 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.14 14:58:22 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 54 ms
+2014.11.14 14:58:22 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.14 14:58:22 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 2 ms
+2014.11.14 14:58:22 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.14 14:58:22 INFO  org.sonar.INFO  Start components done: 11012 ms
+2014.11.14 14:58:24 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.7.0_09) [Windows 7-amd64-java]
+2014.11.14 14:58:24 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/14 14:58:35 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/14 14:58:35 | gem install jruby-openssl for full support.
+STATUS | wrapper  | 2014/11/14 14:59:53 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/14 14:59:53 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/14 14:59:53 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/14 14:59:53 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/14 14:59:53 | 
+INFO   | jvm 1    | 2014/11/14 14:59:53 | 2014-11-14 14:59:53.951:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.14 14:59:56 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 14:59:56 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.14 14:59:58 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4
+2014.11.14 14:59:58 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy
+2014.11.14 14:59:58 INFO  org.sonar.INFO  Install plugins...
+2014.11.14 14:59:58 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 14:59:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 14:59:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 14:59:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 14:59:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 14:59:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 14:59:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 14:59:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 14:59:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 14:59:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 14:59:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.14 14:59:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 14:59:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 14:59:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 14:59:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 14:59:59 INFO  org.sonar.INFO  Install plugins done: 1625 ms
+2014.11.14 15:00:00 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.14 15:00:00 INFO  org.sonar.INFO  Start components...
+2014.11.14 15:00:00 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.14 15:00:03 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.14 15:00:03 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.14 15:00:04 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.14 15:00:04 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.14 15:00:04 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.14 15:00:04 INFO  org.sonar.INFO  Deploy GWT plugins done: 134 ms
+2014.11.14 15:00:04 INFO  org.sonar.INFO  Load metrics...
+2014.11.14 15:00:04 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.14 15:00:04 INFO  org.sonar.INFO  Load metrics done: 376 ms
+2014.11.14 15:00:04 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.14 15:00:05 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 437 ms
+2014.11.14 15:00:05 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.14 15:00:05 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 393 ms
+2014.11.14 15:00:05 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.14 15:00:06 INFO  org.sonar.INFO  Register rules [pmd/java] done: 614 ms
+2014.11.14 15:00:06 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.14 15:00:06 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 27 ms
+2014.11.14 15:00:06 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.14 15:00:06 INFO  org.sonar.INFO  Register rules [squid/java] done: 168 ms
+2014.11.14 15:00:06 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.14 15:00:06 INFO  org.sonar.INFO  Register rules [common-java/java] done: 3 ms
+2014.11.14 15:00:06 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.14 15:00:06 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.14 15:00:08 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1524 ms
+2014.11.14 15:00:08 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.14 15:00:08 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 1 ms
+2014.11.14 15:00:08 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.14 15:00:08 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 4 ms
+2014.11.14 15:00:08 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.14 15:00:08 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 35 ms
+2014.11.14 15:00:08 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.14 15:00:08 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 2 ms
+2014.11.14 15:00:08 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.14 15:00:08 INFO  org.sonar.INFO  Start components done: 8473 ms
+2014.11.14 15:00:09 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.7.0_09) [Windows 7-amd64-java]
+2014.11.14 15:00:09 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/14 15:00:16 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/14 15:00:16 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/14 15:00:28 | 2014-11-14 15:00:28.714:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/14 15:00:28 | 2014-11-14 15:00:28.862:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.14 15:01:10 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 2014-11-14 15:01:12.307:WARN:oejs.ServletHandler:/chart
+INFO   | jvm 1    | 2014/11/14 15:01:12 | java.lang.ArrayIndexOutOfBoundsException: 3
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at generators.BoxGenerator.nameBoxes(BoxGenerator.java:133)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at generators.BoxGenerator.<init>(BoxGenerator.java:24)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at generators.PolymorphicChartGenerator.<init>(PolymorphicChartGenerator.java:32)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at generators.ScatterPlotGenerator.<init>(ScatterPlotGenerator.java:20)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart.generateImage(PolymorphicViewsChart.java:46)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:62)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.server.Server.handle(Server.java:369)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+INFO   | jvm 1    | 2014/11/14 15:01:12 | 	at java.lang.Thread.run(Unknown Source)
+STATUS | wrapper  | 2014/11/14 15:08:15 | CTRL-C trapped.  Shutting down.
+INFO   | jvm 1    | 2014/11/14 15:08:17 | 2014-11-14 15:08:17.345:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@0.0.0.0:9000
+INFO   | jvm 1    | 2014/11/14 15:08:17 | 2014-11-14 15:08:17.346:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server
+2014.11.14 15:08:18 INFO  org.sonar.INFO  Stop sonar...
+2014.11.14 15:08:18 INFO  o.s.s.n.NotificationService  Notification service stopped
+2014.11.14 15:08:18 INFO  org.sonar.INFO  Stop sonar done: 2 ms
+INFO   | jvm 1    | 2014/11/14 15:08:18 | 2014-11-14 15:08:18.375:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server
+STATUS | wrapper  | 2014/11/14 15:08:18 | <-- Wrapper Stopped
+STATUS | wrapper  | 2014/11/14 15:08:56 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/14 15:08:56 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/14 15:08:57 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/14 15:08:57 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/14 15:08:57 | 
+INFO   | jvm 1    | 2014/11/14 15:08:57 | 2014-11-14 15:08:57.224:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.14 15:09:00 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:09:00 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.14 15:09:01 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4
+2014.11.14 15:09:01 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy
+2014.11.14 15:09:01 INFO  org.sonar.INFO  Install plugins...
+2014.11.14 15:09:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:09:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:09:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:09:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:09:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:09:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:09:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:09:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:09:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:09:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:09:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.14 15:09:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:09:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:09:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:09:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:09:02 INFO  org.sonar.INFO  Install plugins done: 238 ms
+2014.11.14 15:09:02 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.14 15:09:02 INFO  org.sonar.INFO  Start components...
+2014.11.14 15:09:02 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.14 15:09:05 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.14 15:09:05 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.14 15:09:05 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.14 15:09:05 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.14 15:09:05 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.14 15:09:06 INFO  org.sonar.INFO  Deploy GWT plugins done: 284 ms
+2014.11.14 15:09:06 INFO  org.sonar.INFO  Load metrics...
+2014.11.14 15:09:06 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.14 15:09:06 INFO  org.sonar.INFO  Load metrics done: 365 ms
+2014.11.14 15:09:06 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.14 15:09:07 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 450 ms
+2014.11.14 15:09:07 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.14 15:09:07 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 413 ms
+2014.11.14 15:09:07 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.14 15:09:08 INFO  org.sonar.INFO  Register rules [pmd/java] done: 606 ms
+2014.11.14 15:09:08 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.14 15:09:08 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 26 ms
+2014.11.14 15:09:08 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.14 15:09:08 INFO  org.sonar.INFO  Register rules [squid/java] done: 173 ms
+2014.11.14 15:09:08 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.14 15:09:08 INFO  org.sonar.INFO  Register rules [common-java/java] done: 4 ms
+2014.11.14 15:09:08 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.14 15:09:08 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.14 15:09:10 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1501 ms
+2014.11.14 15:09:10 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.14 15:09:10 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.11.14 15:09:10 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.14 15:09:10 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 4 ms
+2014.11.14 15:09:10 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.14 15:09:10 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 30 ms
+2014.11.14 15:09:10 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.14 15:09:10 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 2 ms
+2014.11.14 15:09:10 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.14 15:09:10 INFO  org.sonar.INFO  Start components done: 8263 ms
+2014.11.14 15:09:10 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.7.0_09) [Windows 7-amd64-java]
+2014.11.14 15:09:10 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/14 15:09:19 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/14 15:09:19 | gem install jruby-openssl for full support.
+STATUS | wrapper  | 2014/11/14 15:09:28 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/14 15:09:28 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/14 15:09:28 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/14 15:09:28 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/14 15:09:28 | 
+INFO   | jvm 1    | 2014/11/14 15:09:28 | 2014-11-14 15:09:28.762:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.14 15:09:31 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:09:31 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.14 15:09:32 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4
+2014.11.14 15:09:32 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy
+2014.11.14 15:09:32 INFO  org.sonar.INFO  Install plugins...
+2014.11.14 15:09:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:09:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:09:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:09:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:09:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:09:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:09:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:09:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:09:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:09:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:09:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.14 15:09:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:09:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:09:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:09:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:09:32 INFO  org.sonar.INFO  Install plugins done: 243 ms
+2014.11.14 15:09:33 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.14 15:09:33 INFO  org.sonar.INFO  Start components...
+2014.11.14 15:09:33 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.14 15:09:34 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.14 15:09:35 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.14 15:09:35 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.14 15:09:35 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.14 15:09:35 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.14 15:09:35 INFO  org.sonar.INFO  Deploy GWT plugins done: 252 ms
+2014.11.14 15:09:35 INFO  org.sonar.INFO  Load metrics...
+2014.11.14 15:09:35 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.14 15:09:35 INFO  org.sonar.INFO  Load metrics done: 513 ms
+2014.11.14 15:09:36 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.14 15:09:36 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 422 ms
+2014.11.14 15:09:36 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.14 15:09:36 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 386 ms
+2014.11.14 15:09:36 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.14 15:09:37 INFO  org.sonar.INFO  Register rules [pmd/java] done: 583 ms
+2014.11.14 15:09:37 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.14 15:09:37 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 25 ms
+2014.11.14 15:09:37 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.14 15:09:37 INFO  org.sonar.INFO  Register rules [squid/java] done: 164 ms
+2014.11.14 15:09:37 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.14 15:09:37 INFO  org.sonar.INFO  Register rules [common-java/java] done: 4 ms
+2014.11.14 15:09:37 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.14 15:09:38 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.14 15:09:39 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1593 ms
+2014.11.14 15:09:39 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.14 15:09:39 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 1 ms
+2014.11.14 15:09:39 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.14 15:09:39 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 4 ms
+2014.11.14 15:09:39 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.14 15:09:39 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 14 ms
+2014.11.14 15:09:39 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.14 15:09:39 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 2 ms
+2014.11.14 15:09:39 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.14 15:09:40 INFO  org.sonar.INFO  Start components done: 6683 ms
+2014.11.14 15:09:40 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.7.0_09) [Windows 7-amd64-java]
+2014.11.14 15:09:40 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/14 15:09:45 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/14 15:09:45 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/14 15:09:51 | 2014-11-14 15:09:51.248:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/14 15:09:51 | 2014-11-14 15:09:51.302:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.14 15:10:02 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.14 15:10:06 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 2014-11-14 15:10:26.022:WARN:oejs.ServletHandler:/chart
+INFO   | jvm 1    | 2014/11/14 15:10:26 | java.lang.ArrayIndexOutOfBoundsException: 1
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at generators.BoxGenerator.parseColor(BoxGenerator.java:94)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at generators.BoxGenerator.getBoxColors(BoxGenerator.java:70)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at generators.BoxGenerator.getBoxes(BoxGenerator.java:48)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at generators.PolymorphicChartGenerator.<init>(PolymorphicChartGenerator.java:33)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at generators.ScatterPlotGenerator.<init>(ScatterPlotGenerator.java:20)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart.generateImage(PolymorphicViewsChart.java:46)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:62)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.Server.handle(Server.java:369)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at java.lang.Thread.run(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 2014-11-14 15:10:26.173:WARN:oejs.ServletHandler:/chart
+INFO   | jvm 1    | 2014/11/14 15:10:26 | java.lang.ArrayIndexOutOfBoundsException: 1
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at generators.BoxGenerator.parseColor(BoxGenerator.java:94)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at generators.BoxGenerator.getBoxColors(BoxGenerator.java:70)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at generators.BoxGenerator.getBoxes(BoxGenerator.java:48)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at generators.PolymorphicChartGenerator.<init>(PolymorphicChartGenerator.java:33)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at generators.ScatterPlotGenerator.<init>(ScatterPlotGenerator.java:20)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart.generateImage(PolymorphicViewsChart.java:46)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:62)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.Server.handle(Server.java:369)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+INFO   | jvm 1    | 2014/11/14 15:10:26 | 	at java.lang.Thread.run(Unknown Source)
+STATUS | wrapper  | 2014/11/14 15:17:41 | CTRL-C trapped.  Shutting down.
+INFO   | jvm 1    | 2014/11/14 15:17:43 | 2014-11-14 15:17:43.303:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@0.0.0.0:9000
+INFO   | jvm 1    | 2014/11/14 15:17:43 | 2014-11-14 15:17:43.304:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server
+2014.11.14 15:17:44 INFO  org.sonar.INFO  Stop sonar...
+2014.11.14 15:17:44 INFO  o.s.s.n.NotificationService  Notification service stopped
+2014.11.14 15:17:44 INFO  org.sonar.INFO  Stop sonar done: 26 ms
+INFO   | jvm 1    | 2014/11/14 15:17:44 | 2014-11-14 15:17:44.357:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server
+STATUS | wrapper  | 2014/11/14 15:17:44 | <-- Wrapper Stopped
+STATUS | wrapper  | 2014/11/14 15:18:10 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/14 15:18:10 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/14 15:18:10 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/14 15:18:10 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/14 15:18:10 | 
+INFO   | jvm 1    | 2014/11/14 15:18:11 | 2014-11-14 15:18:10.989:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.14 15:18:13 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:18:13 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.14 15:18:14 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4
+2014.11.14 15:18:14 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy
+2014.11.14 15:18:15 INFO  org.sonar.INFO  Install plugins...
+2014.11.14 15:18:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:18:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:18:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:18:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:18:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:18:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:18:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:18:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:18:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:18:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:18:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.14 15:18:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:18:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:18:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:18:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:18:15 INFO  org.sonar.INFO  Install plugins done: 296 ms
+2014.11.14 15:18:15 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.14 15:18:15 INFO  org.sonar.INFO  Start components...
+2014.11.14 15:18:15 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.14 15:18:17 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.14 15:18:17 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.14 15:18:17 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.14 15:18:17 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.14 15:18:17 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.14 15:18:18 INFO  org.sonar.INFO  Deploy GWT plugins done: 291 ms
+2014.11.14 15:18:18 INFO  org.sonar.INFO  Load metrics...
+2014.11.14 15:18:18 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.14 15:18:18 INFO  org.sonar.INFO  Load metrics done: 496 ms
+2014.11.14 15:18:18 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.14 15:18:19 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 451 ms
+2014.11.14 15:18:19 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.14 15:18:19 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 389 ms
+2014.11.14 15:18:19 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.14 15:18:20 INFO  org.sonar.INFO  Register rules [pmd/java] done: 630 ms
+2014.11.14 15:18:20 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.14 15:18:20 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 26 ms
+2014.11.14 15:18:20 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.14 15:18:20 INFO  org.sonar.INFO  Register rules [squid/java] done: 172 ms
+2014.11.14 15:18:20 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.14 15:18:20 INFO  org.sonar.INFO  Register rules [common-java/java] done: 3 ms
+2014.11.14 15:18:20 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.14 15:18:20 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.14 15:18:22 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1652 ms
+2014.11.14 15:18:22 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.14 15:18:22 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.11.14 15:18:22 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.14 15:18:22 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 4 ms
+2014.11.14 15:18:22 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.14 15:18:22 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 13 ms
+2014.11.14 15:18:22 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.14 15:18:22 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 2 ms
+2014.11.14 15:18:22 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.14 15:18:22 INFO  org.sonar.INFO  Start components done: 6974 ms
+2014.11.14 15:18:23 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.7.0_09) [Windows 7-amd64-java]
+2014.11.14 15:18:23 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/14 15:18:28 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/14 15:18:28 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/14 15:18:34 | 2014-11-14 15:18:34.116:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/14 15:18:34 | 2014-11-14 15:18:34.168:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.14 15:18:43 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 2014-11-14 15:19:07.219:WARN:oejs.ServletHandler:/chart
+INFO   | jvm 1    | 2014/11/14 15:19:07 | java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at java.util.ArrayList.rangeCheck(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at java.util.ArrayList.get(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at generators.BoxGenerator.getBoxes(BoxGenerator.java:50)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at generators.PolymorphicChartGenerator.<init>(PolymorphicChartGenerator.java:33)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at generators.ScatterPlotGenerator.<init>(ScatterPlotGenerator.java:20)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart.generateImage(PolymorphicViewsChart.java:46)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:62)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.server.Server.handle(Server.java:369)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+INFO   | jvm 1    | 2014/11/14 15:19:07 | 	at java.lang.Thread.run(Unknown Source)
+2014.11.14 15:21:48 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+STATUS | wrapper  | 2014/11/14 15:22:00 | CTRL-C trapped.  Shutting down.
+INFO   | jvm 1    | 2014/11/14 15:22:01 | 2014-11-14 15:22:01.924:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@0.0.0.0:9000
+INFO   | jvm 1    | 2014/11/14 15:22:01 | 2014-11-14 15:22:01.925:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server
+2014.11.14 15:22:02 INFO  o.a.c.h.HttpMethodDirector  I/O exception (org.apache.commons.httpclient.NoHttpResponseException) caught when processing request: The server localhost failed to respond
+2014.11.14 15:22:02 INFO  o.a.c.h.HttpMethodDirector  Retrying request
+2014.11.14 15:22:02 INFO  org.sonar.INFO  Stop sonar...
+2014.11.14 15:22:02 INFO  o.s.s.n.NotificationService  Notification service stopped
+2014.11.14 15:22:02 INFO  org.sonar.INFO  Stop sonar done: 3 ms
+INFO   | jvm 1    | 2014/11/14 15:22:02 | 2014-11-14 15:22:02.952:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.054:WARN:oejut.QueuedThreadPool:1 threads could not be stopped
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.054:INFO:oejut.QueuedThreadPool:Couldn't stop Thread[qtp677821304-31,5,main]
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at java.net.PlainSocketImpl.connect(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at java.net.SocksSocketImpl.connect(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at java.net.Socket.connect(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at java.lang.reflect.Method.invoke(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at org.apache.commons.httpclient.protocol.ReflectionSocketFactory.createSocket(ReflectionSocketFactory.java:140)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at org.apache.commons.httpclient.protocol.DefaultProtocolSocketFactory.createSocket(DefaultProtocolSocketFactory.java:125)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at org.apache.commons.httpclient.HttpConnection.open(HttpConnection.java:707)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at org.apache.commons.httpclient.MultiThreadedHttpConnectionManager$HttpConnectionAdapter.open(MultiThreadedHttpConnectionManager.java:1361)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:387)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:323)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at org.sonar.wsclient.connectors.HttpClient3Connector.executeRequest(HttpClient3Connector.java:102)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at org.sonar.wsclient.connectors.HttpClient3Connector.execute(HttpClient3Connector.java:81)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at org.sonar.wsclient.Sonar.find(Sonar.java:49)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at be.kuleuven.cs.oss.sonarfacade.WebServiceSonarFacade.findMeasures(WebServiceSonarFacade.java:128)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at be.kuleuven.cs.oss.sonarfacade.WebServiceSonarFacade.findMeasure(WebServiceSonarFacade.java:115)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at generators.MeasureFetcher.getMeasureValues(MeasureFetcher.java:36)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.055:INFO:oejut.QueuedThreadPool: at generators.BoxGenerator.getBoxDimension(BoxGenerator.java:126)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.056:INFO:oejut.QueuedThreadPool: at generators.BoxGenerator.getBoxes(BoxGenerator.java:47)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.056:INFO:oejut.QueuedThreadPool: at generators.PolymorphicChartGenerator.<init>(PolymorphicChartGenerator.java:33)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.056:INFO:oejut.QueuedThreadPool: at generators.ScatterPlotGenerator.<init>(ScatterPlotGenerator.java:20)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.075:INFO:oejut.QueuedThreadPool: at be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart.generateImage(PolymorphicViewsChart.java:46)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.075:INFO:oejut.QueuedThreadPool: at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:62)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.076:INFO:oejut.QueuedThreadPool: at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.076:INFO:oejut.QueuedThreadPool: at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.076:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.076:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.077:INFO:oejut.QueuedThreadPool: at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.077:INFO:oejut.QueuedThreadPool: at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.078:INFO:oejut.QueuedThreadPool: at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.078:INFO:oejut.QueuedThreadPool: at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.078:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.079:INFO:oejut.QueuedThreadPool: at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.079:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.080:INFO:oejut.QueuedThreadPool: at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.080:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.080:INFO:oejut.QueuedThreadPool: at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.080:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.081:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.081:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.082:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.082:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.082:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.083:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.083:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.083:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.084:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.084:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.084:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.085:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.085:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.085:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.086:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.086:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.086:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.server.Server.handle(Server.java:369)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.087:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.087:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.088:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.088:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.088:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.089:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.089:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.089:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.090:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.090:INFO:oejut.QueuedThreadPool: at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+INFO   | jvm 1    | 2014/11/14 15:22:03 | 2014-11-14 15:22:03.090:INFO:oejut.QueuedThreadPool: at java.lang.Thread.run(Unknown Source)
+STATUS | wrapper  | 2014/11/14 15:22:03 | <-- Wrapper Stopped
+STATUS | wrapper  | 2014/11/14 15:22:07 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/14 15:22:08 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/14 15:22:08 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/14 15:22:08 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/14 15:22:08 | 
+INFO   | jvm 1    | 2014/11/14 15:22:08 | 2014-11-14 15:22:08.410:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.14 15:22:11 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:22:11 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.14 15:22:12 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4
+2014.11.14 15:22:12 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy
+2014.11.14 15:22:12 INFO  org.sonar.INFO  Install plugins...
+2014.11.14 15:22:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:22:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:22:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:22:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:22:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:22:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:22:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:22:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:22:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:22:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:22:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.14 15:22:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:22:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:22:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:22:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:22:12 INFO  org.sonar.INFO  Install plugins done: 238 ms
+2014.11.14 15:22:12 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.14 15:22:12 INFO  org.sonar.INFO  Start components...
+2014.11.14 15:22:12 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.14 15:22:14 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.14 15:22:14 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.14 15:22:14 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.14 15:22:14 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.14 15:22:14 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.14 15:22:15 INFO  org.sonar.INFO  Deploy GWT plugins done: 301 ms
+2014.11.14 15:22:15 INFO  org.sonar.INFO  Load metrics...
+2014.11.14 15:22:15 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.14 15:22:15 INFO  org.sonar.INFO  Load metrics done: 397 ms
+2014.11.14 15:22:15 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.14 15:22:16 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 442 ms
+2014.11.14 15:22:16 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.14 15:22:16 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 411 ms
+2014.11.14 15:22:16 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.14 15:22:17 INFO  org.sonar.INFO  Register rules [pmd/java] done: 614 ms
+2014.11.14 15:22:17 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.14 15:22:17 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 26 ms
+2014.11.14 15:22:17 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.14 15:22:17 INFO  org.sonar.INFO  Register rules [squid/java] done: 167 ms
+2014.11.14 15:22:17 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.14 15:22:17 INFO  org.sonar.INFO  Register rules [common-java/java] done: 3 ms
+2014.11.14 15:22:17 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.14 15:22:17 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.14 15:22:19 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1594 ms
+2014.11.14 15:22:19 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.14 15:22:19 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.11.14 15:22:19 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.14 15:22:19 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 4 ms
+2014.11.14 15:22:19 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.14 15:22:19 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 13 ms
+2014.11.14 15:22:19 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.14 15:22:19 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 1 ms
+2014.11.14 15:22:19 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.14 15:22:19 INFO  org.sonar.INFO  Start components done: 6830 ms
+2014.11.14 15:22:19 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.7.0_09) [Windows 7-amd64-java]
+2014.11.14 15:22:19 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/14 15:22:25 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/14 15:22:25 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/14 15:22:30 | 2014-11-14 15:22:30.915:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/14 15:22:31 | 2014-11-14 15:22:30.966:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.14 15:22:46 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 2014-11-14 15:23:10.790:WARN:oejs.ServletHandler:/chart
+INFO   | jvm 1    | 2014/11/14 15:23:10 | java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at java.util.ArrayList.rangeCheck(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at java.util.ArrayList.get(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at generators.BoxGenerator.getBoxes(BoxGenerator.java:50)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at generators.PolymorphicChartGenerator.<init>(PolymorphicChartGenerator.java:33)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at generators.ScatterPlotGenerator.<init>(ScatterPlotGenerator.java:20)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart.generateImage(PolymorphicViewsChart.java:46)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:62)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.server.Server.handle(Server.java:369)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+INFO   | jvm 1    | 2014/11/14 15:23:10 | 	at java.lang.Thread.run(Unknown Source)
+STATUS | wrapper  | 2014/11/14 15:33:06 | CTRL-C trapped.  Shutting down.
+INFO   | jvm 1    | 2014/11/14 15:33:06 | 2014-11-14 15:33:06.772:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@0.0.0.0:9000
+INFO   | jvm 1    | 2014/11/14 15:33:06 | 2014-11-14 15:33:06.772:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server
+2014.11.14 15:33:07 INFO  org.sonar.INFO  Stop sonar...
+2014.11.14 15:33:07 INFO  o.s.s.n.NotificationService  Notification service stopped
+2014.11.14 15:33:07 INFO  org.sonar.INFO  Stop sonar done: 2 ms
+INFO   | jvm 1    | 2014/11/14 15:33:07 | 2014-11-14 15:33:07.800:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server
+STATUS | wrapper  | 2014/11/14 15:33:08 | <-- Wrapper Stopped
+STATUS | wrapper  | 2014/11/14 15:33:53 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/14 15:33:53 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/14 15:33:54 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/14 15:33:54 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/14 15:33:54 | 
+INFO   | jvm 1    | 2014/11/14 15:33:54 | 2014-11-14 15:33:54.315:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.14 15:33:57 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:33:57 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.14 15:33:58 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4
+2014.11.14 15:33:58 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy
+2014.11.14 15:33:58 INFO  org.sonar.INFO  Install plugins...
+2014.11.14 15:33:58 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:33:58 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:33:58 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:33:58 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:33:58 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:33:58 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:33:58 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:33:58 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:33:58 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:33:58 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:33:58 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.14 15:33:58 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:33:58 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.14 15:33:58 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:33:58 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.14 15:33:58 INFO  org.sonar.INFO  Install plugins done: 251 ms
+2014.11.14 15:33:59 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.14 15:33:59 INFO  org.sonar.INFO  Start components...
+2014.11.14 15:33:59 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.14 15:34:01 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.14 15:34:01 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.14 15:34:01 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.14 15:34:01 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.14 15:34:01 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Thijs\Documents\GitHub\OSS_1415\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.14 15:34:01 INFO  org.sonar.INFO  Deploy GWT plugins done: 256 ms
+2014.11.14 15:34:01 INFO  org.sonar.INFO  Load metrics...
+2014.11.14 15:34:01 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.14 15:34:01 INFO  org.sonar.INFO  Load metrics done: 376 ms
+2014.11.14 15:34:01 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.14 15:34:02 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 433 ms
+2014.11.14 15:34:02 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.14 15:34:02 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 409 ms
+2014.11.14 15:34:02 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.14 15:34:03 INFO  org.sonar.INFO  Register rules [pmd/java] done: 688 ms
+2014.11.14 15:34:03 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.14 15:34:03 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 26 ms
+2014.11.14 15:34:03 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.14 15:34:03 INFO  org.sonar.INFO  Register rules [squid/java] done: 179 ms
+2014.11.14 15:34:03 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.14 15:34:03 INFO  org.sonar.INFO  Register rules [common-java/java] done: 4 ms
+2014.11.14 15:34:03 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.14 15:34:04 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.14 15:34:05 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1544 ms
+2014.11.14 15:34:05 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.14 15:34:05 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.11.14 15:34:05 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.14 15:34:05 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 4 ms
+2014.11.14 15:34:05 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.14 15:34:05 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 13 ms
+2014.11.14 15:34:05 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.14 15:34:05 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 1 ms
+2014.11.14 15:34:05 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.14 15:34:06 INFO  org.sonar.INFO  Start components done: 6703 ms
+2014.11.14 15:34:06 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.7.0_09) [Windows 7-amd64-java]
+2014.11.14 15:34:06 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/14 15:34:11 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/14 15:34:11 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/14 15:34:17 | 2014-11-14 15:34:17.686:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Thijs/Documents/GitHub/OSS_1415/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/14 15:34:17 | 2014-11-14 15:34:17.739:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.14 15:34:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.14 15:34:39 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 2014-11-14 15:34:43.386:WARN:oejs.ServletHandler:/chart
+INFO   | jvm 1    | 2014/11/14 15:34:43 | java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at java.util.ArrayList.rangeCheck(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at java.util.ArrayList.get(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at generators.BoxGenerator.getBoxes(BoxGenerator.java:58)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at generators.PolymorphicChartGenerator.<init>(PolymorphicChartGenerator.java:33)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at generators.ScatterPlotGenerator.<init>(ScatterPlotGenerator.java:20)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart.generateImage(PolymorphicViewsChart.java:46)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:62)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.server.Server.handle(Server.java:369)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+INFO   | jvm 1    | 2014/11/14 15:34:43 | 	at java.lang.Thread.run(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 2014-11-14 15:34:57.068:WARN:oejs.ServletHandler:/chart
+INFO   | jvm 1    | 2014/11/14 15:34:57 | java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at java.util.ArrayList.rangeCheck(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at java.util.ArrayList.get(Unknown Source)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at generators.BoxGenerator.getBoxes(BoxGenerator.java:58)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at generators.PolymorphicChartGenerator.<init>(PolymorphicChartGenerator.java:33)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at generators.ScatterPlotGenerator.<init>(ScatterPlotGenerator.java:20)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart.generateImage(PolymorphicViewsChart.java:46)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:62)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.server.Server.handle(Server.java:369)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+INFO   | jvm 1    | 2014/11/14 15:34:57 | 	at java.lang.Thread.run(Unknown Source)

@@ -9,8 +9,8 @@ import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
 
-public class parameterTest {
-
+public class ParameterTest {
+ /*
 	@Test
 	public void testCasting() {
 
@@ -22,5 +22,5 @@ public class parameterTest {
 		BufferedImage img = chart.generateImage(params);
 		assertEquals(null, img);
 	}
-
+*/
 }

@@ -51,10 +51,6 @@ public class ChartParameters {
 
   private Map<String, String> params;
   
-  public Map<String,String> getParams() { 
-	  return params;
-  }
-
   /**
    * Creates a ChartParameter based on a list of parameters
    * @param params the list of parameters
@@ -75,6 +71,10 @@ public class ChartParameters {
       String[] keyval = StringUtils.split(group, "=");
       params.put(keyval[0], keyval[1]);
     }
+  }
+
+    public Map<String,String> getParams() { 
+	  return this.params;
   }
 
   /**

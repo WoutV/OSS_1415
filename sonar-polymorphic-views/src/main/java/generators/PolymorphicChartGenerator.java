@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.sonar.api.charts.ChartParameters;
+
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import be.kuleuven.cs.oss.sonarfacade.ResourceQualifier;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
@@ -21,14 +23,14 @@ public abstract class PolymorphicChartGenerator {
 	protected MeasureFetcher measureFetcher;
 	protected BoxGenerator boxGenerator;
 	protected Box[] boxes;
-	public PolymorphicChartGenerator(PolymorphicChartParameters params, SonarFacade sonar) {
+	public PolymorphicChartGenerator(ChartParameters params, SonarFacade sonar) {
 		this.builder = new Java2DBuilder();
 		
-		String resourceType = params.getResources();
-		String parent = params.getParent();
+		String resourceType = params.getValue("resources");
+		String parent = params.getValue("parent");
 		this.measureFetcher = new MeasureFetcher(resourceType,parent,sonar);
 		this.boxGenerator = new BoxGenerator(measureFetcher);
-		this.boxes = boxGenerator.getBoxes(params.getBoxWidth(),params.getBoxHeight(),params.getBoxColor());
+		this.boxes = boxGenerator.getBoxes(params.getValue("boxwidth"),params.getValue("boxheight"),params.getValue("boxcolor"));
 	}
 
 	public abstract BufferedImage generateImage();
