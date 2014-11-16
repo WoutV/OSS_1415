@@ -36,7 +36,6 @@ public class PolymorphicChartParameters extends ChartParameters {
 		super(queryString);
 	}
 
-
 	/**
 	 * @return resources
 	 */

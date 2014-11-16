@@ -5,16 +5,27 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class is used to generate lists of boxes with a certain width, height and color.
  * @author Thijs&Wout
  *
  */
+
 public class BoxGenerator {
 	//TODO superclass shapegenerator maken, en in plaats van boxes, getShapes abstracte methode maken in super
 	// en laten overerven. Ook shape hierarchy maken dan, met color als algemene parameter, en laat geshapes
 	//ne lijst van shapes teruggeven.
+	private final static Logger LOG = LoggerFactory.getLogger(BoxGenerator.class);
 	private Box[] boxes;
 	private MeasureFetcher measureFetcher;
 
@@ -44,17 +55,16 @@ public class BoxGenerator {
 	 * @return an array of boxes with the given dimension/color
 	 */
 	public Box[] getBoxes(String width, String height, String color) {
+		//TODO fix this!
+		if(width == null){
+			width = "8";
+		}
+		if(height == null){
+			height = "8";
+		}
 		List<Double> widthList = getBoxDimension(width);
 		List<Double> heightList = getBoxDimension(height);
 		List<Color> colorList = getBoxColors(color);
-		//TODO fix this!
-		if(width == null){
-			width = "80";
-		}
-		if(height == null){
-			height = "80";
-		}
-		//TODO end fix this
 		for (int i = 0; i < boxes.length; i++) {
 			boxes[i].setHeight(heightList.get(i));
 			boxes[i].setWidth(widthList.get(i));
@@ -64,6 +74,7 @@ public class BoxGenerator {
 	}
 
 	/**
+	 *TODO aanpa
 	 * This method returns a list of colors, one for each box. If the input is
 	 * in RGB format, the color is the same for all boxes. If the format
 	 * "min<float>max<float>key<string>" is used as input, the color of each box
@@ -80,11 +91,40 @@ public class BoxGenerator {
 			result = new ArrayList<Color>(Collections.nCopies(
 					boxes.length, rgb));
 
-		} catch (IllegalArgumentException e) {
-			// TODO kleur met metrics en overgang en shizzle
+		} catch (Exception e) {
+
+			try {
+				
+				//TODO mss in aparte methode steken dit parsen? Kan eventueel zelfs samen met parseColor als ge ne lijst met delimiters geeft?
+				float min = Float.parseFloat(color.split("min")[1].split("max")[0]);				
+				float max  = Float.parseFloat(color.split("max")[1].split("key")[0]);
+				String key = color.split("key")[1];
+				
+				Map<String,Double> colors =  measureFetcher.getMeasureValues(key);
+
+				ScatterPlotGenerator.scale(colors, min, max);
+				result = new ArrayList<Color>();
+
+				for (int i = 0; i < boxes.length; i++) {
+					String name = boxes[i].getName();
+					int colorValue = colors.get(name).intValue();
+					Color c = new Color(colorValue,colorValue,colorValue);
+					result.add(c);
+				}
+			}
+			//TODO Default
+			//TODO indien geen default algemene exception van maken zodat defalt hier komt?
+			catch(NumberFormatException f){
+				result = new ArrayList<Color>(Collections.nCopies(
+						boxes.length, Color.WHITE));
+			}
 		}
+
+
 		return result;
 	}
+
+
 
 	/**
 	 * This method parses an input string to an rgb color. If the input is not
@@ -99,19 +139,14 @@ public class BoxGenerator {
 	 */
 	static Color parseColor(String color) throws IllegalArgumentException {
 		Integer[] result = new Integer[3];
-		try {
+		try{
 			result[0] = Integer.parseInt(color.split("r")[1].split("g")[0]);				
 			result[1] = Integer.parseInt(color.split("g")[1].split("b")[0]);
 			result[2] = Integer.parseInt(color.split("b")[1]);
 		} catch (NumberFormatException e) {
 			throw new IllegalArgumentException();
 		}
-		catch(IndexOutOfBoundsException e){
-			//TODO static finals van maken
-			result[0] = 255;			
-			result[1] = 255;
-			result[2] = 255;
-		}
+
 		return new Color(result[0], result[1], result[2]);
 	}
 
@@ -128,7 +163,7 @@ public class BoxGenerator {
 	 */
 	private List<Double> getBoxDimension(String dimension) {
 		List<Double> dimensions;
-		try {
+		try {		
 			Double parsedDimension = Double.parseDouble(dimension);
 			dimensions = new ArrayList<Double>(Collections.nCopies(boxes.length, parsedDimension));
 		} catch (NumberFormatException e) {
