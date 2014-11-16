@@ -6,14 +6,15 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
-
 /**
  * This class is used to generate lists of boxes with a certain width, height and color.
  * @author Thijs&Wout
  *
  */
 public class BoxGenerator {
+	//TODO superclass shapegenerator maken, en in plaats van boxes, getShapes abstracte methode maken in super
+	// en laten overerven. Ook shape hierarchy maken dan, met color als algemene parameter, en laat geshapes
+	//ne lijst van shapes teruggeven.
 	private Box[] boxes;
 	private MeasureFetcher measureFetcher;
 

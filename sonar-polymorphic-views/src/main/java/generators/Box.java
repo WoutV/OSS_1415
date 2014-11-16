@@ -3,6 +3,7 @@ package generators;
 import java.awt.Color;
 
 public class Box {
+	//TODO superklasse shape maken. naam en kleur kunnen naar daar worden geduwd
 	private String name;
 	public String getName() {
 		return name;
