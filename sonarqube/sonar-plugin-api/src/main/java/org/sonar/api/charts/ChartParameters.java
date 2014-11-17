@@ -73,7 +73,7 @@ public class ChartParameters {
     }
   }
 
-    public Map<String,String> getParams() { 
+  public Map<String,String> getParams() { 
 	  return this.params;
   }
 

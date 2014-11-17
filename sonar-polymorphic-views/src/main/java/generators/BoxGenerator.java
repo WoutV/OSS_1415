@@ -76,8 +76,7 @@ public class BoxGenerator {
 		List<Color> result = new ArrayList<Color>();
 		try {
 			Color rgb = parseColor(color);
-			result = new ArrayList<Color>(Collections.nCopies(
-					boxes.length, rgb));
+			result = new ArrayList<Color>(Collections.nCopies(boxes.length, rgb));
 
 		} catch (IllegalArgumentException e) {
 			// TODO kleur met metrics en overgang en shizzle
