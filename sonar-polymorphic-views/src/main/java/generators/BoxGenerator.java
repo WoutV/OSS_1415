@@ -18,17 +18,15 @@ public class BoxGenerator extends ShapeGenerator {
 	private final static Logger LOG = LoggerFactory.getLogger(BoxGenerator.class);
 	private Box[] shapes;
 	
-
 	public BoxGenerator(MeasureFetcher measureFetcher) {
 		super(measureFetcher);
 		if(measureFetcher.equals(null)) {
-		int numberOfShapes = measureFetcher.getNumberOfResources();
-		this.shapes= new Box[numberOfShapes];
-		nameBoxes();
+			int numberOfShapes = measureFetcher.getNumberOfResources();
+			this.shapes= new Box[numberOfShapes];
+			nameShapes();
 		}
 		initBoxes();
 	}
-
 	
 	/**
 	 * This method initializes the list of shapes with "empty" boxes
@@ -63,19 +61,5 @@ public class BoxGenerator extends ShapeGenerator {
 			shapes[i].setColor(colorList.get(i));
 		}
 		return shapes;
-	}
-
-	
-
-	/**
-	 * This method names all the boxes with the correct resource names.
-	 */
-	private void nameBoxes() {
-		List<String> names = measureFetcher.getResourceNames();
-		int i = 0;
-		for (String s : names) {
-			shapes[i].setName(s);
-			i++;
-		}
 	}
 }

@@ -138,5 +138,17 @@ public abstract class ShapeGenerator {
 		}
 		return new Color(result[0], result[1], result[2]);
 	}
+	
+	/**
+	 * This method names all the boxes with the correct resource names.
+	 */
+	protected void nameShapes() {
+		List<String> names = measureFetcher.getResourceNames();
+		int i = 0;
+		for (String s : names) {
+			shapes[i].setName(s);
+			i++;
+		}
+	}
 
 }

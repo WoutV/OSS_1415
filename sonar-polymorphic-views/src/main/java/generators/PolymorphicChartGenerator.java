@@ -15,17 +15,18 @@ import chartbuilder.Java2DBuilder;
 public abstract class PolymorphicChartGenerator {
 	protected ChartBuilder builder;
 	protected MeasureFetcher measureFetcher;
-	protected ShapeGenerator boxGenerator;
+	protected ShapeGenerator shapeGenerator;
 	protected Box[] boxes;
+	
 	public PolymorphicChartGenerator(ChartParameters params, SonarFacade sonar) {
 		this.builder = new Java2DBuilder();
 		
 		String resourceType = params.getValue("resources");
 		String parent = params.getValue("parent");
 		this.measureFetcher = new MeasureFetcher(resourceType,parent,sonar);
-		this.boxGenerator = new BoxGenerator(measureFetcher);
+		this.shapeGenerator = new BoxGenerator(measureFetcher);
 		//TODO ik heb hier ne cast gedaan naar ne array me boxes. Volgens mij is da niet ideaal
-		this.boxes = (Box[]) boxGenerator.getShapes(params.getValue("boxwidth"),params.getValue("boxheight"),params.getValue("boxcolor"));
+		this.boxes = (Box[]) shapeGenerator.getShapes(params.getValue("boxwidth"),params.getValue("boxheight"),params.getValue("boxcolor"));
 	}
 
 	public abstract BufferedImage generateImage();

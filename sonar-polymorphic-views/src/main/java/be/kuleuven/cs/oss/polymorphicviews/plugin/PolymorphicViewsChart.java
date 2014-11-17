@@ -47,6 +47,7 @@ public class PolymorphicViewsChart implements Chart {
 			break;
 			case "syscomp" : generator = new SystemComplexityGenerator(params,sonar);
 			break;
+			// this obviously means that we set the default plot to scatterplot
 			default : generator = new ScatterPlotGenerator(params,sonar);
 		}
 		BufferedImage buff = generator.generateImage();
