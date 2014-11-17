@@ -22,7 +22,7 @@ public class PolymorphicChartParameters extends ChartParameters {
 	public static final String DEFAULT_TYPE = "scatter"; 
 	public static final String DEFAULT_BOXWIDTH = "20"; //TODO AANPASSSEN
 	public static final String DEFAULT_BOXHEIGHT = "20"; // TODO aanpassen
-	public static final String DEFAULT_BOXCOLOR = "255255255";
+	public static final String DEFAULT_BOXCOLOR = "r255g255b255"; //TODO ik stel voor om hier SHAPECOLOR van te maken 
 	public static final String DEFAULT_SIZE = "480x480"; //TODO aanpassen
 
 

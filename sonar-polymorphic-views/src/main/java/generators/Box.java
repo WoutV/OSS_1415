@@ -1,16 +1,16 @@
 package generators;
 
-import java.awt.Color;
 
-public class Box {
-	//TODO superklasse shape maken. naam en kleur kunnen naar daar worden geduwd
-	private String name;
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+
+/**
+ * This class represents boxes that can be used to draw a graph. Each box has its own dimensions.
+ * @author Wout
+ *
+ */
+public class Box extends Shape {
+	private double width;
+	private double height;
+	
 	public double getWidth() {
 		return width;
 	}
@@ -23,13 +23,4 @@ public class Box {
 	public void setHeight(double height) {
 		this.height = height;
 	}
-	public Color getColor() {
-		return color;
-	}
-	public void setColor(Color color) {
-		this.color = color;
-	}
-	private double width;
-	private double height;
-	private Color color;
 }
