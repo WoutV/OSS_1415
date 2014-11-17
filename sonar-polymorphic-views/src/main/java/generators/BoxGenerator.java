@@ -20,6 +20,8 @@ public class BoxGenerator extends ShapeGenerator {
 	
 	public BoxGenerator(MeasureFetcher measureFetcher) {
 		super(measureFetcher);
+		//should never be null
+		//the null check is for testing only
 		if(measureFetcher.equals(null)) {
 			int numberOfShapes = measureFetcher.getNumberOfResources();
 			this.shapes= new Box[numberOfShapes];
@@ -42,7 +44,7 @@ public class BoxGenerator extends ShapeGenerator {
 	 */
 	@Override
 	public Box[] getShapes(String width, String height, String color) {
-//		TODO ik denk dat dit de bedoeling was ?
+//		TODO make default
 		if(width == null){
 			width = PolymorphicChartParameters.DEFAULT_BOXWIDTH;
 		}
