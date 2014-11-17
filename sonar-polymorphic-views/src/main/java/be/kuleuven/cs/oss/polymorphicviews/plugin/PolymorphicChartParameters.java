@@ -1,5 +1,6 @@
 package be.kuleuven.cs.oss.polymorphicviews.plugin;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.sonar.api.charts.ChartParameters;
@@ -34,7 +35,6 @@ public class PolymorphicChartParameters extends ChartParameters {
 	public PolymorphicChartParameters(String queryString) {
 		super(queryString);
 	}
-
 
 	/**
 	 * @return resources

@@ -34,7 +34,7 @@ public class MeasureFetcher {
 		Map<String, Double> allValues = new HashMap<String, Double>(); //TODO Checken of resources zelfde naam kunnen hebben -> if so moet op andere manier
 		for(Resource resource:resources){
 			Measure m = sonar.findMeasure(resource, metric);
-			allValues.put(resource.getKey(), m.getValue());
+			allValues.put(resource.getName(), m.getValue());
 		}
 				
 		return allValues;
