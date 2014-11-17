@@ -1,10 +1,11 @@
 package be.kuleuven.cs.oss.polymorphicviews.plugin;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.sonar.api.charts.ChartParameters;
 
-public class PolymorphicChartParameters extends ChartParameters {
+public class PolymorphicChartParameters {
 
 	public static final String PARAM_RESOURCES = "resources";
 	public static final String PARAM_PARENT = "parent";
@@ -17,29 +18,34 @@ public class PolymorphicChartParameters extends ChartParameters {
 	public static final String PARAM_BOXCOLOR = "boxcolor";
 	public static final String PARAM_LOCALE = "locale";
 
-	public static final String DEFAULT_RESOURCES = "CLA";
+	public static final String DEFAULT_RESOURCES = "classes";
 	public static final String DEFAULT_TYPE = "scatter"; 
-	public static final String DEFAULT_BOXWIDTH = "20"; //TODO AANPASSSEN
-	public static final String DEFAULT_BOXHEIGHT = "20"; // TODO aanpassen
-	public static final String DEFAULT_BOXCOLOR = "r255g255b255"; //TODO ik stel voor om hier SHAPECOLOR van te maken 
-	public static final String DEFAULT_SIZE = "480x480"; //TODO aanpassen
+	public static final String DEFAULT_BOXWIDTH = "8"; //TODO AANPASSSEN
+	public static final String DEFAULT_BOXHEIGHT = "8"; //TODO aanpassen
+	public static final String DEFAULT_BOXCOLOR = "r255g255b255"; 
+	public static final String DEFAULT_SIZE = "800x800";
+	public static final String DEFAULT_PARENT = "freemind"; // TODO aanpassen
+	public static final String DEFAULT_XMETRIC = "lines";
+	public static final String DEFAULT_YMETRIC = "comment_lines";
+	private Map<String, String> params;
+	private static final String[] properties = {"resources","parent","type","xmetric","ymetric","size","boxwidth","boxheight","boxcolor"};
 
 
 
 
 	//Constructors
-	public PolymorphicChartParameters(Map<String, String> params) {
-		super(params);
-	}
-	public PolymorphicChartParameters(String queryString) {
-		super(queryString);
+	public PolymorphicChartParameters(ChartParameters p) {
+		params = new HashMap<String, String>();
+		for(String s : properties) {
+			this.params.put(s,p.getValue(s));
+		}
 	}
 
 	/**
 	 * @return resources
 	 */
 	public String getResources() {
-		String result = getValue(PARAM_RESOURCES,DEFAULT_RESOURCES,false);
+		String result = getValue(PARAM_RESOURCES,DEFAULT_RESOURCES);
 		return result;
 	}
 
@@ -48,7 +54,7 @@ public class PolymorphicChartParameters extends ChartParameters {
 	 * TODO default toevoegen
 	 */
 	public String getParent(){
-		String result = getValue(PARAM_PARENT);
+		String result = getValue(PARAM_PARENT, DEFAULT_PARENT);
 		return result;
 	}
 	
@@ -57,47 +63,64 @@ public class PolymorphicChartParameters extends ChartParameters {
 	 * TODO default toevoegen
 	 */
 	public String getXMetric(){
-		String result = getValue(PARAM_XMETRIC);
+		String result = getValue(PARAM_XMETRIC, DEFAULT_XMETRIC);
 		return result;
 	}
 	
 	public String getYMetric(){
-		String result = getValue(PARAM_YMETRIC);
+		String result = getValue(PARAM_YMETRIC, DEFAULT_YMETRIC);
 		return result;
 	}
 	
 	public String getType(){
-		String result = getValue(PARAM_TYPE, DEFAULT_TYPE, false);
+		String result = getValue(PARAM_TYPE, DEFAULT_TYPE);
 		return result;
-	}
-	
-	public int getWidth(){
-		String width = getValues(PARAM_SIZE, "x")[0];
-		return Integer.parseInt(width);
-	}
-	
-	public int getHeigth(){
-		String heigth = getValues(PARAM_SIZE, "x")[1];
-		return Integer.parseInt(heigth);
 	}
 
 	public String getBoxWidth(){
-		String result = getValue(PARAM_BOXWIDTH, DEFAULT_BOXWIDTH, false);
+		String result = getValue(PARAM_BOXWIDTH, DEFAULT_BOXWIDTH);
 		return result;
 	}
 	
 	public String getSize(){
-		String result = getValue(PARAM_SIZE, DEFAULT_SIZE,false);
+		String result = getValue(PARAM_SIZE, DEFAULT_SIZE);
 		return result;
 	}
 	
 	public String getBoxHeight(){
-		String result = getValue(PARAM_BOXHEIGHT, DEFAULT_BOXHEIGHT, false);
+		String result = getValue(PARAM_BOXHEIGHT, DEFAULT_BOXHEIGHT);
 		return result;
 	}
 	
 	public String getBoxColor(){
-		String result = getValue(PARAM_BOXCOLOR, DEFAULT_BOXCOLOR, false);
+		String result = getValue(PARAM_BOXCOLOR, DEFAULT_BOXCOLOR);
 		return result;
 	}
+	
+	 /**
+//	   * Shortcut to getValue with no decoding and no default value
+//	   * @param key the param ket
+//	   * @return the value of the param
+//	   */
+//	  public String getValue(String key) {
+//	    return getValue(key, "");
+//	  }
+
+	  /**
+	   * Returns the [decoded or not] value of a param from its key or the default value
+	   * if id does not exist
+	   *
+	   * @param key the param ket
+	   * @param defaultValue the default value if not exist
+	   * @param decode whther the value should be decoded
+	   * @return the value of the param
+	   */
+
+	  public String getValue(String key, String defaultValue) {
+		String val = params.get(key);
+	    if (val == null || val.isEmpty()) {
+	      val = defaultValue;
+	    }
+	    return val;
+	  }
 }

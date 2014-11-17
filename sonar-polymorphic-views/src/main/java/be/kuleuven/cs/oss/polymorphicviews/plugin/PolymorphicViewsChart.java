@@ -38,17 +38,15 @@ public class PolymorphicViewsChart implements Chart {
 	@Override
 	public BufferedImage generateImage(ChartParameters params) {
 		//We hebben een getter gemaakt in ChartParameters om de parameters te converteren naar ons eigen type. 
-		//PolymorphicChartParameters polyParams = new PolymorphicChartParameters(params.getParams());
+		PolymorphicChartParameters polyParams = new PolymorphicChartParameters(params);
 		LOG.info("PolymorphicViewsChart generateImage() called!");
-		String type = params.getValue("type");
+		String type = polyParams.getType();
 		PolymorphicChartGenerator generator = null;
 		switch(type) { 
-			case "scatter" : generator = new ScatterPlotGenerator(params,sonar);
+			case "scatter" : generator = new ScatterPlotGenerator(polyParams,sonar);
 			break;
-			case "syscomp" : generator = new SystemComplexityGenerator(params,sonar);
+			case "syscomp" : generator = new SystemComplexityGenerator(polyParams,sonar);
 			break;
-			// this obviously means that we set the default plot to scatterplot
-			default : generator = new ScatterPlotGenerator(params,sonar);
 		}
 		BufferedImage buff = generator.generateImage();
 		return buff;

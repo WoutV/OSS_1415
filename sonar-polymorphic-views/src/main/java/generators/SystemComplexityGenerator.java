@@ -9,8 +9,8 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 
-	public SystemComplexityGenerator(ChartParameters params, SonarFacade sonar) {
-		super(params,sonar);
+	public SystemComplexityGenerator(PolymorphicChartParameters polyParams, SonarFacade sonar) {
+		super(polyParams,sonar);
 	}
 
 	@Override

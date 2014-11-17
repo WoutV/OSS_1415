@@ -16,31 +16,44 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 
+	private static final int OFFSET = 50;
 	private int width;
 	private int height;
 	private String xMetric;
 	private String yMetric;
+	private Box[] boxes;
 
-	public ScatterPlotGenerator(ChartParameters params, SonarFacade sonar) {
-		super(params,sonar);
-		this.xMetric = params.getValue("xmetric");
-		this.yMetric = params.getValue("ymetric");
-		parseSize(params.getValue("size"));
+	public ScatterPlotGenerator(PolymorphicChartParameters polyParams, SonarFacade sonar) {
+		super(polyParams,sonar);
+		this.xMetric = polyParams.getXMetric();
+		this.yMetric = polyParams.getYMetric();
+		parseSize(polyParams.getSize());
+		BoxGenerator boxGenerator = new BoxGenerator(measureFetcher);
+		this.boxes = boxGenerator.getShapes(polyParams.getBoxWidth(),polyParams.getBoxHeight(),polyParams.getBoxColor());
 	}
 
 	
 	@Override
 	public BufferedImage generateImage() {
-		double maxX = 0.9*width;
-		double maxY = 0.9*height;
+		double maxX = width-OFFSET	;
+		double maxY = height-OFFSET;
 
 	    builder.createCanvas(height, width, BufferedImage.TYPE_INT_RGB);
-	    builder.createXAxis(xMetric, 0, 0, (int) maxX,width,0); 
-	    builder.createYAxis(yMetric, 0, 0, (int) maxY,height,0); 
-		Map<String,Double> xValues = scale(measureFetcher.getMeasureValues(xMetric),0, maxX);
-		Map<String,Double> yValues = scale(measureFetcher.getMeasureValues(yMetric),0, maxY);
+	    builder.createXAxis(xMetric, OFFSET, width, 0,(int) maxX,(int) maxY); 
+	    builder.createYAxis(yMetric, OFFSET, height, 0,(int) maxY,OFFSET); 
+		Map<String,Double> xValues = addOffset(scale(measureFetcher.getMeasureValues(xMetric),0, maxX));
+		Map<String,Double> yValues = addOffset(scale(measureFetcher.getMeasureValues(yMetric),0, maxY));
 		buildBoxes(xValues,yValues);
 		return builder.getImage();
+	}
+
+
+	private Map<String, Double> addOffset(Map<String, Double> values) {
+		for(Entry<String, Double> entry :values.entrySet()){
+			double newValue = entry.getValue()+OFFSET;
+			values.put(entry.getKey(), newValue);
+		}
+		return values;
 	}
 
 
@@ -52,13 +65,13 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 	 */
 	
 	//TODO test schrijven voor deze methode
-	static Map<String,Double> scale(Map<String,Double> values, double min, double max){
-		double minimum = Collections.min(values.values(),null);
-		double maximum = Collections.max(values.values(),null);
-		double totalLength = min+max;		
+	static Map<String,Double> scale(Map<String,Double> values, double a, double b){
+		double min = Collections.min(values.values(),null);
+		double max = Collections.max(values.values(),null);
+		double factor = (b-a)/(max-min);
 
 		for(Entry<String, Double> entry :values.entrySet()){
-			double newValue = (maximum - minimum)*(entry.getValue() - min)/(max-min) + minimum;
+			double newValue = factor*entry.getValue()+(a);
 			values.put(entry.getKey(), newValue);
 		}
 		return values;
@@ -66,23 +79,23 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 
 	private void buildBoxes(Map<String, Double> xValues,
 			Map<String, Double> yValues) {
-		for(Box box : this.boxes){
-			String resourceName = box.getName();
+		for(Box shape : this.boxes){
+			String resourceName = shape.getName();
 			double xValue = xValues.get(resourceName);
 			double yValue = yValues.get(resourceName);
-			builder.createRectangle((int) xValue, (int) yValue, (int) box.getHeight(),(int) box.getWidth(), box.getColor(), resourceName);
+			builder.createRectangle((int) xValue, (int) yValue, (int) shape.getHeight(),(int) shape.getWidth(), shape.getColor(), resourceName);
 		}
 
 	}
 
-	private void parseSize(String size){
-		//TODO fixen met default size!
-		if(size == null || size.isEmpty()){
-			size="1048x1048";
-		}
-		
+	private void parseSize(String size){		
 		String[] sizes = size.split("x");
 		this.width=Integer.parseInt(sizes[0]);
 		this.height=Integer.parseInt(sizes[1]);
 	}
+	
+//	private void Map<String,Double> fixOffset(Map<String,>) {
+//		
+//		
+//	}
 }
