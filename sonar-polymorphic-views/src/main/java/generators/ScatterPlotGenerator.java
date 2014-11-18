@@ -48,8 +48,8 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 		yValues=scale(yValues, 0, height);
 
 	    builder.createCanvas(height, width, BufferedImage.TYPE_INT_RGB);
-	    builder.createXAxis(xMetric, 0, width, minX, maxX, 0); 
-	    builder.createYAxis(yMetric, 0, height,minY, maxY, 0); 
+	    builder.createXAxis(xMetric, minX, maxX); 
+	    builder.createYAxis(yMetric, minY, maxY); 
 		buildBoxes(xValues,yValues);
 		
 		return builder.getImage();
@@ -85,7 +85,7 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 			String resourceName = shape.getName();
 			double xValue = xValues.get(resourceName);
 			double yValue = yValues.get(resourceName);
-			builder.createRectangle((int) xValue, (int) yValue, (int) shape.getHeight(),(int) shape.getWidth(), shape.getColor(), resourceName);
+			builder.createRectangleFittedToAxes((int) xValue, (int) yValue, (int) shape.getHeight(),(int) shape.getWidth(), shape.getColor(), resourceName);
 		}
 
 	}

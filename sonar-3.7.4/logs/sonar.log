@@ -19050,3 +19050,362 @@ INFO   | jvm 1    | 2014/11/18 13:27:35 | 0.0
 INFO   | jvm 1    | 2014/11/18 13:27:35 | 0.0
 INFO   | jvm 1    | 2014/11/18 13:27:35 | 0.0
 INFO   | jvm 1    | 2014/11/18 13:27:35 | -1.5707963267948966
+STATUS | wrapper  | 2014/11/18 21:54:16 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/18 21:54:16 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/18 21:54:17 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/18 21:54:17 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/18 21:54:17 | 
+INFO   | jvm 1    | 2014/11/18 21:54:19 | 2014-11-18 21:54:18.992:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.18 21:54:25 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 21:54:25 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.18 21:54:30 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4
+2014.11.18 21:54:30 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy
+2014.11.18 21:54:31 ERROR o.s.s.p.Platform  The following directory can not be created: C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy
+java.lang.IllegalStateException: The following directory can not be created: C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy
+	at org.sonar.server.platform.DefaultServerFileSystem.start(DefaultServerFileSystem.java:89) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_25]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_25]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_25]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_25]
+	at org.picocontainer.lifecycle.ReflectionLifecycleStrategy.invokeMethod(ReflectionLifecycleStrategy.java:110) ~[picocontainer-2.14.3.jar:na]
+	at org.picocontainer.lifecycle.ReflectionLifecycleStrategy.start(ReflectionLifecycleStrategy.java:89) ~[picocontainer-2.14.3.jar:na]
+	at org.picocontainer.injectors.AbstractInjectionFactory$LifecycleAdapter.start(AbstractInjectionFactory.java:84) ~[picocontainer-2.14.3.jar:na]
+	at org.picocontainer.behaviors.AbstractBehavior.start(AbstractBehavior.java:169) ~[picocontainer-2.14.3.jar:na]
+	at org.picocontainer.behaviors.Stored$RealComponentLifecycle.start(Stored.java:132) ~[picocontainer-2.14.3.jar:na]
+	at org.picocontainer.behaviors.Stored.start(Stored.java:110) ~[picocontainer-2.14.3.jar:na]
+	at org.picocontainer.DefaultPicoContainer.potentiallyStartAdapter(DefaultPicoContainer.java:1015) ~[picocontainer-2.14.3.jar:na]
+	at org.picocontainer.DefaultPicoContainer.startAdapters(DefaultPicoContainer.java:1008) ~[picocontainer-2.14.3.jar:na]
+	at org.picocontainer.DefaultPicoContainer.start(DefaultPicoContainer.java:766) ~[picocontainer-2.14.3.jar:na]
+	at org.sonar.api.platform.ComponentContainer.startComponents(ComponentContainer.java:91) ~[sonar-plugin-api-3.7.4.jar:na]
+	at org.sonar.server.platform.Platform.startDatabaseConnectors(Platform.java:251) ~[classes/:na]
+	at org.sonar.server.platform.Platform.init(Platform.java:189) ~[classes/:na]
+	at org.sonar.server.platform.PlatformLifecycleListener.contextInitialized(PlatformLifecycleListener.java:33) [classes/:na]
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:746) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:238) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1240) [jetty-webapp-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:689) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:482) [jetty-webapp-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:281) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.application.JettyEmbedder.start(JettyEmbedder.java:67) [sonar-application-3.7.4.jar:na]
+	at org.sonar.application.StartServer.main(StartServer.java:48) [sonar-application-3.7.4.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_25]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_25]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_25]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_25]
+	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240) [wrapper-3.2.3.jar:3.2.3]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_25]
+Caused by: java.io.IOException: Unable to delete directory C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\plugins\java\META-INF.
+	at org.apache.commons.io.FileUtils.deleteDirectory(FileUtils.java:1541) ~[commons-io-2.4.jar:2.4]
+	at org.apache.commons.io.FileUtils.forceDelete(FileUtils.java:2270) ~[commons-io-2.4.jar:2.4]
+	at org.apache.commons.io.FileUtils.cleanDirectory(FileUtils.java:1653) ~[commons-io-2.4.jar:2.4]
+	at org.apache.commons.io.FileUtils.deleteDirectory(FileUtils.java:1535) ~[commons-io-2.4.jar:2.4]
+	at org.apache.commons.io.FileUtils.forceDelete(FileUtils.java:2270) ~[commons-io-2.4.jar:2.4]
+	at org.apache.commons.io.FileUtils.cleanDirectory(FileUtils.java:1653) ~[commons-io-2.4.jar:2.4]
+	at org.sonar.server.platform.DefaultServerFileSystem.start(DefaultServerFileSystem.java:85) ~[classes/:na]
+	... 36 common frames omitted
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 2014-11-18 21:54:31.035:WARN:oejw.WebAppContext:Failed startup of context o.e.j.w.WebAppContext{/,file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/18 21:54:31 | java.lang.IllegalStateException: The following directory can not be created: C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.sonar.server.platform.DefaultServerFileSystem.start(DefaultServerFileSystem.java:89)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at java.lang.reflect.Method.invoke(Unknown Source)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.lifecycle.ReflectionLifecycleStrategy.invokeMethod(ReflectionLifecycleStrategy.java:110)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.lifecycle.ReflectionLifecycleStrategy.start(ReflectionLifecycleStrategy.java:89)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.injectors.AbstractInjectionFactory$LifecycleAdapter.start(AbstractInjectionFactory.java:84)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.behaviors.AbstractBehavior.start(AbstractBehavior.java:169)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.behaviors.Stored$RealComponentLifecycle.start(Stored.java:132)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.behaviors.Stored.start(Stored.java:110)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.DefaultPicoContainer.potentiallyStartAdapter(DefaultPicoContainer.java:1015)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.DefaultPicoContainer.startAdapters(DefaultPicoContainer.java:1008)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.DefaultPicoContainer.start(DefaultPicoContainer.java:766)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.sonar.api.platform.ComponentContainer.startComponents(ComponentContainer.java:91)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.sonar.server.platform.Platform.startDatabaseConnectors(Platform.java:251)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.sonar.server.platform.Platform.init(Platform.java:189)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.sonar.server.platform.PlatformLifecycleListener.contextInitialized(PlatformLifecycleListener.java:33)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:746)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:238)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1240)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:689)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:482)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.server.Server.doStart(Server.java:281)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.sonar.application.JettyEmbedder.start(JettyEmbedder.java:67)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.sonar.application.StartServer.main(StartServer.java:48)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at java.lang.reflect.Method.invoke(Unknown Source)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at java.lang.Thread.run(Unknown Source)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | Caused by: 
+INFO   | jvm 1    | 2014/11/18 21:54:31 | java.io.IOException: Unable to delete directory C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\plugins\java\META-INF.
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.apache.commons.io.FileUtils.deleteDirectory(FileUtils.java:1541)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.apache.commons.io.FileUtils.forceDelete(FileUtils.java:2270)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.apache.commons.io.FileUtils.cleanDirectory(FileUtils.java:1653)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.apache.commons.io.FileUtils.deleteDirectory(FileUtils.java:1535)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.apache.commons.io.FileUtils.forceDelete(FileUtils.java:2270)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.apache.commons.io.FileUtils.cleanDirectory(FileUtils.java:1653)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.sonar.server.platform.DefaultServerFileSystem.start(DefaultServerFileSystem.java:85)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at java.lang.reflect.Method.invoke(Unknown Source)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.lifecycle.ReflectionLifecycleStrategy.invokeMethod(ReflectionLifecycleStrategy.java:110)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.lifecycle.ReflectionLifecycleStrategy.start(ReflectionLifecycleStrategy.java:89)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.injectors.AbstractInjectionFactory$LifecycleAdapter.start(AbstractInjectionFactory.java:84)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.behaviors.AbstractBehavior.start(AbstractBehavior.java:169)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.behaviors.Stored$RealComponentLifecycle.start(Stored.java:132)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.behaviors.Stored.start(Stored.java:110)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.DefaultPicoContainer.potentiallyStartAdapter(DefaultPicoContainer.java:1015)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.DefaultPicoContainer.startAdapters(DefaultPicoContainer.java:1008)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.picocontainer.DefaultPicoContainer.start(DefaultPicoContainer.java:766)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.sonar.api.platform.ComponentContainer.startComponents(ComponentContainer.java:91)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.sonar.server.platform.Platform.startDatabaseConnectors(Platform.java:251)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.sonar.server.platform.Platform.init(Platform.java:189)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.sonar.server.platform.PlatformLifecycleListener.contextInitialized(PlatformLifecycleListener.java:33)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:746)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:238)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1240)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:689)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:482)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.server.Server.doStart(Server.java:281)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.sonar.application.JettyEmbedder.start(JettyEmbedder.java:67)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.sonar.application.StartServer.main(StartServer.java:48)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at java.lang.reflect.Method.invoke(Unknown Source)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 	at java.lang.Thread.run(Unknown Source)
+INFO   | jvm 1    | 2014/11/18 21:54:31 | 2014-11-18 21:54:31.477:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+STATUS | wrapper  | 2014/11/18 22:02:49 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/18 22:02:50 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/18 22:02:50 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/18 22:02:50 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/18 22:02:50 | 
+INFO   | jvm 1    | 2014/11/18 22:02:51 | 2014-11-18 22:02:51.619:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.18 22:02:56 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 22:02:56 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.18 22:02:59 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4
+2014.11.18 22:02:59 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy
+2014.11.18 22:02:59 INFO  org.sonar.INFO  Install plugins...
+2014.11.18 22:02:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 22:02:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 22:02:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 22:02:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 22:02:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 22:02:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 22:02:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 22:02:59 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 22:03:00 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 22:03:00 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 22:03:00 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.18 22:03:00 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 22:03:00 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 22:03:00 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 22:03:00 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 22:03:00 INFO  org.sonar.INFO  Install plugins done: 1274 ms
+2014.11.18 22:03:00 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.18 22:03:01 INFO  org.sonar.INFO  Start components...
+2014.11.18 22:03:01 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.18 22:03:08 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.18 22:03:08 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.18 22:03:08 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.18 22:03:08 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.18 22:03:09 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.18 22:03:09 INFO  org.sonar.INFO  Deploy GWT plugins done: 511 ms
+2014.11.18 22:03:09 INFO  org.sonar.INFO  Load metrics...
+2014.11.18 22:03:11 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.18 22:03:11 INFO  org.sonar.INFO  Load metrics done: 1926 ms
+2014.11.18 22:03:11 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.18 22:03:12 INFO  org.sonar.INFO  Register rules [pmd/java] done: 1307 ms
+2014.11.18 22:03:12 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.18 22:03:12 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 50 ms
+2014.11.18 22:03:12 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.18 22:03:13 INFO  org.sonar.INFO  Register rules [squid/java] done: 349 ms
+2014.11.18 22:03:13 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.18 22:03:16 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 2792 ms
+2014.11.18 22:03:16 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.18 22:03:17 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 1751 ms
+2014.11.18 22:03:17 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.18 22:03:17 INFO  org.sonar.INFO  Register rules [common-java/java] done: 11 ms
+2014.11.18 22:03:17 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.18 22:03:18 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.18 22:03:22 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 3447 ms
+2014.11.18 22:03:22 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.18 22:03:22 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 1 ms
+2014.11.18 22:03:23 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.18 22:03:23 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 8 ms
+2014.11.18 22:03:23 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.18 22:03:23 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 126 ms
+2014.11.18 22:03:23 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.18 22:03:23 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 4 ms
+2014.11.18 22:03:23 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.18 22:03:23 INFO  org.sonar.INFO  Start components done: 22234 ms
+2014.11.18 22:03:23 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_25) [Windows 7-amd64-java]
+2014.11.18 22:03:23 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/18 22:03:34 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/18 22:03:34 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/18 22:03:54 | 2014-11-18 22:03:54.396:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/18 22:03:54 | 2014-11-18 22:03:54.647:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.18 22:03:59 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.18 22:04:13 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+STATUS | wrapper  | 2014/11/18 23:29:23 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/18 23:29:23 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/18 23:29:24 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/18 23:29:24 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/18 23:29:24 | 
+INFO   | jvm 1    | 2014/11/18 23:29:25 | 2014-11-18 23:29:25.125:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.18 23:29:29 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 23:29:29 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.18 23:29:32 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4
+2014.11.18 23:29:32 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy
+2014.11.18 23:29:32 INFO  org.sonar.INFO  Install plugins...
+2014.11.18 23:29:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 23:29:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 23:29:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 23:29:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 23:29:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 23:29:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 23:29:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 23:29:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 23:29:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 23:29:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 23:29:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.18 23:29:32 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 23:29:33 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 23:29:33 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 23:29:33 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 23:29:33 INFO  org.sonar.INFO  Install plugins done: 487 ms
+2014.11.18 23:29:33 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.18 23:29:33 INFO  org.sonar.INFO  Start components...
+2014.11.18 23:29:33 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.18 23:29:37 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.18 23:29:37 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.18 23:29:37 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.18 23:29:37 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.18 23:29:37 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.18 23:29:37 INFO  org.sonar.INFO  Deploy GWT plugins done: 515 ms
+2014.11.18 23:29:37 INFO  org.sonar.INFO  Load metrics...
+2014.11.18 23:29:38 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.18 23:29:38 INFO  org.sonar.INFO  Load metrics done: 964 ms
+2014.11.18 23:29:39 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.18 23:29:40 INFO  org.sonar.INFO  Register rules [pmd/java] done: 1123 ms
+2014.11.18 23:29:40 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.18 23:29:40 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 42 ms
+2014.11.18 23:29:40 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.18 23:29:40 INFO  org.sonar.INFO  Register rules [squid/java] done: 312 ms
+2014.11.18 23:29:40 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.18 23:29:43 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 2546 ms
+2014.11.18 23:29:43 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.18 23:29:45 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 1771 ms
+2014.11.18 23:29:45 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.18 23:29:45 INFO  org.sonar.INFO  Register rules [common-java/java] done: 12 ms
+2014.11.18 23:29:45 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.18 23:29:45 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.18 23:29:48 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 2842 ms
+2014.11.18 23:29:48 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.18 23:29:48 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 1 ms
+2014.11.18 23:29:49 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.18 23:29:49 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 7 ms
+2014.11.18 23:29:49 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.18 23:29:49 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 29 ms
+2014.11.18 23:29:49 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.18 23:29:49 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 4 ms
+2014.11.18 23:29:49 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.18 23:29:49 INFO  org.sonar.INFO  Start components done: 15760 ms
+2014.11.18 23:29:49 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_25) [Windows 7-amd64-java]
+2014.11.18 23:29:49 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/18 23:29:58 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/18 23:29:58 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/18 23:30:13 | 2014-11-18 23:30:13.028:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/18 23:30:13 | 2014-11-18 23:30:13.232:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.18 23:30:26 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.18 23:30:41 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+STATUS | wrapper  | 2014/11/19 00:02:54 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/19 00:02:54 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/19 00:02:55 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/19 00:02:55 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/19 00:02:55 | 
+INFO   | jvm 1    | 2014/11/19 00:02:56 | 2014-11-19 00:02:56.102:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.19 00:03:00 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.19 00:03:00 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.19 00:03:02 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4
+2014.11.19 00:03:02 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy
+2014.11.19 00:03:03 INFO  org.sonar.INFO  Install plugins...
+2014.11.19 00:03:03 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.19 00:03:03 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.19 00:03:03 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.19 00:03:03 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.19 00:03:03 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.19 00:03:03 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.19 00:03:03 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.19 00:03:03 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.19 00:03:03 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.19 00:03:03 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.19 00:03:03 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.19 00:03:03 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.19 00:03:03 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.19 00:03:03 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.19 00:03:03 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.19 00:03:03 INFO  org.sonar.INFO  Install plugins done: 530 ms
+2014.11.19 00:03:03 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.19 00:03:04 INFO  org.sonar.INFO  Start components...
+2014.11.19 00:03:04 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.19 00:03:07 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.19 00:03:07 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.19 00:03:07 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.19 00:03:07 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.19 00:03:08 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.19 00:03:08 INFO  org.sonar.INFO  Deploy GWT plugins done: 459 ms
+2014.11.19 00:03:08 INFO  org.sonar.INFO  Load metrics...
+2014.11.19 00:03:09 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.19 00:03:09 INFO  org.sonar.INFO  Load metrics done: 863 ms
+2014.11.19 00:03:09 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.19 00:03:10 INFO  org.sonar.INFO  Register rules [pmd/java] done: 993 ms
+2014.11.19 00:03:10 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.19 00:03:10 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 42 ms
+2014.11.19 00:03:10 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.19 00:03:10 INFO  org.sonar.INFO  Register rules [squid/java] done: 320 ms
+2014.11.19 00:03:10 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.19 00:03:13 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 2395 ms
+2014.11.19 00:03:13 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.19 00:03:14 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 1455 ms
+2014.11.19 00:03:14 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.19 00:03:14 INFO  org.sonar.INFO  Register rules [common-java/java] done: 9 ms
+2014.11.19 00:03:14 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.19 00:03:15 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.19 00:03:18 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 2900 ms
+2014.11.19 00:03:18 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.19 00:03:18 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 1 ms
+2014.11.19 00:03:18 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.19 00:03:18 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 9 ms
+2014.11.19 00:03:18 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.19 00:03:19 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 30 ms
+2014.11.19 00:03:19 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.19 00:03:19 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 4 ms
+2014.11.19 00:03:19 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.19 00:03:19 INFO  org.sonar.INFO  Start components done: 14840 ms
+2014.11.19 00:03:19 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_25) [Windows 7-amd64-java]
+2014.11.19 00:03:19 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/19 00:03:29 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/19 00:03:29 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/19 00:03:44 | 2014-11-19 00:03:44.889:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/19 00:03:45 | 2014-11-19 00:03:45.161:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.19 00:04:07 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.19 00:04:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!

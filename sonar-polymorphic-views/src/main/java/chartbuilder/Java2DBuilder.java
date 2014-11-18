@@ -1,7 +1,9 @@
 package chartbuilder;
 
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.Polygon;
 import java.awt.Rectangle;
 import java.awt.geom.AffineTransform;
@@ -18,7 +20,15 @@ import java.awt.image.BufferedImage;
  */
 public class Java2DBuilder implements ChartBuilder {
 	
+	//TODO Interface commentaar en niet deze klasse! 
 	protected BufferedImage canvas;
+	private int canvasWidth;
+	private int canvasHeight;
+	private final static double SCALE = 0.9;
+	private double minX;
+	private double maxX;
+	private double minY;
+	private double maxY;
 	
 	/**
 	 * Creates an instance of this class.
@@ -36,6 +46,25 @@ public class Java2DBuilder implements ChartBuilder {
 		return this.canvas;
 	}
 	
+	private int getCanvasWidth() {
+		return this.canvasWidth;
+	}
+	
+	private int getCanvasHeight() {
+		return this.canvasHeight;
+	}
+	
+
+	/**
+	 * @param y The y value in the coordinate system with the y-axis pointing downwards.
+	 * @return the y value changed to the x-y-coordinate system with the y-axis pointing upwards.
+	 */
+	private double fixY(double y) {
+		double result = getCanvasHeight() - y;
+		return result;
+	}
+	
+	
 	/**
 	 * Sets the canvas of this builder.
 	 * @param canvas A canvas for this builder.
@@ -45,7 +74,18 @@ public class Java2DBuilder implements ChartBuilder {
 	}
 	
 	/**
+	 * Returns the canvas.
+	 * 
+	 * @return the current canvas
+	 */
+	@Override
+	public BufferedImage getImage() {
+		return getCanvas();
+	}
+	
+	/**
 	 * Will create a new image and set it as its current canvas.
+	 * The width and the height of the canvas are saved.
 	 * 
 	 * @param height The height of the image in pixels.
 	 * @param width	The width of the image in pixels.
@@ -55,55 +95,70 @@ public class Java2DBuilder implements ChartBuilder {
 	public void createCanvas(int height, int width, int imageType) {
 		BufferedImage img = new BufferedImage(width, height, imageType);
 		Graphics2D graphics = img.createGraphics();
+		this.canvasWidth = width;
+		this.canvasHeight = height;
 		graphics.setColor(Color.WHITE);
 		graphics.fillRect(0, 0, width, height);
 		setCanvas(img);
+		
 	}
 
 	/**
 	 * This method will draw an x-axis, pointed to the right.
 	 * The x-axis has a centered label and a minimum and maximum value is showed.
+	 * The minimum value will be the start point on the x-axis and the maximum value will be the end point on the x-axis.
+	 * The start of the x-axis will always be drawn 10% of the total width of the canvas to the right of the left border of the canvas.
+	 * The end of the x-axis will always be drawn 10% of the total width of the canvas to the left of the left border of the canvas.
+	 * The x-axis will always be drawn 10% of the total height of the canvas to the top of the bottom border of the canvas.
 	 * 
 	 * @param label The label shown with the x-axis.
-	 * @param xStart The start point of the x-axis.
-	 * @param xStop The end point of the x-axis .
-	 * @param xMin The minimum value of the input.
-	 * @param xMax The maximum value of the input.
-	 * @param y The y-position on the canvas where the x-axis will be shown.
+	 * @param xMin The minimum value of the input. 
+	 * @param xMax The maximum value of the input. 
 	 */
 	@Override
-	public void createXAxis(String label, int xStart, int xStop,
-			int xMin, int xMax, int y) {
+	public void createXAxis(String label, int xMin, int xMax) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
-		drawHorizontalAxis(xStart, xStop, y);
+		this.minX = xMin;
+		this.maxX = xMax;
+		double start = 0.1*getCanvasWidth();
+		double stop = 0.9*getCanvasWidth();
+		double height = 0.9*getCanvasHeight();
+		drawHorizontalAxis(start, stop, height);
 		int pos = graphics.getFontMetrics().getMaxAscent();
-		drawCenteredString(label, xStart+(xStop-xStart)/2, y+pos);
-		drawCenteredString(""+xMin, xMin, y+pos);
-		drawCenteredString(""+xMax, xMax, y+pos);
+		graphics.setColor(Color.BLACK);
+		drawCenteredString(label, (int) (start+(stop-start)/2), (int) (height+pos));
+		graphics.drawString(""+xMin, (int) (start), (int) (height+pos));
+		graphics.drawString(""+xMax, (int) (stop), (int) (height+pos));
 	}
 
 	/**
 	 * This method will draw an y-axis, pointed upwards.
 	 * The y-axis has a centered label and a minimum and maximum value is showed.
+	 * The minimum value will be the start point on the y-axis and the maximum value will be the end point on the y-axis.
+	 * The start of the y-axis will always be drawn 10% of the total height of the canvas to the top of the bottom border of the canvas.
+	 * The end of the y-axis will always be drawn 10% of the total height of the canvas to the bottom of the top border of the canvas.
+	 * The y-axis will always be drawn 10% of the total width of the canvas to the right of the left border of the canvas.
 	 * 
 	 * @param label The label shown with the y-axis.
-	 * @param yStart The start point of the y-axis.
-	 * @param yStop The end point of the y-axis. 
-	 * @param yMin The minimum value of the input.
-	 * @param yMax The maximum value of the input.
-	 * @param x The x-position on the canvas where the y-axis will be shown. 
+	 * @param yMin The minimum value of the input. 
+	 * @param yMax The maximum value of the input. 
 	 */
 	@Override
-	public void createYAxis(String label, int yStart, int yStop,
-			int yMin, int yMax, int x) {
+	public void createYAxis(String label, int yMin, int yMax) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
-		drawVerticalAxis(yStart, yStop, x);
+		this.minY = yMin;
+		this.maxY = yMax;
+		double start = 0.1*getCanvasHeight();
+		double stop = 0.9*getCanvasHeight();
+		double width = 0.1*getCanvasWidth();
+		drawVerticalAxis(start, stop, width);
 		int pos = graphics.getFontMetrics().getMaxDescent();
-		drawVerticalString(label, x-pos, yStart+(yStop-yStart)/2, -Math.PI/2);
-		drawVerticalString(""+yMin, x-pos, yStop-yMin, -Math.PI/2);
-		drawVerticalString(""+yMax, x-pos, yStop-yMax, -Math.PI/2);
+		graphics.setColor(Color.BLACK);
+		drawVerticalString(label, (int) (width-pos), (int) (start+(stop-start)/2), -Math.PI/2);
+		drawVerticalString(""+yMin, (int) (width-pos), (int) (start+0.99*(stop-start)), -Math.PI/2);
+		drawVerticalString(""+yMax, (int) (width-pos), (int) (start+0.01*(stop-start)), -Math.PI/2);
 	}
 
 	/**
@@ -118,10 +173,39 @@ public class Java2DBuilder implements ChartBuilder {
 	public void createLine(int x1, int y1, int x2, int y2) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
+		int newY1 = (int) fixY(y1);
+		int newY2 = (int) fixY(y2);
 		graphics.setColor(Color.BLACK);
-		graphics.drawLine(x1, y1, x2, y2);
+		graphics.drawLine(x1, newY1, x2, newY2);
 	}
 
+	/**
+	 * This method will draw a rectangle with its label on the current canvas, positioned correctly with respect to the axes.
+	 * The rectangle has a black border and the label will be centered above the rectangle.
+	 * 
+	 * Precondition: The current canvas should already have axes.
+	 * 
+	 * @param xPosition The x-coordinate of the upper left corner.
+	 * @param yPosition The y-coordinate of the upper left corner.
+	 * @param height The height of the rectangle.
+	 * @param width The width of the rectangle.
+	 * @param color The color of the rectangle.
+	 * @param label The label above the rectangle.
+	 */
+	@Override
+	public void createRectangleFittedToAxes(int xPosition, int yPosition, int height,
+			int width, Color color, String label) {
+		double startX = 0.1*getCanvasHeight();
+		double startY = 0.1*getCanvasWidth();
+		
+		int newX = (int) (startX + ((xPosition-this.minX)*0.8*getCanvasWidth()/Math.abs(maxX-minX)));
+		int newY = (int) fixY(startY + ((yPosition-this.minY)*0.8*getCanvasHeight()/Math.abs(maxY-minY)));
+		
+		
+		drawRectangle(newX, newY, width, height, color);
+		drawCenteredString(label, newX + (width/2) , newY-1);
+	}
+	
 	/**
 	 * This method will draw a rectangle with its label on the current canvas.
 	 * The rectangle has a black border and the label will be centered above the rectangle.
@@ -129,6 +213,7 @@ public class Java2DBuilder implements ChartBuilder {
 	 * @param xPosition The x-coordinate of the upper left corner.
 	 * @param yPosition The y-coordinate of the upper left corner.
 	 * @param height The height of the rectangle.
+	 * @param width The width of the rectangle.
 	 * @param color The color of the rectangle.
 	 * @param label The label above the rectangle.
 	 */
@@ -139,15 +224,6 @@ public class Java2DBuilder implements ChartBuilder {
 		drawCenteredString(label, xPosition + (width/2) , yPosition-1);
 	}
 
-	/**
-	 * Returns the canvas.
-	 * 
-	 * @return the current canvas
-	 */
-	@Override
-	public BufferedImage getImage() {
-		return getCanvas();
-	}
 	
 	/**
 	 * This method will draw a string centered around the specified position.
@@ -191,7 +267,7 @@ public class Java2DBuilder implements ChartBuilder {
 	 * @param xStop The end point of the x-axis.
 	 * @param y The y-position on the canvas where the x-axis will be shown.
 	 */
-	public void drawHorizontalAxis(int xStart, int xStop, int y) {
+	private void drawHorizontalAxis(double xStart, double xStop, double y) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
 		Line2D line = new Line2D.Double(xStart, y, xStop, y);
@@ -203,14 +279,16 @@ public class Java2DBuilder implements ChartBuilder {
 	/**
 	 * This method will draw a vertical axis, pointed upwards.
 	 * 
-	 * @param yStart The start point of the y-axis.
-	 * @param yStop The end point of the y-axis. 
+	 * @param start The start point of the y-axis.
+	 * @param stop The end point of the y-axis. 
 	 * @param x The x-position on the canvas where the y-axis will be shown. 
 	 */
-	public void drawVerticalAxis(int yStart, int yStop, int x) {
+	private void drawVerticalAxis(double start, double stop, double x) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
-		Line2D line = new Line2D.Double(x, yStop, x, yStart);
+		double newStart = fixY(start);
+		double newStop = fixY(stop);
+		Line2D line = new Line2D.Double(x, newStart, x, newStop);
 		graphics.setColor(Color.BLACK);
 		graphics.draw(line);
 		drawArrowHead(line);
@@ -231,7 +309,7 @@ public class Java2DBuilder implements ChartBuilder {
 		graphics.rotate(angle);
 		int width = graphics.getFontMetrics().stringWidth(label);
 		graphics.setColor(Color.BLACK);
-		graphics.drawString(label, -y-(width/2), x);
+		graphics.drawString(label, -y, x);
 		graphics.setTransform(original);
 	}
 	
@@ -251,9 +329,6 @@ public class Java2DBuilder implements ChartBuilder {
 		arrowHead.addPoint( -5,-5);
 	    double angle = Math.atan2(line.getY2()-line.getY1(), line.getX2()-line.getX1());
 	    graphics.translate(line.getX2(), line.getY2());
-	    System.out.println("" + line.getX2());
-	    System.out.println("" + line.getY2());
-	    System.out.println("" + angle);
 	    graphics.rotate(angle);  
 	    graphics.draw(arrowHead);
 		graphics.fill(arrowHead);
