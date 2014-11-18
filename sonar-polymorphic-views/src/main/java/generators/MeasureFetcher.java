@@ -31,7 +31,7 @@ public class MeasureFetcher {
 	 */
 	public Map<String, Double> getMeasureValues(String met){		
 		Metric metric = sonar.findMetric(met);		
-		Map<String, Double> allValues = new HashMap<String, Double>(); //TODO Checken of resources zelfde naam kunnen hebben -> if so moet op andere manier
+		Map<String, Double> allValues = new HashMap<String, Double>();
 		for(Resource resource:resources){
 			Measure m = sonar.findMeasure(resource, metric);
 			allValues.put(resource.getName(), m.getValue());
@@ -52,10 +52,8 @@ public class MeasureFetcher {
 		
 		case "classes":
 			 return sonar.findClasses(parent);
-	
-		default:
-			return sonar.findPackages(parent);	
 		}
+		return null;
 	}
 
 	public int getNumberOfResources() {
@@ -68,5 +66,9 @@ public class MeasureFetcher {
 			result.add(r.getName());
 		}
 		return result;
+	}
+	
+	public String getDefaultProject() {
+		return sonar.findProjects().get(0).getKey();
 	}
 }
