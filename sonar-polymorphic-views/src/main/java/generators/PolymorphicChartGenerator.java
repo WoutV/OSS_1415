@@ -8,6 +8,8 @@ import chartbuilder.ChartBuilder;
 import chartbuilder.Java2DBuilder;
 
 /**
+ * This class is an abstract superclass for generators that make polymorphic charts. Every generator has a builder,
+ * to draw the chart, and a measurefetcher which serves as communication with the database.
  * @author Thijs&Wout
  *
  */
@@ -24,5 +26,10 @@ public abstract class PolymorphicChartGenerator {
 		this.measureFetcher = new MeasureFetcher(resourceType,parent,sonar);
 	}
 
+	
+	/**
+	 * This method generates a bufferedimage. It uses the builder to do so. 
+	 * @return the generated image
+	 */
 	public abstract BufferedImage generateImage();
 }

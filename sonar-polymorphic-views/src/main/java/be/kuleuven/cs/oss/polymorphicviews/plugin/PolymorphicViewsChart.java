@@ -38,7 +38,6 @@ public class PolymorphicViewsChart implements Chart {
 	 */
 	@Override
 	public BufferedImage generateImage(ChartParameters params) {
-		//We hebben een getter gemaakt in ChartParameters om de parameters te converteren naar ons eigen type. 
 		PolymorphicChartParameters polyParams = new PolymorphicChartParameters(params);
 		LOG.info("PolymorphicViewsChart generateImage() called!");
 		String type = polyParams.getType();

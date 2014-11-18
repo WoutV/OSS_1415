@@ -52,7 +52,6 @@ public class PolymorphicChartParameters {
 
 	/**
 	 * @return parent
-	 * TODO default toevoegen
 	 */
 	public String getParent(){
 		String result = getValue(PARAM_PARENT, DEFAULT_PARENT);
@@ -60,14 +59,16 @@ public class PolymorphicChartParameters {
 	}
 	
 	/**
-	 * @return
-	 * TODO default toevoegen
+	 * @return xmetric
 	 */
 	public String getXMetric(){
 		String result = getValue(PARAM_XMETRIC, DEFAULT_XMETRIC);
 		return result;
 	}
 	
+	/**
+	 * @return ymetric
+	 */
 	public String getYMetric(){
 		String result = getValue(PARAM_YMETRIC, DEFAULT_YMETRIC);
 		return result;
@@ -107,7 +108,6 @@ public class PolymorphicChartParameters {
 	   * @param decode whther the value should be decoded
 	   * @return the value of the param
 	   */
-
 	  public String getValue(String key, String defaultValue) {
 		String val = params.get(key);
 	    if (val == null || val.isEmpty()) {
