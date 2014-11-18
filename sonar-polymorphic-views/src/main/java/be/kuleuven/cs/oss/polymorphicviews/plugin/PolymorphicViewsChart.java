@@ -32,6 +32,7 @@ public class PolymorphicViewsChart implements Chart {
 	}
 
 	/**
+	 * This method generates a buffered image, based on the given ChartParameters.
 	 * @param params arguments passed by end-user in URL
 	 * @return the image that should be displayed in the browser
 	 */

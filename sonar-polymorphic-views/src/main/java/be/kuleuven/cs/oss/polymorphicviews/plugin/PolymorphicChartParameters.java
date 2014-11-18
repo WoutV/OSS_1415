@@ -20,8 +20,8 @@ public class PolymorphicChartParameters {
 
 	public static final String DEFAULT_RESOURCES = "classes";
 	public static final String DEFAULT_TYPE = "scatter"; 
-	public static final String DEFAULT_BOXWIDTH = "8"; //TODO AANPASSSEN
-	public static final String DEFAULT_BOXHEIGHT = "8"; //TODO aanpassen
+	public static final String DEFAULT_BOXWIDTH = "13";
+	public static final String DEFAULT_BOXHEIGHT = "13";
 	public static final String DEFAULT_BOXCOLOR = "r255g255b255"; 
 	public static final String DEFAULT_SIZE = "800x800";
 	public static final String DEFAULT_PARENT = "freemind"; // TODO aanpassen
@@ -30,10 +30,11 @@ public class PolymorphicChartParameters {
 	private Map<String, String> params;
 	private static final String[] properties = {"resources","parent","type","xmetric","ymetric","size","boxwidth","boxheight","boxcolor"};
 
-
-
-
-	//Constructors
+	
+	/**
+	 * Generates a polymorphicChartParameters object, with the same properties as the given ChartParameters
+	 * @param p
+	 */
 	public PolymorphicChartParameters(ChartParameters p) {
 		params = new HashMap<String, String>();
 		for(String s : properties) {
@@ -96,15 +97,6 @@ public class PolymorphicChartParameters {
 		String result = getValue(PARAM_BOXCOLOR, DEFAULT_BOXCOLOR);
 		return result;
 	}
-	
-	 /**
-//	   * Shortcut to getValue with no decoding and no default value
-//	   * @param key the param ket
-//	   * @return the value of the param
-//	   */
-//	  public String getValue(String key) {
-//	    return getValue(key, "");
-//	  }
 
 	  /**
 	   * Returns the [decoded or not] value of a param from its key or the default value

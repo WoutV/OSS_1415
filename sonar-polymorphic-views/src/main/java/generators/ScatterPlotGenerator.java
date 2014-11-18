@@ -1,70 +1,67 @@
 package generators;
 
 import java.awt.image.BufferedImage;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.sonar.api.charts.ChartParameters;
-
-import com.ctc.wstx.dtd.MinimalDTDReader;
-
-import chartbuilder.ChartBuilder;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 
-	private static final int OFFSET = 50;
 	private int width;
 	private int height;
 	private String xMetric;
 	private String yMetric;
 	private Box[] boxes;
 
+	
+	/**
+	 * This constructor creates a new scatterplotgenerator object. 
+	 * @param polyParams specify the chart that should be built
+	 * @param sonar is a facade that can be used to access data about the analyzed project
+	 */
 	public ScatterPlotGenerator(PolymorphicChartParameters polyParams, SonarFacade sonar) {
 		super(polyParams,sonar);
+		
 		this.xMetric = polyParams.getXMetric();
 		this.yMetric = polyParams.getYMetric();
+		
 		parseSize(polyParams.getSize());
+		
 		BoxGenerator boxGenerator = new BoxGenerator(measureFetcher);
-		this.boxes = boxGenerator.getShapes(polyParams.getBoxWidth(),polyParams.getBoxHeight(),polyParams.getBoxColor());
+		this.boxes = boxGenerator.getBoxes(polyParams.getBoxWidth(),polyParams.getBoxHeight(),polyParams.getBoxColor());
 	}
 
-	
 	@Override
 	public BufferedImage generateImage() {
-		double maxX = width-OFFSET	;
-		double maxY = height-OFFSET;
+		Map<String,Double> xValues = measureFetcher.getMeasureValues(xMetric);
+		Map<String,Double> yValues = measureFetcher.getMeasureValues(yMetric);
+		
+		int minX = Collections.min(xValues.values(),null).intValue();
+		int maxX = Collections.max(xValues.values(),null).intValue();
+		int minY = Collections.min(yValues.values(),null).intValue();
+		int maxY = Collections.max(yValues.values(),null).intValue();
+		
+		xValues=scale(xValues, 0, width);
+		yValues=scale(yValues, 0, height);
 
 	    builder.createCanvas(height, width, BufferedImage.TYPE_INT_RGB);
-	    builder.createXAxis(xMetric, OFFSET, width, 0,(int) maxX,(int) maxY); 
-	    builder.createYAxis(yMetric, OFFSET, height, 0,(int) maxY,OFFSET); 
-		Map<String,Double> xValues = addOffset(scale(measureFetcher.getMeasureValues(xMetric),0, maxX));
-		Map<String,Double> yValues = addOffset(scale(measureFetcher.getMeasureValues(yMetric),0, maxY));
+	    builder.createXAxis(xMetric, 0, width, minX, maxX, 0); 
+	    builder.createYAxis(yMetric, 0, height,minY, maxY, 0); 
 		buildBoxes(xValues,yValues);
+		
 		return builder.getImage();
 	}
-
-
-	private Map<String, Double> addOffset(Map<String, Double> values) {
-		for(Entry<String, Double> entry :values.entrySet()){
-			double newValue = entry.getValue()+OFFSET;
-			values.put(entry.getKey(), newValue);
-		}
-		return values;
-	}
-
-
-	/**
-	 * Scales given the values of a given map so the biggest value is at size
-	 * @param values
-	 * @param size
-	 * @return
-	 */
 	
-	//TODO test schrijven voor deze methode
+	/**
+	 * This method scales the given values map.
+	 * @param values the array to be scaled
+	 * @param a the minimum value of the scaled values
+	 * @param b the maximum value of the scaled values
+	 * @return the Map with the scaled values and their key
+	 */
 	static Map<String,Double> scale(Map<String,Double> values, double a, double b){
 		double min = Collections.min(values.values(),null);
 		double max = Collections.max(values.values(),null);
@@ -74,11 +71,16 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 			double newValue = factor*entry.getValue()+(a);
 			values.put(entry.getKey(), newValue);
 		}
+		
 		return values;
 	}
 
-	private void buildBoxes(Map<String, Double> xValues,
-			Map<String, Double> yValues) {
+	/**
+	 * This method builds all the boxes used by the scatterplot
+	 * @param xValues values for x position of the boxes
+	 * @param yValues values for y position of the boxes
+	 */
+	private void buildBoxes(Map<String, Double> xValues, Map<String, Double> yValues) {
 		for(Box shape : this.boxes){
 			String resourceName = shape.getName();
 			double xValue = xValues.get(resourceName);
@@ -93,9 +95,4 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 		this.width=Integer.parseInt(sizes[0]);
 		this.height=Integer.parseInt(sizes[1]);
 	}
-	
-//	private void Map<String,Double> fixOffset(Map<String,>) {
-//		
-//		
-//	}
 }

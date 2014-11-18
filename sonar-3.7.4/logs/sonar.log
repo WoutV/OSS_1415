@@ -17001,3 +17001,2045 @@ WARN   | wrapper  | 2014/11/17 23:15:57 | JVM process was still running after re
 2014.11.17 23:15:57 INFO  org.sonar.INFO  Stop sonar done: 5 ms
 INFO   | jvm 1    | 2014/11/17 23:15:57 | 2014-11-17 23:15:57.916:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
 STATUS | wrapper  | 2014/11/17 23:15:57 | <-- Wrapper Stopped
+STATUS | wrapper  | 2014/11/18 09:11:45 | --> Wrapper Started as Daemon
+STATUS | wrapper  | 2014/11/18 09:11:45 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/18 09:11:47 | Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=128m; support was removed in 8.0
+INFO   | jvm 1    | 2014/11/18 09:11:51 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/18 09:11:51 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/18 09:11:51 | 
+INFO   | jvm 1    | 2014/11/18 09:11:53 | 2014-11-18 09:11:53.693:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.18 09:12:17 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 09:12:17 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.18 09:12:22 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4
+2014.11.18 09:12:22 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy
+2014.11.18 09:12:23 INFO  org.sonar.INFO  Install plugins...
+2014.11.18 09:12:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 09:12:24 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 09:12:24 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 09:12:24 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 09:12:24 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 09:12:24 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 09:12:24 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 09:12:24 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 09:12:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 09:12:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 09:12:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.18 09:12:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 09:12:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 09:12:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 09:12:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 09:12:25 INFO  org.sonar.INFO  Install plugins done: 2438 ms
+2014.11.18 09:12:25 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.18 09:12:26 INFO  org.sonar.INFO  Start components...
+2014.11.18 09:12:26 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.18 09:12:34 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.18 09:12:34 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.18 09:12:34 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.18 09:12:34 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy/gwt
+2014.11.18 09:12:34 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy/gwt
+2014.11.18 09:12:34 INFO  org.sonar.INFO  Deploy GWT plugins done: 83 ms
+2014.11.18 09:12:34 INFO  org.sonar.INFO  Load metrics...
+2014.11.18 09:12:36 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.18 09:12:36 INFO  org.sonar.INFO  Load metrics done: 1362 ms
+2014.11.18 09:12:36 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.18 09:12:38 INFO  org.sonar.INFO  Register rules [pmd/java] done: 1575 ms
+2014.11.18 09:12:38 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.18 09:12:38 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 59 ms
+2014.11.18 09:12:38 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.18 09:12:38 INFO  org.sonar.INFO  Register rules [squid/java] done: 459 ms
+2014.11.18 09:12:38 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.18 09:12:42 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 3072 ms
+2014.11.18 09:12:42 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.18 09:12:43 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 1755 ms
+2014.11.18 09:12:43 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.18 09:12:43 INFO  org.sonar.INFO  Register rules [common-java/java] done: 15 ms
+2014.11.18 09:12:43 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.18 09:12:45 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.18 09:12:50 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 5538 ms
+2014.11.18 09:12:51 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.18 09:12:51 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 1 ms
+2014.11.18 09:12:51 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.18 09:12:51 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 9 ms
+2014.11.18 09:12:51 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.18 09:12:51 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 131 ms
+2014.11.18 09:12:51 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.18 09:12:51 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 4 ms
+2014.11.18 09:12:51 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.18 09:12:52 INFO  org.sonar.INFO  Start components done: 25737 ms
+2014.11.18 09:12:52 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_25) [linux-amd64-java]
+2014.11.18 09:12:52 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/18 09:13:11 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/18 09:13:11 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/18 09:13:36 | 2014-11-18 09:13:36.836:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/18 09:13:37 | 2014-11-18 09:13:37.096:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.18 09:13:37 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.18 09:13:37 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/18 09:13:38 | (eval):2 warning: already initialized constant Javax
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue85
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue70
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue73
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue63
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue86
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue77
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue74
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue65
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue70
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue70
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue68
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue99
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue77
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue69
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue175
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue72
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue66
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue78
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue65
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue86
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue72
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue149
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue74
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue67
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue65
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue68
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue68
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue76
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue65
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue125
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue65
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue65
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue129
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue145
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue63
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue70
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue69
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue200
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue118
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue84
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue71
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue50
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue71
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue68
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue67
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue70
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue126
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue74
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue68
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue68
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue77
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue72
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue66
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue65
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue68
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue66
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue94
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue89
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue81
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue82
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue63
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue160
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue70
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue65
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue80
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue66
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue77
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue70
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue121
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue68
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue112
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue69
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue77
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue87
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue74
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue69
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue67
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue103
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue67
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue73
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue81
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue69
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue102
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue74
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue83
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue67
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue71
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue73
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue85
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue70
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue73
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue63
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue86
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue77
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue74
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue65
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue70
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue70
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue68
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue99
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue77
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue69
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue175
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue72
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue66
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue78
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue65
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue86
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue72
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue149
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue74
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue67
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue65
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue68
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue68
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue76
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue65
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue125
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue65
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue65
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue129
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue145
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue63
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue70
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue69
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue200
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue118
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue84
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue71
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue50
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue71
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue68
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue67
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue70
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue126
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue74
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue68
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue68
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue77
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue72
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue66
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue65
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue68
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue66
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue94
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue89
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue81
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue82
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue63
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue160
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue70
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue65
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue80
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue66
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue77
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue70
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue121
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue68
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue112
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue69
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue77
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue51
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue87
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue74
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue69
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue61
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue67
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue56
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue103
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue67
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue73
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue81
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue57
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue69
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue102
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue60
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue74
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue52
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue64
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue62
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue83
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue54
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue67
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue71
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue53
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue73
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue59
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue55
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+2014.11.18 09:14:51 INFO  g.BoxGenerator  Colorvalue58
+INFO   | jvm 1    | 2014/11/18 09:14:52 | 800.0
+INFO   | jvm 1    | 2014/11/18 09:14:52 | 800.0
+INFO   | jvm 1    | 2014/11/18 09:14:52 | 750.0
+INFO   | jvm 1    | 2014/11/18 09:14:52 | 0.0
+INFO   | jvm 1    | 2014/11/18 09:14:52 | 750.0
+INFO   | jvm 1    | 2014/11/18 09:14:52 | 0.0
+INFO   | jvm 1    | 2014/11/18 09:14:52 | 50.0
+INFO   | jvm 1    | 2014/11/18 09:14:52 | 
+INFO   | jvm 1    | 2014/11/18 09:14:52 | 50.0
+INFO   | jvm 1    | 2014/11/18 09:14:52 | -1.5707963267948966
+INFO   | jvm 1    | 2014/11/18 09:14:52 | 50.0
+INFO   | jvm 1    | 2014/11/18 09:14:52 | 50.0
+INFO   | jvm 1    | 2014/11/18 09:14:52 | -1.5707963267948966
+                                                                                                           STATUS | wrapper  | 2014/11/18 09:24:31 | --> Wrapper Started as Daemon
+STATUS | wrapper  | 2014/11/18 09:24:31 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/18 09:24:33 | Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=128m; support was removed in 8.0
+INFO   | jvm 1    | 2014/11/18 09:24:37 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/18 09:24:37 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/18 09:24:37 | 
+INFO   | jvm 1    | 2014/11/18 09:24:39 | 2014-11-18 09:24:39.336:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.18 09:24:44 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 09:24:44 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.18 09:24:45 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4
+2014.11.18 09:24:45 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy
+2014.11.18 09:24:45 INFO  org.sonar.INFO  Install plugins...
+2014.11.18 09:24:45 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 09:24:45 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 09:24:45 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 09:24:45 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 09:24:45 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 09:24:45 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 09:24:45 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 09:24:45 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 09:24:46 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 09:24:46 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 09:24:46 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.18 09:24:46 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 09:24:46 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 09:24:46 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 09:24:46 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 09:24:46 INFO  org.sonar.INFO  Install plugins done: 797 ms
+2014.11.18 09:24:46 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.18 09:24:46 INFO  org.sonar.INFO  Start components...
+2014.11.18 09:24:46 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.18 09:24:48 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.18 09:24:48 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.18 09:24:48 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.18 09:24:48 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy/gwt
+2014.11.18 09:24:48 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy/gwt
+2014.11.18 09:24:48 INFO  org.sonar.INFO  Deploy GWT plugins done: 23 ms
+2014.11.18 09:24:48 INFO  org.sonar.INFO  Load metrics...
+2014.11.18 09:24:49 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.18 09:24:49 INFO  org.sonar.INFO  Load metrics done: 355 ms
+2014.11.18 09:24:49 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.18 09:24:49 INFO  org.sonar.INFO  Register rules [pmd/java] done: 375 ms
+2014.11.18 09:24:49 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.18 09:24:49 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 19 ms
+2014.11.18 09:24:49 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.18 09:24:49 INFO  org.sonar.INFO  Register rules [squid/java] done: 142 ms
+2014.11.18 09:24:49 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.18 09:24:50 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 865 ms
+2014.11.18 09:24:50 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.18 09:24:51 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 427 ms
+2014.11.18 09:24:51 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.18 09:24:51 INFO  org.sonar.INFO  Register rules [common-java/java] done: 3 ms
+2014.11.18 09:24:51 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.18 09:24:51 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.18 09:24:52 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1484 ms
+2014.11.18 09:24:52 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.18 09:24:52 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.11.18 09:24:53 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.18 09:24:53 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 5 ms
+2014.11.18 09:24:53 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.18 09:24:53 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 38 ms
+2014.11.18 09:24:53 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.18 09:24:53 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 3 ms
+2014.11.18 09:24:53 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.18 09:24:53 INFO  org.sonar.INFO  Start components done: 6712 ms
+2014.11.18 09:24:53 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_25) [linux-amd64-java]
+2014.11.18 09:24:53 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/18 09:24:57 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/18 09:24:57 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/18 09:25:05 | 2014-11-18 09:25:05.588:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/18 09:25:05 | 2014-11-18 09:25:05.824:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.18 09:25:08 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/18 09:25:10 | 800.0
+INFO   | jvm 1    | 2014/11/18 09:25:10 | 750.0
+INFO   | jvm 1    | 2014/11/18 09:25:10 | 0.0
+INFO   | jvm 1    | 2014/11/18 09:25:10 | 50.0
+INFO   | jvm 1    | 2014/11/18 09:25:10 | 50.0
+INFO   | jvm 1    | 2014/11/18 09:25:10 | -1.5707963267948966
+2014.11.18 09:25:29 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/18 09:25:29 | 800.0
+INFO   | jvm 1    | 2014/11/18 09:25:29 | 750.0
+INFO   | jvm 1    | 2014/11/18 09:25:29 | 0.0
+INFO   | jvm 1    | 2014/11/18 09:25:29 | 50.0
+INFO   | jvm 1    | 2014/11/18 09:25:29 | 50.0
+INFO   | jvm 1    | 2014/11/18 09:25:29 | -1.5707963267948966
+2014.11.18 09:25:38 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/18 09:25:38 | 800.0
+INFO   | jvm 1    | 2014/11/18 09:25:38 | 750.0
+INFO   | jvm 1    | 2014/11/18 09:25:38 | 0.0
+INFO   | jvm 1    | 2014/11/18 09:25:38 | 50.0
+INFO   | jvm 1    | 2014/11/18 09:25:38 | 50.0
+INFO   | jvm 1    | 2014/11/18 09:25:38 | -1.5707963267948966
+2014.11.18 09:26:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/18 09:26:20 | 800.0
+INFO   | jvm 1    | 2014/11/18 09:26:20 | 750.0
+INFO   | jvm 1    | 2014/11/18 09:26:20 | 0.0
+INFO   | jvm 1    | 2014/11/18 09:26:20 | 50.0
+INFO   | jvm 1    | 2014/11/18 09:26:20 | 50.0
+INFO   | jvm 1    | 2014/11/18 09:26:20 | -1.5707963267948966
+2014.11.18 09:26:55 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/18 09:26:55 | 800.0
+INFO   | jvm 1    | 2014/11/18 09:26:55 | 750.0
+INFO   | jvm 1    | 2014/11/18 09:26:55 | 0.0
+INFO   | jvm 1    | 2014/11/18 09:26:55 | 50.0
+INFO   | jvm 1    | 2014/11/18 09:26:55 | 50.0
+INFO   | jvm 1    | 2014/11/18 09:26:55 | -1.5707963267948966
+2014.11.18 09:27:41 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/18 09:27:41 | 800.0
+INFO   | jvm 1    | 2014/11/18 09:27:41 | 750.0
+INFO   | jvm 1    | 2014/11/18 09:27:41 | 0.0
+INFO   | jvm 1    | 2014/11/18 09:27:41 | 50.0
+INFO   | jvm 1    | 2014/11/18 09:27:41 | 50.0
+INFO   | jvm 1    | 2014/11/18 09:27:41 | -1.5707963267948966
+STATUS | wrapper  | 2014/11/18 10:06:59 | TERM trapped.  Shutting down.
+INFO   | jvm 1    | 2014/11/18 10:06:59 | 2014-11-18 10:06:59.929:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@0.0.0.0:9000
+INFO   | jvm 1    | 2014/11/18 10:06:59 | 2014-11-18 10:06:59.931:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+2014.11.18 10:07:00 INFO  org.sonar.INFO  Stop sonar...
+2014.11.18 10:07:00 INFO  o.s.s.n.NotificationService  Notification service stopped
+2014.11.18 10:07:00 INFO  org.sonar.INFO  Stop sonar done: 5 ms
+INFO   | jvm 1    | 2014/11/18 10:07:00 | 2014-11-18 10:07:00.973:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+STATUS | wrapper  | 2014/11/18 10:07:01 | <-- Wrapper Stopped
+STATUS | wrapper  | 2014/11/18 10:07:57 | --> Wrapper Started as Daemon
+STATUS | wrapper  | 2014/11/18 10:07:58 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/18 10:07:58 | Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=128m; support was removed in 8.0
+INFO   | jvm 1    | 2014/11/18 10:07:58 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/18 10:07:58 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/18 10:07:58 | 
+INFO   | jvm 1    | 2014/11/18 10:07:58 | 2014-11-18 10:07:58.526:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.18 10:08:00 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:08:00 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.18 10:08:01 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4
+2014.11.18 10:08:01 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy
+2014.11.18 10:08:01 INFO  org.sonar.INFO  Install plugins...
+2014.11.18 10:08:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:08:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:08:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:08:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:08:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:08:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:08:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:08:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:08:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:08:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:08:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.18 10:08:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:08:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:08:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:08:01 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:08:01 INFO  org.sonar.INFO  Install plugins done: 122 ms
+2014.11.18 10:08:01 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.18 10:08:01 INFO  org.sonar.INFO  Start components...
+2014.11.18 10:08:01 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.18 10:08:03 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.18 10:08:03 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.18 10:08:03 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.18 10:08:03 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy/gwt
+2014.11.18 10:08:03 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy/gwt
+2014.11.18 10:08:03 INFO  org.sonar.INFO  Deploy GWT plugins done: 22 ms
+2014.11.18 10:08:03 INFO  org.sonar.INFO  Load metrics...
+2014.11.18 10:08:03 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.18 10:08:03 INFO  org.sonar.INFO  Load metrics done: 338 ms
+2014.11.18 10:08:03 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.18 10:08:04 INFO  org.sonar.INFO  Register rules [pmd/java] done: 431 ms
+2014.11.18 10:08:04 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.18 10:08:04 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 15 ms
+2014.11.18 10:08:04 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.18 10:08:04 INFO  org.sonar.INFO  Register rules [squid/java] done: 101 ms
+2014.11.18 10:08:04 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.18 10:08:04 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 746 ms
+2014.11.18 10:08:04 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.18 10:08:05 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 432 ms
+2014.11.18 10:08:05 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.18 10:08:05 INFO  org.sonar.INFO  Register rules [common-java/java] done: 3 ms
+2014.11.18 10:08:05 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.18 10:08:05 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.18 10:08:07 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1574 ms
+2014.11.18 10:08:07 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.18 10:08:07 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.11.18 10:08:07 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.18 10:08:07 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 6 ms
+2014.11.18 10:08:07 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.18 10:08:07 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 16 ms
+2014.11.18 10:08:07 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.18 10:08:07 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 2 ms
+2014.11.18 10:08:07 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.18 10:08:07 INFO  org.sonar.INFO  Start components done: 5786 ms
+2014.11.18 10:08:07 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_25) [linux-amd64-java]
+2014.11.18 10:08:07 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/18 10:08:11 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/18 10:08:11 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/18 10:08:15 | 2014-11-18 10:08:15.120:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/18 10:08:15 | 2014-11-18 10:08:15.173:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.18 10:08:15 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.18 10:08:15 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 800.0
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 800.0
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 750.0
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 750.0
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 0.0
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 0.0
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 50.0
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 50.0
+INFO   | jvm 1    | 2014/11/18 10:08:17 | -1.5707963267948966
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 50.0
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 50.0
+INFO   | jvm 1    | 2014/11/18 10:08:17 | -1.5707963267948966
+2014.11.18 10:08:17 ERROR o.s.s.ui.JRubyFacade  Fail to render: http://localhost:9000/api/resources?resource=freemind%3Atests.freemind.ToolsTests&metrics=lines&verbose=false&
+undefined method `name' for nil:NilClass
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:435:in `resource_to_json'
+	org/jruby/RubyArray.java:1620:in `each'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:432:in `resource_to_json'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:365:in `to_json'
+	org/jruby/RubyArray.java:1620:in `each'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:363:in `to_json'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:266:in `index'
+	org/jruby/RubyProc.java:270:in `call'
+	org/jruby/RubyProc.java:220:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:135:in `custom'
+	org/jruby/RubyProc.java:270:in `call'
+	org/jruby/RubyProc.java:220:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:179:in `respond'
+	org/jruby/RubyArray.java:1620:in `each'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:173:in `respond'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:107:in `respond_to'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:265:in `index'
+	org/jruby/RubyKernel.java:2105:in `send'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:1333:in `perform_action'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:617:in `call_filters'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:610:in `perform_action_with_filters'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activesupport-2.3.15/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activesupport-2.3.15/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/rescue.rb:160:in `perform_action_with_rescue'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/flash.rb:151:in `perform_action_with_flash'
+	org/jruby/RubyKernel.java:2105:in `send'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:532:in `process'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:606:in `process_with_filters'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:391:in `process'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:386:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/routing/route_set.rb:438:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:87:in `dispatch'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:121:in `_call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+	org/jruby/RubyProc.java:270:in `call'
+	org/jruby/RubyProc.java:220:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:29:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:9:in `cache'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:28:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/string_coercion.rb:25:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/head.rb:9:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/methodoverride.rb:24:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/params_parser.rb:15:in `call'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/jruby/rack/session_store.rb:70:in `context'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/session/abstract/id.rb:58:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/failsafe.rb:26:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:106:in `call'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/adapter/rails.rb:34:in `serve_rails'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/adapter/rails.rb:39:in `call'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/handler/servlet.rb:22:in `call'
+
+2014.11.18 10:08:17 ERROR o.s.s.ui.JRubyFacade  Fail to render: http://localhost:9000/api/resources?resource=freemind%3Atests.freemind.ToolsTests&metrics=lines&verbose=false&
+undefined method `name' for nil:NilClass
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:435:in `resource_to_json'
+	org/jruby/RubyArray.java:1620:in `each'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:432:in `resource_to_json'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:365:in `to_json'
+	org/jruby/RubyArray.java:1620:in `each'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:363:in `to_json'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:266:in `index'
+	org/jruby/RubyProc.java:270:in `call'
+	org/jruby/RubyProc.java:220:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:135:in `custom'
+	org/jruby/RubyProc.java:270:in `call'
+	org/jruby/RubyProc.java:220:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:179:in `respond'
+	org/jruby/RubyArray.java:1620:in `each'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:173:in `respond'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:107:in `respond_to'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:265:in `index'
+	org/jruby/RubyKernel.java:2105:in `send'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:1333:in `perform_action'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:617:in `call_filters'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:610:in `perform_action_with_filters'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activesupport-2.3.15/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activesupport-2.3.15/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/rescue.rb:160:in `perform_action_with_rescue'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/flash.rb:151:in `perform_action_with_flash'
+	org/jruby/RubyKernel.java:2105:in `send'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:532:in `process'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:606:in `process_with_filters'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:391:in `process'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:386:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/routing/route_set.rb:438:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:87:in `dispatch'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:121:in `_call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+	org/jruby/RubyProc.java:270:in `call'
+	org/jruby/RubyProc.java:220:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:29:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:9:in `cache'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:28:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/string_coercion.rb:25:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/head.rb:9:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/methodoverride.rb:24:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/params_parser.rb:15:in `call'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/jruby/rack/session_store.rb:70:in `context'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/session/abstract/id.rb:58:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/failsafe.rb:26:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:106:in `call'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/adapter/rails.rb:34:in `serve_rails'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/adapter/rails.rb:39:in `call'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/handler/servlet.rb:22:in `call'
+
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 2014-11-18 10:08:17.323:WARN:oejs.ServletHandler:/chart
+INFO   | jvm 1    | 2014/11/18 10:08:17 | org.sonar.wsclient.connectors.ConnectionException: HTTP error: 500, msg: Server Error, query: org.apache.commons.httpclient.methods.GetMethod@186adfec
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.sonar.wsclient.connectors.HttpClient3Connector.executeRequest(HttpClient3Connector.java:108)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.sonar.wsclient.connectors.HttpClient3Connector.execute(HttpClient3Connector.java:81)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.sonar.wsclient.Sonar.find(Sonar.java:49)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at be.kuleuven.cs.oss.sonarfacade.WebServiceSonarFacade.findMeasures(WebServiceSonarFacade.java:128)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at be.kuleuven.cs.oss.sonarfacade.WebServiceSonarFacade.findMeasure(WebServiceSonarFacade.java:115)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at generators.MeasureFetcher.getMeasureValues(MeasureFetcher.java:36)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at generators.ScatterPlotGenerator.generateImage(ScatterPlotGenerator.java:45)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart.generateImage(PolymorphicViewsChart.java:52)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:62)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.Server.handle(Server.java:369)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at java.lang.Thread.run(Thread.java:745)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 2014-11-18 10:08:17.328:WARN:oejs.ServletHandler:/chart
+INFO   | jvm 1    | 2014/11/18 10:08:17 | org.sonar.wsclient.connectors.ConnectionException: HTTP error: 500, msg: Server Error, query: org.apache.commons.httpclient.methods.GetMethod@6ccf270
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.sonar.wsclient.connectors.HttpClient3Connector.executeRequest(HttpClient3Connector.java:108)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.sonar.wsclient.connectors.HttpClient3Connector.execute(HttpClient3Connector.java:81)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.sonar.wsclient.Sonar.find(Sonar.java:49)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at be.kuleuven.cs.oss.sonarfacade.WebServiceSonarFacade.findMeasures(WebServiceSonarFacade.java:128)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at be.kuleuven.cs.oss.sonarfacade.WebServiceSonarFacade.findMeasure(WebServiceSonarFacade.java:115)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at generators.MeasureFetcher.getMeasureValues(MeasureFetcher.java:36)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at generators.ScatterPlotGenerator.generateImage(ScatterPlotGenerator.java:45)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart.generateImage(PolymorphicViewsChart.java:52)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:62)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.Server.handle(Server.java:369)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+INFO   | jvm 1    | 2014/11/18 10:08:17 | 	at java.lang.Thread.run(Thread.java:745)
+2014.11.18 10:08:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 800.0
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 750.0
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 0.0
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 50.0
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 50.0
+INFO   | jvm 1    | 2014/11/18 10:08:24 | -1.5707963267948966
+2014.11.18 10:08:24 ERROR o.s.s.ui.JRubyFacade  Fail to render: http://localhost:9000/api/resources?resource=freemind%3Atests.freemind.ToolsTests&metrics=lines&verbose=false&
+undefined method `name' for nil:NilClass
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:435:in `resource_to_json'
+	org/jruby/RubyArray.java:1620:in `each'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:432:in `resource_to_json'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:365:in `to_json'
+	org/jruby/RubyArray.java:1620:in `each'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:363:in `to_json'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:266:in `index'
+	org/jruby/RubyProc.java:270:in `call'
+	org/jruby/RubyProc.java:220:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:135:in `custom'
+	org/jruby/RubyProc.java:270:in `call'
+	org/jruby/RubyProc.java:220:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:179:in `respond'
+	org/jruby/RubyArray.java:1620:in `each'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:173:in `respond'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:107:in `respond_to'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:265:in `index'
+	org/jruby/RubyKernel.java:2105:in `send'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:1333:in `perform_action'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:617:in `call_filters'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:610:in `perform_action_with_filters'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activesupport-2.3.15/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activesupport-2.3.15/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/rescue.rb:160:in `perform_action_with_rescue'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/flash.rb:151:in `perform_action_with_flash'
+	org/jruby/RubyKernel.java:2105:in `send'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:532:in `process'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:606:in `process_with_filters'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:391:in `process'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:386:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/routing/route_set.rb:438:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:87:in `dispatch'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:121:in `_call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+	org/jruby/RubyProc.java:270:in `call'
+	org/jruby/RubyProc.java:220:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:29:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:9:in `cache'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:28:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/string_coercion.rb:25:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/head.rb:9:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/methodoverride.rb:24:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/params_parser.rb:15:in `call'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/jruby/rack/session_store.rb:70:in `context'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/session/abstract/id.rb:58:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/failsafe.rb:26:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:106:in `call'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/adapter/rails.rb:34:in `serve_rails'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/adapter/rails.rb:39:in `call'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/handler/servlet.rb:22:in `call'
+
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 2014-11-18 10:08:24.402:WARN:oejs.ServletHandler:/chart
+INFO   | jvm 1    | 2014/11/18 10:08:24 | org.sonar.wsclient.connectors.ConnectionException: HTTP error: 500, msg: Server Error, query: org.apache.commons.httpclient.methods.GetMethod@39f3663b
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.sonar.wsclient.connectors.HttpClient3Connector.executeRequest(HttpClient3Connector.java:108)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.sonar.wsclient.connectors.HttpClient3Connector.execute(HttpClient3Connector.java:81)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.sonar.wsclient.Sonar.find(Sonar.java:49)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at be.kuleuven.cs.oss.sonarfacade.WebServiceSonarFacade.findMeasures(WebServiceSonarFacade.java:128)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at be.kuleuven.cs.oss.sonarfacade.WebServiceSonarFacade.findMeasure(WebServiceSonarFacade.java:115)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at generators.MeasureFetcher.getMeasureValues(MeasureFetcher.java:36)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at generators.ScatterPlotGenerator.generateImage(ScatterPlotGenerator.java:45)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart.generateImage(PolymorphicViewsChart.java:52)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:62)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.server.Server.handle(Server.java:369)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+INFO   | jvm 1    | 2014/11/18 10:08:24 | 	at java.lang.Thread.run(Thread.java:745)
+2014.11.18 10:08:40 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/18 10:08:40 | 800.0
+INFO   | jvm 1    | 2014/11/18 10:08:40 | 750.0
+INFO   | jvm 1    | 2014/11/18 10:08:40 | 0.0
+INFO   | jvm 1    | 2014/11/18 10:08:40 | 50.0
+INFO   | jvm 1    | 2014/11/18 10:08:40 | 50.0
+INFO   | jvm 1    | 2014/11/18 10:08:40 | -1.5707963267948966
+2014.11.18 10:08:40 ERROR o.s.s.ui.JRubyFacade  Fail to render: http://localhost:9000/api/resources?resource=freemind%3Atests.freemind.ToolsTests&metrics=lines&verbose=false&
+undefined method `name' for nil:NilClass
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:435:in `resource_to_json'
+	org/jruby/RubyArray.java:1620:in `each'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:432:in `resource_to_json'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:365:in `to_json'
+	org/jruby/RubyArray.java:1620:in `each'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:363:in `to_json'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:266:in `index'
+	org/jruby/RubyProc.java:270:in `call'
+	org/jruby/RubyProc.java:220:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:135:in `custom'
+	org/jruby/RubyProc.java:270:in `call'
+	org/jruby/RubyProc.java:220:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:179:in `respond'
+	org/jruby/RubyArray.java:1620:in `each'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:173:in `respond'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:107:in `respond_to'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:265:in `index'
+	org/jruby/RubyKernel.java:2105:in `send'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:1333:in `perform_action'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:617:in `call_filters'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:610:in `perform_action_with_filters'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activesupport-2.3.15/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activesupport-2.3.15/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/rescue.rb:160:in `perform_action_with_rescue'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/flash.rb:151:in `perform_action_with_flash'
+	org/jruby/RubyKernel.java:2105:in `send'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:532:in `process'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:606:in `process_with_filters'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:391:in `process'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:386:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/routing/route_set.rb:438:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:87:in `dispatch'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:121:in `_call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+	org/jruby/RubyProc.java:270:in `call'
+	org/jruby/RubyProc.java:220:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:29:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:9:in `cache'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:28:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/string_coercion.rb:25:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/head.rb:9:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/methodoverride.rb:24:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/params_parser.rb:15:in `call'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/jruby/rack/session_store.rb:70:in `context'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/session/abstract/id.rb:58:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/failsafe.rb:26:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:106:in `call'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/adapter/rails.rb:34:in `serve_rails'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/adapter/rails.rb:39:in `call'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/handler/servlet.rb:22:in `call'
+
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 2014-11-18 10:08:40.969:WARN:oejs.ServletHandler:/chart
+INFO   | jvm 1    | 2014/11/18 10:08:41 | org.sonar.wsclient.connectors.ConnectionException: HTTP error: 500, msg: Server Error, query: org.apache.commons.httpclient.methods.GetMethod@3595f61
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.sonar.wsclient.connectors.HttpClient3Connector.executeRequest(HttpClient3Connector.java:108)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.sonar.wsclient.connectors.HttpClient3Connector.execute(HttpClient3Connector.java:81)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.sonar.wsclient.Sonar.find(Sonar.java:49)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at be.kuleuven.cs.oss.sonarfacade.WebServiceSonarFacade.findMeasures(WebServiceSonarFacade.java:128)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at be.kuleuven.cs.oss.sonarfacade.WebServiceSonarFacade.findMeasure(WebServiceSonarFacade.java:115)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at generators.MeasureFetcher.getMeasureValues(MeasureFetcher.java:36)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at generators.ScatterPlotGenerator.generateImage(ScatterPlotGenerator.java:45)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart.generateImage(PolymorphicViewsChart.java:52)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:62)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.server.Server.handle(Server.java:369)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+INFO   | jvm 1    | 2014/11/18 10:08:41 | 	at java.lang.Thread.run(Thread.java:745)
+2014.11.18 10:08:44 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 800.0
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 750.0
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 0.0
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 50.0
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 50.0
+INFO   | jvm 1    | 2014/11/18 10:08:44 | -1.5707963267948966
+2014.11.18 10:08:44 ERROR o.s.s.ui.JRubyFacade  Fail to render: http://localhost:9000/api/resources?resource=freemind%3Atests.freemind.ToolsTests&metrics=lines&verbose=false&
+undefined method `name' for nil:NilClass
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:435:in `resource_to_json'
+	org/jruby/RubyArray.java:1620:in `each'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:432:in `resource_to_json'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:365:in `to_json'
+	org/jruby/RubyArray.java:1620:in `each'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:363:in `to_json'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:266:in `index'
+	org/jruby/RubyProc.java:270:in `call'
+	org/jruby/RubyProc.java:220:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:135:in `custom'
+	org/jruby/RubyProc.java:270:in `call'
+	org/jruby/RubyProc.java:220:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:179:in `respond'
+	org/jruby/RubyArray.java:1620:in `each'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:173:in `respond'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/mime_responds.rb:107:in `respond_to'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/api/resources_controller.rb:265:in `index'
+	org/jruby/RubyKernel.java:2105:in `send'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:1333:in `perform_action'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:617:in `call_filters'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:610:in `perform_action_with_filters'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activesupport-2.3.15/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activesupport-2.3.15/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/rescue.rb:160:in `perform_action_with_rescue'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/flash.rb:151:in `perform_action_with_flash'
+	org/jruby/RubyKernel.java:2105:in `send'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:532:in `process'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:606:in `process_with_filters'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:391:in `process'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:386:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/routing/route_set.rb:438:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:87:in `dispatch'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:121:in `_call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+	org/jruby/RubyProc.java:270:in `call'
+	org/jruby/RubyProc.java:220:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:29:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:9:in `cache'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:28:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/string_coercion.rb:25:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/head.rb:9:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/methodoverride.rb:24:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/params_parser.rb:15:in `call'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/jruby/rack/session_store.rb:70:in `context'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/session/abstract/id.rb:58:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/failsafe.rb:26:in `call'
+	/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:106:in `call'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/adapter/rails.rb:34:in `serve_rails'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/adapter/rails.rb:39:in `call'
+	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/handler/servlet.rb:22:in `call'
+
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 2014-11-18 10:08:44.503:WARN:oejs.ServletHandler:/chart
+INFO   | jvm 1    | 2014/11/18 10:08:44 | org.sonar.wsclient.connectors.ConnectionException: HTTP error: 500, msg: Server Error, query: org.apache.commons.httpclient.methods.GetMethod@70a20e72
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.sonar.wsclient.connectors.HttpClient3Connector.executeRequest(HttpClient3Connector.java:108)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.sonar.wsclient.connectors.HttpClient3Connector.execute(HttpClient3Connector.java:81)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.sonar.wsclient.Sonar.find(Sonar.java:49)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at be.kuleuven.cs.oss.sonarfacade.WebServiceSonarFacade.findMeasures(WebServiceSonarFacade.java:128)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at be.kuleuven.cs.oss.sonarfacade.WebServiceSonarFacade.findMeasure(WebServiceSonarFacade.java:115)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at generators.MeasureFetcher.getMeasureValues(MeasureFetcher.java:36)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at generators.ScatterPlotGenerator.generateImage(ScatterPlotGenerator.java:45)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart.generateImage(PolymorphicViewsChart.java:52)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:62)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.server.Server.handle(Server.java:369)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+INFO   | jvm 1    | 2014/11/18 10:08:44 | 	at java.lang.Thread.run(Thread.java:745)
+STATUS | wrapper  | 2014/11/18 10:08:49 | TERM trapped.  Shutting down.
+INFO   | jvm 1    | 2014/11/18 10:08:49 | 2014-11-18 10:08:49.901:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@0.0.0.0:9000
+INFO   | jvm 1    | 2014/11/18 10:08:49 | 2014-11-18 10:08:49.901:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+2014.11.18 10:08:50 INFO  org.sonar.INFO  Stop sonar...
+2014.11.18 10:08:50 INFO  o.s.s.n.NotificationService  Notification service stopped
+2014.11.18 10:08:50 INFO  org.sonar.INFO  Stop sonar done: 4 ms
+INFO   | jvm 1    | 2014/11/18 10:08:50 | 2014-11-18 10:08:50.931:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+STATUS | wrapper  | 2014/11/18 10:08:51 | <-- Wrapper Stopped
+STATUS | wrapper  | 2014/11/18 10:08:52 | --> Wrapper Started as Daemon
+STATUS | wrapper  | 2014/11/18 10:08:52 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/18 10:08:52 | Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=128m; support was removed in 8.0
+INFO   | jvm 1    | 2014/11/18 10:08:52 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/18 10:08:52 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/18 10:08:52 | 
+INFO   | jvm 1    | 2014/11/18 10:08:53 | 2014-11-18 10:08:53.060:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.18 10:08:54 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:08:54 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.18 10:08:55 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4
+2014.11.18 10:08:55 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy
+2014.11.18 10:08:55 INFO  org.sonar.INFO  Install plugins...
+2014.11.18 10:08:55 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:08:55 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:08:55 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:08:55 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:08:55 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:08:55 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:08:55 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:08:55 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:08:55 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:08:55 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:08:55 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.18 10:08:55 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:08:55 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:08:55 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:08:55 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:08:55 INFO  org.sonar.INFO  Install plugins done: 126 ms
+2014.11.18 10:08:55 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.18 10:08:56 INFO  org.sonar.INFO  Start components...
+2014.11.18 10:08:56 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.18 10:08:57 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.18 10:08:57 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.18 10:08:57 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.18 10:08:57 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy/gwt
+2014.11.18 10:08:57 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy/gwt
+2014.11.18 10:08:57 INFO  org.sonar.INFO  Deploy GWT plugins done: 21 ms
+2014.11.18 10:08:57 INFO  org.sonar.INFO  Load metrics...
+2014.11.18 10:08:57 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.18 10:08:57 INFO  org.sonar.INFO  Load metrics done: 341 ms
+2014.11.18 10:08:57 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.18 10:08:58 INFO  org.sonar.INFO  Register rules [pmd/java] done: 473 ms
+2014.11.18 10:08:58 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.18 10:08:58 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 18 ms
+2014.11.18 10:08:58 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.18 10:08:58 INFO  org.sonar.INFO  Register rules [squid/java] done: 124 ms
+2014.11.18 10:08:58 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.18 10:08:59 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 832 ms
+2014.11.18 10:08:59 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.18 10:08:59 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 435 ms
+2014.11.18 10:08:59 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.18 10:08:59 INFO  org.sonar.INFO  Register rules [common-java/java] done: 3 ms
+2014.11.18 10:08:59 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.18 10:09:00 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.18 10:09:01 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1267 ms
+2014.11.18 10:09:01 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.18 10:09:01 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.11.18 10:09:01 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.18 10:09:01 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 5 ms
+2014.11.18 10:09:01 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.18 10:09:01 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 13 ms
+2014.11.18 10:09:01 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.18 10:09:01 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 1 ms
+2014.11.18 10:09:01 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.18 10:09:01 INFO  org.sonar.INFO  Start components done: 5442 ms
+2014.11.18 10:09:01 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_25) [linux-amd64-java]
+2014.11.18 10:09:01 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/18 10:09:04 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/18 10:09:04 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/18 10:09:09 | 2014-11-18 10:09:09.369:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/18 10:09:09 | 2014-11-18 10:09:09.414:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.18 10:09:16 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/18 10:09:17 | 800.0
+INFO   | jvm 1    | 2014/11/18 10:09:17 | 750.0
+INFO   | jvm 1    | 2014/11/18 10:09:17 | 0.0
+INFO   | jvm 1    | 2014/11/18 10:09:17 | 50.0
+INFO   | jvm 1    | 2014/11/18 10:09:17 | 50.0
+INFO   | jvm 1    | 2014/11/18 10:09:17 | -1.5707963267948966
+STATUS | wrapper  | 2014/11/18 10:17:07 | TERM trapped.  Shutting down.
+INFO   | jvm 1    | 2014/11/18 10:17:07 | 2014-11-18 10:17:07.873:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@0.0.0.0:9000
+INFO   | jvm 1    | 2014/11/18 10:17:07 | 2014-11-18 10:17:07.875:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+2014.11.18 10:17:08 INFO  org.sonar.INFO  Stop sonar...
+2014.11.18 10:17:08 INFO  o.s.s.n.NotificationService  Notification service stopped
+2014.11.18 10:17:08 INFO  org.sonar.INFO  Stop sonar done: 4 ms
+INFO   | jvm 1    | 2014/11/18 10:17:08 | 2014-11-18 10:17:08.906:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+STATUS | wrapper  | 2014/11/18 10:17:08 | <-- Wrapper Stopped
+STATUS | wrapper  | 2014/11/18 10:17:27 | --> Wrapper Started as Daemon
+STATUS | wrapper  | 2014/11/18 10:17:27 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/18 10:17:27 | Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=128m; support was removed in 8.0
+INFO   | jvm 1    | 2014/11/18 10:17:27 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/18 10:17:27 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/18 10:17:27 | 
+INFO   | jvm 1    | 2014/11/18 10:17:28 | 2014-11-18 10:17:27.969:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.18 10:17:29 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:17:29 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.18 10:17:30 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4
+2014.11.18 10:17:30 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy
+2014.11.18 10:17:30 INFO  org.sonar.INFO  Install plugins...
+2014.11.18 10:17:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:17:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:17:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:17:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:17:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:17:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:17:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:17:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:17:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:17:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:17:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.18 10:17:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:17:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:17:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.18 10:17:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.18 10:17:30 INFO  org.sonar.INFO  Install plugins done: 115 ms
+2014.11.18 10:17:30 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.18 10:17:30 INFO  org.sonar.INFO  Start components...
+2014.11.18 10:17:30 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.18 10:17:32 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.18 10:17:32 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.18 10:17:32 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.18 10:17:32 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy/gwt
+2014.11.18 10:17:32 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to /home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/deploy/gwt
+2014.11.18 10:17:32 INFO  org.sonar.INFO  Deploy GWT plugins done: 22 ms
+2014.11.18 10:17:32 INFO  org.sonar.INFO  Load metrics...
+2014.11.18 10:17:32 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.18 10:17:32 INFO  org.sonar.INFO  Load metrics done: 365 ms
+2014.11.18 10:17:32 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.18 10:17:33 INFO  org.sonar.INFO  Register rules [pmd/java] done: 432 ms
+2014.11.18 10:17:33 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.18 10:17:33 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 19 ms
+2014.11.18 10:17:33 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.18 10:17:33 INFO  org.sonar.INFO  Register rules [squid/java] done: 102 ms
+2014.11.18 10:17:33 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.18 10:17:34 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 728 ms
+2014.11.18 10:17:34 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.18 10:17:34 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 402 ms
+2014.11.18 10:17:34 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.18 10:17:34 INFO  org.sonar.INFO  Register rules [common-java/java] done: 3 ms
+2014.11.18 10:17:34 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.18 10:17:34 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.18 10:17:36 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1283 ms
+2014.11.18 10:17:36 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.18 10:17:36 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.11.18 10:17:36 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.18 10:17:36 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 3 ms
+2014.11.18 10:17:36 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.18 10:17:36 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 11 ms
+2014.11.18 10:17:36 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.18 10:17:36 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 2 ms
+2014.11.18 10:17:36 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.18 10:17:36 INFO  org.sonar.INFO  Start components done: 5454 ms
+2014.11.18 10:17:36 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_25) [linux-amd64-java]
+2014.11.18 10:17:36 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/18 10:17:39 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/18 10:17:39 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/18 10:17:44 | 2014-11-18 10:17:44.331:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/18 10:17:44 | 2014-11-18 10:17:44.379:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.18 10:17:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+INFO   | jvm 1    | 2014/11/18 10:18:14 | 800.0
+INFO   | jvm 1    | 2014/11/18 10:18:14 | 0.0
+INFO   | jvm 1    | 2014/11/18 10:18:14 | 0.0
+INFO   | jvm 1    | 2014/11/18 10:18:14 | 0.0
+INFO   | jvm 1    | 2014/11/18 10:18:14 | 0.0
+INFO   | jvm 1    | 2014/11/18 10:18:14 | -1.5707963267948966

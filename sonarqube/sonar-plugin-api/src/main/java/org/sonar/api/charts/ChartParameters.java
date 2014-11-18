@@ -112,7 +112,7 @@ public class ChartParameters {
    *
    * @param key the param key
    * @param delimiter the values delimiter
-   * @return the list of vaalues
+   * @return the list of values
    */
   public String[] getValues(String key, String delimiter) {
     String value = params.get(key);
