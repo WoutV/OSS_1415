@@ -6,11 +6,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import org.jfree.util.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 
 /**
  * This class is used to generate lists of boxes with a certain width, height and color.
