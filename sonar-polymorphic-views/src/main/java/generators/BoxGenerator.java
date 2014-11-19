@@ -15,13 +15,16 @@ import org.slf4j.LoggerFactory;
  *
  */
 
-public class BoxGenerator {
+// TODO kijken of er nog meer naar de interface moet geduwd worden. Also, lijst
+// met shapes ipv lijst met boxes. Weet nog niet goed hoe.
+
+public class BoxGenerator extends ShapeGenerator {
 	private final static Logger LOG = LoggerFactory.getLogger(BoxGenerator.class);
-	private MeasureFetcher measureFetcher;
+	
 	private Box[] boxes;
 	
 	public BoxGenerator(MeasureFetcher measureFetcher) {
-		this.measureFetcher = measureFetcher;
+		super(measureFetcher);
 		//should never be null
 		//the null check is for testing only
 		//if(!measureFetcher.equals(null)) {
@@ -30,7 +33,6 @@ public class BoxGenerator {
 			initBoxes();
 			nameShapes();
 		//}
-		
 	}
 	
 	/**
@@ -50,7 +52,7 @@ public class BoxGenerator {
 	 * @param color that should be given to all boxes (rgb format or grayscale with metric)
 	 * @return
 	 */
-	public Box[] getBoxes(String width, String height, String color) {
+	public Shape[] getBoxes(String width, String height, String color) {
 		List<Double> widthList = getShapeDimension(width);
 		List<Double> heightList = getShapeDimension(height);
 		List<Color> colorList = getShapeColors(color);
@@ -93,6 +95,7 @@ public class BoxGenerator {
 	 * shapes array.
 	 * 
 	 * @param values
+	 * @return the values, ordered by shape name
 	 */
 	private List<Double> getShapeSize(Map<String, Double> values) {
 		List<Double> result = new ArrayList<Double>();
@@ -120,11 +123,9 @@ public class BoxGenerator {
 	private List<Color> getShapeColors(String color) {
 		List<Color> result = new ArrayList<Color>();
 		try {
-			Color rgb = parseColor(color);
-			result = new ArrayList<Color>(Collections.nCopies(boxes.length,
-					rgb));
-
-		} catch (Exception e) {
+			Color rgb = ShapeGenerator.parseColor(color);
+			result = new ArrayList<Color>(Collections.nCopies(boxes.length,rgb));
+		} catch (Exception e) { //the color parsing is invalid and the string should be of the format "min<float>max<float>key<string>"
 			String[] splitted = Util.splitOnDelimiter(color, new String[]{"min","max","key"});
 			Double min = Double.parseDouble(splitted[0]);
 			Double max = Double.parseDouble(splitted[1]);
@@ -135,6 +136,19 @@ public class BoxGenerator {
 		return result;
 	}
 
+	
+	/**
+	 * This method scales a list of metric values to a new list, with the lowest
+	 * value of the metric scaled to min, and the highest scaled to max.
+	 * 
+	 * @param min
+	 *            the minimum color value of the list with scaled colors
+	 * @param max
+	 *            the maximum color value of the list with scaled colors
+	 * @param key
+	 *            the key that represents the metric that should be scaled
+	 * @return a list with the scaled color values
+	 */
 	private List<Color> getGrayScaleColors(Double min, Double max, String key) {
 		Map<String, Double> colors = measureFetcher.getMeasureValues(key);
 		Map<String, Double> scaledColors = ScatterPlotGenerator.scale(colors, min, max);
@@ -148,30 +162,6 @@ public class BoxGenerator {
 			result.add(c);
 		}
 		return result;
-	}
-
-	/**
-	 * This method parses an input string to an rgb color. If the input is not
-	 * of the form rxxxgxxxbxxx, it should be of the form
-	 * min<float>max<float>key<string>. In the first case, the color will be the
-	 * same for all shapes, in the second case, the color will be depending on a
-	 * specific metric.
-	 * 
-	 * @param color
-	 * @return
-	 * @throws IllegalArgumentException
-	 */
-	static Color parseColor(String color) throws IllegalArgumentException {
-		Integer[] result = new Integer[3];
-		try {
-			String[] splitted = Util.splitOnDelimiter(color, new String[]{"r","g","b"});
-			result[0] = Integer.parseInt(splitted[0]);
-			result[1] = Integer.parseInt(splitted[1]);
-			result[2] = Integer.parseInt(splitted[2]);
-		} catch (NumberFormatException e) {
-			throw new IllegalArgumentException();
-		}
-		return new Color(result[0], result[1], result[2]);
 	}
 
 	/**

@@ -14,7 +14,7 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 	private int height;
 	private String xMetric;
 	private String yMetric;
-	private Box[] boxes;
+	private Shape[] shapes;
 
 	
 	/**
@@ -31,26 +31,27 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 		parseSize(polyParams.getSize());
 		
 		BoxGenerator boxGenerator = new BoxGenerator(measureFetcher);
-		this.boxes = boxGenerator.getBoxes(polyParams.getBoxWidth(),polyParams.getBoxHeight(),polyParams.getBoxColor());
+		this.shapes = boxGenerator.getBoxes(polyParams.getBoxWidth(),polyParams.getBoxHeight(),polyParams.getBoxColor());
 	}
 
 	@Override
 	public BufferedImage generateImage() {
-		Map<String,Double> xValues = measureFetcher.getMeasureValues(xMetric);
-		Map<String,Double> yValues = measureFetcher.getMeasureValues(yMetric);
+		Map<String,Double> xPositions = measureFetcher.getMeasureValues(xMetric);
+		Map<String,Double> yPositions = measureFetcher.getMeasureValues(yMetric);
 		
-		int minX = Collections.min(xValues.values(),null).intValue();
-		int maxX = Collections.max(xValues.values(),null).intValue();
-		int minY = Collections.min(yValues.values(),null).intValue();
-		int maxY = Collections.max(yValues.values(),null).intValue();
+		int minX = Collections.min(xPositions.values(),null).intValue();
+		int maxX = Collections.max(xPositions.values(),null).intValue();
+		int minY = Collections.min(yPositions.values(),null).intValue();
+		int maxY = Collections.max(yPositions.values(),null).intValue();
 		
-		xValues=scale(xValues, 0, width);
-		yValues=scale(yValues, 0, height);
+		xPositions=scale(xPositions, 0, width);
+		yPositions=scale(yPositions, 0, height);
 
 	    builder.createCanvas(height, width, BufferedImage.TYPE_INT_RGB);
 	    builder.createXAxis(xMetric, minX, maxX); 
-	    builder.createYAxis(yMetric, minY, maxY); 
-		buildBoxes(xValues,yValues);
+	    builder.createYAxis(yMetric, minY, maxY);
+	    
+		buildShapes(xPositions,yPositions);
 		
 		return builder.getImage();
 	}
@@ -80,14 +81,14 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 	 * @param xValues values for x position of the boxes
 	 * @param yValues values for y position of the boxes
 	 */
-	private void buildBoxes(Map<String, Double> xValues, Map<String, Double> yValues) {
-		for(Box shape : this.boxes){
-			String resourceName = shape.getName();
-			double xValue = xValues.get(resourceName);
-			double yValue = yValues.get(resourceName);
-			builder.createRectangleFittedToAxes((int) xValue, (int) yValue, (int) shape.getHeight(),(int) shape.getWidth(), shape.getColor(), resourceName);
+	private void buildShapes(Map<String, Double> xValues, Map<String, Double> yValues) {
+		for(Shape shape : this.shapes){
+			Double xValue = xValues.get(shape.getName());
+			Double yValue = yValues.get(shape.getName());
+			shape.setxPos(xValue.intValue());
+			shape.setyPos(yValue.intValue());
+			shape.draw(this.builder);
 		}
-
 	}
 
 	private void parseSize(String size){		

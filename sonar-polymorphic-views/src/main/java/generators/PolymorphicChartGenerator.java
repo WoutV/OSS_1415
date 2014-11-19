@@ -18,6 +18,11 @@ public abstract class PolymorphicChartGenerator {
 	protected MeasureFetcher measureFetcher;
 	
 	
+	/**
+	 * Create a new PolymorphicChartGenerator
+	 * @param params the parameters to be used to create the generator, specifies the resources, parent, type , ... 
+	 * @param sonar the provided sonarfacade that serves as connection with the database
+	 */
 	public PolymorphicChartGenerator(PolymorphicChartParameters params, SonarFacade sonar) {
 		this.builder = new Java2DBuilder();
 		
