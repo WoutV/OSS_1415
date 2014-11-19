@@ -12,11 +12,11 @@ import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 
 public abstract class ShapeGenerator {
 	protected MeasureFetcher measureFetcher;
-	
+
 	protected Shape[] shapes;
 
 	protected  PolymorphicChartParameters params;
-	
+
 	public ShapeGenerator(MeasureFetcher measureFetcher, PolymorphicChartParameters params) {
 		this.measureFetcher=measureFetcher;
 		this.params=params;
@@ -44,7 +44,7 @@ public abstract class ShapeGenerator {
 		}
 		return new Color(result[0], result[1], result[2]);
 	}
-	
+
 	/**
 	 * This method gives all boxes the correct values.
 	 * @param width that should be given to all boxes (number or metric)
@@ -55,7 +55,7 @@ public abstract class ShapeGenerator {
 	public Shape[] getShapes() {
 		return this.shapes;
 	}
-	
+
 	/**
 	 * TODO aanpa This method returns a list of colors, one for each shape. If
 	 * the input is in RGB format, the color is the same for all shapes. If the
@@ -69,17 +69,18 @@ public abstract class ShapeGenerator {
 	 */
 	protected List<Color> getShapeColors(String color) {
 		List<Color> result = new ArrayList<Color>();
-		try {
+		if(Util.isValidColor(color)){
 			Color rgb = ShapeGenerator.parseColor(color);
 			result = new ArrayList<Color>(Collections.nCopies(shapes.length,rgb));
-		} catch (Exception e) { //the color parsing is invalid and the string should be of the format "min<float>max<float>key<string>"
+		} 
+		else{ //the color parsing is invalid and the string should be of the format "min<float>max<float>key<string>"
 			try{
-			String[] splitted = Util.splitOnDelimiter(color, new String[]{"min","max","key"});
-			Double min = Double.parseDouble(splitted[0]);
-			Double max = Double.parseDouble(splitted[1]);
-			String key = splitted[2];
-			
-			result = getGrayScaleColors(min, max, key);
+				String[] splitted = Util.splitOnDelimiter(color, new String[]{"min","max","key"});
+				Double min = Double.parseDouble(splitted[0]);
+				Double max = Double.parseDouble(splitted[1]);
+				String key = splitted[2];
+
+				result = getGrayScaleColors(min, max, key);
 			}
 			//Given input is not valid
 			catch (IllegalArgumentException f){
@@ -89,7 +90,7 @@ public abstract class ShapeGenerator {
 		}
 		return result;
 	}
-	
+
 	/**
 	 * This method scales a list of metric values to a new list, with the lowest
 	 * value of the metric scaled to min, and the highest scaled to max.
@@ -105,22 +106,22 @@ public abstract class ShapeGenerator {
 	private List<Color> getGrayScaleColors(Double min, Double max, String key) throws IllegalArgumentException{
 		Map<String, Double> colors = measureFetcher.getMeasureValues(key);
 		Map<String, Double> scaledColors = Util.scale(colors, min, max);
-		
+
 		List<Color> result = new ArrayList<Color>();
 		try{
-		for (int i = 0; i < shapes.length; i++) {
-			String name = shapes[i].getName();
-			int colorValue = scaledColors.get(name).intValue();
-			Color c = new Color(colorValue, colorValue, colorValue);
-			result.add(c);
-		}
-		return result;
+			for (int i = 0; i < shapes.length; i++) {
+				String name = shapes[i].getName();
+				int colorValue = scaledColors.get(name).intValue();
+				Color c = new Color(colorValue, colorValue, colorValue);
+				result.add(c);
+			}
+			return result;
 		}
 		catch(Exception e){
 			throw new IllegalArgumentException();
 		}
 	}
-	
+
 	/**
 	 * This method names all the shapes with the correct resource names.
 	 */

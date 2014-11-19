@@ -44,7 +44,7 @@ public class Util {
 		double factor = (b-a)/(max-min);
 
 		for(Entry<String, Double> entry :values.entrySet()){
-			double newValue = factor*entry.getValue()+(a);
+			double newValue = factor*(entry.getValue()-min)+(a);
 			values.put(entry.getKey(), newValue);
 		}
 		
