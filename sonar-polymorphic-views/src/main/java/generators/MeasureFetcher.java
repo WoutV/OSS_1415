@@ -60,6 +60,9 @@ public class MeasureFetcher {
 		return this.resources.size();
 	}
 	
+	/**
+	 * @return  a list of all the resourcenames
+	 */
 	public List<String> getResourceNames() {
 		List<String> result = new ArrayList<String>();
 		for(Resource r : resources) {

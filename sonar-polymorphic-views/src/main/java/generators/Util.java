@@ -51,6 +51,11 @@ public class Util {
 		return values;
 	}
 
+	/**
+	 * Checks if the input is a valid string to be parsed to a color.
+	 * @param input (should be of form "r25g26b27")
+	 * @return True if valid, False if not.
+	 */
 	public static boolean isValidColor(String input){
 		try{
 		
@@ -67,6 +72,12 @@ public class Util {
 		}
 	}
 	
+	/**
+	 * @param number
+	 * @param min
+	 * @param max
+	 * @return True if number is between min en max
+	 */
 	public static boolean isBetween(float number, int min, int max){
 		return (number <= max && number >= min);
 	}

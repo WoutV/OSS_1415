@@ -26,7 +26,7 @@ public class BoxGenerator extends ShapeGenerator {
 		//if(!measureFetcher.equals(null)) {  //For testing
 			int numberOfShapes = measureFetcher.getNumberOfResources();
 			this.shapes= new Shape[numberOfShapes];
-			initBoxes(params.getBoxWidth(),params.getBoxHeight(),params.getBoxHeight());
+			initBoxes(params.getBoxWidth(),params.getBoxHeight(),params.getBoxColor());
 		//}
 	}
 	

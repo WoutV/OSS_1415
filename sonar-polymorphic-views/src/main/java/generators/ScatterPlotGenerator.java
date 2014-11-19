@@ -35,7 +35,6 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 		parseSize(polyParams.getSize());
 		
 		ShapeGenerator boxGenerator = new BoxGenerator(measureFetcher,polyParams);
-		System.out.println(boxGenerator.getShapes());
 		shapes.addAll(Arrays.asList(boxGenerator.getShapes()));
 	}
 
