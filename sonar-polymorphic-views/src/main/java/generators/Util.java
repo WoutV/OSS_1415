@@ -18,13 +18,17 @@ public class Util {
 	 * @return an array with the parts of the splitted string
 	 */
 	//TODO test this method
-	public static String[] splitOnDelimiter(String input, String[] delimiters) {
+	public static String[] splitOnDelimiter(String input, String[] delimiters) throws IllegalArgumentException{
+		try{
 		String[] result = new String[delimiters.length];
 		for(int i = 0;i<delimiters.length-1;i++) {
 			result[i] = input.split(delimiters[i])[1].split(delimiters[i+1])[0];
 		}
 		result[delimiters.length-1] = input.split(delimiters[delimiters.length-1])[1];
-		return result;
+		return result;}
+		catch(Exception f){
+			throw new IllegalArgumentException();
+		}
 	}
 	
 	/**
@@ -47,4 +51,23 @@ public class Util {
 		return values;
 	}
 
+	public static boolean isValidColor(String input){
+		try{
+		
+			String[] res = Util.splitOnDelimiter(input, new String[] {"r","g","b"});
+			float r = Float.parseFloat(res[0]);
+			float g = Float.parseFloat(res[1]);
+			float b = Float.parseFloat(res[2]);
+			
+			return (isBetween(r,0,255)&&isBetween(g,0,255)&&isBetween(b,0,255));
+			
+		}
+		catch(Exception e){
+			return false;
+		}
+	}
+	
+	public static boolean isBetween(float number, int min, int max){
+		return (number <= max && number >= min);
+	}
 }

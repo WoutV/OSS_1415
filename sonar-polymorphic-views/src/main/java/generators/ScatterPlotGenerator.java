@@ -1,6 +1,7 @@
 package generators;
 
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -29,11 +30,13 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 		
 		this.xMetric = polyParams.getXMetric();
 		this.yMetric = polyParams.getYMetric();
-		
+		this.shapes = new ArrayList<Shape>();
+	
 		parseSize(polyParams.getSize());
 		
 		ShapeGenerator boxGenerator = new BoxGenerator(measureFetcher,polyParams);
-		this.shapes.addAll(Arrays.asList(boxGenerator.getShapes()));
+		System.out.println(boxGenerator.getShapes());
+		shapes.addAll(Arrays.asList(boxGenerator.getShapes()));
 	}
 
 	@Override

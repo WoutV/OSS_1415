@@ -53,7 +53,7 @@ public abstract class ShapeGenerator {
 	 * @return
 	 */
 	public Shape[] getShapes() {
-		return shapes;
+		return this.shapes;
 	}
 	
 	/**
@@ -73,12 +73,19 @@ public abstract class ShapeGenerator {
 			Color rgb = ShapeGenerator.parseColor(color);
 			result = new ArrayList<Color>(Collections.nCopies(shapes.length,rgb));
 		} catch (Exception e) { //the color parsing is invalid and the string should be of the format "min<float>max<float>key<string>"
+			try{
 			String[] splitted = Util.splitOnDelimiter(color, new String[]{"min","max","key"});
 			Double min = Double.parseDouble(splitted[0]);
 			Double max = Double.parseDouble(splitted[1]);
 			String key = splitted[2];
 			
 			result = getGrayScaleColors(min, max, key);
+			}
+			//Given input is not valid
+			catch (IllegalArgumentException f){
+				Color rgb = ShapeGenerator.parseColor(PolymorphicChartParameters.DEFAULT_BOXCOLOR);
+				result = new ArrayList<Color>(Collections.nCopies(shapes.length,rgb));
+			}
 		}
 		return result;
 	}
@@ -95,12 +102,12 @@ public abstract class ShapeGenerator {
 	 *            the key that represents the metric that should be scaled
 	 * @return a list with the scaled color values
 	 */
-	private List<Color> getGrayScaleColors(Double min, Double max, String key) {
+	private List<Color> getGrayScaleColors(Double min, Double max, String key) throws IllegalArgumentException{
 		Map<String, Double> colors = measureFetcher.getMeasureValues(key);
 		Map<String, Double> scaledColors = Util.scale(colors, min, max);
 		
 		List<Color> result = new ArrayList<Color>();
-
+		try{
 		for (int i = 0; i < shapes.length; i++) {
 			String name = shapes[i].getName();
 			int colorValue = scaledColors.get(name).intValue();
@@ -108,6 +115,10 @@ public abstract class ShapeGenerator {
 			result.add(c);
 		}
 		return result;
+		}
+		catch(Exception e){
+			throw new IllegalArgumentException();
+		}
 	}
 	
 	/**
