@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
@@ -75,6 +74,11 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 		}
 	}
 
+	
+	/**
+	 * This method splits a String of form IntegerxInteger into two strings, parses them and sets the width and height of the scatterplot.
+	 * @param size
+	 */
 	private void parseSize(String size){		
 		String[] sizes = size.split("x");
 		this.width=Integer.parseInt(sizes[0]);

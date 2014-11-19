@@ -1,12 +1,13 @@
 package generators;
 
+import java.awt.Color;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Map.Entry;
 
 /**
  * This class contains all "useful" methods used throughout the project, e.g. parsing, ...
- * @author wout
+ * @author Wout&Thijs
  *
  */
 public class Util {
@@ -17,7 +18,6 @@ public class Util {
 	 * @param delimiters the places where the string should be split
 	 * @return an array with the parts of the splitted string
 	 */
-	//TODO test this method
 	public static String[] splitOnDelimiter(String input, String[] delimiters) throws IllegalArgumentException{
 		try{
 		String[] result = new String[delimiters.length];
@@ -80,5 +80,26 @@ public class Util {
 	 */
 	public static boolean isBetween(float number, int min, int max){
 		return (number <= max && number >= min);
+	}
+	
+	/**
+	 * This method parses an input string to an rgb color. If the input is not
+	 * of the form rxxxgxxxbxxx. 
+	 * 
+	 * @param color
+	 * @return a color object
+	 * @throws IllegalArgumentException
+	 */
+	public static Color parseColor(String color) throws IllegalArgumentException {
+		Integer[] result = new Integer[3];
+		try {
+			String[] splitted = Util.splitOnDelimiter(color, new String[]{"r","g","b"});
+			result[0] = Integer.parseInt(splitted[0]);
+			result[1] = Integer.parseInt(splitted[1]);
+			result[2] = Integer.parseInt(splitted[2]);
+		} catch (NumberFormatException e) {
+			throw new IllegalArgumentException();
+		}
+		return new Color(result[0], result[1], result[2]);
 	}
 }
