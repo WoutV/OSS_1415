@@ -10,7 +10,7 @@ import chartbuilder.ChartBuilder;
  * @author Wout
  *
  */
-public class Shape {
+public abstract class Shape {
 	
 	//TODO Line moet ook overerven van shape denk ik . dan kunt ge da veel gemakkelijker tekenen, gewoon overerven van draw en buildermeegeven
 	
@@ -55,7 +55,5 @@ public class Shape {
 		this.color = color;
 	}
 
-	public void draw(ChartBuilder builder) {
-		// subclass should provide implementation
-	}
+	public abstract void draw(ChartBuilder builder);
 }

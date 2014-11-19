@@ -1,7 +1,9 @@
 package generators;
 
 import java.awt.image.BufferedImage;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -14,7 +16,7 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 	private int height;
 	private String xMetric;
 	private String yMetric;
-	private Shape[] shapes;
+	private List<Shape> shapes;
 
 	
 	/**
@@ -30,8 +32,8 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 		
 		parseSize(polyParams.getSize());
 		
-		BoxGenerator boxGenerator = new BoxGenerator(measureFetcher);
-		this.shapes = boxGenerator.getBoxes(polyParams.getBoxWidth(),polyParams.getBoxHeight(),polyParams.getBoxColor());
+		ShapeGenerator boxGenerator = new BoxGenerator(measureFetcher,polyParams);
+		this.shapes.addAll(Arrays.asList(boxGenerator.getShapes()));
 	}
 
 	@Override
@@ -44,8 +46,8 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 		int minY = Collections.min(yPositions.values(),null).intValue();
 		int maxY = Collections.max(yPositions.values(),null).intValue();
 		
-		xPositions=scale(xPositions, 0, width);
-		yPositions=scale(yPositions, 0, height);
+		xPositions=Util.scale(xPositions, 0, width);
+		yPositions=Util.scale(yPositions, 0, height);
 
 	    builder.createCanvas(height, width, BufferedImage.TYPE_INT_RGB);
 	    builder.createXAxis(xMetric, minX, maxX); 
@@ -56,26 +58,6 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 		return builder.getImage();
 	}
 	
-	/**
-	 * This method scales the given values map.
-	 * @param values the array to be scaled
-	 * @param a the minimum value of the scaled values
-	 * @param b the maximum value of the scaled values
-	 * @return the Map with the scaled values and their key
-	 */
-	static Map<String,Double> scale(Map<String,Double> values, double a, double b){
-		double min = Collections.min(values.values(),null);
-		double max = Collections.max(values.values(),null);
-		double factor = (b-a)/(max-min);
-
-		for(Entry<String, Double> entry :values.entrySet()){
-			double newValue = factor*entry.getValue()+(a);
-			values.put(entry.getKey(), newValue);
-		}
-		
-		return values;
-	}
-
 	/**
 	 * This method builds all the boxes used by the scatterplot
 	 * @param xValues values for x position of the boxes
