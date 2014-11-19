@@ -19050,3 +19050,15 @@ INFO   | jvm 1    | 2014/11/18 13:27:35 | 0.0
 INFO   | jvm 1    | 2014/11/18 13:27:35 | 0.0
 INFO   | jvm 1    | 2014/11/18 13:27:35 | 0.0
 INFO   | jvm 1    | 2014/11/18 13:27:35 | -1.5707963267948966
+WARN   | wrapper  | 2014/11/18 14:06:33 | JVM process was still running after receiving a SIGCHLD signal.
+WARN   | wrapper  | 2014/11/18 14:06:33 | JVM process was still running after receiving a SIGCHLD signal.
+STATUS | wrapper  | 2014/11/18 14:06:33 | TERM trapped.  Shutting down.
+WARN   | wrapper  | 2014/11/18 14:06:33 | JVM process was still running after receiving a SIGCHLD signal.
+INFO   | jvm 1    | 2014/11/18 14:06:33 | 2014-11-18 14:06:33.775:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@0.0.0.0:9000
+INFO   | jvm 1    | 2014/11/18 14:06:33 | 2014-11-18 14:06:33.776:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+WARN   | wrapper  | 2014/11/18 14:06:34 | JVM process was still running after receiving a SIGCHLD signal.
+2014.11.18 14:06:34 INFO  org.sonar.INFO  Stop sonar...
+2014.11.18 14:06:34 INFO  o.s.s.n.NotificationService  Notification service stopped
+2014.11.18 14:06:34 INFO  org.sonar.INFO  Stop sonar done: 5 ms
+INFO   | jvm 1    | 2014/11/18 14:06:34 | 2014-11-18 14:06:34.815:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+STATUS | wrapper  | 2014/11/18 14:06:34 | <-- Wrapper Stopped
