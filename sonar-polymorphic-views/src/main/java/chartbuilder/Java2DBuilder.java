@@ -202,8 +202,8 @@ public class Java2DBuilder implements ChartBuilder {
 		int newY = (int) fixY(startY + ((yPosition-this.minY)*0.8*getCanvasHeight()/Math.abs(maxY-minY)));
 		
 		
-		drawRectangle(newX, newY, width, height, color);
-		drawCenteredString(label, newX + (width/2) , newY-1);
+		drawRectangle(newX-width/2, newY-height/2, width, height, color);
+		drawCenteredString(label, newX, newY-height/2 -1);
 	}
 	
 	/**
@@ -220,8 +220,9 @@ public class Java2DBuilder implements ChartBuilder {
 	@Override
 	public void createRectangle(int xPosition, int yPosition, int height,
 			int width, Color color, String label) {
-		drawRectangle(xPosition, yPosition, width, height, color);
-		drawCenteredString(label, xPosition + (width/2) , yPosition-1);
+		int newY = (int) fixY(yPosition);
+		drawRectangle(xPosition-width/2, newY-height/2, width, height, color);
+		drawCenteredString(label, xPosition, newY-height/2-1);
 	}
 
 	
