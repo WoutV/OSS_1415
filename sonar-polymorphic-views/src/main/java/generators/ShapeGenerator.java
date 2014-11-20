@@ -30,7 +30,7 @@ public abstract class ShapeGenerator {
 	}
 
 	/**
-	 * TODO aanpa This method returns a list of colors, one for each shape. If
+	 * This method returns a list of colors, one for each shape. If
 	 * the input is in RGB format, the color is the same for all shapes. If the
 	 * format "min<float>max<float>key<string>" is used as input, the color of
 	 * each box is dependent on a specific measure of the box. Else, the color

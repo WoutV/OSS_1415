@@ -1,6 +1,6 @@
 plexus-utils-1.5.15.jar|fe1f47086bd28e34b84150b702e1d953
-sonar-batch-maven-compat-3.7.4.jar|7c80d3904f529124dbd4c0d9844e0d8b
 h2-1.3.172.jar|a05f6a5ebc62b2c3d8960ff83f66c5a0
+sonar-batch-maven-compat-3.7.4.jar|7c80d3904f529124dbd4c0d9844e0d8b
 hibernate-commons-annotations-3.1.0.GA.jar|d0210143d969a065b7cca091dd950608
 xercesImpl-2.8.1.jar|e86f321c8191b37bd720ff5679f57288
 maven-plugin-registry-2.2.0.jar|cdfc2ed834d936075581bd3603ef8404
@@ -34,12 +34,12 @@ sonar-markdown-3.7.4.jar|97f655cb5fbc96b50da4e3b2287a5eef
 sonar-deprecated-3.7.4.jar|02c60cd9003b661066c25f9ce30bb77b
 sonar-update-center-common-1.8.jar|7883c59234cf706239e6386594944213
 hibernate-core-3.3.2.GA.jar|c4cd7c2993e9b09b8e82cfeea4b45059
-log4j-over-slf4j-1.6.2.jar|fddedef0acff7abcdb57756526f575ec
 ejb3-persistence-1.0.2.GA.jar|fcce49800b85f6d334d3e5a7c39c8184
+log4j-over-slf4j-1.6.2.jar|fddedef0acff7abcdb57756526f575ec
 commons-dbutils-1.5.jar|82e2d385b50a6728c980adfadb063036
 picocontainer-2.14.3.jar|248c980fc9de4fecaef8ff6ed2b738a3
-sonar-home-3.7.4.jar|bf74a14e63abb1ab4cf6e836ea35869b
 commons-io-2.4.jar|7f97854dc04c119d461fed14f5d8bb96
+sonar-home-3.7.4.jar|bf74a14e63abb1ab4cf6e836ea35869b
 jcl-over-slf4j-1.6.2.jar|fc74c7fde6c00f8f2707aa4785407a01
 geronimo-spec-jta-1.0-M1.jar|876a346519e3d45e6ec6dfa068462d14
 antlr-2.7.6.jar|97c6bb68108a3d68094eab0f67157962
@@ -63,8 +63,8 @@ backport-util-concurrent-3.1.jar|748bb0cbf4780b2e3121dc9c12e10cd9
 sonar-colorizer-3.7.4.jar|46bb97919b8fa4f9dbede765a0983a46
 guava-10.0.1.jar|d05cd8b0a7ee4466994d64779eb28190
 commons-codec-1.8.jar|b87aa66fe75685c82d082e750ab51b2e
-javassist-3.4.GA.jar|f4ae7631c3b9fb4ea8b61b5c5395f177
 blueprints-core-2.2.0.jar|267c129d5e31dfeb8dd446a1493083a4
+javassist-3.4.GA.jar|f4ae7631c3b9fb4ea8b61b5c5395f177
 junit-4.10.jar|68380001b88006ebe49be50cef5bb23a
 plexus-classworlds-2.2.3.jar|e6673b3089c11931211b77d24bbc4f8e
 sonar-batch-3.7.4.jar|7dfe8c66d66a2de1e2d05710b7c7affe
