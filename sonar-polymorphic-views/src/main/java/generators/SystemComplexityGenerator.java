@@ -17,11 +17,11 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	private String boxWidth;
 	private String boxColor;
 	private List<Shape> shapes;//The collection of shapes, displayed on the view
-	private List<BoxTree> dependencyTrees;
+	private List<ShapeTree> dependencyTrees;
 	
 	
 	/** 
-	 * This constructor creates a new systemcomplexitygenerator object. 
+	 * This constructor creates a new system complexity generator object. 
 	 * @param polyParams specify the chart that should be built
 	 * @param sonar is a facade that can be used to access data about the analyzed project
 	 */
@@ -39,7 +39,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	
 	/**
 	 * This method generates the image to be displayed as view
-	 * @return the systemcomplexity view as requested as a BuffereredImage
+	 * @return the system complexity view as requested as a BuffereredImage
 	 */
 	@Override
 	public BufferedImage generateImage() {

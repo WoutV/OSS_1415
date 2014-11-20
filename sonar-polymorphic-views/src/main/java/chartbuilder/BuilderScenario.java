@@ -28,7 +28,7 @@ public class BuilderScenario {
 		builder.createYAxis("Number of methods", 0, 500, 800, 1200);
 		builder.createRectangleFittedToAxes(50, 70, 12, 15, Color.blue, "sonar.random");
 		builder.createRectangleFittedToAxes(100, 50, 12, 15, Color.blue, "sonarTest");
-		builder.createRectangleFittedToAxes(200, 500, 20, 15, Color.blue, "sonar Stuff");
+		builder.createRectangleFittedToAxes(200, 500, 20, 15, Color.blue, "ActualSonar");
 		builder.createRectangleFittedToAxes(-20, 500, 50, 70, Color.blue, "sonarqube");
 		builder.createRectangleFittedToAxes(200, 0, 90, 90, Color.blue, "visualistation");
 		builder.createRectangleFittedToAxes(0, 0, 80, 40, Color.blue, "JAVA2DBUILDER");

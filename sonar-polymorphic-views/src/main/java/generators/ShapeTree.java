@@ -1,10 +1,13 @@
 package generators;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ShapeTree {
-	ShapeTreeNode startNode;
-	List<ShapeTreeNode> nodes;
+	
+	private ShapeTreeNode startNode;
+	
+	private List<ShapeTreeNode> nodes = new ArrayList<ShapeTreeNode>();
 	
 	public ShapeTree(ShapeTreeNode startNode, List<ShapeTreeNode> nodes){
 		this.startNode=startNode;
@@ -36,8 +39,17 @@ public class ShapeTree {
 	}
 	
 	public void sortTreeAlphabetic(){
+		getStartnode().sortAlphabetic();
 		for(ShapeTreeNode node : nodes){
 			node.sortAlphabetic();
 		}
+	}
+	
+	public String toString(){
+		String result = getStartnode().getName();
+		for(ShapeTreeNode node : getNodes()){
+			result = result + "\r\n" + node.toString(); 
+		}
+		return result;
 	}
 }
