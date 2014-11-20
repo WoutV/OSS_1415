@@ -22,8 +22,10 @@ public class MeasureFetcher {
 
 	public MeasureFetcher(String resourceType, String parent, SonarFacade sonar){
 		this.sonar = sonar;
-		Resource ancestor = sonar.findResource(parent);
-		this.resources = findResources(resourceType,ancestor);
+		if(sonar != null) {
+			Resource ancestor = sonar.findResource(parent);
+			this.resources = findResources(resourceType,ancestor);
+		}
 	}
 	
 	/**

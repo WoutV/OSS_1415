@@ -21,20 +21,16 @@ public class BoxGenerator extends ShapeGenerator {
 	private final static Logger LOG = LoggerFactory.getLogger(BoxGenerator.class);
 	
 	public BoxGenerator(MeasureFetcher measureFetcher, PolymorphicChartParameters params) {
-		super(measureFetcher,params);
-
-		//if(!measureFetcher.equals(null)) {  //For testing
-			int numberOfShapes = measureFetcher.getNumberOfResources();
-			this.shapes= new Shape[numberOfShapes];
-			initBoxes(params.getBoxWidth(),params.getBoxHeight(),params.getBoxColor());
-		//}
+		super(measureFetcher, params);
+		int numberOfShapes = measureFetcher.getNumberOfResources();
+		this.shapes = new Shape[numberOfShapes];
+		initBoxes(params.getBoxWidth(), params.getBoxHeight(),params.getBoxColor());
 	}
 	
 	/**
 	 * This method initializes the list of shapes with "empty" boxes
 	 */
 	private void initBoxes(String width,String height,String color) {
-		
 		Box[] boxes =  new Box[shapes.length];
 		for(int i = 0;i<boxes.length;i++) {
 			boxes[i] = new Box();
@@ -42,16 +38,28 @@ public class BoxGenerator extends ShapeGenerator {
 		this.shapes = boxes;
 		nameShapes();
 		
-		List<Double> widthList = getShapeDimension(width);
-		List<Double> heightList = getShapeDimension(height);
+		setBoxProperties(width, height, color, boxes);
+	}
+
+	private void setBoxProperties(String width, String height, String color,Box[] boxes) {
+		List<Double> widthList;
+		try {
+			widthList = getShapeDimension(width);
+		} catch (IllegalArgumentException e) {
+			widthList = getShapeDimension(PolymorphicChartParameters.DEFAULT_BOXWIDTH);
+		}
+		List<Double> heightList;
+		try {
+			heightList = getShapeDimension(height);
+		} catch (IllegalArgumentException e) {
+			heightList = getShapeDimension(PolymorphicChartParameters.DEFAULT_BOXHEIGHT);
+		}
 		List<Color> colorList = getShapeColors(color);
 		for (int i = 0; i < boxes.length; i++) {
 			boxes[i].setHeight(heightList.get(i));
 			boxes[i].setWidth(widthList.get(i));
 			boxes[i].setColor(colorList.get(i));
 		}
-		this.shapes = boxes;
-		
 	}
 
 
@@ -66,14 +74,17 @@ public class BoxGenerator extends ShapeGenerator {
 	 *            needed.
 	 * @return a list with the width/height of all the boxes
 	 */
-	private List<Double> getShapeDimension(String dimension) {
+	private List<Double> getShapeDimension(String dimension) throws IllegalArgumentException {
 		List<Double> dimensions;
 		try {
-			Double parsedDimension = Double.parseDouble(dimension);
+			Double parsedDimension = Math.abs(Double.parseDouble(dimension));
 			dimensions = new ArrayList<Double>(Collections.nCopies(shapes.length, parsedDimension));
 		} catch (NumberFormatException e) {
-			Map<String, Double> values = measureFetcher.getMeasureValues(dimension);
-			dimensions = getShapeSize(values);
+				Map<String, Double> values = measureFetcher.getMeasureValues(dimension);
+				dimensions = getShapeSize(values);
+				if(dimensions.isEmpty()) {
+					throw new IllegalArgumentException();
+				}
 		}
 		return dimensions;
 	}
@@ -97,7 +108,4 @@ public class BoxGenerator extends ShapeGenerator {
 		}
 		return result;
 	}
-	
-
-
 }
