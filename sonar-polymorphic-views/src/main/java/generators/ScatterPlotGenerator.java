@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import org.jfree.util.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,7 +30,7 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 	 */
 	public ScatterPlotGenerator(PolymorphicChartParameters polyParams, SonarFacade sonar) {
 		super(polyParams,sonar);
-		
+		LOG.info("Creating scatterplot...");
 		this.xMetric = polyParams.getXMetric();
 		this.yMetric = polyParams.getYMetric();
 		this.shapes = new ArrayList<Shape>();
@@ -53,16 +54,13 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 		xPositions=Util.scale(xPositions, 0, width);
 		yPositions=Util.scale(yPositions, 0, height);
 
+		Log.info("Creating axes...");
 	    builder.createCanvas(height, width, BufferedImage.TYPE_INT_RGB);
 	    builder.createXAxis(xMetric, 0, width, minX, maxX); 
 	    builder.createYAxis(yMetric, 0, height, minY, maxY);
 	    
+	    Log.info("Building shapes...");
 		buildShapes(xPositions,yPositions);
-		//TODO remove
-		for (Double xpos : xPositions.values()){
-		LOG.info("xPosition : "+xpos);
-		}
-		
 		return builder.getImage();
 	}
 	

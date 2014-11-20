@@ -3,9 +3,9 @@ package generatorsTest;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import generators.BoxGenerator;
-import generators.DummyMeasureFetcher;
 import generators.Shape;
 import generators.Util;
+import generatorsTest.DummyMeasureFetcher;
 
 import java.awt.Color;
 import java.util.HashMap;

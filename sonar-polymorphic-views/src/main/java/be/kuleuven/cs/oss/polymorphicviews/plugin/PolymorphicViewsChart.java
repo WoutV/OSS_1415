@@ -30,7 +30,7 @@ public class PolymorphicViewsChart implements Chart {
 	public String getKey() {
 		return "polymorphic";
 	}
-
+	
 	/**
 	 * This method generates a buffered image, based on the given ChartParameters.
 	 * @param params arguments passed by end-user in URL
@@ -38,8 +38,9 @@ public class PolymorphicViewsChart implements Chart {
 	 */
 	@Override
 	public BufferedImage generateImage(ChartParameters params) {
-		PolymorphicChartParameters polyParams = new PolymorphicChartParameters(params);
 		LOG.info("PolymorphicViewsChart generateImage() called!");
+		setDefaultParameters();
+		PolymorphicChartParameters polyParams = new PolymorphicChartParameters(params);
 		String type = polyParams.getType();
 		PolymorphicChartGenerator generator = null;
 		switch(type) { 
@@ -49,7 +50,17 @@ public class PolymorphicViewsChart implements Chart {
 			break;
 		}
 		BufferedImage buff = generator.generateImage();
+		LOG.info("PolymorphicViewsChart generated!");
 		return buff;
+	}
+
+	private void setDefaultParameters() {
+		String xMetricDefault = sonar.findMetrics().get(0).getKey();
+		String yMetricDefault  =  sonar.findMetrics().get(1).getKey();
+		String project = sonar.findProjects().get(0).getKey();
+		PolymorphicChartParameters.DEFAULT_XMETRIC=xMetricDefault;
+		PolymorphicChartParameters.DEFAULT_YMETRIC=yMetricDefault;
+		PolymorphicChartParameters.DEFAULT_PARENT=project;
 	}
 	
 	public SonarFacade getSonar() {
