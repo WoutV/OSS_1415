@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import be.kuleuven.cs.oss.sonarfacade.Dependency;
 import be.kuleuven.cs.oss.sonarfacade.Measure;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
@@ -19,12 +20,10 @@ public class MeasureFetcher {
 	private SonarFacade sonar;
 	private List<Resource> resources;
 
-	public MeasureFetcher(String resourceType, String parent, SonarFacade sonar) {
+	public MeasureFetcher(String resourceType, String parent, SonarFacade sonar){
 		this.sonar = sonar;
-		if (sonar!=null) {
-			Resource ancestor = sonar.findResource(parent);
-			this.resources = findResources(resourceType, ancestor);
-		}
+		Resource ancestor = sonar.findResource(parent);
+		this.resources = findResources(resourceType,ancestor);
 	}
 	
 	/**
@@ -37,9 +36,20 @@ public class MeasureFetcher {
 		for(Resource resource:resources){
 			Measure m = sonar.findMeasure(resource, metric);
 			allValues.put(resource.getName(), m.getValue());
-		}	
+		}
+				
 		return allValues;
 	}
+	
+	public BoxTree getDependencyTree(){
+		BoxTree dependencyTree;
+		for(Resource resource: resources){
+			List<Dependency> dependencies= sonar.findOutgoingDependencies(resource);
+			//for()
+		}
+		return null;
+	}
+	
 	
 	/**
 	 * @param resourceType 
