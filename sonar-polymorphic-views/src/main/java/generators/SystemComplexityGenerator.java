@@ -33,7 +33,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		this.boxColor = polyParams.getBoxColor();
 		
 		ShapeGenerator boxGenerator = new BoxGenerator(measureFetcher,polyParams);
-		shapes.addAll(Arrays.asList(boxGenerator.getBoxes()));
+		shapes.addAll(Arrays.asList(boxGenerator.getShapes()));//enkel boxes
 	}
 
 	/**
