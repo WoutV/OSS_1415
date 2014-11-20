@@ -307,3 +307,14 @@ undefined method `map' for nil:NilClass
 	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/adapter/rails.rb:39:in `call'
 	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/handler/servlet.rb:22:in `call'
 
+WARN   | wrapper  | 2014/11/20 12:19:54 | JVM process was still running after receiving a SIGCHLD signal.
+STATUS | wrapper  | 2014/11/20 12:19:54 | TERM trapped.  Shutting down.
+WARN   | wrapper  | 2014/11/20 12:19:54 | JVM process was still running after receiving a SIGCHLD signal.
+INFO   | jvm 1    | 2014/11/20 12:19:55 | 2014-11-20 12:19:55.539:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@0.0.0.0:9000
+INFO   | jvm 1    | 2014/11/20 12:19:55 | 2014-11-20 12:19:55.539:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+WARN   | wrapper  | 2014/11/20 12:19:55 | JVM process was still running after receiving a SIGCHLD signal.
+2014.11.20 12:19:56 INFO  org.sonar.INFO  Stop sonar...
+2014.11.20 12:19:56 INFO  o.s.s.n.NotificationService  Notification service stopped
+2014.11.20 12:19:56 INFO  org.sonar.INFO  Stop sonar done: 3 ms
+INFO   | jvm 1    | 2014/11/20 12:19:56 | 2014-11-20 12:19:56.574:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+STATUS | wrapper  | 2014/11/20 12:19:56 | <-- Wrapper Stopped
