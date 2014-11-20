@@ -43,24 +43,24 @@ public class MeasureFetcher {
 		return allValues;
 	}
 	
-	public List<BoxTree> getDependencyTrees(){
-		List<BoxTree> dependencyTrees= new ArrayList<BoxTree>();
+	public List<ShapeTree> getDependencyTrees(){
+		List<ShapeTree> dependencyTrees= new ArrayList<ShapeTree>();
 		for(Resource resource: resources){ //loop over main nodes and build a tree for each main node
-			BoxTreeNode master = new BoxTreeNode(resource.getName());//create master node
-			BoxTree tree = new BoxTree(master);//create tree for master node
+			ShapeTreeNode master = new ShapeTreeNode(resource.getName());//create master node
+			ShapeTree tree = new ShapeTree(master);//create tree for master node
 			tree = fillTree(resource, tree);//createTree recursively
 			dependencyTrees.add(tree);
 		}
 		return dependencyTrees;
 	}
 	
-	public BoxTree fillTree(Resource resource, BoxTree tree){
+	public ShapeTree fillTree(Resource resource, ShapeTree tree){
 		List<Dependency> dependencies= sonar.findOutgoingDependencies(resource); //get dependencies for a resource
 		for(Dependency dependency: dependencies){//loop over all found resources
 			String toResourceKey = dependency.getToResourceKey();//get the key of every resource of a dependency
 			Resource res = sonar.findResource(toResourceKey);//find the resource with the key
-			resources.add(res);// at this resource to resources
-			BoxTreeNode node = new BoxTreeNode(res.getName());//create node for resource
+			resources.add(res);// add this resource to resources
+			ShapeTreeNode node = new ShapeTreeNode(res.getName());//create node for resource
 			tree.addNode(node);//add resource to tree
 			tree = fillTree(res, tree);//and do whole thing again for each resource
 		}
