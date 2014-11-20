@@ -1,19 +1,13 @@
 package generators;
 
-public class Line {
+import chartbuilder.ChartBuilder;
 
-	private int secondX;
-	private int secondY;
-	public int getSecondX() {
-		return secondX;
-	}
-	public void setSecondX(int secondX) {
-		this.secondX = secondX;
-	}
-	public int getSecondY() {
-		return secondY;
-	}
-	public void setSecondY(int secondY) {
-		this.secondY = secondY;
+public class Line extends Shape{
+
+	@Override
+	public void draw(ChartBuilder builder) {
+		int secondX=(int)this.getWidth()+this.getxPos();//TODO check
+		int secondY=(int)this.getHeight()+this.getyPos();
+		builder.createLine(this.getxPos(),this.getyPos(), secondX, secondY);
 	}
 }

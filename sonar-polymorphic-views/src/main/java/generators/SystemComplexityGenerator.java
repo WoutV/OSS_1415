@@ -33,7 +33,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		this.boxColor = polyParams.getBoxColor();
 		
 		ShapeGenerator boxGenerator = new BoxGenerator(measureFetcher,polyParams);
-		shapes.addAll(Arrays.asList(boxGenerator.getShapes()));
+		shapes.addAll(Arrays.asList(boxGenerator.getBoxes()));
 	}
 
 	/**
@@ -56,15 +56,10 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	public void buildShapes(Map<String, Double> heights, Map<String, Double> widths){
 		//TODO horizontal ordering: alphabetical String.compareTo(otherString)
 		//TODO vertical ordering: hierarchy + height= max height of yMetric of that row
-		
+
 		for(Shape shape : this.shapes){
-			Double height = heights.get(shape.getName());
-			Double width = widths.get(shape.getName());
-			Box box = (Box) shape;
-			box.setHeight(height.intValue());
-			box.setWidth(width.intValue());
-			//Positioning
-			box.draw(this.builder);
+
+			shape.draw(this.builder);
 		}
 	}
 	

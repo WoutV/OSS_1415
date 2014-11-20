@@ -75,4 +75,6 @@ public class MeasureFetcher {
 	public String getDefaultProject() {
 		return sonar.findProjects().get(0).getKey();
 	}
+	
+	
 }

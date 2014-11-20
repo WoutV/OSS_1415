@@ -98,7 +98,6 @@ public class BoxGenerator extends ShapeGenerator {
 		return result;
 	}
 	
-	
 
 
 }
