@@ -54,7 +54,6 @@ public class MeasureFetcher {
 		return null;
 	}
 	
-	public BoxTree
 	
 	
 	/**
