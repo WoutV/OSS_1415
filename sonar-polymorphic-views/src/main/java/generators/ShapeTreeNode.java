@@ -12,16 +12,18 @@ import java.util.TreeSet;
  */
 public class ShapeTreeNode {
 
-	String name;
-	Shape shape;
-	List<ShapeTreeNode> children = new ArrayList<ShapeTreeNode>();
+	private String name;
+	private Shape shape;
+	private int level;
+	private List<ShapeTreeNode> children = new ArrayList<ShapeTreeNode>();
 	
-	public ShapeTreeNode(String name, List<ShapeTreeNode> children){
+	public ShapeTreeNode(String name, List<ShapeTreeNode> children, int level){
 		this.name=name;
 		this.children=children;
+		this.level = level;
 	}
 	
-	public ShapeTreeNode(String name){
+	public ShapeTreeNode(String name, int level){
 		this.name = name;
 	}
 	
@@ -114,5 +116,13 @@ public class ShapeTreeNode {
 			result = result + "\r\n" + node.getName(); 
 		}
 		return result;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
 	}
 }

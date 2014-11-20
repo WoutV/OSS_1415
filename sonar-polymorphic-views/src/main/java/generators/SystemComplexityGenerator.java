@@ -15,9 +15,11 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	private int height;
 	private String boxHeight;
 	private String boxWidth;
-	private String boxColor;
 	private List<Shape> shapes;//The collection of shapes, displayed on the view
 	private List<ShapeTree> dependencyTrees;
+	private int leafMargin = 1;
+	private int treeMargin = 5;
+	private int heightMargin = 5;
 	
 	
 	/** 
@@ -30,7 +32,6 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		
 		this.boxHeight = polyParams.getBoxHeight();
 		this.boxWidth = polyParams.getBoxWidth();
-		this.boxColor = polyParams.getBoxColor();
 		this.dependencyTrees= measureFetcher.getDependencyTrees();
 		ShapeGenerator boxGenerator = new BoxGenerator(measureFetcher,polyParams);
 		shapes.addAll(Arrays.asList(boxGenerator.getShapes()));
@@ -59,13 +60,75 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	}
 	
 	public void getXPositions(){
-		//TODO create way to instantiate x-positions
+		for(ShapeTree tree : dependencyTrees){
+			Shape master = getShapeBy(tree.getStartnode().getName());
+			master.setxPos(0);
+			layoutX(tree);
+		}
+		int tempx = 0;
+		for(ShapeTree tree: dependencyTrees){
+			int width = (int) tree.getMaxWidth(leafMargin);
+			shiftTree(tempx + width/2, tree);
+			tempx += width+treeMargin;
+		}
+	}
 
+	private void layoutX(ShapeTree tree) {
+		int height = tree.getHeight();
+		for(int i = 1; i < height+1 ; i++){
+			List<ShapeTreeNode> level = tree.getXthLvl(i);
+			double lvlWidth = tree.getLvlWidthMargin(i, leafMargin);
+			double tempX = 0 - lvlWidth/2;
+			for(ShapeTreeNode node : level){
+				node.getShape().setxPos((int) tempX);
+				tempX += node.getShape().getWidth() + leafMargin;
+			}
+		}
+	}
+	
+	private void layoutY(ShapeTree tree){
+		int tempY = 0;
+		for(int i = 0; i < tree.getHeight()+1; i++){
+			List<ShapeTreeNode> level = tree.getXthLvl(i);
+			double lvlHeight = tree.getMaxHeightOfLvl(i);
+			for(ShapeTreeNode node : level){
+				node.getShape().setyPos((int) tempY + heightMargin);
+				tempY += lvlHeight + heightMargin;
+			}
+		}
+	}
+	/**
+	 * Move whole tree by x.
+	 * @param x
+	 */
+	private void shiftTree(int x, ShapeTree tree){
+		List<ShapeTreeNode> nodes = tree.getNodes();
+		nodes.add(tree.getStartnode());
+		for(ShapeTreeNode node : nodes){
+			Shape shape = node.getShape();
+			shape.setxPos(shape.getxPos()+x);
+		}
+	}
+	
+	private void addShapesToTree(ShapeTree tree){
+		for(ShapeTreeNode node : tree.getNodes()){
+			node.setShape(getShapeBy(node.getName()));
+		}
+	}
+
+	private Shape getShapeBy(String name){
+		for(Shape shape : shapes){
+			if(shape.getName().equals(name)){
+				return shape;
+			}
+		}
+		return null;
 	}
 	
 	public void getYPositions(){
-		//TODO create way to instantiate y-positions
-		//TODO vertical ordering: hierarchy + height= max height of yMetric of that row
+		for(ShapeTree tree : dependencyTrees){
+			layoutY(tree);
+		}
 	}
 	
 	public void createLines(){
