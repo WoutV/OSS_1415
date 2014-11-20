@@ -1,9 +1,7 @@
 package chartbuilder;
 
 import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.Polygon;
 import java.awt.Rectangle;
 import java.awt.geom.AffineTransform;
@@ -49,7 +47,6 @@ public class Java2DBuilder implements ChartBuilder {
 		return this.canvasHeight;
 	}
 	
-
 	/**
 	 * @param y The y value in the coordinate system with the y-axis pointing downwards.
 	 * @return the y value changed to the x-y-coordinate system with the y-axis pointing upwards.
@@ -59,11 +56,24 @@ public class Java2DBuilder implements ChartBuilder {
 		return result;
 	}
 	
+	/**
+	 * This method will scale the given x-value considered the scaling and translation of the axes.
+	 * 
+	 * @param x
+	 * @return The scaled and translated x-value.
+	 */
 	private int scaleX(int x) {
 		int result = (int) (x*SCALE+(1-SCALE)/2*getCanvasWidth());
 		return result;
 	}
 	
+	/**
+	 * This method will scale the given y-value considered the scaling and translation of the axes.
+	 * The y value is also fixed to take into account the switch of the y-axis direction.
+	 * 
+	 * @param y
+	 * @return The fixed, scaled and translated y-value.
+	 */
 	private int scaleY(int y) {
 		int result = (int) (fixY(y)*SCALE+(1-SCALE)/2*getCanvasHeight());
 		return result;
@@ -77,24 +87,11 @@ public class Java2DBuilder implements ChartBuilder {
 		this.canvas = canvas;
 	}
 	
-	/**
-	 * Returns the canvas.
-	 * 
-	 * @return the current canvas
-	 */
 	@Override
 	public BufferedImage getImage() {
 		return getCanvas();
 	}
 	
-	/**
-	 * Will create a new image and set it as its current canvas.
-	 * The width and the height of the canvas are saved.
-	 * 
-	 * @param height The height of the image in pixels.
-	 * @param width	The width of the image in pixels.
-	 * @param imageType The type of the image, e.g. BufferedImage.TYPE_INT_RGB.
-	 */
 	@Override
 	public void createCanvas(int height, int width, int imageType) {
 		BufferedImage img = new BufferedImage(width, height, imageType);
@@ -106,18 +103,6 @@ public class Java2DBuilder implements ChartBuilder {
 		setCanvas(img);
 	}
 
-	/**
-	 * This method will draw an x-axis, pointed to the right.
-	 * The x-axis has a centered label and a minimum and maximum value is showed.
-	 * The minimum value will be the start point on the x-axis and the maximum value will be the end point on the x-axis.
-	 * The start of the x-axis will always be drawn 10% of the total width of the canvas to the right of the left border of the canvas.
-	 * The end of the x-axis will always be drawn 10% of the total width of the canvas to the left of the left border of the canvas.
-	 * The x-axis will always be drawn 10% of the total height of the canvas to the top of the bottom border of the canvas.
-	 * 
-	 * @param label The label shown with the x-axis.
-	 * @param xMin The minimum value of the input. 
-	 * @param xMax The maximum value of the input. 
-	 */
 	@Override
 	public void createXAxis(String label, int xMin, int xMax, int minLabel, int maxLabel) {
 		BufferedImage img = getCanvas();
@@ -133,18 +118,6 @@ public class Java2DBuilder implements ChartBuilder {
 		graphics.drawString(""+maxLabel, (int) (stop), (int) (height+pos));
 	}
 
-	/**
-	 * This method will draw an y-axis, pointed upwards.
-	 * The y-axis has a centered label and a minimum and maximum value is showed.
-	 * The minimum value will be the start point on the y-axis and the maximum value will be the end point on the y-axis.
-	 * The start of the y-axis will always be drawn 10% of the total height of the canvas to the top of the bottom border of the canvas.
-	 * The end of the y-axis will always be drawn 10% of the total height of the canvas to the bottom of the top border of the canvas.
-	 * The y-axis will always be drawn 10% of the total width of the canvas to the right of the left border of the canvas.
-	 * 
-	 * @param label The label shown with the y-axis.
-	 * @param yMin The minimum value of the input. 
-	 * @param yMax The maximum value of the input. 
-	 */
 	@Override
 	public void createYAxis(String label, int yMin, int yMax, int minLabel, int maxLabel) {
 		BufferedImage img = getCanvas();
@@ -160,14 +133,6 @@ public class Java2DBuilder implements ChartBuilder {
 		drawVerticalString(""+maxLabel, (int) (width-pos), (int) (start), -Math.PI/2, false);
 	}
 
-	/**
-	 * This method will draw a line between two points on the current canvas.
-	 * 
-	 * @param x1 x-coordinate of start point.
-	 * @param y1 y-coordinate of start point.
-	 * @param x2 x-coordinate of end point.
-	 * @param y2 y-coordinate of end point.
-	 */
 	@Override
 	public void createLine(int x1, int y1, int x2, int y2) {
 		BufferedImage img = getCanvas();
@@ -175,45 +140,7 @@ public class Java2DBuilder implements ChartBuilder {
 		graphics.setColor(Color.BLACK);
 		graphics.drawLine(scaleX(x1), scaleY(y1), scaleX(x2), scaleY(y2));
 	}
-
-	/**
-	 * This method will draw a rectangle with its label on the current canvas, positioned correctly with respect to the axes.
-	 * The rectangle has a black border and the label will be centered above the rectangle.
-	 * 
-	 * Precondition: The current canvas should already have axes.
-	 * 
-	 * @param xPosition The x-coordinate of the upper left corner.
-	 * @param yPosition The y-coordinate of the upper left corner.
-	 * @param height The height of the rectangle.
-	 * @param width The width of the rectangle.
-	 * @param color The color of the rectangle.
-	 * @param label The label above the rectangle.
-	 */
-//	@Override
-//	public void createRectangleFittedToAxes(int xPosition, int yPosition, int height,
-//			int width, Color color, String label) {
-//		double startX = 0.1*getCanvasHeight();
-//		double startY = 0.1*getCanvasWidth();
-//		
-//		int newX = (int) (startX + ((xPosition-this.minX)*0.8*getCanvasWidth()/Math.abs(maxX-minX)));
-//		int newY = (int) fixY(startY + ((yPosition-this.minY)*0.8*getCanvasHeight()/Math.abs(maxY-minY)));
-//		
-//		
-//		drawRectangle(newX-width/2, newY-height/2, width, height, color);
-//		drawCenteredString(label, newX, newY-height/2 -1);
-//	}
 	
-	/**
-	 * This method will draw a rectangle with its label on the current canvas.
-	 * The rectangle has a black border and the label will be centered above the rectangle.
-	 * 
-	 * @param xPosition The x-coordinate of the upper left corner.
-	 * @param yPosition The y-coordinate of the upper left corner.
-	 * @param height The height of the rectangle.
-	 * @param width The width of the rectangle.
-	 * @param color The color of the rectangle.
-	 * @param label The label above the rectangle.
-	 */
 	@Override
 	public void createRectangle(int xPosition, int yPosition, int height,
 			int width, Color color, String label) {
@@ -223,7 +150,6 @@ public class Java2DBuilder implements ChartBuilder {
 		drawCenteredString(label, newX, newY-height/2-1);
 	}
 
-	
 	/**
 	 * This method will draw a string centered around the specified position.
 	 * 
@@ -293,7 +219,6 @@ public class Java2DBuilder implements ChartBuilder {
 		drawArrowHead(line);
 	}
 	
-	//TODO commentaar
 	/**
 	 * This method will draw a string that is rotated.
 	 * 
@@ -301,6 +226,8 @@ public class Java2DBuilder implements ChartBuilder {
 	 * @param x The x-coordinate of the center.
 	 * @param y The y-coordinate of the center.
 	 * @param angle The angle, in radians, the string will be rotated over to the right.
+	 * @param centered True if the string need to be centered to the given y-coordinate, 
+	 * 				   False if the string need to start from the given y-coordinate.
 	 */
 	private void drawVerticalString(String label, int x, int y, double angle, boolean centered) {
 		BufferedImage img = getCanvas();
@@ -317,8 +244,6 @@ public class Java2DBuilder implements ChartBuilder {
 		}
 		graphics.setTransform(original);
 	}
-	
-	
 	
 	/**
 	 * This method will draw an arrowhead on the end of a line, pointing away of the line. 
