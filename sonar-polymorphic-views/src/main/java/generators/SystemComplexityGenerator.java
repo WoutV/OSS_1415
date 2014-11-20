@@ -17,6 +17,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	private String boxWidth;
 	private String boxColor;
 	private List<Shape> shapes;//The collection of shapes, displayed on the view
+	//tree
 	
 	
 	/** 
@@ -47,20 +48,23 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	    builder.createCanvas(height, width, BufferedImage.TYPE_INT_RGB);
 	    
 	    
-	    buildShapes(boxWidths,boxHeights);
+	    buildShapes(boxHeights, boxWidths);
 	    
 		return builder.getImage();
 	}
 
-	public void buildShapes(Map<String, Double> xValues, Map<String, Double> yValues){
+	public void buildShapes(Map<String, Double> heights, Map<String, Double> widths){
 		//TODO horizontal ordering: alphabetical String.compareTo(otherString)
 		//TODO vertical ordering: hierarchy + height= max height of yMetric of that row
+		
 		for(Shape shape : this.shapes){
-			Double xValue = xValues.get(shape.getName());
-			Double yValue = yValues.get(shape.getName());
-			shape.setxPos(xValue.intValue());
-			shape.setyPos(yValue.intValue());
-			shape.draw(this.builder);
+			Double height = heights.get(shape.getName());
+			Double width = widths.get(shape.getName());
+			Box box = (Box) shape;
+			box.setHeight(height.intValue());
+			box.setWidth(width.intValue());
+			//Positioning
+			box.draw(this.builder);
 		}
 	}
 	
