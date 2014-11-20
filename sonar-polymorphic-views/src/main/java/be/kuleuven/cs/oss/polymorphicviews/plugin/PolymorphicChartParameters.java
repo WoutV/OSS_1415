@@ -24,7 +24,7 @@ public class PolymorphicChartParameters {
 	public static final String DEFAULT_BOXCOLOR = "r255g255b255"; 
 	public static final String DEFAULT_SIZE = "800x800";
 	public static final String DEFAULT_RESOURCES = "classes";
-	public static String DEFAULT_PARENT; // TODO aanpassen
+	public static String DEFAULT_PARENT;
 	public static String DEFAULT_XMETRIC ;
 	public static String DEFAULT_YMETRIC;
 	private Map<String, String> params = new HashMap<String, String>();
