@@ -35,6 +35,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		this.dependencyTrees= measureFetcher.getDependencyTrees();
 		ShapeGenerator boxGenerator = new BoxGenerator(measureFetcher,polyParams);
 		shapes.addAll(Arrays.asList(boxGenerator.getShapes()));
+		addShapesToTree();
 	}
 
 	
@@ -110,9 +111,11 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		}
 	}
 	
-	private void addShapesToTree(ShapeTree tree){
-		for(ShapeTreeNode node : tree.getNodes()){
-			node.setShape(getShapeBy(node.getName()));
+	private void addShapesToTree(){
+		for(ShapeTree shapeTree: dependencyTrees){
+			for(ShapeTreeNode node : shapeTree.getNodes()){
+				node.setShape(getShapeBy(node.getName()));
+			}
 		}
 	}
 
@@ -132,9 +135,34 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	}
 	
 	public void createLines(){
-		for(Shape shape:this.shapes){
+		for(ShapeTree shapeTree:dependencyTrees){
+			int height = shapeTree.getHeight();
+			for(int i=0; i<height;i++){
+				List<ShapeTreeNode> nodes = shapeTree.getXthLvl(i);
+				for(ShapeTreeNode root: nodes){
+					for(ShapeTreeNode node: root.getChildren()){
+						createLine(root, node);
+					}
+				}
 
+			}	
 		}
+	}
+	
+	public void createLine(ShapeTreeNode node1, ShapeTreeNode node2){
+		Shape shape1 = node1.getShape();
+		int x1 = shape1.getxPos() + (int)shape1.getWidth()/2;
+		int y1 = shape1.getyPos() + (int)shape1.getHeight();
+		Shape shape2 = node2.getShape();
+		int x2 = shape2.getxPos() + (int)shape1.getWidth()/2;
+		int y2 = shape2.getyPos();
+		Shape line= new Line();
+		line.setxPos(x1);
+		line.setyPos(y1);
+		line.setWidth(x2-x1);
+		line.setHeight(y2-y1);
+		
+		shapes.add(line);
 	}
 	
 }
