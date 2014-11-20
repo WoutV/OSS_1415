@@ -55,7 +55,7 @@ public class MeasureFetcher {
 	}
 	
 	public BoxTree fillTree(Resource resource, BoxTree tree){
-		List<Dependency> dependencies= sonar.findOutgoingDependencies(resource); //get depencies for a resource
+		List<Dependency> dependencies= sonar.findOutgoingDependencies(resource); //get dependencies for a resource
 		for(Dependency dependency: dependencies){//loop over all found resources
 			String toResourceKey = dependency.getToResourceKey();//get the key of every resource of a dependency
 			Resource res = sonar.findResource(toResourceKey);//find the resource with the key
