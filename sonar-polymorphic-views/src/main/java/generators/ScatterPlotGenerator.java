@@ -7,11 +7,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class ScatterPlotGenerator extends PolymorphicChartGenerator {
-
+	private final static Logger LOG = LoggerFactory.getLogger(BoxGenerator.class);
 	private int width;
 	private int height;
 	private String xMetric;
@@ -51,10 +54,14 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 		yPositions=Util.scale(yPositions, 0, height);
 
 	    builder.createCanvas(height, width, BufferedImage.TYPE_INT_RGB);
-	    builder.createXAxis(xMetric, minX, maxX); 
-	    builder.createYAxis(yMetric, minY, maxY);
+	    builder.createXAxis(xMetric, 0, width, minX, maxX); 
+	    builder.createYAxis(yMetric, 0, height, minY, maxY);
 	    
 		buildShapes(xPositions,yPositions);
+		//TODO remove
+		for (Double xpos : xPositions.values()){
+		LOG.info("xPosition : "+xpos);
+		}
 		
 		return builder.getImage();
 	}

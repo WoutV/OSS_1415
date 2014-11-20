@@ -18,8 +18,6 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	private String boxColor;
 	private List<Shape> shapes;//The collection of shapes, displayed on the view
 	private List<BoxTree> dependencyTrees;
-	ShapeGenerator boxGenerator;
-	//tree
 	
 	
 	/** 
@@ -34,7 +32,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		this.boxWidth = polyParams.getBoxWidth();
 		this.boxColor = polyParams.getBoxColor();
 		this.dependencyTrees= measureFetcher.getDependencyTrees();
-		boxGenerator = new BoxGenerator(measureFetcher,polyParams);
+		ShapeGenerator boxGenerator = new BoxGenerator(measureFetcher,polyParams);
 		shapes.addAll(Arrays.asList(boxGenerator.getShapes()));
 	}
 
@@ -46,29 +44,34 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	@Override
 	public BufferedImage generateImage() {
 
-		Map<String,Double> boxHeights = measureFetcher.getMeasureValues(boxHeight);
-		Map<String,Double> boxWidths = measureFetcher.getMeasureValues(boxWidth);
+	
 	    builder.createCanvas(height, width, BufferedImage.TYPE_INT_RGB);
 	    
+	    getXPositions();
+	    getYPositions();    
+	    createLines();
 	    
-	    buildShapes(boxHeights, boxWidths);
-	    
+	    for(Shape shape : this.shapes){
+			shape.draw(this.builder);
+		}
+
 		return builder.getImage();
 	}
+	
+	public void getXPositions(){
+		//TODO create way to instantiate x-positions
 
-	public void buildShapes(Map<String, Double> heights, Map<String, Double> widths){
-		//TODO horizontal ordering: alphabetical String.compareTo(otherString)
+	}
+	
+	public void getYPositions(){
+		//TODO create way to instantiate y-positions
 		//TODO vertical ordering: hierarchy + height= max height of yMetric of that row
+	}
+	
+	public void createLines(){
+		for(Shape shape:this.shapes){
 
-		for(Shape shape : this.shapes){
-
-			shape.draw(this.builder);
 		}
 	}
 	
-	public void buildLines(BoxTree dependencyTree){
-		for(Shape shape:this.shapes){
-			
-		}
-	}
 }

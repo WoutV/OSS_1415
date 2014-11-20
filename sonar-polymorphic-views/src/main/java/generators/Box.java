@@ -12,6 +12,6 @@ public class Box extends Shape {
 
 	@Override
 	public void draw(ChartBuilder builder) {
-		builder.createRectangleFittedToAxes(this.getxPos(),this.getyPos(), (int) this.getHeight(),(int) this.getWidth(), this.getColor(), this.getName());
+		builder.createRectangle(this.getxPos(),this.getyPos(), (int) this.getHeight(),(int) this.getWidth(), this.getColor(), this.getName());
 	}
 }

@@ -116,7 +116,7 @@ public class Java2DBuilder implements ChartBuilder {
 	 * @param xMax The maximum value of the input. 
 	 */
 	@Override
-	public void createXAxis(String label, int xMin, int xMax) {
+	public void createXAxis(String label, int xMin, int xMax, int minLabel, int maxLabel) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
 		this.minX = xMin;
@@ -128,8 +128,8 @@ public class Java2DBuilder implements ChartBuilder {
 		int pos = graphics.getFontMetrics().getMaxAscent();
 		graphics.setColor(Color.BLACK);
 		drawCenteredString(label, (int) (start+(stop-start)/2), (int) (height+pos));
-		graphics.drawString(""+xMin, (int) (start), (int) (height+pos));
-		graphics.drawString(""+xMax, (int) (stop), (int) (height+pos));
+		graphics.drawString(""+minLabel, (int) (start), (int) (height+pos));
+		graphics.drawString(""+maxLabel, (int) (stop), (int) (height+pos));
 	}
 
 	/**
@@ -145,7 +145,7 @@ public class Java2DBuilder implements ChartBuilder {
 	 * @param yMax The maximum value of the input. 
 	 */
 	@Override
-	public void createYAxis(String label, int yMin, int yMax) {
+	public void createYAxis(String label, int yMin, int yMax, int minLabel, int maxLabel) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
 		this.minY = yMin;
@@ -157,8 +157,8 @@ public class Java2DBuilder implements ChartBuilder {
 		int pos = graphics.getFontMetrics().getMaxDescent();
 		graphics.setColor(Color.BLACK);
 		drawVerticalString(label, (int) (width-pos), (int) (start+(stop-start)/2), -Math.PI/2);
-		drawVerticalString(""+yMin, (int) (width-pos), (int) (start+0.99*(stop-start)), -Math.PI/2);
-		drawVerticalString(""+yMax, (int) (width-pos), (int) (start+0.01*(stop-start)), -Math.PI/2);
+		drawVerticalString(""+minLabel, (int) (width-pos), (int) (start+0.99*(stop-start)), -Math.PI/2);
+		drawVerticalString(""+maxLabel, (int) (width-pos), (int) (start+0.01*(stop-start)), -Math.PI/2);
 	}
 
 	/**
