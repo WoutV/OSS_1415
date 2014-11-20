@@ -8,7 +8,7 @@ core,true,sonar-core-plugin-3.7.4.jar|ce3f6e1a4e6ad406c0714bdafffccd7b
 findbugs,false,sonar-findbugs-plugin-1.3.jar|b346b723ea4e3da0fc12fca7f574bd45
 java,false,sonar-java-plugin-1.3.jar|8363b2f715e5492867f22bddda5856e6
 mavenbatch,true,sonar-maven-batch-plugin-3.7.4.jar|d20d7aa9925a097166bc8f22f94e55fa
-polymorphicviews,false,sonar-polymorphic-views-1.0-SNAPSHOT.jar|b517de9bd4613579b3325c134798646a
+polymorphicviews,false,sonar-polymorphic-views-1.0-SNAPSHOT.jar|e064f1ac6bce25d2b3b1e8867f686e4a
 cpd,true,sonar-cpd-plugin-3.7.4.jar|00a6f9aaed07c36f1de8f4d42fae6a8e
 design,true,sonar-design-plugin-3.7.4.jar|9f095fd8a78513420d74462a396a1e16
 l10nen,true,sonar-l10n-en-plugin-3.7.4.jar|d2b2725baaf4164b126b7a90616c8613

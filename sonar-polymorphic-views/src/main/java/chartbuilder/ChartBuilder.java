@@ -78,20 +78,4 @@ public interface ChartBuilder {
 
 	public void createRectangle(int xPosition, int yPosition, int height, int width, Color color, String label);
 
-	/**
-	 * This method will draw a rectangle with its label on the current canvas, positioned correctly with respect to the axes.
-	 * The rectangle has a black border and the label will be centered above the rectangle.
-	 * 
-	 * Precondition: The current canvas should already have axes.
-	 * 
-	 * @param xPosition The x-coordinate of the upper left corner.
-	 * @param yPosition The y-coordinate of the upper left corner.
-	 * @param height The height of the rectangle.
-	 * @param width The width of the rectangle.
-	 * @param color The color of the rectangle.
-	 * @param label The label above the rectangle.
-	 */
-	public void createRectangleFittedToAxes(int xPosition, int yPosition, int height,
-			int width, Color color, String label);
-
 }

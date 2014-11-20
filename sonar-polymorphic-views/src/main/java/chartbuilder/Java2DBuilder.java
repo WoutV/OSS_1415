@@ -20,15 +20,10 @@ import java.awt.image.BufferedImage;
  */
 public class Java2DBuilder implements ChartBuilder {
 	
-	//TODO Interface commentaar en niet deze klasse! 
 	protected BufferedImage canvas;
 	private int canvasWidth;
 	private int canvasHeight;
-	private final static double SCALE = 0.9;
-	private double minX;
-	private double maxX;
-	private double minY;
-	private double maxY;
+	private final static double SCALE = 0.8;
 	
 	/**
 	 * Creates an instance of this class.
@@ -64,6 +59,15 @@ public class Java2DBuilder implements ChartBuilder {
 		return result;
 	}
 	
+	private int scaleX(int x) {
+		int result = (int) (x*SCALE+(1-SCALE)/2*getCanvasWidth());
+		return result;
+	}
+	
+	private int scaleY(int y) {
+		int result = (int) (fixY(y)*SCALE+(1-SCALE)/2*getCanvasHeight());
+		return result;
+	}
 	
 	/**
 	 * Sets the canvas of this builder.
@@ -100,7 +104,6 @@ public class Java2DBuilder implements ChartBuilder {
 		graphics.setColor(Color.WHITE);
 		graphics.fillRect(0, 0, width, height);
 		setCanvas(img);
-		
 	}
 
 	/**
@@ -119,16 +122,14 @@ public class Java2DBuilder implements ChartBuilder {
 	public void createXAxis(String label, int xMin, int xMax, int minLabel, int maxLabel) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
-		this.minX = xMin;
-		this.maxX = xMax;
-		double start = 0.1*getCanvasWidth();
-		double stop = 0.9*getCanvasWidth();
-		double height = 0.9*getCanvasHeight();
+		double start = (1-SCALE)/2*getCanvasWidth();
+		double stop = (1-(1-SCALE)/2)*getCanvasWidth();
+		double height = (1-(1-SCALE)/2)*getCanvasHeight();
 		drawHorizontalAxis(start, stop, height);
 		int pos = graphics.getFontMetrics().getMaxAscent();
 		graphics.setColor(Color.BLACK);
 		drawCenteredString(label, (int) (start+(stop-start)/2), (int) (height+pos));
-		graphics.drawString(""+minLabel, (int) (start), (int) (height+pos));
+		graphics.drawString(""+minLabel, (int) (start+1), (int) (height+pos));
 		graphics.drawString(""+maxLabel, (int) (stop), (int) (height+pos));
 	}
 
@@ -148,17 +149,15 @@ public class Java2DBuilder implements ChartBuilder {
 	public void createYAxis(String label, int yMin, int yMax, int minLabel, int maxLabel) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
-		this.minY = yMin;
-		this.maxY = yMax;
-		double start = 0.1*getCanvasHeight();
-		double stop = 0.9*getCanvasHeight();
-		double width = 0.1*getCanvasWidth();
+		double start = (1-SCALE)/2*getCanvasHeight();
+		double stop = (1-(1-SCALE)/2)*getCanvasHeight();
+		double width = (1-SCALE)/2*getCanvasWidth();
 		drawVerticalAxis(start, stop, width);
 		int pos = graphics.getFontMetrics().getMaxDescent();
 		graphics.setColor(Color.BLACK);
-		drawVerticalString(label, (int) (width-pos), (int) (start+(stop-start)/2), -Math.PI/2);
-		drawVerticalString(""+minLabel, (int) (width-pos), (int) (start+0.99*(stop-start)), -Math.PI/2);
-		drawVerticalString(""+maxLabel, (int) (width-pos), (int) (start+0.01*(stop-start)), -Math.PI/2);
+		drawVerticalString(label, (int) (width-pos), (int) (start+(stop-start)/2), -Math.PI/2, true);
+		drawVerticalString(""+minLabel, (int) (width-pos), (int) (stop-1), -Math.PI/2, false);
+		drawVerticalString(""+maxLabel, (int) (width-pos), (int) (start), -Math.PI/2, false);
 	}
 
 	/**
@@ -173,10 +172,8 @@ public class Java2DBuilder implements ChartBuilder {
 	public void createLine(int x1, int y1, int x2, int y2) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
-		int newY1 = (int) fixY(y1);
-		int newY2 = (int) fixY(y2);
 		graphics.setColor(Color.BLACK);
-		graphics.drawLine(x1, newY1, x2, newY2);
+		graphics.drawLine(scaleX(x1), scaleY(y1), scaleX(x2), scaleY(y2));
 	}
 
 	/**
@@ -192,19 +189,19 @@ public class Java2DBuilder implements ChartBuilder {
 	 * @param color The color of the rectangle.
 	 * @param label The label above the rectangle.
 	 */
-	@Override
-	public void createRectangleFittedToAxes(int xPosition, int yPosition, int height,
-			int width, Color color, String label) {
-		double startX = 0.1*getCanvasHeight();
-		double startY = 0.1*getCanvasWidth();
-		
-		int newX = (int) (startX + ((xPosition-this.minX)*0.8*getCanvasWidth()/Math.abs(maxX-minX)));
-		int newY = (int) fixY(startY + ((yPosition-this.minY)*0.8*getCanvasHeight()/Math.abs(maxY-minY)));
-		
-		
-		drawRectangle(newX-width/2, newY-height/2, width, height, color);
-		drawCenteredString(label, newX, newY-height/2 -1);
-	}
+//	@Override
+//	public void createRectangleFittedToAxes(int xPosition, int yPosition, int height,
+//			int width, Color color, String label) {
+//		double startX = 0.1*getCanvasHeight();
+//		double startY = 0.1*getCanvasWidth();
+//		
+//		int newX = (int) (startX + ((xPosition-this.minX)*0.8*getCanvasWidth()/Math.abs(maxX-minX)));
+//		int newY = (int) fixY(startY + ((yPosition-this.minY)*0.8*getCanvasHeight()/Math.abs(maxY-minY)));
+//		
+//		
+//		drawRectangle(newX-width/2, newY-height/2, width, height, color);
+//		drawCenteredString(label, newX, newY-height/2 -1);
+//	}
 	
 	/**
 	 * This method will draw a rectangle with its label on the current canvas.
@@ -220,9 +217,10 @@ public class Java2DBuilder implements ChartBuilder {
 	@Override
 	public void createRectangle(int xPosition, int yPosition, int height,
 			int width, Color color, String label) {
-		int newY = (int) fixY(yPosition);
-		drawRectangle(xPosition-width/2, newY-height/2, width, height, color);
-		drawCenteredString(label, xPosition, newY-height/2-1);
+		int newX = scaleX(xPosition);
+		int newY = scaleY(yPosition);
+		drawRectangle(newX-width/2, newY-height/2, width, height, color);
+		drawCenteredString(label, newX, newY-height/2-1);
 	}
 
 	
@@ -295,6 +293,7 @@ public class Java2DBuilder implements ChartBuilder {
 		drawArrowHead(line);
 	}
 	
+	//TODO commentaar
 	/**
 	 * This method will draw a string that is rotated.
 	 * 
@@ -303,16 +302,23 @@ public class Java2DBuilder implements ChartBuilder {
 	 * @param y The y-coordinate of the center.
 	 * @param angle The angle, in radians, the string will be rotated over to the right.
 	 */
-	private void drawVerticalString(String label, int x, int y, double angle) {
+	private void drawVerticalString(String label, int x, int y, double angle, boolean centered) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
 		AffineTransform original = graphics.getTransform();
 		graphics.rotate(angle);
 		int width = graphics.getFontMetrics().stringWidth(label);
 		graphics.setColor(Color.BLACK);
-		graphics.drawString(label, -y, x);
+		if (centered) {
+			graphics.drawString(label, -y-width/2, x);
+		}
+		else {
+			graphics.drawString(label, -y, x);
+		}
 		graphics.setTransform(original);
 	}
+	
+	
 	
 	/**
 	 * This method will draw an arrowhead on the end of a line, pointing away of the line. 

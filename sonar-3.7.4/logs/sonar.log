@@ -307,3 +307,299 @@ undefined method `map' for nil:NilClass
 	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/adapter/rails.rb:39:in `call'
 	file:/home/wout/Desktop/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/handler/servlet.rb:22:in `call'
 
+STATUS | wrapper  | 2014/11/20 13:57:27 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/20 13:57:28 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/20 13:57:28 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/20 13:57:28 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/20 13:57:28 | 
+INFO   | jvm 1    | 2014/11/20 13:57:29 | 2014-11-20 13:57:29.665:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.20 13:57:34 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 13:57:34 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.20 13:57:36 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4
+2014.11.20 13:57:36 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy
+2014.11.20 13:57:37 INFO  org.sonar.INFO  Install plugins...
+2014.11.20 13:57:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 13:57:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 13:57:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 13:57:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 13:57:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 13:57:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 13:57:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 13:57:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 13:57:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 13:57:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 13:57:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.20 13:57:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 13:57:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 13:57:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 13:57:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 13:57:37 INFO  org.sonar.INFO  Install plugins done: 571 ms
+2014.11.20 13:57:38 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.20 13:57:38 INFO  org.sonar.INFO  Start components...
+2014.11.20 13:57:38 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.20 13:57:41 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.20 13:57:41 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.20 13:57:41 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.20 13:57:41 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.20 13:57:41 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.20 13:57:42 INFO  org.sonar.INFO  Deploy GWT plugins done: 486 ms
+2014.11.20 13:57:42 INFO  org.sonar.INFO  Load metrics...
+2014.11.20 13:57:42 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.20 13:57:43 INFO  org.sonar.INFO  Load metrics done: 785 ms
+2014.11.20 13:57:43 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.20 13:57:44 INFO  org.sonar.INFO  Register rules [pmd/java] done: 932 ms
+2014.11.20 13:57:44 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.20 13:57:44 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 42 ms
+2014.11.20 13:57:44 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.20 13:57:44 INFO  org.sonar.INFO  Register rules [squid/java] done: 282 ms
+2014.11.20 13:57:44 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.20 13:57:47 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 2484 ms
+2014.11.20 13:57:47 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.20 13:57:48 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 1775 ms
+2014.11.20 13:57:48 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.20 13:57:48 INFO  org.sonar.INFO  Register rules [common-java/java] done: 21 ms
+2014.11.20 13:57:48 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.20 13:57:49 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.20 13:57:52 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 3015 ms
+2014.11.20 13:57:52 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.20 13:57:52 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 1 ms
+2014.11.20 13:57:53 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.20 13:57:53 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 8 ms
+2014.11.20 13:57:53 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.20 13:57:53 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 28 ms
+2014.11.20 13:57:53 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.20 13:57:53 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 4 ms
+2014.11.20 13:57:53 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.20 13:57:53 INFO  org.sonar.INFO  Start components done: 14822 ms
+2014.11.20 13:57:53 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_25) [Windows 7-amd64-java]
+2014.11.20 13:57:53 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/20 13:58:02 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/20 13:58:02 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/20 13:58:15 | 2014-11-20 13:58:15.780:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/20 13:58:16 | 2014-11-20 13:58:16.015:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.20 13:58:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.20 13:58:21 INFO  g.BoxGenerator  Creating scatterplot...
+2014.11.20 13:58:32 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generated!
+2014.11.20 13:58:32 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.20 13:58:33 INFO  g.BoxGenerator  Creating scatterplot...
+2014.11.20 13:58:40 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generated!
+2014.11.20 13:59:02 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.20 13:59:02 INFO  g.BoxGenerator  Creating scatterplot...
+2014.11.20 13:59:09 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generated!
+2014.11.20 13:59:11 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.20 13:59:11 INFO  g.BoxGenerator  Creating scatterplot...
+2014.11.20 13:59:13 ERROR o.s.s.ui.JRubyFacade  Fail to render: http://localhost:9000/dashboard/configure?did=5
+undefined method `map' for nil:NilClass
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/dashboard_controller.rb:213:in `load_widget_definitions'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/dashboard_controller.rb:46:in `configure'
+	org/jruby/RubyKernel.java:2105:in `send'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:1333:in `perform_action'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:617:in `call_filters'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:610:in `perform_action_with_filters'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activesupport-2.3.15/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+	file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activesupport-2.3.15/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/rescue.rb:160:in `perform_action_with_rescue'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/flash.rb:151:in `perform_action_with_flash'
+	org/jruby/RubyKernel.java:2105:in `send'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:532:in `process'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:606:in `process_with_filters'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:391:in `process'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:386:in `call'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/routing/route_set.rb:438:in `call'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:87:in `dispatch'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:85:in `dispatch'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:121:in `_call'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+	org/jruby/RubyProc.java:270:in `call'
+	org/jruby/RubyProc.java:220:in `call'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:29:in `call'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:9:in `cache'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:28:in `call'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/string_coercion.rb:25:in `call'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/head.rb:9:in `call'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/methodoverride.rb:24:in `call'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/params_parser.rb:15:in `call'
+	file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/jruby/rack/session_store.rb:70:in `context'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/session/abstract/id.rb:58:in `call'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/failsafe.rb:26:in `call'
+	C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:106:in `call'
+	file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/adapter/rails.rb:34:in `serve_rails'
+	file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/adapter/rails.rb:39:in `call'
+	file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/handler/servlet.rb:22:in `call'
+
+2014.11.20 13:59:16 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.20 13:59:16 INFO  g.BoxGenerator  Creating scatterplot...
+2014.11.20 13:59:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generated!
+2014.11.20 13:59:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generated!
+STATUS | wrapper  | 2014/11/20 14:36:35 | CTRL-C trapped.  Shutting down.
+INFO   | jvm 1    | 2014/11/20 14:36:35 | 2014-11-20 14:36:35.865:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@0.0.0.0:9000
+INFO   | jvm 1    | 2014/11/20 14:36:35 | 2014-11-20 14:36:35.866:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+2014.11.20 14:36:36 INFO  org.sonar.INFO  Stop sonar...
+2014.11.20 14:36:36 INFO  o.s.s.n.NotificationService  Notification service stopped
+2014.11.20 14:36:36 INFO  org.sonar.INFO  Stop sonar done: 6 ms
+INFO   | jvm 1    | 2014/11/20 14:36:36 | 2014-11-20 14:36:36.905:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/20 14:36:37 | Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=128m; support was removed in 8.0
+STATUS | wrapper  | 2014/11/20 14:36:37 | <-- Wrapper Stopped
+STATUS | wrapper  | 2014/11/20 14:36:40 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/20 14:36:40 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/20 14:36:41 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/20 14:36:41 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/20 14:36:41 | 
+INFO   | jvm 1    | 2014/11/20 14:36:42 | 2014-11-20 14:36:42.035:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.20 14:36:46 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 14:36:46 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.20 14:36:48 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4
+2014.11.20 14:36:48 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy
+2014.11.20 14:36:48 INFO  org.sonar.INFO  Install plugins...
+2014.11.20 14:36:48 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 14:36:49 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 14:36:49 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 14:36:49 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 14:36:49 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 14:36:49 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 14:36:49 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 14:36:49 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 14:36:49 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 14:36:49 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 14:36:49 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.20 14:36:49 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 14:36:49 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 14:36:49 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 14:36:49 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 14:36:49 INFO  org.sonar.INFO  Install plugins done: 502 ms
+2014.11.20 14:36:49 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.20 14:36:50 INFO  org.sonar.INFO  Start components...
+2014.11.20 14:36:50 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.20 14:36:53 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.20 14:36:53 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.20 14:36:53 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.20 14:36:53 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.20 14:36:54 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.20 14:36:54 INFO  org.sonar.INFO  Deploy GWT plugins done: 509 ms
+2014.11.20 14:36:54 INFO  org.sonar.INFO  Load metrics...
+2014.11.20 14:36:55 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.20 14:36:55 INFO  org.sonar.INFO  Load metrics done: 786 ms
+2014.11.20 14:36:55 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.20 14:36:56 INFO  org.sonar.INFO  Register rules [pmd/java] done: 949 ms
+2014.11.20 14:36:56 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.20 14:36:56 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 37 ms
+2014.11.20 14:36:56 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.20 14:36:56 INFO  org.sonar.INFO  Register rules [squid/java] done: 305 ms
+2014.11.20 14:36:56 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.20 14:36:59 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 2447 ms
+2014.11.20 14:36:59 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.20 14:37:00 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 1435 ms
+2014.11.20 14:37:00 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.20 14:37:00 INFO  org.sonar.INFO  Register rules [common-java/java] done: 5 ms
+2014.11.20 14:37:00 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.20 14:37:01 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.20 14:37:03 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 2726 ms
+2014.11.20 14:37:03 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.20 14:37:03 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 1 ms
+2014.11.20 14:37:04 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.20 14:37:04 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 6 ms
+2014.11.20 14:37:04 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.20 14:37:04 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 27 ms
+2014.11.20 14:37:04 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.20 14:37:04 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 3 ms
+2014.11.20 14:37:04 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.20 14:37:04 INFO  org.sonar.INFO  Start components done: 14631 ms
+2014.11.20 14:37:04 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_25) [Windows 7-amd64-java]
+2014.11.20 14:37:04 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/20 14:37:14 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/20 14:37:14 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/20 14:37:27 | 2014-11-20 14:37:27.391:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/20 14:37:27 | 2014-11-20 14:37:27.590:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.20 14:37:28 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.20 14:37:31 INFO  g.BoxGenerator  Creating scatterplot...
+2014.11.20 14:37:42 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generated!
+2014.11.20 14:37:42 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.20 14:37:43 INFO  g.BoxGenerator  Creating scatterplot...
+2014.11.20 14:37:50 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generated!
+STATUS | wrapper  | 2014/11/20 14:38:23 | CTRL-C trapped.  Shutting down.
+INFO   | jvm 1    | 2014/11/20 14:38:24 | 2014-11-20 14:38:24.016:INFO:oejs.Server:Graceful shutdown SelectChannelConnector@0.0.0.0:9000
+INFO   | jvm 1    | 2014/11/20 14:38:24 | 2014-11-20 14:38:24.016:INFO:oejs.Server:Graceful shutdown o.e.j.w.WebAppContext{/,file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+2014.11.20 14:38:25 INFO  org.sonar.INFO  Stop sonar...
+2014.11.20 14:38:25 INFO  o.s.s.n.NotificationService  Notification service stopped
+2014.11.20 14:38:25 INFO  org.sonar.INFO  Stop sonar done: 10 ms
+INFO   | jvm 1    | 2014/11/20 14:38:25 | 2014-11-20 14:38:25.069:INFO:oejsh.ContextHandler:stopped o.e.j.w.WebAppContext{/,file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/20 14:38:25 | Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=128m; support was removed in 8.0
+STATUS | wrapper  | 2014/11/20 14:38:25 | <-- Wrapper Stopped
+STATUS | wrapper  | 2014/11/20 14:39:28 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/20 14:39:28 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/20 14:39:29 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/20 14:39:29 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/20 14:39:29 | 
+INFO   | jvm 1    | 2014/11/20 14:39:29 | 2014-11-20 14:39:29.923:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.20 14:39:34 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 14:39:34 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.20 14:39:37 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4
+2014.11.20 14:39:37 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy
+2014.11.20 14:39:37 INFO  org.sonar.INFO  Install plugins...
+2014.11.20 14:39:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 14:39:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 14:39:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 14:39:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 14:39:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 14:39:37 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 14:39:38 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 14:39:38 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 14:39:38 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 14:39:38 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 14:39:38 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.20 14:39:38 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 14:39:38 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 14:39:38 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.20 14:39:38 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.20 14:39:38 INFO  org.sonar.INFO  Install plugins done: 710 ms
+2014.11.20 14:39:38 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.20 14:39:39 INFO  org.sonar.INFO  Start components...
+2014.11.20 14:39:39 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.20 14:39:42 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.20 14:39:43 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.20 14:39:43 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.20 14:39:43 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.20 14:39:43 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Yannick\Documents\GitHub\OSS_1415\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.20 14:39:43 INFO  org.sonar.INFO  Deploy GWT plugins done: 476 ms
+2014.11.20 14:39:43 INFO  org.sonar.INFO  Load metrics...
+2014.11.20 14:39:44 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.20 14:39:44 INFO  org.sonar.INFO  Load metrics done: 813 ms
+2014.11.20 14:39:44 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.20 14:39:45 INFO  org.sonar.INFO  Register rules [pmd/java] done: 974 ms
+2014.11.20 14:39:45 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.20 14:39:45 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 43 ms
+2014.11.20 14:39:45 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.20 14:39:45 INFO  org.sonar.INFO  Register rules [squid/java] done: 287 ms
+2014.11.20 14:39:45 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.20 14:39:48 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 2492 ms
+2014.11.20 14:39:48 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.20 14:39:49 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 1510 ms
+2014.11.20 14:39:49 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.20 14:39:49 INFO  org.sonar.INFO  Register rules [common-java/java] done: 6 ms
+2014.11.20 14:39:49 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.20 14:39:50 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.20 14:39:53 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 2689 ms
+2014.11.20 14:39:53 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.20 14:39:53 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 1 ms
+2014.11.20 14:39:53 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.20 14:39:53 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 7 ms
+2014.11.20 14:39:53 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.20 14:39:53 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 29 ms
+2014.11.20 14:39:53 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.20 14:39:53 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 4 ms
+2014.11.20 14:39:53 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.20 14:39:53 INFO  org.sonar.INFO  Start components done: 14920 ms
+2014.11.20 14:39:54 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_25) [Windows 7-amd64-java]
+2014.11.20 14:39:54 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/20 14:40:02 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/20 14:40:02 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/20 14:40:15 | 2014-11-20 14:40:15.522:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Yannick/Documents/GitHub/OSS_1415/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/20 14:40:15 | 2014-11-20 14:40:15.724:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+2014.11.20 14:40:25 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.20 14:40:27 INFO  g.BoxGenerator  Creating scatterplot...
+2014.11.20 14:40:39 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generated!
