@@ -1,4 +1,6 @@
-package generators;
+package generatorsTest;
+
+import generators.MeasureFetcher;
 
 import java.util.HashMap;
 import java.util.List;
