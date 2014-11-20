@@ -43,14 +43,20 @@ public class MeasureFetcher {
 		return allValues;
 	}
 	
-	public BoxTree getDependencyTree(){
-		BoxTree dependencyTree;
+	public List<BoxTree> getDependencyTree(){
+		List<BoxTree> dependencyTrees= new ArrayList<BoxTree>();
 		for(Resource resource: resources){
+			BoxTree dependencyTree;
 			List<Dependency> dependencies= sonar.findOutgoingDependencies(resource);
+			for(Dependency dependency: dependencies){
+				
+			}
 			//for()
 		}
 		return null;
 	}
+	
+	public BoxTree
 	
 	
 	/**
