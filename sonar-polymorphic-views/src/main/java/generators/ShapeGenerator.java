@@ -77,8 +77,9 @@ public abstract class ShapeGenerator {
 	 * @return a list with the scaled color values
 	 */
 	private List<Color> getGrayScaleColors(Double min, Double max, String key) throws IllegalArgumentException{
+		//TODO hoe werkt dees eigenlijk. vage opgave
 		Map<String, Double> colors = measureFetcher.getMeasureValues(key);
-		Map<String, Double> scaledColors = Util.scale(colors, min, max);
+		Map<String, Double> scaledColors = Util.scale(colors, 0.0, 255.0);
 
 		List<Color> result = new ArrayList<Color>();
 		try{
