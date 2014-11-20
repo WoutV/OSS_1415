@@ -10,15 +10,23 @@ public class BoxTree {
 		this.startNode=startNode;
 		this.nodes=nodes;
 	}
+	
+	public BoxTree(BoxTreeNode startNode){
+		this.startNode = startNode;
+	}
+	
 	public BoxTreeNode getStartnode() {
 		return startNode;
 	}
+	
 	public void setStartnode(BoxTreeNode startNode) {
 		this.startNode = startNode;
 	}
+	
 	public List<BoxTreeNode> getNodes() {
 		return nodes;
 	}
+	
 	public void setNodes(List<BoxTreeNode> nodes) {
 		this.nodes = nodes;
 	}

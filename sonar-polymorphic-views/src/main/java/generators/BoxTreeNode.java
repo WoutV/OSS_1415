@@ -1,15 +1,21 @@
 package generators;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BoxTreeNode {
 
 	String name;
 	Shape shape;
-	List<BoxTreeNode> children;
+	List<BoxTreeNode> children = new ArrayList<BoxTreeNode>();
+	
 	public BoxTreeNode(String name, List<BoxTreeNode> children){
 		this.name=name;
 		this.children=children;
+	}
+	
+	public BoxTreeNode(String name){
+		this.name = name;
 	}
 	
 	public Shape getShape() {
