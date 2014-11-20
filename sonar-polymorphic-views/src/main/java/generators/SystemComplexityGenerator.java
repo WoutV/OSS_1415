@@ -17,7 +17,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	private String boxWidth;
 	private String boxColor;
 	private List<Shape> shapes;//The collection of shapes, displayed on the view
-	private List<BoxTree> dependencyTrees;
+	private List<ShapeTree> dependencyTrees;
 	
 	
 	/** 

@@ -27,7 +27,7 @@ public class PolymorphicChartParameters {
 	public static String DEFAULT_PARENT; // TODO aanpassen
 	public static String DEFAULT_XMETRIC ;
 	public static String DEFAULT_YMETRIC;
-	private Map<String, String> params;
+	private Map<String, String> params = new HashMap<String, String>();
 	private static final String[] properties = {"resources","parent","type","xmetric","ymetric","size","boxwidth","boxheight","boxcolor"};
 
 	
