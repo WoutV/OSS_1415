@@ -24,38 +24,37 @@ public interface ChartBuilder {
 	
 	/**
 	 * This method will draw an x-axis, pointed to the right.
-	 * The x-axis has a centered label and a minimum and maximum value is showed.
-	 * The minimum value will be the start point on the x-axis and the maximum value will be the end point on the x-axis.
-	 * The start of the x-axis will always be drawn 10% of the total width of the canvas to the right of the left border of the canvas.
-	 * The end of the x-axis will always be drawn 10% of the total width of the canvas to the left of the left border of the canvas.
-	 * The x-axis will always be drawn 10% of the total height of the canvas to the top of the bottom border of the canvas.
+	 * The x-axis has a centered label and a minimum label and maximum label are showed.
+	 * The start of the x-axis will always be drawn an amount to the right of the left border of the canvas.
+	 * The end of the x-axis will always be drawn an amount to the left of the right border of the canvas.
+	 * The x-axis will always be drawn an amount to the top of the bottom border of the canvas.
 	 * 
 	 * @param label The label shown with the x-axis.
-	 * @param xMin The minimum value of the input. 
-	 * @param xMax The maximum value of the input. 
-	 * 
-	 * TODO commentaar aanpassen
+	 * @param xMin The start of the x-axis. 
+	 * @param xMax The end value of the x-axis. 
+	 * @param minLabel The minimum value showed at the start of the x-axis.
+	 * @param maxLabel The maximum value showed at the end of the x-axis.
 	 */
 	public void createXAxis(String label, int xMin, int xMax, int minLabel, int maxLabel);
 	
 	/**
 	 * This method will draw an y-axis, pointed upwards.
-	 * The y-axis has a centered label and a minimum and maximum value is showed.
-	 * The minimum value will be the start point on the y-axis and the maximum value will be the end point on the y-axis.
-	 * The start of the y-axis will always be drawn 10% of the total height of the canvas to the top of the bottom border of the canvas.
-	 * The end of the y-axis will always be drawn 10% of the total height of the canvas to the bottom of the top border of the canvas.
-	 * The y-axis will always be drawn 10% of the total width of the canvas to the right of the left border of the canvas.
+	 * The y-axis has a centered label and a minimum label and maximum label are showed.
+	 * The start of the y-axis will always be drawn an amount to the top of the bottom border of the canvas.
+	 * The end of the y-axis will always be drawn an amount to the bottom of the top border of the canvas.
+	 * The y-axis will always be drawn an amount to the right of the left border of the canvas.
 	 * 
 	 * @param label The label shown with the y-axis.
-	 * @param yMin The minimum value of the input. 
-	 * @param yMax The maximum value of the input. 
-	 * 
-	 *TODO commentaar aanpassen
+	 * @param yMin The start of the y-axis. 
+	 * @param yMax The end value of the y-axis. 
+	 * @param minLabel The minimum value showed at the start of the y-axis.
+	 * @param maxLabel The maximum value showed at the end of the y-axis.
 	 */
 	public void createYAxis(String label, int yMin, int yMax, int minLabel, int maxLabel);
 	
 	/**
-	 * This method will draw a line between two points on the current canvas.
+	 * This method will draw a line between two points on the current canvas. 
+	 * This line is scaled and translated to take into account the borders of the canvas.
 	 * 
 	 * @param x1 x-coordinate of start point.
 	 * @param y1 y-coordinate of start point.
@@ -65,33 +64,16 @@ public interface ChartBuilder {
 	public void createLine(int x1, int y1, int x2, int y2);
 	
 	/**
-	 * This method will draw a rectangle with its label on the current canvas.
+	 * This method will draw a rectangle with its label on the current canvas, positioned correctly with respect to the borders of the canvas.
 	 * The rectangle has a black border and the label will be centered above the rectangle.
 	 * 
-	 * @param xPosition The x-coordinate of the upper left corner.
-	 * @param yPosition The y-coordinate of the upper left corner.
+	 * @param xPosition The x-coordinate of center of the rectangle.
+	 * @param yPosition The y-coordinate of the center of the rectangle.
 	 * @param height The height of the rectangle.
 	 * @param width The width of the rectangle.
 	 * @param color The color of the rectangle.
 	 * @param label The label above the rectangle.
 	 */
-
 	public void createRectangle(int xPosition, int yPosition, int height, int width, Color color, String label);
-
-	/**
-	 * This method will draw a rectangle with its label on the current canvas, positioned correctly with respect to the axes.
-	 * The rectangle has a black border and the label will be centered above the rectangle.
-	 * 
-	 * Precondition: The current canvas should already have axes.
-	 * 
-	 * @param xPosition The x-coordinate of the upper left corner.
-	 * @param yPosition The y-coordinate of the upper left corner.
-	 * @param height The height of the rectangle.
-	 * @param width The width of the rectangle.
-	 * @param color The color of the rectangle.
-	 * @param label The label above the rectangle.
-	 */
-	public void createRectangleFittedToAxes(int xPosition, int yPosition, int height,
-			int width, Color color, String label);
 
 }

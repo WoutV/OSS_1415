@@ -47,23 +47,25 @@ public class MeasureFetcher {
 	public List<ShapeTree> getDependencyTrees(){
 		List<ShapeTree> dependencyTrees= new ArrayList<ShapeTree>();
 		for(Resource resource: resources){ //loop over main nodes and build a tree for each main node
-			ShapeTreeNode master = new ShapeTreeNode(resource.getName());//create master node
+			ShapeTreeNode master = new ShapeTreeNode(resource.getName(),0);//create master node
 			ShapeTree tree = new ShapeTree(master);//create tree for master node
-			tree = fillTree(resource, tree);//createTree recursively
+			tree = fillTree(resource, tree, 1);//createTree recursively
 			dependencyTrees.add(tree);
 		}
 		return dependencyTrees;
 	}
 	
-	public ShapeTree fillTree(Resource resource, ShapeTree tree){
+	public ShapeTree fillTree(Resource resource, ShapeTree tree, int level){
 		List<Dependency> dependencies= sonar.findOutgoingDependencies(resource); //get dependencies for a resource
 		for(Dependency dependency: dependencies){//loop over all found resources
-			String toResourceKey = dependency.getToResourceKey();//get the key of every resource of a dependency
-			Resource res = sonar.findResource(toResourceKey);//find the resource with the key
-			resources.add(res);// add this resource to resources
-			ShapeTreeNode node = new ShapeTreeNode(res.getName());//create node for resource
-			tree.addNode(node);//add resource to tree
-			tree = fillTree(res, tree);//and do whole thing again for each resource
+			if(!dependency.getType().toString().equals("USES")){
+				String toResourceKey = dependency.getToResourceKey();//get the key of every resource of a dependency
+				Resource res = sonar.findResource(toResourceKey);//find the resource with the key
+				resources.add(res);// add this resource to resources
+				ShapeTreeNode node = new ShapeTreeNode(res.getName(), level);//create node for resource
+				tree.addNode(node);//add resource to tree
+				tree = fillTree(res, tree, level++);//and do whole thing again for each resource
+			}
 		}
 		return tree; // return tree
 	}
@@ -78,12 +80,10 @@ public class MeasureFetcher {
 		switch (resourceType){
 		case "packages":
 			 List<Resource> packages = sonar.findPackages(parent);
-			 PolymorphicChartParameters.DEFAULT_PARENT=packages.get(0).getKey();
 			 return packages;
 		
 		case "classes":
 			 List<Resource> classes = sonar.findClasses(parent);
-			 PolymorphicChartParameters.DEFAULT_PARENT=classes.get(0).getKey();
 			 return classes;
 		}
 		return null;
