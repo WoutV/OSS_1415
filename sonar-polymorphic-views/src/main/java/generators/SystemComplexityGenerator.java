@@ -31,14 +31,14 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		this.boxHeight = polyParams.getBoxHeight();
 		this.boxWidth = polyParams.getBoxWidth();
 		this.boxColor = polyParams.getBoxColor();
-		this.dependencyTrees= measureFetcher.getDependencyTrees();
-		ShapeGenerator boxGenerator = new BoxGenerator(measureFetcher,polyParams);
-		shapes.addAll(Arrays.asList(boxGenerator.getShapes()));
+	//	this.dependencyTrees= measureFetcher.getDependencyTrees();
+	//	ShapeGenerator boxGenerator = new BoxGenerator(measureFetcher,polyParams);
+	//	shapes.addAll(Asrrays.asList(boxGenerator.getShapes()));
 	}
 
 	
 	/**
-	 * This method generates the image to be displayed as view
+	 * This method generates the image to be dsisplayed as view
 	 * @return the systemcomplexity view as requested as a BuffereredImage
 	 */
 	@Override
