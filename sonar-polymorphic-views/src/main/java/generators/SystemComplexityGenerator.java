@@ -11,7 +11,7 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 
 	//TODO which attributes can be placed in superclass?
-	private int width;
+	private int width;//TODO make self-generated
 	private int height;
 	private String boxHeight;
 	private String boxWidth;
