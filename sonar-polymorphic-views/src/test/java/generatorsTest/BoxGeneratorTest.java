@@ -1,6 +1,8 @@
 package generatorsTest;
 
-import static org.easymock.EasyMock.*;
+import static org.easymock.EasyMock.createMockBuilder;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import generators.BoxGenerator;
@@ -13,9 +15,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.easymock.EasyMock;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.sonar.api.charts.ChartParameters;
 
