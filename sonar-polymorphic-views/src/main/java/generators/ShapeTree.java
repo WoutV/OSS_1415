@@ -5,25 +5,26 @@ import java.util.List;
 
 public class ShapeTree {
 	
-	private ShapeTreeNode startNode;
+	private ShapeTreeNode root;
 	
 	private List<ShapeTreeNode> nodes = new ArrayList<ShapeTreeNode>();
 	
-	public ShapeTree(ShapeTreeNode startNode, List<ShapeTreeNode> nodes){
-		this.startNode=startNode;
+	public ShapeTree(ShapeTreeNode root, List<ShapeTreeNode> nodes){
+		this.root=root;
 		this.nodes=nodes;
 	}
 	
-	public ShapeTree(ShapeTreeNode startNode){
-		this.startNode = startNode;
+	public ShapeTree(ShapeTreeNode root){
+		root.setLevel(0);
+		this.root = root;
 	}
 	
-	public ShapeTreeNode getStartnode() {
-		return startNode;
+	public ShapeTreeNode getRoot() {
+		return root;
 	}
 	
-	public void setStartnode(ShapeTreeNode startNode) {
-		this.startNode = startNode;
+	public void setRoot(ShapeTreeNode root) {
+		this.root = root;
 	}
 	
 	public List<ShapeTreeNode> getNodes() {
@@ -39,7 +40,7 @@ public class ShapeTree {
 	}
 	
 	public void sortTreeAlphabetic(){
-		getStartnode().sortAlphabetic();
+		getRoot().sortAlphabetic();
 		for(ShapeTreeNode node : nodes){
 			node.sortAlphabetic();
 		}
@@ -55,6 +56,7 @@ public class ShapeTree {
 		}
 		return height;
 	}
+	
 	public List<ShapeTreeNode> getXthLvl(int x){
 		ArrayList<ShapeTreeNode> list = new ArrayList<ShapeTreeNode>();
 		for(ShapeTreeNode node : getNodes()){
@@ -86,7 +88,7 @@ public class ShapeTree {
 	}
 	
 	public String toString(){
-		String result = getStartnode().getName();
+		String result = getRoot().getName();
 		for(ShapeTreeNode node : getNodes()){
 			result = result + "\r\n" + node.toString(); 
 		}
@@ -116,4 +118,44 @@ public class ShapeTree {
 		}
 		return maxHeight;
 	}
+	
+//	private boolean checkLevel(int level) {
+//		List<ShapeTreeNode> nodes = getXthLvl(level-1);
+//		for(ShapeTreeNode node_i : nodes){
+//			for(ShapeTreeNode node_j : nodes){
+//				if(node_i == node_j){ 
+//					//do nothing
+//				}
+//				else{
+//					Shape shape_i = node_i.getFirstChild().getShape();
+//					int left_i = shape_i.getxPos();
+//					int right_i = left_i + (int) shape_i.getWidth();
+//					int right_j = node_j.getFirstChild().getShape().getxPos();
+//					if(left_i < )
+//						
+//					}
+//				}
+//				
+//			}
+//		}
+//		return false;
+//		
+//	}
+	
+//	/**
+//	 * This method will shake the tree, giving each group of classes that belong together positions, so that no parts of the tree overlap and are all beautifully spread out.
+//	 */
+//	public void shake() {
+//		shakeX();
+//		//shakeY();	
+//	}
+//	
+//	public void shakeX(){
+//		Shape shape = getRoot().getShape();          
+//		shape.setxPos((int) -shape.getWidth()/2); //Root centered to 0
+//		getRoot().shakeChildrenX(); //shake kids of root
+//		//checkLevel(1); // check first level
+//	}
+
+	
 }

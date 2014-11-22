@@ -1,5 +1,6 @@
 package be.kuleuven.cs.oss.polymorphicviews.plugin;
 
+
 import generators.PolymorphicChartGenerator;
 import generators.ScatterPlotGenerator;
 import generators.SystemComplexityGenerator;
@@ -12,6 +13,8 @@ import org.sonar.api.charts.Chart;
 import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
+
+
 
 /**
  * Binding to the Sonar charts servlet

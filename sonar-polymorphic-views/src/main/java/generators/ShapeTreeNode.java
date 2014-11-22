@@ -13,6 +13,7 @@ import java.util.TreeSet;
 public class ShapeTreeNode {
 
 	private String name;
+	private String key;
 	private Shape shape;
 	private int level;
 	private List<ShapeTreeNode> children = new ArrayList<ShapeTreeNode>();
@@ -25,6 +26,12 @@ public class ShapeTreeNode {
 	
 	public ShapeTreeNode(String name, int level){
 		this.name = name;
+		this.level = level;
+	}
+	
+	public ShapeTreeNode(String name, String key){
+		this.name = name;
+		this.key = key;
 	}
 	
 	public Shape getShape() {
@@ -47,37 +54,32 @@ public class ShapeTreeNode {
 		return children;
 	}
 	
+	public ShapeTreeNode getFirstChild(){
+		if(children.isEmpty()){
+			return null;
+		}
+		else{
+			return children.get(0);
+		}
+	}
+	
+	public ShapeTreeNode getLastChild(){
+		if(children.isEmpty()){
+			return null;
+		}
+		else{
+			return children.get(children.size());
+		}
+	}
+	
 	public void setChildren(List<ShapeTreeNode> children) {
 		this.children = children;
 	}
 
 	public void addChild(ShapeTreeNode node){
+		node.setLevel(this.getLevel()+1);
 		this.children.add(node);
 	}
-	
-//	public void sortAlphabetic() {
-//		if(!getChildren().isEmpty()){
-//			List<ShapeTreeNode> list = new ArrayList<ShapeTreeNode>();
-//			int min = Integer.MIN_VALUE;
-//			ShapeTreeNode current = null;
-//			int count = 0;
-//			HashMap<ShapeTreeNode, Integer> map = getStringMap();
-//			int size = map.size();
-//			while(count<size){
-//				for(ShapeTreeNode node : map.keySet()){
-//					int value = map.get(node);
-//					if(value < min || min == Integer.MIN_VALUE){
-//						min = value;
-//						current = node;
-//					}
-//					count++;
-//				}
-//				list.add(current);
-//				map.remove(current);
-//			}
-//			children = list;
-//		}
-//	}
 	
 	public void sortAlphabetic() {
 		if(!getChildren().isEmpty()){
@@ -97,18 +99,6 @@ public class ShapeTreeNode {
 		}
 	}
 	
-//	public HashMap<ShapeTreeNode, Integer> getStringMap(){
-//		HashMap<ShapeTreeNode, Integer> map = new HashMap<ShapeTreeNode, Integer>();
-//		map.put(children.get(0),0);
-//		String referenceString = children.get(0).getName();
-//		int i = 1;
-//		while(i < children.size()){
-//			ShapeTreeNode nextNode = children.get(i);
-//			map.put(nextNode, referenceString.compareTo(nextNode.getName()));
-//			i++;
-//		}
-//		return map;
-//	}
 	
 	public String toString(){
 		String result = getName();
@@ -124,5 +114,34 @@ public class ShapeTreeNode {
 
 	public void setLevel(int level) {
 		this.level = level;
+	}
+	
+	public int getChildrenWidth(){
+		int width = 0;
+		for(ShapeTreeNode node : getChildren()){
+			width += node.getShape().getWidth();
+		}
+		return width;
+	}
+	
+	/**
+	 * This method gets the width of all children, and centers them with their parent aka. this node.
+	 */
+	public void shakeChildrenX() {
+		int width = getChildrenWidth();
+		int moved = this.getShape().getxPos()-(width/2);
+		for(ShapeTreeNode node : getChildren()){
+			node.getShape().setxPos(moved);
+			moved += -(width/2) + node.getShape().getWidth();
+		}
+		
+	}
+
+	public String getKey() {
+		return key;
+	}
+
+	public void setKey(String key) {
+		this.key = key;
 	}
 }

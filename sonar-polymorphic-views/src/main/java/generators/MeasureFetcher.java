@@ -44,32 +44,6 @@ public class MeasureFetcher {
 		return allValues;
 	}
 	
-	public List<ShapeTree> getDependencyTrees(){
-		List<ShapeTree> dependencyTrees= new ArrayList<ShapeTree>();
-		for(Resource resource: resources){ //loop over main nodes and build a tree for each main node
-			ShapeTreeNode master = new ShapeTreeNode(resource.getName(),0);//create master node
-			ShapeTree tree = new ShapeTree(master);//create tree for master node
-			tree = fillTree(resource, tree, 1);//createTree recursively
-			dependencyTrees.add(tree);
-		}
-		return dependencyTrees;
-	}
-	
-	public ShapeTree fillTree(Resource resource, ShapeTree tree, int level){
-		List<Dependency> dependencies= sonar.findOutgoingDependencies(resource); //get dependencies for a resource
-		for(Dependency dependency: dependencies){//loop over all found resources
-			if(!dependency.getType().toString().equals("USES")){
-				String toResourceKey = dependency.getToResourceKey();//get the key of every resource of a dependency
-				Resource res = sonar.findResource(toResourceKey);//find the resource with the key
-				resources.add(res);// add this resource to resources
-				ShapeTreeNode node = new ShapeTreeNode(res.getName(), level);//create node for resource
-				tree.addNode(node);//add resource to tree
-				tree = fillTree(res, tree, level++);//and do whole thing again for each resource
-			}
-		}
-		return tree; // return tree
-	}
-	
 	
 	/**
 	 * @param resourceType 
@@ -88,7 +62,7 @@ public class MeasureFetcher {
 		}
 		return null;
 	}
-
+	
 	public int getNumberOfResources() {
 		return this.resources.size();
 	}
@@ -104,9 +78,45 @@ public class MeasureFetcher {
 		return result;
 	}
 	
+	public HashMap<String, String> getResourceKeysAndNames(){
+		HashMap<String, String> result = new HashMap<String, String>();
+		for(Resource r : resources) {
+			result.put(r.getKey(), r.getName());
+		}
+		return result;
+	}
+	
 	public String getDefaultProject() {
 		return sonar.findProjects().get(0).getKey();
 	}
 	
+	private Resource getResource(String key){
+		for(Resource resource : resources){
+			if(resource.getKey().equals(key)){
+				return resource;
+			}
+		}
+		return null;
+	}
+	
+	public List<String[]> findOutgoingDependencies(String resourceKey){
+		List<Dependency> dependencies = sonar.findOutgoingDependencies(getResource(resourceKey)); //TODO fix, not getting anything
+		List<String[]> result = new ArrayList<String[]>();
+		for(Dependency dependency : dependencies){
+			String[] tuple = {dependency.getType().toString() , dependency.getToResourceKey()};
+			result.add(tuple);
+		}
+		return result;
+	}
+	
+	public List<String[]> findIncomingDependencies(String resourceKey){
+		List<Dependency> dependencies = sonar.findIncomingDependencies(getResource(resourceKey)); //TODO fix, not getting anything
+		List<String[]> result = new ArrayList<String[]>();
+		for(Dependency dependency : dependencies){
+			String[] tuple = {dependency.getType().toString() , dependency.getFromResourceKey()};
+			result.add(tuple);
+		}
+		return result;
+	}
 	
 }

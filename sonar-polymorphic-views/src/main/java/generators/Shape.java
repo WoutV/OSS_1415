@@ -34,7 +34,6 @@ public abstract class Shape {
 		this.height = height;
 	}
 	
-	
 	public int getxPos() {
 		return xPos;
 	}
