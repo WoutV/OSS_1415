@@ -18,6 +18,7 @@ import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
  */
 
 public class BoxGenerator extends ShapeGenerator {
+	
 	private final static Logger LOG = LoggerFactory.getLogger(BoxGenerator.class);
 	
 	public BoxGenerator(MeasureFetcher measureFetcher, PolymorphicChartParameters params) {
@@ -37,10 +38,26 @@ public class BoxGenerator extends ShapeGenerator {
 		}
 		this.shapes = boxes;
 		nameShapes();
-		
 		setBoxProperties(width, height, color, boxes);
+		
 	}
 
+	/**
+	 * This method sets the right properties of the boxes, according to the
+	 * given parameters.
+	 * 
+	 * @param width
+	 *            the width of the boxes. Can be a string referencing to a
+	 *            certain metric, or a parseable double value
+	 * @param height
+	 *            the height of the boxes. Can be a string referencing to a
+	 *            certain metric, or a parseable double value
+	 * @param color
+	 *            the color of the boxes. Can be a string referencing to a
+	 *            certain metric, or a parseable double value
+	 * @param boxes
+	 *            the list on which the operation should be carried out
+	 */
 	private void setBoxProperties(String width, String height, String color,Box[] boxes) {
 		List<Double> widthList;
 		try {

@@ -1,12 +1,17 @@
 package be.kuleuven.cs.oss.polymorphicviews.plugin;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.sonar.api.charts.ChartParameters;
 
-public class PolymorphicChartParameters {
 
+/**
+ * This class represents a set of parameters of a polymorphic chart. It serves
+ * as a wrapper for a ChartParameters object, which serves as storage of the
+ * parameters.
+ * 
+ * @author Thijs & Wout
+ *
+ */
+public class PolymorphicChartParameters { 
 	public static final String PARAM_RESOURCES = "resources";
 	public static final String PARAM_PARENT = "parent";
 	public static final String PARAM_TYPE = "type";

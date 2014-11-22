@@ -3,8 +3,7 @@ package generators;
 import chartbuilder.ChartBuilder;
 
 /**
- * This class represents boxes that can be used to draw a graph. Each box has its own dimensions.
- * @author Wout
+ * This class represents boxes that can be used to draw a graph.
  *
  */
 public class Box extends Shape {
