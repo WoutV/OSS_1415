@@ -10,21 +10,24 @@ import java.util.Set;
 
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
+import structure.ShapeTree;
+import structure.ShapeTreeNode;
+
 
 
 
 public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 
 	//TODO which attributes can be placed in superclass?
-	private int width = 800;//TODO make self-generated
-	private int height = 800;
+	private int width = 2000;//TODO make self-generated
+	private int height = 400;
 	private String boxHeight;
 	private String boxWidth;
 	private List<Shape> shapes = new ArrayList<Shape>();//The collection of shapes, displayed on the view
 	private List<ShapeTree> dependencyTrees;
-	private int leafMargin = 1;
-	private int treeMargin = 5;
-	private int heightMargin = 5;
+	private int leafMargin = 13;
+	private int treeMargin = 20;
+	private int heightMargin = 50;
 	
 	
 	/** 
@@ -50,13 +53,14 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	 * @return the systemcomplexity view as requested as a BuffereredImage
 	 */
 	@Override
-	public BufferedImage generateImage() {
+	public BufferedImage generateImage() {  
+	    resetAllPositions();
+	    getPositions();
+	    
+	    setSize();
 	    builder.createCanvas(height, width, BufferedImage.TYPE_INT_RGB);
 	    
-	    resetAllPositions();
-	    //shakeTrees();
-	    getXPositions();
-	    getYPositions(); 
+	    flipY();
 	    createLines();
 	    
 	    for(Shape shape : this.shapes){
@@ -65,58 +69,48 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 
 		return builder.getImage();
 	}
-
-
+	
+	
+	/**
+	 * Resets all positions to zero.
+	 */
 	private void resetAllPositions() {
 		for(ShapeTree tree : dependencyTrees){
-			Shape shape = tree.getRoot().getShape();
-			shape.setxPos(0);
-			shape.setyPos(0);
-			for(ShapeTreeNode node : tree.getNodes()){
-				node.getShape().setxPos(0);
-				node.getShape().setyPos(0);
-			}
+			tree.resetAllPositions();
 		}
-		
 	}
 
-
+	/**
+	 * This methods is responsible for building the different trees, representing a hierarchy of classes.
+	 * First, it will create a node for every resource.
+	 * Secondly, it will isolate the nodes that have no outgoingDependencies (nodes that do not extend another class)
+	 * , these nodes will become the root of a tree.
+	 * Thirdly, the trees will be filled 'depth-first'-like with the remaining nodes.
+	 * 
+	 * @return List of all trees
+	 */
 	public List<ShapeTree> buildTrees(){
-		List<ShapeTree> dependencyTrees= new ArrayList<ShapeTree>();
 		HashMap<String, String> map = measureFetcher.getResourceKeysAndNames();
 		
-		List<ShapeTreeNode> nodes = generateNodes(map); //create all nodes
-		createRoots(dependencyTrees, nodes); 			//get roots for trees, aka trees with no incomingDependencies unless "uses".
+		List<ShapeTreeNode> nodes = generateNodes(map);
+		List<ShapeTree> dependencyTrees = findRoots(nodes); 			
 		
-		for(ShapeTree ent : dependencyTrees){ 			//get rest of trees, by adding for each root its children and their children etc...
+		for(ShapeTree ent : dependencyTrees){
 			ShapeTreeNode root = ent.getRoot(); 
-			dig(map, nodes, ent, root);
+			dig(nodes, ent, root);
 		}
 		return dependencyTrees;
-		
 	}
-
-	private void createRoots(List<ShapeTree> dependencyTrees,
-			List<ShapeTreeNode> nodes) {
-		for(ShapeTreeNode leaf : nodes){
-			System.out.println("ENTER");
-			List<String[]> incomingDependencies = measureFetcher.findIncomingDependencies(leaf.getKey());
-			boolean isRoot = true;
-			for(String[] dependency: incomingDependencies){
-//				if(!dependency[0].equals("USES")){
-//					isRoot = false; //TODO implement "uses" correctly
-//				}
-			}
-			if(incomingDependencies.isEmpty()){
-				isRoot = false;
-			}
-			if(isRoot){ //create new tree with this root
-				ShapeTree tree = new ShapeTree(leaf);
-				dependencyTrees.add(tree);
-			}
-		}
-	}
-
+	
+	/**
+	 * This method will generate a node for every resource. The node will contain the key and the name.
+	 * Key is needed later because the relations between the nodes are not established yet.
+	 * Since resources can have the same name but not the same key, 
+	 * this makes sure that no node gets added to two nodes with the same name.
+	 * 
+	 * @param map containing names and keys of all resources.
+	 * @return a node for every resource
+	 */
 	private List<ShapeTreeNode> generateNodes(HashMap<String, String> map) {
 		List<ShapeTreeNode> nodes = new ArrayList<ShapeTreeNode>();
 		for(String key : map.keySet()){
@@ -125,87 +119,72 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		}
 		return nodes;
 	}
-
-	private void dig(HashMap<String, String> map, List<ShapeTreeNode> nodes,ShapeTree ent, ShapeTreeNode root) {
-		List<String[]> outgoingDependencies = measureFetcher.findOutgoingDependencies(root.getKey());
-		for(String[] dependency: outgoingDependencies){
-			System.out.println("OutDependency for "+root.getName()+": "+dependency);
+	
+	/**
+	 * This method will isolate the nodes that have no outgoingDepencies (nodes that do not extend another class).
+	 * These nodes will become the root of a tree.
+	 * @param dependencyTrees 
+	 * @param nodes
+	 */
+	private List<ShapeTree>  findRoots(List<ShapeTreeNode> nodes) {
+		List<ShapeTree> dependencyTrees = new ArrayList<ShapeTree>();
+		for(ShapeTreeNode leaf : nodes){
+			List<String[]> outgoingDependencies = measureFetcher.findOutgoingDependencies(leaf.getKey());
+			boolean onlyUses = true;
+			for(String[] dependency: outgoingDependencies){
+				if(!dependency[0].equals("USES")){
+					onlyUses = false;
+				}
+			}
+			if(onlyUses || outgoingDependencies.isEmpty()){
+				ShapeTree tree = new ShapeTree(leaf);
+				dependencyTrees.add(tree);
+			}
+		}
+		return dependencyTrees;
+	}
+	
+	/**
+	 * This will lookup the children of a node and add them to the node.
+	 * This method is called recursively and will fill a tree 'depth-first'-like.
+	 * @param nodes List of all nodes
+	 * @param ent A tree
+	 * @param parent A node of the tree
+	 */
+	private void dig(List<ShapeTreeNode> nodes, ShapeTree ent, ShapeTreeNode parent) {
+		List<String[]> incommingDependencies = measureFetcher.findIncomingDependencies(parent.getKey());
+		for(String[] dependency: incommingDependencies){
 			if(!dependency[0].equals("USES")){
 				String key = dependency[1];
-				String name = map.get(key);
 				for(ShapeTreeNode node : nodes){
-					if(node.getName().equals(name)){
+					if(node.getKey().equals(key)){
 						ent.addNode(node);
-						root.addChild(node);
-						dig(map, nodes, ent, node);
+						parent.addChild(node);
+						dig(nodes, ent, node);
 					}
 				}
 			}
 		}
 	}
 	
-	public void getXPositions(){
-		System.out.println("CHECK2");
+	/**
+	 * This method will instantiate all x,y positions in all trees and set the total width of all trees.
+	 */
+	public void getPositions(){
 		for(ShapeTree tree : dependencyTrees){
-			Shape master = getShapeBy(tree.getRoot().getName());
-			master.setxPos(0);
-			layoutX(tree);
+			tree.layout(leafMargin, heightMargin);
 		}
 		int tempx = 0;
 		for(ShapeTree tree: dependencyTrees){
 			int width = (int) tree.getMaxWidth(leafMargin);
-			shiftTree(tempx + width/2, tree);
+			tree.shiftTree(tempx + width/2 + treeMargin);
 			tempx += width+treeMargin;
-		}
-	}
-
-	public void getYPositions(){
-		for(ShapeTree tree : dependencyTrees){
-			Shape master = getShapeBy(tree.getRoot().getName());
-			master.setyPos(0);
-			layoutY(tree);
-		}
-	}
-	
-	
-	private void layoutX(ShapeTree tree) {
-		int height = tree.getHeight();
-		for(int i = 1; i < height+1 ; i++){
-			List<ShapeTreeNode> level = tree.getXthLvl(i);
-			double lvlWidth = tree.getLvlWidthMargin(i, leafMargin);
-			double tempX = 0 - lvlWidth/2;
-			for(ShapeTreeNode node : level){
-				node.getShape().setxPos((int) tempX);
-				tempX += node.getShape().getWidth() + leafMargin;
-			}
-		}
-	}
-	
-	private void layoutY(ShapeTree tree){
-		int tempY = 0;
-		for(int i = 1; i < tree.getHeight()+1; i++){
-			List<ShapeTreeNode> level = tree.getXthLvl(i);
-			double lvlHeight = tree.getMaxHeightOfLvl(i-1);
-			for(ShapeTreeNode node : level){
-				node.getShape().setyPos((int) tempY + heightMargin);
-				tempY += lvlHeight + heightMargin;
-			}
 		}
 	}
 	
 	/**
-	 * Move whole tree by x.
-	 * @param x
+	 * This method will add each shape to a node
 	 */
-	private void shiftTree(int x, ShapeTree tree){
-		List<ShapeTreeNode> nodes = tree.getNodes();
-		nodes.add(tree.getRoot());
-		for(ShapeTreeNode node : nodes){
-			Shape shape = node.getShape();
-			shape.setxPos(shape.getxPos()+x);
-		}
-	}
-	
 	private void addShapesToTree(){
 		for(ShapeTree shapeTree: dependencyTrees){
 			shapeTree.getRoot().setShape(getShapeBy(shapeTree.getRoot().getName()));
@@ -215,7 +194,12 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 			}
 		}
 	}
-
+	
+	/**
+	 * Get a shape by name.
+	 * @param name the name of the shape
+	 * @return the shape with the given name
+	 */
 	private Shape getShapeBy(String name){
 		for(Shape shape : shapes){
 			if(shape.getName().equals(name)){
@@ -225,12 +209,14 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		return null;
 	}
 	
-	
+	/**
+	 * Will create a lines for every parent and its children.
+	 */
 	public void createLines(){
 		for(ShapeTree shapeTree:dependencyTrees){
-			int height = shapeTree.getHeight();
+			int height = shapeTree.getAmountOfLevels();
 			for(int i=0; i<height;i++){
-				List<ShapeTreeNode> nodes = shapeTree.getXthLvl(i);
+				List<ShapeTreeNode> nodes = shapeTree.getLevel(i);
 				for(ShapeTreeNode root: nodes){
 					for(ShapeTreeNode node: root.getChildren()){
 						createLine(root, node);
@@ -241,13 +227,18 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		}
 	}
 	
+	/**
+	 * Will create a line shape between to shapes and add it to shapes.
+	 * @param node1 The parent
+	 * @param node2 The child
+	 */
 	public void createLine(ShapeTreeNode node1, ShapeTreeNode node2){
 		Shape shape1 = node1.getShape();
 		int x1 = shape1.getxPos() + (int)shape1.getWidth()/2;
-		int y1 = shape1.getyPos() + (int)shape1.getHeight();
+		int y1 = shape1.getyPos();
 		Shape shape2 = node2.getShape();
-		int x2 = shape2.getxPos() + (int)shape1.getWidth()/2;
-		int y2 = shape2.getyPos();
+		int x2 = shape2.getxPos() + (int)shape2.getWidth()/2;
+		int y2 = shape2.getyPos() + (int)shape2.getHeight();
 		Shape line= new Line();
 		line.setxPos(x1);
 		line.setyPos(y1);
@@ -257,12 +248,35 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		shapes.add(line);
 	}
 	
-//	/**
-//	 * This method will shake each trees, this will make sure that no shapes of each tree would overlap.
-//	 */
-//	private void shakeTrees() {
-//		for(ShapeTree tree : dependencyTrees){
-//			tree.shake();
-//		}
-//	}
+	/**
+	 * Will flip the trees, so that they are not not upside down 
+	 */
+	private void flipY() {
+		for(ShapeTree tree : dependencyTrees){
+			for(ShapeTreeNode node : tree.getNodes()){
+				Shape shape = node.getShape();
+				shape.setyPos(this.height - shape.getyPos());
+			}
+		}
+	}
+	
+	/**
+	 * Set height and width of the plot.
+	 */
+	private void setSize() {
+		int tempx = 0;
+		for(ShapeTree tree: dependencyTrees){
+			int width = (int) tree.getMaxWidth(leafMargin);
+			tempx += width+treeMargin;
+		}
+		this.width = tempx;
+		int maxHeight = 0;
+		for(ShapeTree tree: dependencyTrees){
+			int height = (int) tree.getTotalHeight(heightMargin) + 4 * heightMargin;
+			if(height > maxHeight){
+				maxHeight = height;
+			}
+		}
+		this.height = maxHeight;
+	}
 }

@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
+
 public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 	private final static Logger LOG = LoggerFactory.getLogger(BoxGenerator.class);
 	private int width;
