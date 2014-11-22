@@ -19,8 +19,8 @@ import structure.ShapeTreeNode;
 public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 
 	//TODO which attributes can be placed in superclass?
-	private int width = 2000;//TODO make self-generated
-	private int height = 400;
+	private int width;
+	private int height;
 	private String boxHeight;
 	private String boxWidth;
 	private List<Shape> shapes = new ArrayList<Shape>();//The collection of shapes, displayed on the view
