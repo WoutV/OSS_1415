@@ -21,17 +21,6 @@ public class ShapeTreeNode {
 	private List<ShapeTreeNode> children = new ArrayList<ShapeTreeNode>();
 	private ShapeTreeNode parent;
 	
-	public ShapeTreeNode(String name, List<ShapeTreeNode> children, int level){
-		this.name=name;
-		this.children=children;
-		this.level = level;
-	}
-	
-	public ShapeTreeNode(String name, int level){
-		this.name = name;
-		this.level = level;
-	}
-	
 	public ShapeTreeNode(String name, String key){
 		this.name = name;
 		this.key = key;
