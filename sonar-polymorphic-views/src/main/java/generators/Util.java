@@ -2,6 +2,7 @@ package generators;
 
 import java.awt.Color;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -51,6 +52,32 @@ public class Util {
 		return values;
 	}
 
+	/**
+	 * This method scales the given values map.
+	 * @param values the array to be scaled
+	 * @param a the minimum value of the scaled values
+	 * @param b the maximum value of the scaled values
+	 * @return the Map with the scaled values and their key
+	 */
+	public static Map<String,Double> scaleGrey(Map<String,Double> values, double min, double max){
+		double factor = 255/(max-min);
+		for(Entry<String, Double> entry :values.entrySet()){
+			double newValue;
+			if (entry.getValue()<=min){
+				newValue = 255;
+			}
+			else if (entry.getValue()>=max){
+				newValue =0;
+			}
+			else{
+				newValue = 255-factor*(entry.getValue() -min);
+			}
+			values.put(entry.getKey(),newValue);
+		}
+		return values;
+	}
+
+	
 	/**
 	 * Checks if the input is a valid string to be parsed to a color.
 	 * @param input (should be of form "r25g26b27")
