@@ -145,7 +145,4 @@ public class BoxGeneratorTest {
 		assertEquals(shapes[1].getColor(),new Color(0,0,0));
 		assertEquals(shapes[2].getColor(),new Color(0,0,0));
 	}
-	
-	
-
 }
