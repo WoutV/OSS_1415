@@ -102,4 +102,29 @@ public class Util {
 		}
 		return new Color(result[0], result[1], result[2]);
 	}
+	
+	/**
+	 * This method scales the given values map.
+	 * @param values the array to be scaled
+	 * @param a the minimum value of the scaled values
+	 * @param b the maximum value of the scaled values
+	 * @return the Map with the scaled values and their key
+	 */
+	public static Map<String,Double> scaleGrey(Map<String,Double> values, double min, double max){
+		double factor = 255/(max-min);
+		for(Entry<String, Double> entry :values.entrySet()){
+			double newValue;
+			if (entry.getValue()<=min){
+				newValue = 255;
+			}
+			else if (entry.getValue()>=max){
+				newValue =0;
+			}
+			else{
+				newValue = 255-factor*(entry.getValue() -min);
+			}
+			values.put(entry.getKey(),newValue);
+		}
+		return values;
+	}
 }
