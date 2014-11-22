@@ -63,6 +63,7 @@ public class Util {
 		double factor = 255/(max-min);
 		for(Entry<String, Double> entry :values.entrySet()){
 			double newValue;
+			System.out.println(entry.getValue());
 			if (entry.getValue()<=min){
 				newValue = 255;
 			}

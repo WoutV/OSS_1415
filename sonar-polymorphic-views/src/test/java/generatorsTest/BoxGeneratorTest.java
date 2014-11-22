@@ -1,7 +1,6 @@
 package generatorsTest;
 
-import static org.easymock.EasyMock.expect;
-import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import generators.BoxGenerator;
@@ -16,6 +15,7 @@ import java.util.Map;
 
 import org.easymock.EasyMock;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.sonar.api.charts.ChartParameters;
 
@@ -27,27 +27,25 @@ public class BoxGeneratorTest {
 	
 	@Before
 	  public void setUp() throws Exception {
-//	    measureFetcher = createMockBuilder(MeasureFetcher.class)
-//	    		.withConstructor(String.class, String.class, SonarFacade.class)
-//	    		.withArgs("", "", null)
-//	    		.addMockedMethod("getNumberOfResources", int.class)
-//	    		.createNiceMock();
-		measureFetcher = EasyMock.createNiceMock(MeasureFetcher.class);
+		//measureFetcher = EasyMock.createMock(MeasureFetcher.class);
+		
+	}
+	 
+	@Before
+	public void initialize() {
+		measureFetcher = createMockBuilder(MeasureFetcher.class).addMockedMethods("getNumberOfResources", "getResourceNames", "getMeasureValues").createMock();
 		expect(measureFetcher.getNumberOfResources()).andReturn(3);
 		expect(measureFetcher.getResourceNames()).andReturn(new ArrayList<String>(){{add("resource1");add("resource2"); add("resource3");}});
-		expect(measureFetcher.getMeasureValues("lines")).andReturn(new HashMap<String,Double>());
-		expect(measureFetcher.getMeasureValues("commentlines")).andReturn(new HashMap<String,Double>());
 		expect(measureFetcher.getMeasureValues("width")).andReturn(new HashMap<String,Double>());
 		expect(measureFetcher.getMeasureValues("height")).andReturn(new HashMap<String,Double>());
 		expect(measureFetcher.getMeasureValues("color")).andReturn(new HashMap<String,Double>());
-		//expect(measureFetcher.getMeasureValues("width")).andReturn(new HashMap<String,Double>(){{put("resource1",null); put("resource2",null);put("resource3",null);}});
-		//expect(measureFetcher.getMeasureValues("height")).andReturn(new HashMap<String,Double>(){{put("resource1",null); put("resource2",null);put("resource3",null);}});
-		replay(measureFetcher);
+		//
 	}
 	  
 
 	@Test
 	public void testNormalUse() {
+		replay(measureFetcher);
 		Map<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("boxcolor", "r255g0b0");
 		paramMap.put("boxheight", "12.0");
@@ -68,6 +66,7 @@ public class BoxGeneratorTest {
 	
 	@Test
 	public void testDefault() {
+		replay(measureFetcher);
 		Map<String, String> paramMap = new HashMap<String, String>();
 		ChartParameters p = new ChartParameters(paramMap); 
 		PolymorphicChartParameters params = new PolymorphicChartParameters(p);
@@ -85,7 +84,7 @@ public class BoxGeneratorTest {
 	
 	@Test
 	public void testInvalidInput() {
-		
+		replay(measureFetcher);
 		Map<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("boxcolor", "color");
 		paramMap.put("boxheight", "height");
@@ -100,6 +99,7 @@ public class BoxGeneratorTest {
 	
 	@Test
 	public void testNegativeInput() {
+		replay(measureFetcher);
 		Map<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("boxcolor", "r-20g30b253");
 		paramMap.put("boxheight", "-25");
@@ -114,27 +114,35 @@ public class BoxGeneratorTest {
 
 	@Test
 	public void testGrayScaleInput() {
+		Map<String, Double> linesList = new HashMap<String,Double>(){{put("resource1", 5.0);put("resource2",75.0);put("resource3",100.0);}};
+		expect(measureFetcher.getMeasureValues("lines")).andReturn(linesList);
+		replay(measureFetcher);
 		Map<String, String> paramMap = new HashMap<String, String>();
-		paramMap.put("boxcolor", "min0max255keylines");
+		paramMap.put("boxcolor", "min10max100keylines");
 		ChartParameters p = new ChartParameters(paramMap); 
 		PolymorphicChartParameters params = new PolymorphicChartParameters(p);
 		BoxGenerator bg = new BoxGenerator(measureFetcher, params);
 		Shape[] shapes = bg.getShapes();
 		assertEquals(shapes[0].getColor(),new Color(255,255,255));
-		assertEquals(shapes[1].getColor(),new Color(42,42,42));
+		assertEquals(shapes[1].getColor(),new Color(70,70,70));
 		assertEquals(shapes[2].getColor(),new Color(0,0,0));
 	}
 	
 	@Test
-	public void testGrayScale2Input() {
+	public void testGrayScaleInputAllOutInterval() {
+		//measureFetcher = EasyMock.createNiceMock(MeasureFetcher.class);
+		Map<String, Double> linesList2 = new HashMap<String,Double>(){{put("resource1", -75.0);put("resource2",75.0);put("resource3",100.0);}};
+		expect(measureFetcher.getMeasureValues("lines")).andReturn(linesList2);
+		replay(measureFetcher);
 		Map<String, String> paramMap = new HashMap<String, String>();
-		paramMap.put("boxcolor", "min0max1keylines");
+		paramMap.put("boxcolor", "min10max50keylines");
 		ChartParameters p = new ChartParameters(paramMap); 
 		PolymorphicChartParameters params = new PolymorphicChartParameters(p);
 		BoxGenerator bg = new BoxGenerator(measureFetcher, params);
 		Shape[] shapes = bg.getShapes();
+		System.out.println(shapes[0].getColor());
 		assertEquals(shapes[0].getColor(),new Color(255,255,255));
-		assertEquals(shapes[1].getColor(),new Color(42,42,42));
+		assertEquals(shapes[1].getColor(),new Color(0,0,0));
 		assertEquals(shapes[2].getColor(),new Color(0,0,0));
 	}
 	
