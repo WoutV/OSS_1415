@@ -24,10 +24,10 @@ public class BuilderScenario {
 	
 	public void testScenarioA() throws IOException{
 		builder.createCanvas(600,600, BufferedImage.TYPE_INT_RGB);
-		builder.createXAxis("Lines of code", 0, 600, -20 , 300);
-		builder.createYAxis("Number of methods", 0, 600, 800, 1200);
-//		builder.createXAxis("Lines of code", 300, 600, -20 , 300);
-//		builder.createYAxis("Number of methods", 300, 600, 800, 1200);
+		builder.createXAxis("Lines of code", 0, 300, 0, -20 , 300);
+		builder.createYAxis("Number of methods", 0, 600, 0, 800, 1200);
+		builder.createXAxis("Lines of code", 300, 600, 0, -20 , 300);
+		builder.createYAxis("Number of methods", 0, 600, 300, 800, 1200);
 		builder.createRectangle(300, 60, 80, 40, Color.blue, "JAVA2DBUILDER");
 		builder.createRectangle(500, 150, 30, 47, Color.blue, "PolymorphicViewsChart");
 		File outputfile = new File("img.png");
