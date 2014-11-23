@@ -205,7 +205,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	 */
 	public void createLines(){
 		for(ShapeTree shapeTree:dependencyTrees){
-			int height = shapeTree.getAmountOfLevels();
+			int height = shapeTree.getHighestLevel();
 			for(int i=0; i<height;i++){
 				List<ShapeTreeNode> nodes = shapeTree.getLevel(i);
 				for(ShapeTreeNode root: nodes){
