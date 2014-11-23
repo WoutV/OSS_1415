@@ -62,10 +62,10 @@ public interface ChartBuilder {
 	 * @param y1 y-coordinate of start point.
 	 * @param x2 x-coordinate of end point.
 	 * @param y2 y-coordinate of end point.
-	 * @param type The type of line that should be drawn. This should be an one of the possible elements
-	 * 		  of the enum LineType, written in non-capital letters .
+	 * @param type The type of line that should be drawn. This should be one of the possible elements
+	 * 		  of the enum LineType.
 	 */
-	public void createLine(int x1, int y1, int x2, int y2, String type);
+	public void createLine(int x1, int y1, int x2, int y2, LineType type);
 	
 	/**
 	 * This method will draw a rectangle with its label on the current canvas, positioned correctly with respect to the borders of the canvas.

@@ -138,11 +138,11 @@ public class Java2DBuilder implements ChartBuilder {
 	}
 
 	@Override
-	public void createLine(int x1, int y1, int x2, int y2, String lineStyle) {
+	public void createLine(int x1, int y1, int x2, int y2, LineType lineType) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
 		graphics.setColor(Color.BLACK);
-		Stroke style = LineType.createLineStyleStroke(lineStyle);
+		Stroke style = createLineStyleStroke(lineType);
 		graphics.setStroke(style);
 		graphics.drawLine(scaleX(x1), scaleY(y1), scaleX(x2), scaleY(y2));
 	}
@@ -271,5 +271,23 @@ public class Java2DBuilder implements ChartBuilder {
 		graphics.setTransform(original);
 	}
 
+	private static Stroke createLineStyleStroke(LineType lineType) {
+        float[] style = null;
+        if (lineType != null) {
+	        switch (lineType) {
+			case SOLID:
+				break;
+			case DASH:
+				style = new float[] {20.0f, 20.0f};
+				break;
+			case DOTDASH:
+				style = new float[] {20.0f, 9.0f, 3.0f, 9.0f};
+				break;
+			default:
+	        }
+        }
+        Stroke result = new BasicStroke(1.0f, BasicStroke.CAP_SQUARE, BasicStroke.JOIN_MITER, 1.0f, style, 0.0f);
+        return result;
+    }
 
 }
