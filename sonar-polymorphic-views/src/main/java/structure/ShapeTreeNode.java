@@ -84,12 +84,12 @@ public class ShapeTreeNode {
 	/**
 	 * This method gets the width of all children, and centers them with their parent aka. this node.
 	 */
-	public void shakeChildrenX() {
-		int width = getChildrenWidth();
+	public void shakeChildrenX(int margin) {
+		int width = getChildrenWidth() + margin * getChildren().size()-1;
 		int moved = this.getShape().getxPos()-(width/2);
 		for(ShapeTreeNode node : getChildren()){
 			node.getShape().setxPos(moved);
-			moved += -(width/2) + node.getShape().getWidth();
+			moved += -(width/2) + node.getShape().getWidth() + margin;
 		}
 		
 	}
@@ -162,6 +162,19 @@ public class ShapeTreeNode {
 
 	public void setParent(ShapeTreeNode parent) {
 		this.parent = parent;
+	}
+	
+	public void shift(int x){
+		this.getShape().setxPos(this.getShape().getxPos()+x);
+		for(ShapeTreeNode child : getChildren()){
+			child.shift(x);
+		}
+	}
+
+	public void positionNextTo(int xcoord, int margin) {
+		int x  = this.getChildrenPosition()[0];
+		int distance = (xcoord + margin) - x;
+		shift(distance);
 	}
 
 }

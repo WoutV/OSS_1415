@@ -23,7 +23,8 @@ public class ShapeTree {
 	 * @param heightMargin a margin between levels
 	 */
 	public void layout(int leafMargin, int heightMargin){
-		layoutX(leafMargin);
+		//layoutX(leafMargin);
+		newSort(leafMargin, heightMargin);
 		layoutY(heightMargin);
 	}
 	
@@ -33,7 +34,7 @@ public class ShapeTree {
 	 */
 	public void layoutX(int leafMargin) {
 		getRoot().getShape().setxPos(0);
-		int height = getAmountOfLevels();
+		int height = getHighestLevel();
 		for(int i = 1; i < height+1 ; i++){
 			List<ShapeTreeNode> level = getLevel(i);
 			double lvlWidth = getLvlWidthMargin(i, leafMargin);
@@ -52,7 +53,7 @@ public class ShapeTree {
 	public void layoutY(int heightMargin){
 		getRoot().getShape().setyPos(0);
 		int tempY = 0;
-		for(int i = 1; i < getAmountOfLevels()+1; i++){
+		for(int i = 1; i < getHighestLevel()+1; i++){
 			List<ShapeTreeNode> level = getLevel(i);
 			double lvlHeight = getMaxHeightOfLvl(i-1);
 			for(ShapeTreeNode node : level){
@@ -104,7 +105,7 @@ public class ShapeTree {
 	 * Gets the amount of levels of this tree.
 	 * @return the amount of levels
 	 */
-	public int getAmountOfLevels(){
+	public int getHighestLevel(){
 		int height = -1;
 		for(ShapeTreeNode node : nodes){
 			int temp = node.getLevel();
@@ -163,7 +164,7 @@ public class ShapeTree {
 	 * @return The width of the level with the biggest width of the tree.
 	 */
 	public double getMaxWidth(int margin){
-		int height = getAmountOfLevels();
+		int height = getHighestLevel();
 		double maxWidth = 0;
 		for(int i = 0; i < height+1; i++){
 			double width = getLvlWidthMargin(i, margin);
@@ -197,10 +198,10 @@ public class ShapeTree {
 	 */
 	public double getTotalHeight(int heightMargin){
 		int temp = 0;
-		for(int i = 0; i < getAmountOfLevels()+1;i++){
+		for(int i = 0; i < getHighestLevel()+1;i++){
 			temp += getMaxHeightOfLvl(i);
 		}
-		temp += getAmountOfLevels()-1 * heightMargin;
+		temp += getHighestLevel()-1 * heightMargin;
 		return temp;
 	}
 	
@@ -224,32 +225,21 @@ public class ShapeTree {
 		nodes.add(node);
 	}
 	
-	//new method
-	public void layoutA(){
-		for(int currentLevel = 2; currentLevel <= getAmountOfLevels(); currentLevel++){
-			//get nodes of one level higher
-			List<ShapeTreeNode> nodes = getLevel(currentLevel-1);
-			ShapeTreeNode previous = null;
-			
+	public void newSort(int leafMargin, int heightMargin){
+		for(int i = getHighestLevel()-1 ; i >= 0 ; i--){
+			List<ShapeTreeNode> nodes = getLevel(i);
+			List<ShapeTreeNode> checked = new ArrayList<ShapeTreeNode>();
+			int whichNode = 0;
 			for(ShapeTreeNode node : nodes){
-				if(previous != null){
-					fixOverlap();
+				node.shakeChildrenX(leafMargin);
+				if(!checked.isEmpty()){
+					ShapeTreeNode other = checked.get(whichNode-1);
+					int[] childrenRange = other.getChildrenPosition();
+					node.positionNextTo(childrenRange[1], leafMargin);
 				}
-				previous = node;
+				checked.add(node);
+				whichNode += 1;
 			}
 		}
-	}
-	
-	public void shake(){
-		root.getShape().setxPos(0);
-		root.shakeChildrenX();
-		for(ShapeTreeNode node : nodes){
-			node.shakeChildrenX();
-		}
-	}
-	
-	private void fixOverlap() {
-		// TODO Auto-generated method stub
-		
 	}
 }
