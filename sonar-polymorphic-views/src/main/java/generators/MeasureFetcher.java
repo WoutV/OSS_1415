@@ -9,6 +9,7 @@ import be.kuleuven.cs.oss.sonarfacade.Dependency;
 import be.kuleuven.cs.oss.sonarfacade.Measure;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
+import be.kuleuven.cs.oss.sonarfacade.ResourceQualifier;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 /**
@@ -16,7 +17,7 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
  *
  */
 public class MeasureFetcher {
-	
+
 	private SonarFacade sonar;
 	private List<Resource> resources;
 
@@ -27,7 +28,7 @@ public class MeasureFetcher {
 			this.resources = findResources(resourceType,ancestor);
 		}
 	}
-	
+
 	/**
 	 * @param metric = the metric key for the metric for which measures must be found
 	 * @return values for the measures of the given metric
@@ -43,30 +44,30 @@ public class MeasureFetcher {
 		}	
 		return allValues;
 	}
-	
-	
+
+
 	/**
 	 * @param resourceType 
 	 * @param parent - Ancestor of the resources that are returned
 	 * @return All the resources of the given type below the given parent.
 	 */
 	private List<Resource> findResources(String resourceType, Resource parent){
-		switch (resourceType){
-		case "packages":
-			 List<Resource> packages = sonar.findPackages(parent);
-			 return packages;
-		
-		case "classes":
-			 List<Resource> classes = sonar.findClasses(parent);
-			 return classes;
+
+		if(resourceType.equals(ResourceQualifier.CLASS.toString())){		
+			List<Resource> packages = sonar.findPackages(parent);
+			return packages;
+		}
+		else if (resourceType.equals(ResourceQualifier.PACKAGE.toString())){
+			List<Resource> classes = sonar.findClasses(parent);
+			return classes;
 		}
 		return null;
 	}
-	
+
 	public int getNumberOfResources() {
 		return this.resources.size();
 	}
-	
+
 	/**
 	 * @return  a list of all the resourcenames
 	 */
@@ -77,7 +78,7 @@ public class MeasureFetcher {
 		}
 		return result;
 	}
-	
+
 	public HashMap<String, String> getResourceKeysAndNames(){
 		HashMap<String, String> result = new HashMap<String, String>();
 		for(Resource r : resources) {
@@ -85,11 +86,11 @@ public class MeasureFetcher {
 		}
 		return result;
 	}
-	
+
 	public String getDefaultProject() {
 		return sonar.findProjects().get(0).getKey();
 	}
-	
+
 	private Resource getResource(String key){
 		for(Resource resource : resources){
 			if(resource.getKey().equals(key)){
@@ -98,9 +99,9 @@ public class MeasureFetcher {
 		}
 		return null;
 	}
-	
+
 	public List<String[]> findOutgoingDependencies(String resourceKey){
-		List<Dependency> dependencies = sonar.findOutgoingDependencies(getResource(resourceKey)); //TODO fix, not getting anything
+		List<Dependency> dependencies = sonar.findOutgoingDependencies(getResource(resourceKey));
 		List<String[]> result = new ArrayList<String[]>();
 		for(Dependency dependency : dependencies){
 			String[] tuple = {dependency.getType().toString() , dependency.getToResourceKey()};
@@ -108,9 +109,9 @@ public class MeasureFetcher {
 		}
 		return result;
 	}
-	
+
 	public List<String[]> findIncomingDependencies(String resourceKey){
-		List<Dependency> dependencies = sonar.findIncomingDependencies(getResource(resourceKey)); //TODO fix, not getting anything
+		List<Dependency> dependencies = sonar.findIncomingDependencies(getResource(resourceKey));
 		List<String[]> result = new ArrayList<String[]>();
 		for(Dependency dependency : dependencies){
 			String[] tuple = {dependency.getType().toString() , dependency.getFromResourceKey()};
@@ -118,5 +119,5 @@ public class MeasureFetcher {
 		}
 		return result;
 	}
-	
+
 }
