@@ -167,13 +167,10 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		}
 		int lastTreePos = 0;
 		for(ShapeTree tree: dependencyTrees){
-			System.out.println("NAME: " + tree.getRoot().getName());
 			int leftMost = tree.getLeftMostPositon();
 			int distance = lastTreePos - leftMost;
 			tree.shiftTree(distance + TREE_MARGIN);
 			lastTreePos = tree.getRightMostPosition();
-			System.out.println("LEFTMOST:" + tree.getLeftMostPositon());
-			System.out.println("RIGHTMOST PREVIOUS: " + lastTreePos);
 		}
 	}
 	

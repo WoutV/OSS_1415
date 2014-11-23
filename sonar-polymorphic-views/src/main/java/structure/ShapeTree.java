@@ -52,14 +52,15 @@ public class ShapeTree {
 	 */
 	public void layoutY(int heightMargin){
 		getRoot().getShape().setyPos(0);
-		int tempY = 0;
+		int currentHeight = (int) getRoot().getShape().getHeight() + heightMargin;
 		for(int i = 1; i < getHighestLevel()+1; i++){
 			List<ShapeTreeNode> level = getLevel(i);
-			double lvlHeight = getMaxHeightOfLvl(i-1);
+			double lvlHeight = getMaxHeightOfLvl(i);
 			for(ShapeTreeNode node : level){
-				node.getShape().setyPos((int) tempY + heightMargin);
+				int y = (int) currentHeight;
+				node.getShape().setyPos(y);
 			}
-			tempY += lvlHeight + heightMargin;
+			currentHeight += lvlHeight + heightMargin;
 		}
 	}
 	
