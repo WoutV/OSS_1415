@@ -107,8 +107,8 @@ public class Java2DBuilder implements ChartBuilder {
 	public void createXAxis(String label, int xMin, int xMax, int minLabel, int maxLabel) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
-		double start = (1-SCALE)/2*getCanvasWidth();
-		double stop = (1-(1-SCALE)/2)*getCanvasWidth();
+		double start = xMin + (1-SCALE)/2*getCanvasWidth();
+		double stop = xMax - (1-SCALE)/2*getCanvasWidth();
 		double height = (1-(1-SCALE)/2)*getCanvasHeight();
 		drawHorizontalAxis(start, stop, height);
 		int pos = graphics.getFontMetrics().getMaxAscent();
@@ -122,15 +122,17 @@ public class Java2DBuilder implements ChartBuilder {
 	public void createYAxis(String label, int yMin, int yMax, int minLabel, int maxLabel) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
-		double start = (1-SCALE)/2*getCanvasHeight();
-		double stop = (1-(1-SCALE)/2)*getCanvasHeight();
+		double start = yMin + (1-SCALE)/2*getCanvasHeight();
+		double stop = yMax - (1-SCALE)/2*getCanvasHeight();
 		double width = (1-SCALE)/2*getCanvasWidth();
-		drawVerticalAxis(start, stop, width);
+		double newStart = fixY(start);
+		double newStop = fixY(stop);
+		drawVerticalAxis(newStart, newStop, width);
 		int pos = graphics.getFontMetrics().getMaxDescent();
 		graphics.setColor(Color.BLACK);
-		drawVerticalString(label, (int) (width-pos), (int) (start+(stop-start)/2), -Math.PI/2, true);
-		drawVerticalString(""+minLabel, (int) (width-pos), (int) (stop-1), -Math.PI/2, false);
-		drawVerticalString(""+maxLabel, (int) (width-pos), (int) (start), -Math.PI/2, false);
+		drawVerticalString(label, (int) (width-pos), (int) (newStart -(newStart-newStop)/2), -Math.PI/2, true);
+		drawVerticalString(""+minLabel, (int) (width-pos), (int) (newStart-1), -Math.PI/2, false);
+		drawVerticalString(""+maxLabel, (int) (width-pos), (int) (newStop), -Math.PI/2, false);
 	}
 
 	@Override
@@ -211,9 +213,7 @@ public class Java2DBuilder implements ChartBuilder {
 	private void drawVerticalAxis(double start, double stop, double x) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
-		double newStart = fixY(start);
-		double newStop = fixY(stop);
-		Line2D line = new Line2D.Double(x, newStart, x, newStop);
+		Line2D line = new Line2D.Double(x, start, x, stop);
 		graphics.setColor(Color.BLACK);
 		graphics.draw(line);
 		drawArrowHead(line);

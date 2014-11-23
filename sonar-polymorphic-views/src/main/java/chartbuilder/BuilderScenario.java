@@ -24,15 +24,12 @@ public class BuilderScenario {
 	
 	public void testScenarioA() throws IOException{
 		builder.createCanvas(600,600, BufferedImage.TYPE_INT_RGB);
-		builder.createXAxis("Lines of code", 0, 200, -20 , 300);
-		builder.createYAxis("Number of methods", 0, 500, 800, 1200);
-//		builder.createRectangleFittedToAxes(50, 70, 12, 15, Color.blue, "sonar.random");
-//		builder.createRectangleFittedToAxes(100, 50, 12, 15, Color.blue, "sonarTest");
-//		builder.createRectangleFittedToAxes(200, 500, 20, 15, Color.blue, "ActualSonar");
-//		builder.createRectangleFittedToAxes(-20, 500, 50, 70, Color.blue, "sonarqube");
-//		builder.createRectangleFittedToAxes(200, 0, 90, 90, Color.blue, "visualistation");
-//		builder.createRectangleFittedToAxes(0, 0, 80, 40, Color.blue, "JAVA2DBUILDER");
-//		builder.createRectangleFittedToAxes(-75, 150, 30, 47, Color.blue, "PolymorphicViewsChart");
+		builder.createXAxis("Lines of code", 0, 600, -20 , 300);
+		builder.createYAxis("Number of methods", 0, 600, 800, 1200);
+//		builder.createXAxis("Lines of code", 300, 600, -20 , 300);
+//		builder.createYAxis("Number of methods", 300, 600, 800, 1200);
+		builder.createRectangle(300, 60, 80, 40, Color.blue, "JAVA2DBUILDER");
+		builder.createRectangle(500, 150, 30, 47, Color.blue, "PolymorphicViewsChart");
 		File outputfile = new File("img.png");
 	    ImageIO.write(builder.getImage(), "png", outputfile);
 	}
