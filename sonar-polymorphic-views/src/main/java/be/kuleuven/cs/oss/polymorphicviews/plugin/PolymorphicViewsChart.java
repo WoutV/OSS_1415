@@ -7,6 +7,7 @@ import generators.SystemComplexityGenerator;
 
 import java.awt.image.BufferedImage;
 
+import org.jfree.util.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.sonar.api.charts.Chart;
@@ -27,16 +28,16 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 public class PolymorphicViewsChart implements Chart {
 	private final static Logger LOG = LoggerFactory.getLogger(PolymorphicViewsChart.class);
 	private final SonarFacade sonar;
-	
+
 	public PolymorphicViewsChart(SonarFacade sonar) {
 		this.sonar = sonar;
 	}
-	
+
 	@Override
 	public String getKey() {
 		return "polymorphic";
 	}
-	
+
 	/**
 	 * This method generates a buffered image, based on the given ChartParameters.
 	 * @param params arguments passed by end-user in URL
@@ -50,28 +51,36 @@ public class PolymorphicViewsChart implements Chart {
 		String type = polyParams.getType();
 		PolymorphicChartGenerator generator = null;
 		switch(type) { 
-			case "scatter" : generator = new ScatterPlotGenerator(polyParams,sonar);
-			break;
-			case "syscomp" : generator = new SystemComplexityGenerator(polyParams,sonar);
-			break;
-			default : generator = new ScatterPlotGenerator(polyParams,sonar);
-			break;
+		case "scatter" : generator = new ScatterPlotGenerator(polyParams,sonar);
+		break;
+		case "syscomp" : generator = new SystemComplexityGenerator(polyParams,sonar);
+		break;
+		default : generator = new ScatterPlotGenerator(polyParams,sonar);
+		break;
 		}
-		BufferedImage buff = generator.generateImage();
-		LOG.info("PolymorphicViewsChart generated!");
-		return buff;
+		try{
+			BufferedImage buff = generator.generateImage();
+			LOG.info("PolymorphicViewsChart generated!");
+			return buff;}
+		catch(Exception e)
+		{
+			System.out.println("Error occured generating the chart: \n");
+			e.printStackTrace();
+			Log.error("An error occured generating the chart" + e);
+			return null;
+		}
 	}
 
-	private void setDefaultParameters() {
-		String xMetricDefault = sonar.findMetrics().get(0).getKey();
-		String yMetricDefault  =  sonar.findMetrics().get(1).getKey();
-		String project = sonar.findProjects().get(0).getKey();
-		PolymorphicChartParameters.DEFAULT_XMETRIC=xMetricDefault;
-		PolymorphicChartParameters.DEFAULT_YMETRIC=yMetricDefault;
-		PolymorphicChartParameters.DEFAULT_PARENT=project;
+		private void setDefaultParameters() {
+			String xMetricDefault = sonar.findMetrics().get(0).getKey();
+			String yMetricDefault  =  sonar.findMetrics().get(1).getKey();
+			String project = sonar.findProjects().get(0).getKey();
+			PolymorphicChartParameters.DEFAULT_XMETRIC=xMetricDefault;
+			PolymorphicChartParameters.DEFAULT_YMETRIC=yMetricDefault;
+			PolymorphicChartParameters.DEFAULT_PARENT=project;
+		}
+
+		public SonarFacade getSonar() {
+			return this.sonar;
+		}
 	}
-	
-	public SonarFacade getSonar() {
-		return this.sonar;
-	}
-}

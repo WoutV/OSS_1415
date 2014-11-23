@@ -51,16 +51,14 @@ public class MeasureFetcher {
 	 * @return All the resources of the given type below the given parent.
 	 */
 	private List<Resource> findResources(String resourceType, Resource parent){
+		List<Resource> result = new ArrayList<Resource>();
 		switch (resourceType){
 		case "packages":
-			 List<Resource> packages = sonar.findPackages(parent);
-			 return packages;
-		
+			 result = sonar.findPackages(parent);		
 		case "classes":
-			 List<Resource> classes = sonar.findClasses(parent);
-			 return classes;
+			 result = sonar.findClasses(parent);
 		}
-		return null;
+		return result;
 	}
 	
 	public int getNumberOfResources() {
