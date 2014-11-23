@@ -5,7 +5,9 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import generators.Util;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.junit.Before;
@@ -40,19 +42,37 @@ public class UtilTest {
 	}
 	
 	@Test
-	public void scaleTest() {
+	public void scaleMapTest() {
 		Map<String,Double> map = new HashMap<String,Double>();
 		map.put("-2", -2.0);
 		map.put("0",0.0);
 		map.put("2",2.0);
 		
-		map = Util.scale(map,1.0, 3.0);
+		map = Util.scaleMap(map,1.0, 3.0);
 		
 		assertEquals(1.0, map.get("-2").doubleValue(),0.0001);
 		assertEquals(2.0, map.get("0").doubleValue(),0.0001);
 		assertEquals(3.0, map.get("2").doubleValue(),0.0001);
 		
 	}
+	
+	@Test
+	public void scaleListTest() {
+		List<Double> list = new ArrayList<Double>();
+		List<Double> resultList = new ArrayList<Double>();
+		list.add(-2.0);
+		list.add(0.0);
+		list.add(2.0);
+		
+		
+		resultList = Util.scaleList(list,1.0, 3.0);
+		
+		assertEquals(1.0, resultList.get(0).doubleValue(),0.0001);
+		assertEquals(2.0, resultList.get(1).doubleValue(),0.0001);
+		assertEquals(3.0, resultList.get(2).doubleValue(),0.0001);
+		
+	}
+	
 
 	@Test
 	public void splitOnDelimiterTestNormal() {		

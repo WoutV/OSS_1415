@@ -1,7 +1,9 @@
 package generators;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -38,7 +40,7 @@ public class Util {
 	 * @param b the maximum value of the scaled values
 	 * @return the Map with the scaled values and their key
 	 */
-	public static Map<String,Double> scale(Map<String,Double> values, double a, double b){
+	public static Map<String,Double> scaleMap(Map<String,Double> values, double a, double b){
 		double min = Collections.min(values.values(),null);
 		double max = Collections.max(values.values(),null);
 		double factor = (b-a)/(max-min);
@@ -126,5 +128,29 @@ public class Util {
 			values.put(entry.getKey(),newValue);
 		}
 		return values;
+	}
+
+	/**
+	 * Scales the values of a given list to values between a and b.
+	 * @param values
+	 * @param a the new smallest value
+	 * @param b the new biggest value
+	 * @return
+	 */
+	public static List<Double> scaleList(List<Double> values, double a,
+			double b) {
+		List<Double> result = new ArrayList<Double>();
+		double min = Collections.min(values,null);
+		double max = Collections.max(values,null);
+		if(min==max){
+			return values;
+		}
+		double factor = (b-a)/(max-min);
+
+		for(double value:values){
+			value = factor*(value-min)+(a);
+			result.add(value);
+		}
+		return result;
 	}
 }

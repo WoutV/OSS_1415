@@ -19,6 +19,8 @@ import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 
 public class BoxGenerator extends ShapeGenerator {
 	private final static Logger LOG = LoggerFactory.getLogger(BoxGenerator.class);
+	private final static double MIN_BOX_SIZE = 5;
+	private final static double MAX_BOX_SIZE = 100;
 	
 	public BoxGenerator(MeasureFetcher measureFetcher, PolymorphicChartParameters params) {
 		super(measureFetcher, params);
@@ -44,13 +46,13 @@ public class BoxGenerator extends ShapeGenerator {
 	private void setBoxProperties(String width, String height, String color,Box[] boxes) {
 		List<Double> widthList;
 		try {
-			widthList = getShapeDimension(width);
+			widthList = Util.scaleList(getShapeDimension(width),MIN_BOX_SIZE,MAX_BOX_SIZE);
 		} catch (IllegalArgumentException e) {
 			widthList = getShapeDimension(PolymorphicChartParameters.DEFAULT_BOXWIDTH);
 		}
 		List<Double> heightList;
 		try {
-			heightList = getShapeDimension(height);
+			heightList = Util.scaleList(getShapeDimension(height),MIN_BOX_SIZE,MAX_BOX_SIZE);
 		} catch (IllegalArgumentException e) {
 			heightList = getShapeDimension(PolymorphicChartParameters.DEFAULT_BOXHEIGHT);
 		}

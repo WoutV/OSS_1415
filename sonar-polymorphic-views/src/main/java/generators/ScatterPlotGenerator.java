@@ -50,8 +50,8 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 		int minY = Collections.min(yPositions.values(),null).intValue();
 		int maxY = Collections.max(yPositions.values(),null).intValue();
 		
-		xPositions=Util.scale(xPositions, 0, width);
-		yPositions=Util.scale(yPositions, 0, height);
+		xPositions=Util.scaleMap(xPositions, 0, width);
+		yPositions=Util.scaleMap(yPositions, 0, height);
 
 		Log.info("Creating axes...");
 	    builder.createCanvas(height, width, BufferedImage.TYPE_INT_RGB);
