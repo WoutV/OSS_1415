@@ -62,8 +62,10 @@ public class ShapeTreeNode {
 	public void adjustToMiddleOfChildren(){
 		if(!getChildren().isEmpty()){
 			int[] pos = getChildrenPosition();
-			int midChildren = (pos[1] - pos[0])/2;
-			shape.setxPos(midChildren-(int) (shape.getWidth()/2));
+			int midDistance = (pos[1] - pos[0])/2;
+			midDistance = midDistance-((int) (shape.getWidth()/2));
+			int x = pos[0] + midDistance;
+			shape.setxPos(x);
 		}
 	}
 	
@@ -88,17 +90,14 @@ public class ShapeTreeNode {
 	}
 	
 	/**
-	 * This method gets the width of all children, and centers them with their parent aka. this node.
+	 * This method gets the width of all children
 	 */
 	public void shakeChildrenX(int margin) {
-		int width = getChildrenWidth() + margin * getChildren().size()-1;
-		int moved = this.getShape().getxPos()-(width/2);
+		int moved = 0;
 		for(ShapeTreeNode node : getChildren()){
 			node.getShape().setxPos(moved);
-			moved += node.getShape().getWidth() + margin;
-			node.shakeChildrenX(margin);
+			moved += (int) node.getShape().getWidth() + margin;
 		}
-		
 	}
 	
 	public boolean hasChildren(){
@@ -176,7 +175,9 @@ public class ShapeTreeNode {
 	}
 	
 	public void shift(int x){
-		this.getShape().setxPos(this.getShape().getxPos()+x);
+		Shape shape = this.getShape();
+		int newx = this.getShape().getxPos()+x;
+		shape.setxPos(newx);
 		for(ShapeTreeNode child : getChildren()){
 			child.shift(x);
 		}
@@ -193,5 +194,19 @@ public class ShapeTreeNode {
 		int distance = (xcoord + margin) - x;
 		shift(distance);
 	}
-
+	
+	public int getRightEdgeSubTree(){
+		if(hasChildren()){
+			return getLastChild().getRightEdgeSubTree();
+		}
+		int x = getShape().getxPos() + (int) getShape().getWidth();
+		return x;
+	}
+	
+	public int getLeftEdgeSubTree(){
+		if(hasChildren()){
+			return getFirstChild().getLeftEdgeSubTree();
+		}
+		return getShape().getxPos();
+	}
 }

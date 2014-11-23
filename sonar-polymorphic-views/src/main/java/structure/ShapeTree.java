@@ -23,8 +23,8 @@ public class ShapeTree {
 	 * @param heightMargin a margin between levels
 	 */
 	public void layout(int leafMargin, int heightMargin){
-		layoutX(leafMargin);
-		//newSort(leafMargin);
+		//layoutX(leafMargin);
+		newSort(leafMargin);
 		layoutY(heightMargin);
 	}
 	
@@ -123,6 +123,10 @@ public class ShapeTree {
 	 */
 	public List<ShapeTreeNode> getLevel(int x){
 		ArrayList<ShapeTreeNode> list = new ArrayList<ShapeTreeNode>();
+		if(x == 0){
+			list.add(getRoot());
+			return list;
+		}
 		for(ShapeTreeNode node : getNodes()){
 			if(node.getLevel() == x){
 				list.add(node);
@@ -175,6 +179,21 @@ public class ShapeTree {
 		return maxWidth;
 	}
 	
+	public int getWidth(){
+		ShapeTreeNode node  = this.getRoot();
+		int x1 = node.getLeftEdgeSubTree();
+		int x2 = node.getRightEdgeSubTree();
+		return x2-x1;
+	}
+	
+	public int getRightMostPosition(){
+		return this.getRoot().getRightEdgeSubTree();
+	}
+	
+	public int getLeftMostPositon(){
+		return this.getRoot().getLeftEdgeSubTree();
+	}
+	
 	/**
 	 * Get the maximum height of level x.
 	 * @param x the level
@@ -225,32 +244,56 @@ public class ShapeTree {
 		nodes.add(node);
 	}
 	
+	//need to add method that makes te spacing between children not on the bottom level equal
+	
 	public void newSort(int leafMargin){
-		List<ShapeTreeNode> parentsOfBottom = getLevel(getHighestLevel()-1);
-		for(ShapeTreeNode parent : parentsOfBottom){
-			parent.shakeChildrenX(leafMargin);
-		}
+		layoutBottom(leafMargin);
 		for(int i = getHighestLevel()-1 ; i >= 0 ; i--){
 			List<ShapeTreeNode> nodes = getLevel(i);
 			List<ShapeTreeNode> checked = new ArrayList<ShapeTreeNode>();
 			int whichNode = 0;
+			int maxDistance = 0;
 			for(ShapeTreeNode node : nodes){
-				node.adjustToMiddleOfChildren();
+				node.adjustToMiddleOfChildren(); 
 				if(!checked.isEmpty()){
 					ShapeTreeNode other = checked.get(whichNode-1);
-					if(other.hasChildren()){
-						int[] childrenRange = other.getChildrenPosition();
-						if(node.hasChildren()){
-							node.positionChildrenAndSelfNextTo(childrenRange[1], leafMargin);
-						}
-						else{
-							node.positionSelfNextTo(childrenRange[1], leafMargin);
-						}
+					positionsNodesRelativeTo(leafMargin, other, node);
+					int difference = node.getShape().getxPos() - (other.getShape().getxPos() + (int) other.getShape().getWidth());
+					if(difference > maxDistance){
+						maxDistance = difference;
 					}
 				}
 				checked.add(node);
 				whichNode += 1;
 			}
+			adjustLevelSpacing(i, maxDistance);
+		}
+	}
+
+	private void adjustLevelSpacing(int level, int maxDistance) {
+		List<ShapeTreeNode> nodes = getLevel(level);
+		ShapeTreeNode previous = null;
+		for(ShapeTreeNode node : nodes){
+			if(previous != null){
+				int currentDistance = node.getShape().getxPos() - previous.getShape().getxPos();
+				int toMove = maxDistance - currentDistance;
+				node.shift(toMove);
+			}
+			previous = node;
+		}
+	}
+
+	private void positionsNodesRelativeTo(int leafMargin, ShapeTreeNode other, ShapeTreeNode node) {
+		int rightX = other.getRightEdgeSubTree();
+		int leftX = node.getLeftEdgeSubTree();
+		int difference = rightX - leftX; // 5  10 = -5 
+		node.shift(difference + leafMargin);
+	}
+
+	private void layoutBottom(int leafMargin) {
+		List<ShapeTreeNode> parentsOfBottom = getLevel(getHighestLevel()-1);
+		for(ShapeTreeNode parent : parentsOfBottom){
+			parent.shakeChildrenX(leafMargin);
 		}
 	}
 }

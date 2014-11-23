@@ -165,11 +165,15 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		for(ShapeTree tree : dependencyTrees){
 			tree.layout(LEAF_MARGIN, HEIGHT_MARGIN);
 		}
-		int tempx = 0;
+		int lastTreePos = 0;
 		for(ShapeTree tree: dependencyTrees){
-			int width = (int) tree.getMaxWidth(LEAF_MARGIN);
-			tree.shiftTree(tempx + width/2 + TREE_MARGIN);
-			tempx += width+TREE_MARGIN;
+			System.out.println("NAME: " + tree.getRoot().getName());
+			int leftMost = tree.getLeftMostPositon();
+			int distance = lastTreePos - leftMost;
+			tree.shiftTree(distance + TREE_MARGIN);
+			lastTreePos = tree.getRightMostPosition();
+			System.out.println("LEFTMOST:" + tree.getLeftMostPositon());
+			System.out.println("RIGHTMOST PREVIOUS: " + lastTreePos);
 		}
 	}
 	
@@ -255,12 +259,12 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	 * Set height and width of the plot.
 	 */
 	private void setSize() {
-		int tempx = 0;
-		for(ShapeTree tree: dependencyTrees){
-			int width = (int) tree.getMaxWidth(LEAF_MARGIN);
-			tempx += width+TREE_MARGIN;
+		int x = 0;
+		if(!dependencyTrees.isEmpty()){
+			ShapeTree tree = this.dependencyTrees.get(this.dependencyTrees.size()-1);
+			x = tree.getRightMostPosition() + 2 * TREE_MARGIN;
 		}
-		this.width = tempx;
+		this.width = x;
 		int maxHeight = 0;
 		for(ShapeTree tree: dependencyTrees){
 			int height = (int) tree.getTotalHeight(HEIGHT_MARGIN) + 4 * HEIGHT_MARGIN;
