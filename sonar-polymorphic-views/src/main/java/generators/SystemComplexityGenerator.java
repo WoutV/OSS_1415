@@ -19,8 +19,8 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 
 	private List<Shape> shapes = new ArrayList<Shape>();//The collection of shapes, displayed on the view
 	private List<ShapeTree> dependencyTrees;
-	private final static int LEAF_MARGIN = 13;
-	private final static int TREE_MARGIN = 20;
+	private final static int LEAF_MARGIN = 20;
+	private final static int TREE_MARGIN = 25;
 	private final static int HEIGHT_MARGIN = 50;
 	
 	
@@ -220,16 +220,16 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	
 	/**
 	 * Will create a line shape between to shapes and add it to shapes.
-	 * @param node1 The parent
-	 * @param node2 The child
+	 * @param parent The parent
+	 * @param child The child
 	 */
-	public void createLine(ShapeTreeNode node1, ShapeTreeNode node2){
-		Shape shape1 = node1.getShape();
-		int x1 = shape1.getxPos() + (int)shape1.getWidth()/2;
-		int y1 = shape1.getyPos();
-		Shape shape2 = node2.getShape();
-		int x2 = shape2.getxPos() + (int)shape2.getWidth()/2;
-		int y2 = shape2.getyPos() + (int)shape2.getHeight();
+	public void createLine(ShapeTreeNode parent, ShapeTreeNode child){
+		Shape parentShape = parent.getShape();
+		int x1 = parentShape.getxPos();
+		int y1 = parentShape.getyPos() - (int) parentShape.getHeight()/2;
+		Shape childShape = child.getShape();
+		int x2 = childShape.getxPos();
+		int y2 = childShape.getyPos() + (int)childShape.getHeight()/2;
 		Shape line= new Line();
 		line.setxPos(x1);
 		line.setyPos(y1);
