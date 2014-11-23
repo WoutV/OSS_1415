@@ -17,8 +17,6 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 	private final static Logger LOG = LoggerFactory.getLogger(BoxGenerator.class);
-	private int width;
-	private int height;
 	private String xMetric;
 	private String yMetric;
 	private List<Shape> shapes;
@@ -78,16 +76,5 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 			shape.setyPos(yValue.intValue());
 			shape.draw(this.builder);
 		}
-	}
-
-	
-	/**
-	 * This method splits a String of form IntegerxInteger into two strings, parses them and sets the width and height of the scatterplot.
-	 * @param size
-	 */
-	private void parseSize(String size){		
-		String[] sizes = size.split("x");
-		this.width=Integer.parseInt(sizes[0]);
-		this.height=Integer.parseInt(sizes[1]);
 	}
 }

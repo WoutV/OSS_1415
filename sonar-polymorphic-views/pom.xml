@@ -43,6 +43,11 @@
 			<version>1.7.7</version>
 		</dependency>
 		<dependency>
+    		<groupId>org.easymock</groupId>
+    		<artifactId>easymock</artifactId>
+    		<version>3.3</version> <!-- Or whatever JUnit you're using. -->
+		</dependency>
+		    <dependency>
     		<groupId>junit</groupId>
     		<artifactId>junit</artifactId>
     		<version>4.11</version> <!-- Or whatever JUnit you're using. -->

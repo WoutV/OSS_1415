@@ -5,10 +5,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
+import be.kuleuven.cs.oss.sonarfacade.DependencyType;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 import structure.ShapeTree;
 import structure.ShapeTreeNode;
@@ -18,16 +17,11 @@ import structure.ShapeTreeNode;
 
 public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 
-	//TODO which attributes can be placed in superclass?
-	private int width;
-	private int height;
-	private String boxHeight;
-	private String boxWidth;
 	private List<Shape> shapes = new ArrayList<Shape>();//The collection of shapes, displayed on the view
 	private List<ShapeTree> dependencyTrees;
-	private int leafMargin = 13;
-	private int treeMargin = 20;
-	private int heightMargin = 50;
+	private final static int LEAF_MARGIN = 13;
+	private final static int TREE_MARGIN = 20;
+	private final static int HEIGHT_MARGIN = 50;
 	
 	
 	/** 
@@ -37,9 +31,6 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	 */
 	public SystemComplexityGenerator(PolymorphicChartParameters polyParams, SonarFacade sonar) {
 		super(polyParams,sonar);
-		
-		this.boxHeight = polyParams.getBoxHeight();
-		this.boxWidth = polyParams.getBoxWidth();
 		
 		this.dependencyTrees = buildTrees();
 		ShapeGenerator boxGenerator = new BoxGenerator(measureFetcher,polyParams);
@@ -132,7 +123,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 			List<String[]> outgoingDependencies = measureFetcher.findOutgoingDependencies(leaf.getKey());
 			boolean onlyUses = true;
 			for(String[] dependency: outgoingDependencies){
-				if(!dependency[0].equals("USES")){
+				if(!dependency[0].equals(DependencyType.USES.toString())){
 					onlyUses = false;
 				}
 			}
@@ -154,7 +145,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	private void dig(List<ShapeTreeNode> nodes, ShapeTree ent, ShapeTreeNode parent) {
 		List<String[]> incommingDependencies = measureFetcher.findIncomingDependencies(parent.getKey());
 		for(String[] dependency: incommingDependencies){
-			if(!dependency[0].equals("USES")){
+			if(!dependency[0].equals(DependencyType.USES.toString())){
 				String key = dependency[1];
 				for(ShapeTreeNode node : nodes){
 					if(node.getKey().equals(key)){
@@ -172,13 +163,13 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	 */
 	public void getPositions(){
 		for(ShapeTree tree : dependencyTrees){
-			tree.layout(leafMargin, heightMargin);
+			tree.layout(LEAF_MARGIN, HEIGHT_MARGIN);
 		}
 		int tempx = 0;
 		for(ShapeTree tree: dependencyTrees){
-			int width = (int) tree.getMaxWidth(leafMargin);
-			tree.shiftTree(tempx + width/2 + treeMargin);
-			tempx += width+treeMargin;
+			int width = (int) tree.getMaxWidth(LEAF_MARGIN);
+			tree.shiftTree(tempx + width/2 + TREE_MARGIN);
+			tempx += width+TREE_MARGIN;
 		}
 	}
 	
@@ -266,13 +257,13 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	private void setSize() {
 		int tempx = 0;
 		for(ShapeTree tree: dependencyTrees){
-			int width = (int) tree.getMaxWidth(leafMargin);
-			tempx += width+treeMargin;
+			int width = (int) tree.getMaxWidth(LEAF_MARGIN);
+			tempx += width+TREE_MARGIN;
 		}
 		this.width = tempx;
 		int maxHeight = 0;
 		for(ShapeTree tree: dependencyTrees){
-			int height = (int) tree.getTotalHeight(heightMargin) + 4 * heightMargin;
+			int height = (int) tree.getTotalHeight(HEIGHT_MARGIN) + 4 * HEIGHT_MARGIN;
 			if(height > maxHeight){
 				maxHeight = height;
 			}
