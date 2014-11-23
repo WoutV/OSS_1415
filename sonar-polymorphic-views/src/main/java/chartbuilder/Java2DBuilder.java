@@ -104,12 +104,12 @@ public class Java2DBuilder implements ChartBuilder {
 	}
 
 	@Override
-	public void createXAxis(String label, int xMin, int xMax, int minLabel, int maxLabel) {
+	public void createXAxis(String label, int xMin, int xMax, int y, int minLabel, int maxLabel) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
 		double start = xMin + (1-SCALE)/2*getCanvasWidth();
 		double stop = xMax - (1-SCALE)/2*getCanvasWidth();
-		double height = (1-(1-SCALE)/2)*getCanvasHeight();
+		double height = fixY(y) - (1-SCALE)/2*getCanvasHeight();
 		drawHorizontalAxis(start, stop, height);
 		int pos = graphics.getFontMetrics().getMaxAscent();
 		graphics.setColor(Color.BLACK);
@@ -119,12 +119,12 @@ public class Java2DBuilder implements ChartBuilder {
 	}
 
 	@Override
-	public void createYAxis(String label, int yMin, int yMax, int minLabel, int maxLabel) {
+	public void createYAxis(String label, int yMin, int yMax, int x,  int minLabel, int maxLabel) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
 		double start = yMin + (1-SCALE)/2*getCanvasHeight();
 		double stop = yMax - (1-SCALE)/2*getCanvasHeight();
-		double width = (1-SCALE)/2*getCanvasWidth();
+		double width = x + (1-SCALE)/2*getCanvasWidth();
 		double newStart = fixY(start);
 		double newStop = fixY(stop);
 		drawVerticalAxis(newStart, newStop, width);

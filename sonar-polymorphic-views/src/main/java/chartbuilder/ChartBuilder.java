@@ -32,10 +32,11 @@ public interface ChartBuilder {
 	 * @param label The label shown with the x-axis.
 	 * @param xMin The start of the x-axis. 
 	 * @param xMax The end value of the x-axis. 
+	 * @param y The y-value where the x-axis will be drawn.
 	 * @param minLabel The minimum value showed at the start of the x-axis.
 	 * @param maxLabel The maximum value showed at the end of the x-axis.
 	 */
-	public void createXAxis(String label, int xMin, int xMax, int minLabel, int maxLabel);
+	public void createXAxis(String label, int xMin, int xMax, int y, int minLabel, int maxLabel);
 	
 	/**
 	 * This method will draw an y-axis, pointed upwards.
@@ -47,10 +48,11 @@ public interface ChartBuilder {
 	 * @param label The label shown with the y-axis.
 	 * @param yMin The start of the y-axis. 
 	 * @param yMax The end value of the y-axis. 
+	 * @param x The x-value where the y-axis will be drawn.
 	 * @param minLabel The minimum value showed at the start of the y-axis.
 	 * @param maxLabel The maximum value showed at the end of the y-axis.
 	 */
-	public void createYAxis(String label, int yMin, int yMax, int minLabel, int maxLabel);
+	public void createYAxis(String label, int yMin, int yMax, int x, int minLabel, int maxLabel);
 	
 	/**
 	 * This method will draw a line between two points on the current canvas. 

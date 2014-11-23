@@ -55,8 +55,8 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 
 		Log.info("Creating axes...");
 	    builder.createCanvas(height, width, BufferedImage.TYPE_INT_RGB);
-	    builder.createXAxis(xMetric, 0, width, minX, maxX); 
-	    builder.createYAxis(yMetric, 0, height, minY, maxY);
+	    builder.createXAxis(xMetric, 0, width, 0, minX, maxX); 
+	    builder.createYAxis(yMetric, 0, height, 0, minY, maxY);
 	    
 	    Log.info("Building shapes...");
 		buildShapes(xPositions,yPositions);
