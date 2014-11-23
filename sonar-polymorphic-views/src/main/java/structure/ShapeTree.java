@@ -23,8 +23,8 @@ public class ShapeTree {
 	 * @param heightMargin a margin between levels
 	 */
 	public void layout(int leafMargin, int heightMargin){
-		//layoutX(leafMargin);
-		newSort(leafMargin, heightMargin);
+		layoutX(leafMargin);
+		//newSort(leafMargin);
 		layoutY(heightMargin);
 	}
 	
@@ -225,7 +225,7 @@ public class ShapeTree {
 		nodes.add(node);
 	}
 	
-	public void newSort(int leafMargin, int heightMargin){
+	public void newSort(int leafMargin){
 		for(int i = getHighestLevel()-1 ; i >= 0 ; i--){
 			List<ShapeTreeNode> nodes = getLevel(i);
 			List<ShapeTreeNode> checked = new ArrayList<ShapeTreeNode>();
@@ -234,8 +234,10 @@ public class ShapeTree {
 				node.shakeChildrenX(leafMargin);
 				if(!checked.isEmpty()){
 					ShapeTreeNode other = checked.get(whichNode-1);
-					int[] childrenRange = other.getChildrenPosition();
-					node.positionNextTo(childrenRange[1], leafMargin);
+					if(other.hasChildren()){
+						int[] childrenRange = other.getChildrenPosition();
+						node.positionNextTo(childrenRange[1], leafMargin);
+					}
 				}
 				checked.add(node);
 				whichNode += 1;
