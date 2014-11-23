@@ -226,17 +226,26 @@ public class ShapeTree {
 	}
 	
 	public void newSort(int leafMargin){
+		List<ShapeTreeNode> parentsOfBottom = getLevel(getHighestLevel()-1);
+		for(ShapeTreeNode parent : parentsOfBottom){
+			parent.shakeChildrenX(leafMargin);
+		}
 		for(int i = getHighestLevel()-1 ; i >= 0 ; i--){
 			List<ShapeTreeNode> nodes = getLevel(i);
 			List<ShapeTreeNode> checked = new ArrayList<ShapeTreeNode>();
 			int whichNode = 0;
 			for(ShapeTreeNode node : nodes){
-				node.shakeChildrenX(leafMargin);
+				node.adjustToMiddleOfChildren();
 				if(!checked.isEmpty()){
 					ShapeTreeNode other = checked.get(whichNode-1);
 					if(other.hasChildren()){
 						int[] childrenRange = other.getChildrenPosition();
-						node.positionNextTo(childrenRange[1], leafMargin);
+						if(node.hasChildren()){
+							node.positionChildrenAndSelfNextTo(childrenRange[1], leafMargin);
+						}
+						else{
+							node.positionSelfNextTo(childrenRange[1], leafMargin);
+						}
 					}
 				}
 				checked.add(node);
