@@ -74,11 +74,15 @@ public class ShapeTreeNode {
 	}
 	
 	public int[] getChildrenPosition(){
-		int x1 = getFirstChild().getShape().getxPos();
-		Shape shape =  getLastChild().getShape();
-		int x2 = shape.getxPos() + (int) shape.getWidth();
-		int[] result = {x1,x2};
-		return result;
+		if(!getChildren().isEmpty()){
+			int x1 = getFirstChild().getShape().getxPos();
+			Shape shape =  getLastChild().getShape();
+			int x2 = shape.getxPos() + (int) shape.getWidth();
+			int[] result = {x1,x2};
+			return result;
+		}
+		int[] noChildren = {Integer.MIN_VALUE, Integer.MIN_VALUE};
+		return noChildren;
 	}
 	
 	/**
@@ -90,8 +94,13 @@ public class ShapeTreeNode {
 		for(ShapeTreeNode node : getChildren()){
 			node.getShape().setxPos(moved);
 			moved += -(width/2) + node.getShape().getWidth() + margin;
+			node.shakeChildrenX(margin);
 		}
 		
+	}
+	
+	public boolean hasChildren(){
+		return !getChildren().isEmpty();
 	}
 	
 	public int getLevel() {
@@ -136,7 +145,7 @@ public class ShapeTreeNode {
 			return null;
 		}
 		else{
-			return children.get(children.size());
+			return children.get(children.size()-1);
 		}
 	}
 	
