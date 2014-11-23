@@ -1,9 +1,11 @@
 package chartbuilder;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Polygon;
 import java.awt.Rectangle;
+import java.awt.Stroke;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
@@ -136,10 +138,12 @@ public class Java2DBuilder implements ChartBuilder {
 	}
 
 	@Override
-	public void createLine(int x1, int y1, int x2, int y2) {
+	public void createLine(int x1, int y1, int x2, int y2, String lineStyle) {
 		BufferedImage img = getCanvas();
 		Graphics2D graphics = img.createGraphics();
 		graphics.setColor(Color.BLACK);
+		Stroke style = LineType.createLineStyleStroke(lineStyle);
+		graphics.setStroke(style);
 		graphics.drawLine(scaleX(x1), scaleY(y1), scaleX(x2), scaleY(y2));
 	}
 	
@@ -266,5 +270,6 @@ public class Java2DBuilder implements ChartBuilder {
 		graphics.fill(arrowHead);
 		graphics.setTransform(original);
 	}
+
 
 }
