@@ -139,6 +139,9 @@ public class Util {
 	 */
 	public static List<Double> scaleList(List<Double> values, double a,
 			double b) {
+		if (values==null || values.isEmpty()){
+			return values;
+		}
 		List<Double> result = new ArrayList<Double>();
 		double min = Collections.min(values,null);
 		double max = Collections.max(values,null);
