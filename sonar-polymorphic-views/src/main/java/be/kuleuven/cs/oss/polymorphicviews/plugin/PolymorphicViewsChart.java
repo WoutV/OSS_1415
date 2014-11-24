@@ -46,6 +46,7 @@ public class PolymorphicViewsChart implements Chart {
 	@Override
 	public BufferedImage generateImage(ChartParameters params) {
 		LOG.info("PolymorphicViewsChart generateImage() called!");
+		try{
 		setDefaultParameters();
 		PolymorphicChartParameters polyParams = new PolymorphicChartParameters(params);
 		String type = polyParams.getType();
@@ -58,7 +59,6 @@ public class PolymorphicViewsChart implements Chart {
 		default : generator = new ScatterPlotGenerator(polyParams,sonar);
 		break;
 		}
-		try{
 			BufferedImage buff = generator.generateImage();
 			LOG.info("PolymorphicViewsChart generated!");
 			return buff;}
