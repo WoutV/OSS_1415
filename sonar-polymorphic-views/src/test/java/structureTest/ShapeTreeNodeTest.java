@@ -14,9 +14,11 @@ import structure.ShapeTreeNode;
 
 public class ShapeTreeNodeTest {
 
+	private ShapeTreeNode root;
+	
 	@Before
 	public void setUp() throws Exception {
-		
+		root = new ShapeTreeNode("root", "rootKey");
 	}
 
 	@Test
@@ -28,9 +30,8 @@ public class ShapeTreeNodeTest {
 
 	@Test
 	public void testSortAlphabetic() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child1 = new ShapeTreeNode("a", "key2");
-		ShapeTreeNode child2 = new ShapeTreeNode("b", "key3");
+		ShapeTreeNode child1 = new ShapeTreeNode("a", "key1");
+		ShapeTreeNode child2 = new ShapeTreeNode("b", "key2");
 		ShapeTreeNode child3 = new ShapeTreeNode("c", "key3");
 		root.addChild(child3);
 		root.addChild(child1);
@@ -49,9 +50,8 @@ public class ShapeTreeNodeTest {
 	
 	@Test
 	public void testDoLvls() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
-		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
+		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
 		root.setLevel(1);
 		root.addChild(child1);
 		root.addChild(child2);
@@ -62,15 +62,13 @@ public class ShapeTreeNodeTest {
 	
 	@Test
 	public void testDoLvlsNoChildren() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
 		root.doLvls();
 	}
 	
 	@Test
 	public void testDoLvls2levelsChildren() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
-		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
+		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
 		root.setLevel(1);
 		root.addChild(child1);
 		child1.addChild(child2);
@@ -81,25 +79,22 @@ public class ShapeTreeNodeTest {
 
 	@Test
 	public void testToString() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
-		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
+		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
 		root.addChild(child1);
 		root.addChild(child2);
-		assertTrue(root.toString().equals("node1\r\nnode2\r\nnode3"));
+		assertTrue(root.toString().equals("root\r\nnode1\r\nnode2"));
 	}
 	
 	@Test
 	public void testToStringNoChildren() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		assertTrue(root.toString().equals("node1"));
+		assertTrue(root.toString().equals("root"));
 	}
 
 	@Test
 	public void testAdjustToMiddleOfChildren() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
-		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
+		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
 		Shape box0 = new Box();
 		box0.setxPos(20);
 		box0.setWidth(20);
@@ -120,8 +115,7 @@ public class ShapeTreeNodeTest {
 	
 	@Test
 	public void testAdjustToMiddleOfChildrenWithOneChild() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
+		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
 		Shape box0 = new Box();
 		box0.setxPos(20);
 		box0.setWidth(20);
@@ -137,7 +131,6 @@ public class ShapeTreeNodeTest {
 	
 	@Test
 	public void testAdjustToMiddleOfChildrenWithNoChildren() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
 		Shape box0 = new Box();
 		box0.setxPos(20);
 		box0.setWidth(20);
@@ -148,10 +141,9 @@ public class ShapeTreeNodeTest {
 
 	@Test
 	public void testShakeChildrenX() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
-		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
-		ShapeTreeNode child3 = new ShapeTreeNode("node4", "key4");
+		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
+		ShapeTreeNode child3 = new ShapeTreeNode("node3", "key3");
 		Shape box1 = new Box();
 		box1.setWidth(20);
 		child1.setShape(box1);
@@ -172,9 +164,8 @@ public class ShapeTreeNodeTest {
 
 	@Test
 	public void testShift() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
-		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
+		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
 		Shape box0 = new Box();
 		box0.setxPos(10);
 		box0.setWidth(40);
@@ -197,7 +188,6 @@ public class ShapeTreeNodeTest {
 	
 	@Test
 	public void testShiftNoChildren() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
 		Shape box0 = new Box();
 		box0.setxPos(10);
 		box0.setWidth(40);
@@ -208,9 +198,8 @@ public class ShapeTreeNodeTest {
 	
 	@Test
 	public void testShift2Levels() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
-		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
+		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
 		Shape box0 = new Box();
 		box0.setxPos(10);
 		box0.setWidth(40);
@@ -233,13 +222,12 @@ public class ShapeTreeNodeTest {
 
 	@Test
 	public void testGetRightEdgeSubTree() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
+		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
 		Shape box1 = new Box();
 		box1.setxPos(50);
 		box1.setWidth(20);
 		child1.setShape(box1);
-		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
 		Shape box2 = new Box();
 		box2.setxPos(100);
 		box2.setWidth(10);
@@ -252,19 +240,17 @@ public class ShapeTreeNodeTest {
 	//TODO
 	@Test
 	public void testGetRightEdgeSubTreeNoChildren() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
 		assertNull(root.getRightEdgeSubTree());
 	}
 
 	@Test
 	public void testGetLeftEdgeSubTree() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
+		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
 		Shape box1 = new Box();
 		box1.setxPos(50);
 		box1.setWidth(20);
 		child1.setShape(box1);
-		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
 		Shape box2 = new Box();
 		box2.setxPos(100);
 		box2.setWidth(10);
@@ -277,20 +263,17 @@ public class ShapeTreeNodeTest {
 	//TODO
 	@Test
 	public void testGetLeftEdgeSubTreeNoChildren() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
 		assertNull(root.getLeftEdgeSubTree());
 	}
 
 	@Test
 	public void testGetLevel() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
 		root.setLevel(2);
 		assertTrue(root.getLevel() == 2);
 	}
 
 	@Test
 	public void testSetLevel() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
 		root.setLevel(0);
 		assertTrue(root.getLevel() == 0);
 		root.setLevel(2);
@@ -300,7 +283,6 @@ public class ShapeTreeNodeTest {
 	@Test
 	public void testGetShape() {
 		Shape s = new Box();
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
 		root.setShape(s);
 		assertEquals(root.getShape(), s);
 	}
@@ -308,29 +290,25 @@ public class ShapeTreeNodeTest {
 	@Test
 	public void testSetShape() {
 		Shape s = new Box();
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
 		root.setShape(s);
 		assertEquals(root.getShape(), s);
 	}
 
 	@Test
 	public void testGetName() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		assertTrue(root.getName().equals("node1"));
+		assertTrue(root.getName().equals("root"));
 	}
 
 	@Test
 	public void testSetName() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
 		root.setName("newNode1");
 		assertTrue(root.getName().equals("newNode1"));
 	}
 
 	@Test
 	public void testGetChildren() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
-		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
+		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
 		root.addChild(child1);
 		assertTrue(root.getChildren().size() == 1);
 		root.addChild(child2);
@@ -341,9 +319,8 @@ public class ShapeTreeNodeTest {
 
 	@Test
 	public void testGetFirstChild() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
-		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
+		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
 		root.addChild(child1);
 		root.addChild(child2);
 		assertEquals(root.getFirstChild(), child1);
@@ -351,15 +328,13 @@ public class ShapeTreeNodeTest {
 	
 	@Test
 	public void testGetFirstChildNullChilds() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
 		assertNull(root.getFirstChild());
 	}
 
 	@Test
 	public void testSetChildren() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
-		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
+		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
 		List<ShapeTreeNode> children = new ArrayList<ShapeTreeNode>();
 		children.add(child1);
 		children.add(child2);
@@ -369,27 +344,23 @@ public class ShapeTreeNodeTest {
 	
 	@Test
 	public void testGetLastChildNullChilds() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
 		assertNull(root.getLastChild());
 	}
 
 	@Test
 	public void testAddChild() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
+		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
 		root.addChild(child1);
 		assertTrue(root.getChildren().contains(child1));
 	}
 
 	@Test
 	public void testGetKey() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		assertTrue(root.getKey().equals("key1"));
+		assertTrue(root.getKey().equals("rootKey"));
 	}
 
 	@Test
 	public void testSetKey() {
-		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
 		root.setKey("newKey1");
 		assertTrue(root.getKey().equals("newKey1"));
 	}
