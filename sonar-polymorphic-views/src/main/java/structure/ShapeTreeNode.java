@@ -63,7 +63,6 @@ public class ShapeTreeNode {
 		if(!getChildren().isEmpty()){
 			int[] pos = getChildrenPosition();
 			int midDistance = (pos[1] - pos[0])/2;
-			midDistance = midDistance-((int) (shape.getWidth()/2));
 			int x = pos[0] + midDistance;
 			shape.setxPos(x);
 		}
@@ -79,9 +78,10 @@ public class ShapeTreeNode {
 	
 	public int[] getChildrenPosition(){
 		if(!getChildren().isEmpty()){
-			int x1 = getFirstChild().getShape().getxPos();
-			Shape shape =  getLastChild().getShape();
-			int x2 = shape.getxPos() + (int) shape.getWidth();
+			Shape shape1 = getFirstChild().getShape();
+			int x1 = shape1.getxPos() - (int) shape1.getWidth();
+			Shape shape2 =  getLastChild().getShape();
+			int x2 = shape2.getxPos() + (int) shape2.getWidth();
 			int[] result = {x1,x2};
 			return result;
 		}
@@ -89,13 +89,11 @@ public class ShapeTreeNode {
 		return noChildren;
 	}
 	
-	/**
-	 * This method gets the width of all children
-	 */
+	
 	public void shakeChildrenX(int margin) {
 		int moved = 0;
 		for(ShapeTreeNode node : getChildren()){
-			node.getShape().setxPos(moved);
+			node.getShape().setxPos(moved + (int) node.getShape().getWidth()/2); 
 			moved += (int) node.getShape().getWidth() + margin;
 		}
 	}
@@ -190,7 +188,7 @@ public class ShapeTreeNode {
 	}
 
 	public void positionSelfNextTo(int xcoord, int margin) {
-		int x = this.getShape().getxPos();
+		int x = this.getShape().getxPos() - (int) this.getShape().getWidth() / 2;
 		int distance = (xcoord + margin) - x;
 		shift(distance);
 	}
@@ -199,7 +197,7 @@ public class ShapeTreeNode {
 		if(hasChildren()){
 			return getLastChild().getRightEdgeSubTree();
 		}
-		int x = getShape().getxPos() + (int) getShape().getWidth();
+		int x = getShape().getxPos() + (int) getShape().getWidth()/2;
 		return x;
 	}
 	
@@ -207,6 +205,7 @@ public class ShapeTreeNode {
 		if(hasChildren()){
 			return getFirstChild().getLeftEdgeSubTree();
 		}
-		return getShape().getxPos();
+		int x = getShape().getxPos() - (int) getShape().getWidth()/2;
+		return x;
 	}
 }

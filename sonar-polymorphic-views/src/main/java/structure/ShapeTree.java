@@ -51,13 +51,12 @@ public class ShapeTree {
 	 * @param heightMargin a margin between levels
 	 */
 	public void layoutY(int heightMargin){
-		getRoot().getShape().setyPos(0);
-		int currentHeight = (int) getRoot().getShape().getHeight() + heightMargin;
-		for(int i = 1; i < getHighestLevel()+1; i++){
+		int currentHeight = 0;
+		for(int i = 0; i <= getHighestLevel(); i++){
 			List<ShapeTreeNode> level = getLevel(i);
 			double lvlHeight = getMaxHeightOfLvl(i);
 			for(ShapeTreeNode node : level){
-				int y = (int) currentHeight;
+				int y = (int) currentHeight + (int) node.getShape().getHeight()/2;
 				node.getShape().setyPos(y);
 			}
 			currentHeight += lvlHeight + heightMargin;
@@ -69,12 +68,7 @@ public class ShapeTree {
 	 * @param x the distance to shift
 	 */
 	public void shiftTree(int x){
-		List<ShapeTreeNode> nodes = getNodes();
-		nodes.add(getRoot());
-		for(ShapeTreeNode node : nodes){
-			Shape shape = node.getShape();
-			shape.setxPos(shape.getxPos()+x);
-		}
+		getRoot().shift(x);
 	}
 	
 	
@@ -108,6 +102,9 @@ public class ShapeTree {
 	 */
 	public int getHighestLevel(){
 		int height = -1;
+		List<ShapeTreeNode> list = new ArrayList<ShapeTreeNode>();
+		list.addAll(getNodes());
+		list.add(getRoot());
 		for(ShapeTreeNode node : nodes){
 			int temp = node.getLevel();
 			if(temp>height){
@@ -219,9 +216,8 @@ public class ShapeTree {
 	public double getTotalHeight(int heightMargin){
 		int temp = 0;
 		for(int i = 0; i < getHighestLevel()+1;i++){
-			temp += getMaxHeightOfLvl(i);
+			temp += getMaxHeightOfLvl(i) + heightMargin;
 		}
-		temp += getHighestLevel()-1 * heightMargin;
 		return temp;
 	}
 	
@@ -292,9 +288,12 @@ public class ShapeTree {
 	}
 
 	private void layoutBottom(int leafMargin) {
-		List<ShapeTreeNode> parentsOfBottom = getLevel(getHighestLevel()-1);
-		for(ShapeTreeNode parent : parentsOfBottom){
-			parent.shakeChildrenX(leafMargin);
+		if(getHighestLevel() >= 1){
+			List<ShapeTreeNode> parentsOfBottom = getLevel(getHighestLevel()-1);
+			for(ShapeTreeNode parent : parentsOfBottom){
+				parent.shakeChildrenX(leafMargin);
+			}
 		}
+		
 	}
 }
