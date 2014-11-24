@@ -13,8 +13,6 @@ import structure.ShapeTree;
 import structure.ShapeTreeNode;
 
 
-
-
 public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 
 	private List<Shape> shapes = new ArrayList<Shape>();//The collection of shapes, displayed on the view
