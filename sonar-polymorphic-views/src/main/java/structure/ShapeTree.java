@@ -24,10 +24,89 @@ public class ShapeTree {
 	 * @param heightMargin a margin between levels
 	 */
 	public void layout(int leafMargin, int heightMargin){
-		newSort(leafMargin);
+		layoutX(leafMargin);
 		layoutY(heightMargin);
 	}
 	
+	/**
+	 * The the algorithm that will layout the tree's x positions. The tree is sorted bottom-up.
+	 * First the bottom level will be sorted. This level isn't sorted relative to other levels.
+	 * Second, go from bottom to top. At each level, each node will be positioned in the middle of its children.
+	 * Then, each node will be positioned next to the right most point of the subtree to the left.
+	 * After every node in a level is repositioned, this method checks the maximum distance between two nodes at the level. All nodes
+	 * will then be repositioned according to this maximum distance, so that the middle of every node on a level (bottom level not included) 
+	 * is positioned equally far away.
+	 * @param leafMargin a minimum margin between nodes.
+	 */
+	public void layoutX(int leafMargin){
+		sortTreeAlphabetic();
+		layoutBottom(leafMargin);
+		for(int i = getHighestLevel()-1 ; i >= 0 ; i--){
+			List<ShapeTreeNode> nodes = getLevel(i);
+			List<ShapeTreeNode> checked = new ArrayList<ShapeTreeNode>();
+			int whichNode = 0;
+			int maxDistance = 0;
+			for(ShapeTreeNode node : nodes){
+				node.adjustToMiddleOfChildren(); 
+				if(!checked.isEmpty()){
+					ShapeTreeNode other = checked.get(whichNode-1);
+					positionsNodesRelativeTo(leafMargin, other, node);
+					int difference = node.getShape().getxPos() - (other.getShape().getxPos());
+					if(difference > maxDistance){
+						maxDistance = difference;
+					}
+				}
+				checked.add(node);
+				whichNode += 1;
+			}
+			adjustLevelSpacing(i, maxDistance);
+		}
+	}
+
+	/**
+	 * Makes sure that between all consecutive nodes the distance is equal.
+	 * @param level the level
+	 * @param maxDistance the distance between each node.
+	 */
+	private void adjustLevelSpacing(int level, int maxDistance) {
+		List<ShapeTreeNode> nodes = getLevel(level);
+		ShapeTreeNode previous = null;
+		for(ShapeTreeNode node : nodes){
+			if(previous != null){
+				int currentDistance = node.getShape().getxPos() - previous.getShape().getxPos();
+				int toMove = maxDistance - currentDistance;
+				node.shift(toMove);
+			}
+			previous = node;
+		}
+	}
+
+	/**
+	 * Position a node's subtree next to the most right edge of the subtree of an other node.
+	 * @param leafMargin the distance the two subtrees will be apart from eachother
+	 * @param other a node
+	 * @param node a node
+	 */
+	private void positionsNodesRelativeTo(int leafMargin, ShapeTreeNode other, ShapeTreeNode node) {
+		int rightX = other.getRightEdgeSubTree();
+		int leftX = node.getLeftEdgeSubTree();
+		int difference = rightX - leftX;
+		node.shift(difference + leafMargin);
+	}
+
+	/**
+	 * Position the bottem layer of the tree.
+	 * @param leafMargin
+	 */
+	private void layoutBottom(int leafMargin) {
+		if(getHighestLevel() >= 1){
+			List<ShapeTreeNode> parentsOfBottom = getLevel(getHighestLevel()-1);
+			for(ShapeTreeNode parent : parentsOfBottom){
+				parent.shakeChildrenX(leafMargin);
+			}
+		}
+		
+	}
 	/**
 	 * Determine all y-positions.
 	 * @param heightMargin a margin between levels
@@ -108,10 +187,9 @@ public class ShapeTree {
 	}
 
 	/**
-	 * Get a representation of a tree.
+	 * Get a textual representation of a tree.
 	 * @return representation in form of a string
 	 */
-	//outdated
 	public String toString(){
 		String result = getRoot().getName();
 		for(ShapeTreeNode node : getNodes()){
@@ -120,10 +198,18 @@ public class ShapeTree {
 		return result;
 	}
 
+	/**
+	 * Gets the most right edge of the tree.
+	 * @return the x-coordinate of the most right edge
+	 */
 	public int getRightMostPosition(){
 		return this.getRoot().getRightEdgeSubTree();
 	}
 	
+	/**
+	 * Gets the most left edge of the tree.
+	 * @return the x-coordinate of the most left edge
+	 */
 	public int getLeftMostPositon(){
 		return this.getRoot().getLeftEdgeSubTree();
 	}
@@ -157,77 +243,45 @@ public class ShapeTree {
 		return temp;
 	}
 	
+	/**
+	 * Get the root of the tree
+	 * @return the root
+	 */
 	public ShapeTreeNode getRoot() {
 		return root;
 	}
 	
+	/**
+	 * Set the root of the tree
+	 * @param root
+	 */
 	public void setRoot(ShapeTreeNode root) {
 		this.root = root;
 	}
 	
+	/**
+	 * Get all the nodes of the tree
+	 * @return
+	 */
 	public List<ShapeTreeNode> getNodes() {
 		return nodes;
 	}
 	
+	/**
+	 * Set all the nodes of the tree
+	 * @param nodes
+	 */
 	public void setNodes(List<ShapeTreeNode> nodes) {
 		this.nodes = nodes;
 	}
 	
+	/**
+	 * Add a node to the tree nodes
+	 * @param node
+	 */
 	public void addNode(ShapeTreeNode node){
 		nodes.add(node);
 	}
 	
-	public void newSort(int leafMargin){
-		layoutBottom(leafMargin);
-		for(int i = getHighestLevel()-1 ; i >= 0 ; i--){
-			List<ShapeTreeNode> nodes = getLevel(i);
-			List<ShapeTreeNode> checked = new ArrayList<ShapeTreeNode>();
-			int whichNode = 0;
-			int maxDistance = 0;
-			for(ShapeTreeNode node : nodes){
-				node.adjustToMiddleOfChildren(); 
-				if(!checked.isEmpty()){
-					ShapeTreeNode other = checked.get(whichNode-1);
-					positionsNodesRelativeTo(leafMargin, other, node);
-					int difference = node.getShape().getxPos() - (other.getShape().getxPos() + (int) other.getShape().getWidth());
-					if(difference > maxDistance){
-						maxDistance = difference;
-					}
-				}
-				checked.add(node);
-				whichNode += 1;
-			}
-			adjustLevelSpacing(i, maxDistance);
-		}
-	}
 
-	private void adjustLevelSpacing(int level, int maxDistance) {
-		List<ShapeTreeNode> nodes = getLevel(level);
-		ShapeTreeNode previous = null;
-		for(ShapeTreeNode node : nodes){
-			if(previous != null){
-				int currentDistance = node.getShape().getxPos() - previous.getShape().getxPos();
-				int toMove = maxDistance - currentDistance;
-				node.shift(toMove);
-			}
-			previous = node;
-		}
-	}
-
-	private void positionsNodesRelativeTo(int leafMargin, ShapeTreeNode other, ShapeTreeNode node) {
-		int rightX = other.getRightEdgeSubTree();
-		int leftX = node.getLeftEdgeSubTree();
-		int difference = rightX - leftX; // 5  10 = -5 
-		node.shift(difference + leafMargin);
-	}
-
-	private void layoutBottom(int leafMargin) {
-		if(getHighestLevel() >= 1){
-			List<ShapeTreeNode> parentsOfBottom = getLevel(getHighestLevel()-1);
-			for(ShapeTreeNode parent : parentsOfBottom){
-				parent.shakeChildrenX(leafMargin);
-			}
-		}
-		
-	}
 }
