@@ -41,7 +41,12 @@ public class ShapeTreeNodeTest {
 		assertEquals(root.getChildren().get(2), child3);
 	}
 	
-
+	@Test
+	public void testSortAlphabeticNoChildren() {
+		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
+		root.sortAlphabetic();
+	}
+	
 	@Test
 	public void testDoLvls() {
 		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
@@ -53,6 +58,12 @@ public class ShapeTreeNodeTest {
 		root.doLvls();
 		assertTrue(child1.getLevel() == 2);
 		assertTrue(child2.getLevel() == 2);
+	}
+	
+	@Test
+	public void testDoLvlsNoChildren() {
+		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
+		root.doLvls();
 	}
 	
 	@Test
@@ -77,6 +88,7 @@ public class ShapeTreeNodeTest {
 		root.addChild(child2);
 		assertTrue(root.toString().equals("node1\r\nnode2\r\nnode3"));
 	}
+	
 	@Test
 	public void testToStringNoChildren() {
 		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
@@ -139,16 +151,23 @@ public class ShapeTreeNodeTest {
 		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
 		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
 		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
+		ShapeTreeNode child3 = new ShapeTreeNode("node4", "key4");
 		Shape box1 = new Box();
 		box1.setWidth(20);
 		child1.setShape(box1);
 		Shape box2 = new Box();
 		box2.setWidth(10);
 		child2.setShape(box2);
+		Shape box3 = new Box();
+		box3.setWidth(30);
+		child3.setShape(box3);
 		root.addChild(child1);
 		root.addChild(child2);
+		root.addChild(child3);
 		root.shakeChildrenX(10);
 		assertTrue(Math.abs(child1.getShape().getxPos() - child2.getShape().getxPos()) == 25);
+		assertTrue(Math.abs(child2.getShape().getxPos() - child3.getShape().getxPos()) == 30);
+		assertTrue(Math.abs(child1.getShape().getxPos() - child3.getShape().getxPos()) == 55);
 	}
 
 	@Test
@@ -174,8 +193,19 @@ public class ShapeTreeNodeTest {
 		assertTrue(root.getShape().getxPos() == 40);
 		assertTrue(child1.getShape().getxPos() == 80);
 		assertTrue(child2.getShape().getxPos() == 130);
-		
 	}
+	
+	@Test
+	public void testShiftNoChildren() {
+		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
+		Shape box0 = new Box();
+		box0.setxPos(10);
+		box0.setWidth(40);
+		root.setShape(box0);
+		root.shift(30);
+		assertTrue(root.getShape().getxPos() == 40);
+	}
+	
 	@Test
 	public void testShift2Levels() {
 		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
