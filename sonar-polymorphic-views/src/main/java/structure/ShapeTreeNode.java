@@ -84,7 +84,7 @@ public class ShapeTreeNode {
 	 * Get the accumulated width of all children.
 	 * @return the total width.
 	 */
-	public int getChildrenWidth(){
+	private int getChildrenWidth(){
 		int width = 0;
 		for(ShapeTreeNode node : getChildren()){
 			width += (int) node.getShape().getWidth();
@@ -96,7 +96,7 @@ public class ShapeTreeNode {
 	 * Get the x-position of the left edge of the most left child and the x-position of the right edge of the most right child, will return {0,0} otherwise.
 	 * @return {x1,x2} left_edge and right_edge
 	 */
-	public int[] getChildrenPosition(){
+	private int[] getChildrenPosition(){
 		if(!getChildren().isEmpty()){
 			Shape shape1 = getFirstChild().getShape();
 			int x1 = shape1.getxPos() - (int) shape1.getWidth()/2;
@@ -121,6 +121,7 @@ public class ShapeTreeNode {
 		}
 	}
 	
+	//Gevaarlijk voor nullpointer vermits er geen shape in de constructor wordt meegegeven?
 	/**
 	 * Will shift a node and its children by an amount x.
 	 * @param x the amount to shift
@@ -134,6 +135,7 @@ public class ShapeTreeNode {
 		}
 	}
 	
+	//TODO wat met tree zonder children? Nullpointer want geen shape
 	/**
 	 * Get the most right edge.
 	 * @return the x-coordinate of the most right edge
@@ -146,6 +148,7 @@ public class ShapeTreeNode {
 		return x;
 	}
 	
+	//TODO wat met tree zonder children? Nullpointer want geen shape
 	/**
 	 * Get the most left edge.
 	 * @return the x-coordinate of the most left edge
@@ -162,7 +165,7 @@ public class ShapeTreeNode {
 	 * Checks if a node has children or not.
 	 * @return true if it has children, false if not
 	 */
-	public boolean hasChildren(){
+	private boolean hasChildren(){
 		return !getChildren().isEmpty();
 	}
 	
