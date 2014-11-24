@@ -14,6 +14,7 @@ public class ShapeTree {
 	public ShapeTree(ShapeTreeNode root){
 		root.setLevel(0);
 		this.root = root;
+		this.nodes.add(root);
 	}
 	
 	/**
@@ -23,27 +24,8 @@ public class ShapeTree {
 	 * @param heightMargin a margin between levels
 	 */
 	public void layout(int leafMargin, int heightMargin){
-		//layoutX(leafMargin);
 		newSort(leafMargin);
 		layoutY(heightMargin);
-	}
-	
-	/**
-	 * Determine all x-positions.
-	 * @param leafMargin a margin between children
-	 */
-	public void layoutX(int leafMargin) {
-		getRoot().getShape().setxPos(0);
-		int height = getHighestLevel();
-		for(int i = 1; i < height+1 ; i++){
-			List<ShapeTreeNode> level = getLevel(i);
-			double lvlWidth = getLvlWidthMargin(i, leafMargin);
-			double tempX = 0 - lvlWidth/2;
-			for(ShapeTreeNode node : level){
-				node.getShape().setxPos((int) tempX);
-				tempX += node.getShape().getWidth() + leafMargin;
-			}
-		}
 	}
 	
 	/**
@@ -90,7 +72,6 @@ public class ShapeTree {
 	 * Will sort a tree. This will call each node and tell them to sort its children.
 	 */
 	public void sortTreeAlphabetic(){
-		getRoot().sortAlphabetic();
 		for(ShapeTreeNode node : nodes){
 			node.sortAlphabetic();
 		}
@@ -102,9 +83,6 @@ public class ShapeTree {
 	 */
 	public int getHighestLevel(){
 		int height = -1;
-		List<ShapeTreeNode> list = new ArrayList<ShapeTreeNode>();
-		list.addAll(getNodes());
-		list.add(getRoot());
 		for(ShapeTreeNode node : nodes){
 			int temp = node.getLevel();
 			if(temp>height){
@@ -121,10 +99,6 @@ public class ShapeTree {
 	 */
 	public List<ShapeTreeNode> getLevel(int x){
 		ArrayList<ShapeTreeNode> list = new ArrayList<ShapeTreeNode>();
-		if(x == 0){
-			list.add(getRoot());
-			return list;
-		}
 		for(ShapeTreeNode node : getNodes()){
 			if(node.getLevel() == x){
 				list.add(node);
@@ -132,26 +106,12 @@ public class ShapeTree {
 		}
 		return list;
 	}
-	
-	/**
-	 * Get the width of level x including a margin.
-	 * @param x
-	 * @param margin
-	 * @return
-	 */
-	public double getLvlWidthMargin(int x, int margin){
-		List<ShapeTreeNode> nodes = getLevel(x);
-		double width = 0;
-		for(ShapeTreeNode node : nodes){
-			width+=node.getShape().getWidth();
-		}
-		return width += (getLevel(x).size()-1) * margin;
-	}
-	
+
 	/**
 	 * Get a representation of a tree.
 	 * @return representation in form of a string
 	 */
+	//outdated
 	public String toString(){
 		String result = getRoot().getName();
 		for(ShapeTreeNode node : getNodes()){
@@ -159,31 +119,7 @@ public class ShapeTree {
 		}
 		return result;
 	}
-	
-	/**
-	 * Get the maximum width of a tree.
-	 * @param margin the margin between the each node.
-	 * @return The width of the level with the biggest width of the tree.
-	 */
-	public double getMaxWidth(int margin){
-		int height = getHighestLevel();
-		double maxWidth = 0;
-		for(int i = 0; i < height+1; i++){
-			double width = getLvlWidthMargin(i, margin);
-			if(width > maxWidth){
-				maxWidth = width;
-			}
-		}
-		return maxWidth;
-	}
-	
-	public int getWidth(){
-		ShapeTreeNode node  = this.getRoot();
-		int x1 = node.getLeftEdgeSubTree();
-		int x2 = node.getRightEdgeSubTree();
-		return x2-x1;
-	}
-	
+
 	public int getRightMostPosition(){
 		return this.getRoot().getRightEdgeSubTree();
 	}
@@ -240,8 +176,6 @@ public class ShapeTree {
 	public void addNode(ShapeTreeNode node){
 		nodes.add(node);
 	}
-	
-	//need to add method that makes te spacing between children not on the bottom level equal
 	
 	public void newSort(int leafMargin){
 		layoutBottom(leafMargin);

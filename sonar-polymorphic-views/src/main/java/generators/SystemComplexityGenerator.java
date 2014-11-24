@@ -167,12 +167,9 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		}
 		int lastTreePos = 0;
 		for(ShapeTree tree: dependencyTrees){
-			System.out.println("TREE: " + tree.getRoot().getName() + "  LEFT: "  + tree.getLeftMostPositon() + " RIGHT" + tree.getRightMostPosition());
 			int leftMost = tree.getLeftMostPositon();
 			int distance = lastTreePos - leftMost;
-			System.out.println("DISTANCE: " + distance);
 			tree.shiftTree(distance + TREE_MARGIN);
-			System.out.println("AFTER MOVE, TREE: " + tree.getRoot().getName() + "  LEFT: "  + tree.getLeftMostPositon() + " RIGHT" + tree.getRightMostPosition());
 			lastTreePos = tree.getRightMostPosition();
 		}
 	}
@@ -182,7 +179,6 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	 */
 	private void addShapesToTree(){
 		for(ShapeTree shapeTree: dependencyTrees){
-			shapeTree.getRoot().setShape(getShapeBy(shapeTree.getRoot().getName()));
 			for(ShapeTreeNode node : shapeTree.getNodes()){
 				Shape shape = getShapeBy(node.getName());
 				node.setShape(shape);
@@ -248,9 +244,6 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	 */
 	private void flipY() {
 		for(ShapeTree tree : dependencyTrees){
-			Shape rootShape = tree.getRoot().getShape();
-			int y = rootShape.getyPos();
-			rootShape.setyPos(this.height - y);
 			for(ShapeTreeNode node : tree.getNodes()){
 				Shape shape = node.getShape();
 				shape.setyPos(this.height - shape.getyPos());
