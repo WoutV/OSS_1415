@@ -260,7 +260,6 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 			ShapeTree tree = this.dependencyTrees.get(this.dependencyTrees.size()-1);
 			x = tree.getRightMostPosition() + 2 * TREE_MARGIN;
 		}
-		System.out.println("WIDTH:   " + x);
 		this.width = x;
 		int maxHeight = 0;
 		for(ShapeTree tree: dependencyTrees){
@@ -269,7 +268,6 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 				maxHeight = height;
 			}
 		}
-		System.out.println("HEIGHT:   " + maxHeight);
 		this.height = maxHeight;
 	}
 }

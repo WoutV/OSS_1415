@@ -178,6 +178,7 @@ public class ShapeTree {
 	}
 	
 	public void newSort(int leafMargin){
+		sortTreeAlphabetic();
 		layoutBottom(leafMargin);
 		for(int i = getHighestLevel()-1 ; i >= 0 ; i--){
 			List<ShapeTreeNode> nodes = getLevel(i);
@@ -189,7 +190,7 @@ public class ShapeTree {
 				if(!checked.isEmpty()){
 					ShapeTreeNode other = checked.get(whichNode-1);
 					positionsNodesRelativeTo(leafMargin, other, node);
-					int difference = node.getShape().getxPos() - (other.getShape().getxPos() + (int) other.getShape().getWidth());
+					int difference = node.getShape().getxPos() - (other.getShape().getxPos());
 					if(difference > maxDistance){
 						maxDistance = difference;
 					}
@@ -217,7 +218,7 @@ public class ShapeTree {
 	private void positionsNodesRelativeTo(int leafMargin, ShapeTreeNode other, ShapeTreeNode node) {
 		int rightX = other.getRightEdgeSubTree();
 		int leftX = node.getLeftEdgeSubTree();
-		int difference = rightX - leftX; // 5  10 = -5 
+		int difference = rightX - leftX;
 		node.shift(difference + leafMargin);
 	}
 

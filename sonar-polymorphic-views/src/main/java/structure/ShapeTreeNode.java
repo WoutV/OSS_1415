@@ -19,13 +19,16 @@ public class ShapeTreeNode {
 	private Shape shape;
 	private int level;
 	private List<ShapeTreeNode> children = new ArrayList<ShapeTreeNode>();
-	private ShapeTreeNode parent;
+
 	
 	public ShapeTreeNode(String name, String key){
 		this.name = name;
 		this.key = key;
 	}
 	
+	/**
+	 * Tells a node to sort its children. Uses a TreeSet which has the property that it sorts strings alphabetically when added.
+	 */
 	public void sortAlphabetic() {
 		if(!getChildren().isEmpty()){
 			HashMap<String, ShapeTreeNode> map = new HashMap<String, ShapeTreeNode>();
@@ -44,6 +47,9 @@ public class ShapeTreeNode {
 		}
 	}
 	
+	/**
+	 * Updates the level value of a node.
+	 */
 	public void doLvls(){
 		for(ShapeTreeNode node : getChildren()){
 			node.setLevel(getLevel()+1);
@@ -51,6 +57,9 @@ public class ShapeTreeNode {
 		}
 	}
 	
+	/**
+	 * Representation of a node and its children as a string.
+	 */
 	public String toString(){
 		String result = getName();
 		for(ShapeTreeNode node : getChildren()){
@@ -59,29 +68,40 @@ public class ShapeTreeNode {
 		return result;
 	}
 
+	/**
+	 * Will set the x-position equal to the middle of its children.
+	 */
 	public void adjustToMiddleOfChildren(){
 		if(!getChildren().isEmpty()){
 			int[] pos = getChildrenPosition();
 			int midDistance = (pos[1] - pos[0])/2;
 			int x = pos[0] + midDistance;
-			shape.setxPos(x);
+			getShape().setxPos(x);
 		}
 	}
 	
+	/**
+	 * Get the accumulated width of all children.
+	 * @return the total width.
+	 */
 	public int getChildrenWidth(){
 		int width = 0;
 		for(ShapeTreeNode node : getChildren()){
-			width += node.getShape().getWidth();
+			width += (int) node.getShape().getWidth();
 		}
 		return width;
 	}
 	
+	/**
+	 * Get the x-position of the left edge of the most left child and the x-position of the right edge of the most right child, will return {0,0} otherwise.
+	 * @return {x1,x2} left_edge and right_edge
+	 */
 	public int[] getChildrenPosition(){
 		if(!getChildren().isEmpty()){
 			Shape shape1 = getFirstChild().getShape();
-			int x1 = shape1.getxPos() - (int) shape1.getWidth();
+			int x1 = shape1.getxPos() - (int) shape1.getWidth()/2;
 			Shape shape2 =  getLastChild().getShape();
-			int x2 = shape2.getxPos() + (int) shape2.getWidth();
+			int x2 = shape2.getxPos() + (int) shape2.getWidth()/2;
 			int[] result = {x1,x2};
 			return result;
 		}
@@ -89,6 +109,10 @@ public class ShapeTreeNode {
 		return noChildren;
 	}
 	
+	/**
+	 * Will position children next to each other with a margin in between them.
+	 * @param margin the margin between consecutive children
+	 */
 	public void shakeChildrenX(int margin) {
 		int moved = 0;
 		for(ShapeTreeNode node : getChildren()){
@@ -97,6 +121,10 @@ public class ShapeTreeNode {
 		}
 	}
 	
+	/**
+	 * Will shift a node and its children by an amount x.
+	 * @param x the amount to shift
+	 */
 	public void shift(int x){
 		Shape shape = this.getShape();
 		int newx = this.getShape().getxPos()+x;
@@ -105,55 +133,99 @@ public class ShapeTreeNode {
 			child.shift(x);
 		}
 	}
-
+	
+	/**
+	 * Get the most right edge.
+	 * @return the x-coordinate of the most right edge
+	 */
 	public int getRightEdgeSubTree(){
 		if(hasChildren()){
 			return getLastChild().getRightEdgeSubTree();
 		}
-		int x = getShape().getxPos() + (int) getShape().getWidth()/2;
+		int x = getShape().getxPos() + (int) (getShape().getWidth()/2);
 		return x;
 	}
 	
+	/**
+	 * Get the most left edge.
+	 * @return the x-coordinate of the most left edge
+	 */
 	public int getLeftEdgeSubTree(){
 		if(hasChildren()){
 			return getFirstChild().getLeftEdgeSubTree();
 		}
-		int x = getShape().getxPos() - (int) getShape().getWidth()/2;
+		int x = getShape().getxPos() - (int) (getShape().getWidth()/2);
 		return x;
 	}
 	
+	/**
+	 * Checks if a node has children or not.
+	 * @return true if it has children, false if not
+	 */
 	public boolean hasChildren(){
 		return !getChildren().isEmpty();
 	}
 	
+	/**
+	 * Get the level of this node.
+	 * @return the level of the node
+	 */
 	public int getLevel() {
 		return level;
 	}
 
+	/**
+	 * Set the level of this node
+	 * @param level the level
+	 */
 	public void setLevel(int level) {
 		this.level = level;
 	}
 	
+	/**
+	 * Get the shape of this node
+	 * @return the shape
+	 */
 	public Shape getShape() {
 		return shape;
 	}
 	
+	/**
+	 * Set the shape of this node
+	 * @param shape the shape
+	 */
 	public void setShape(Shape shape) {
 		this.shape = shape;
 	}
 	
+	/**
+	 * Get the name of this node
+	 * @return the name
+	 */
 	public String getName() {
 		return name;
 	}
 	
+	/**
+	 * Set the name of this node
+	 * @param name the name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 	
+	/**
+	 * Return the list of children.
+	 * @return list of children
+	 */
 	public List<ShapeTreeNode> getChildren() {
 		return children;
 	}
 	
+	/**
+	 * Returns the first child of this node.
+	 * @return the first child
+	 */
 	public ShapeTreeNode getFirstChild(){
 		if(children.isEmpty()){
 			return null;
@@ -163,6 +235,10 @@ public class ShapeTreeNode {
 		}
 	}
 	
+	/**
+	 * Returns the last child of this node.
+	 * @return the last child
+	 */
 	public ShapeTreeNode getLastChild(){
 		if(children.isEmpty()){
 			return null;
@@ -172,28 +248,35 @@ public class ShapeTreeNode {
 		}
 	}
 	
+	/**
+	 * Sets the list of children of this node.
+	 * @param children
+	 */
 	public void setChildren(List<ShapeTreeNode> children) {
 		this.children = children;
 	}
 
+	/**
+	 * Add a child to this node
+	 * @param node the child to add
+	 */
 	public void addChild(ShapeTreeNode node){
 		this.children.add(node);
 	}
 	
+	/**
+	 * Get the key of this node
+	 * @return
+	 */
 	public String getKey() {
 		return key;
 	}
 
+	/**
+	 * Set the key of this node
+	 * @param key
+	 */
 	public void setKey(String key) {
 		this.key = key;
-	}
-
-	public ShapeTreeNode getParent() {
-		return parent;
-	}
-
-	public void setParent(ShapeTreeNode parent) {
-		this.parent = parent;
-	}
-	
+	}	
 }
