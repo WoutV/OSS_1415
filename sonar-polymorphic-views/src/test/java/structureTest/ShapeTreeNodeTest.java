@@ -29,26 +29,109 @@ public class ShapeTreeNodeTest {
 	@Test
 	public void testSortAlphabetic() {
 		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
-		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
+		ShapeTreeNode child1 = new ShapeTreeNode("a", "key2");
+		ShapeTreeNode child2 = new ShapeTreeNode("b", "key3");
+		ShapeTreeNode child3 = new ShapeTreeNode("c", "key3");
+		root.addChild(child3);
 		root.addChild(child1);
 		root.addChild(child2);
-		fail("Not yet implemented");
+		root.sortAlphabetic();
+		assertEquals(root.getChildren().get(0), child1);
+		assertEquals(root.getChildren().get(1), child2);
+		assertEquals(root.getChildren().get(2), child3);
 	}
+	
 
 	@Test
 	public void testDoLvls() {
-		fail("Not yet implemented");
+		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
+		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
+		root.setLevel(1);
+		root.addChild(child1);
+		root.addChild(child2);
+		root.doLvls();
+		assertTrue(child1.getLevel() == 2);
+		assertTrue(child2.getLevel() == 2);
+	}
+	
+	@Test
+	public void testDoLvls2levelsChildren() {
+		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
+		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
+		root.setLevel(1);
+		root.addChild(child1);
+		child1.addChild(child2);
+		root.doLvls();
+		assertTrue(child1.getLevel() == 2);
+		assertTrue(child2.getLevel() == 3);
 	}
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
+		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
+		root.addChild(child1);
+		root.addChild(child2);
+		assertTrue(root.toString().equals("node1\r\nnode2\r\nnode3"));
+	}
+	@Test
+	public void testToStringNoChildren() {
+		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
+		assertTrue(root.toString().equals("node1"));
 	}
 
 	@Test
 	public void testAdjustToMiddleOfChildren() {
-		fail("Not yet implemented");
+		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
+		ShapeTreeNode child2 = new ShapeTreeNode("node3", "key3");
+		Shape box0 = new Box();
+		box0.setxPos(20);
+		box0.setWidth(20);
+		root.setShape(box0);
+		Shape box1 = new Box();
+		box1.setxPos(20);
+		box1.setWidth(20);
+		child1.setShape(box1);
+		Shape box2 = new Box();
+		box2.setxPos(100);
+		box2.setWidth(20);
+		child2.setShape(box2);
+		root.addChild(child1);
+		root.addChild(child2);
+		root.adjustToMiddleOfChildren();
+		assertTrue(root.getShape().getxPos() == 60);
+	}
+	
+	@Test
+	public void testAdjustToMiddleOfChildrenWithOneChild() {
+		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode child1 = new ShapeTreeNode("node2", "key2");
+		Shape box0 = new Box();
+		box0.setxPos(20);
+		box0.setWidth(20);
+		root.setShape(box0);
+		Shape box1 = new Box();
+		box1.setxPos(50);
+		box1.setWidth(20);
+		child1.setShape(box1);
+		root.addChild(child1);
+		root.adjustToMiddleOfChildren();
+		assertTrue(root.getShape().getxPos() == 50);
+	}
+	
+	@Test
+	public void testAdjustToMiddleOfChildrenWithNoChildren() {
+		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
+		Shape box0 = new Box();
+		box0.setxPos(20);
+		box0.setWidth(20);
+		root.setShape(box0);
+		root.adjustToMiddleOfChildren();
+		assertTrue(root.getShape().getxPos() == 20);
 	}
 
 	@Test

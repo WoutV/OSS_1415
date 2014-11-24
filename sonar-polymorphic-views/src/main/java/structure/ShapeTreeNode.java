@@ -80,6 +80,7 @@ public class ShapeTreeNode {
 		}
 	}
 	
+	//TODO Methode ni gebruikt?
 	/**
 	 * Get the accumulated width of all children.
 	 * @return the total width.
@@ -121,7 +122,7 @@ public class ShapeTreeNode {
 		}
 	}
 	
-	//Gevaarlijk voor nullpointer vermits er geen shape in de constructor wordt meegegeven?
+	//TODO Gevaarlijk voor nullpointer vermits er geen shape in de constructor wordt meegegeven?
 	/**
 	 * Will shift a node and its children by an amount x.
 	 * @param x the amount to shift
