@@ -40,7 +40,7 @@ public class ShapeTree {
 	 * @param leafMargin a minimum margin between nodes.
 	 */
 	public void layoutX(int leafMargin){
-		sortTreeAlphabetic();
+		sortAlphabetic();
 		layoutBottom(leafMargin);
 		for(int i = getHighestLevel()-1 ; i >= 0 ; i--){
 			List<ShapeTreeNode> nodes = getLevel(i);
@@ -84,19 +84,19 @@ public class ShapeTree {
 
 	/**
 	 * Position a node's subtree next to the most right edge of the subtree of an other node.
-	 * @param leafMargin the distance the two subtrees will be apart from eachother
+	 * @param leafMargin the distance the two subtrees will be apart from each other
 	 * @param other a node
 	 * @param node a node
 	 */
 	private void positionsNodesRelativeTo(int leafMargin, ShapeTreeNode other, ShapeTreeNode node) {
-		int rightX = other.getRightEdgeSubTree();
-		int leftX = node.getLeftEdgeSubTree();
+		int rightX = other.getRightEdge();
+		int leftX = node.getLeftEdge();
 		int difference = rightX - leftX;
 		node.shift(difference + leafMargin);
 	}
 
 	/**
-	 * Position the bottem layer of the tree.
+	 * Position the bottom layer of the tree.
 	 * @param leafMargin
 	 */
 	private void layoutBottom(int leafMargin) {
@@ -138,7 +138,6 @@ public class ShapeTree {
 	 * Sets the right level for every node and resets every node's position to (0,0).
 	 */
 	public void resetAllPositions(){
-		getRoot().doLvls();
 		Shape shape = getRoot().getShape();
 		shape.setxPos(0);
 		shape.setyPos(0);
@@ -151,7 +150,7 @@ public class ShapeTree {
 	/**
 	 * Will sort a tree. This will call each node and tell them to sort its children.
 	 */
-	public void sortTreeAlphabetic(){
+	public void sortAlphabetic(){
 		for(ShapeTreeNode node : nodes){
 			node.sortAlphabetic();
 		}
@@ -204,7 +203,7 @@ public class ShapeTree {
 	 * @return the x-coordinate of the most right edge
 	 */
 	public int getRightMostPosition(){
-		return this.getRoot().getRightEdgeSubTree();
+		return this.getRoot().getRightEdge();
 	}
 	
 	/**
@@ -212,7 +211,7 @@ public class ShapeTree {
 	 * @return the x-coordinate of the most left edge
 	 */
 	public int getLeftMostPositon(){
-		return this.getRoot().getLeftEdgeSubTree();
+		return this.getRoot().getLeftEdge();
 	}
 	
 	/**

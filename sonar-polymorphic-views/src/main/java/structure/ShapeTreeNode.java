@@ -48,16 +48,6 @@ public class ShapeTreeNode {
 	}
 	
 	/**
-	 * Updates the level value of a node.
-	 */
-	public void doLvls(){
-		for(ShapeTreeNode node : getChildren()){
-			node.setLevel(getLevel()+1);
-			node.doLvls();
-		}
-	}
-	
-	/**
 	 * Representation of a node and its children as a string.
 	 */
 	public String toString(){
@@ -141,9 +131,9 @@ public class ShapeTreeNode {
 	 * Get the most right edge.
 	 * @return the x-coordinate of the most right edge
 	 */
-	public int getRightEdgeSubTree(){
+	public int getRightEdge(){
 		if(hasChildren()){
-			return getLastChild().getRightEdgeSubTree();
+			return getLastChild().getRightEdge();
 		}
 		int x = getShape().getxPos() + (int) (getShape().getWidth()/2);
 		return x;
@@ -154,9 +144,9 @@ public class ShapeTreeNode {
 	 * Get the most left edge.
 	 * @return the x-coordinate of the most left edge
 	 */
-	public int getLeftEdgeSubTree(){
+	public int getLeftEdge(){
 		if(hasChildren()){
-			return getFirstChild().getLeftEdgeSubTree();
+			return getFirstChild().getLeftEdge();
 		}
 		int x = getShape().getxPos() - (int) (getShape().getWidth()/2);
 		return x;
@@ -265,6 +255,7 @@ public class ShapeTreeNode {
 	 * @param node the child to add
 	 */
 	public void addChild(ShapeTreeNode node){
+		node.setLevel(this.getLevel()+1);
 		this.children.add(node);
 	}
 	

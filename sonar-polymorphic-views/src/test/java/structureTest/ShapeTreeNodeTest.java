@@ -48,34 +48,32 @@ public class ShapeTreeNodeTest {
 		root.sortAlphabetic();
 	}
 	
-	@Test
-	public void testDoLvls() {
-		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
-		root.setLevel(1);
-		root.addChild(child1);
-		root.addChild(child2);
-		root.doLvls();
-		assertTrue(child1.getLevel() == 2);
-		assertTrue(child2.getLevel() == 2);
-	}
-	
-	@Test
-	public void testDoLvlsNoChildren() {
-		root.doLvls();
-	}
-	
-	@Test
-	public void testDoLvls2levelsChildren() {
-		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
-		root.setLevel(1);
-		root.addChild(child1);
-		child1.addChild(child2);
-		root.doLvls();
-		assertTrue(child1.getLevel() == 2);
-		assertTrue(child2.getLevel() == 3);
-	}
+//	@Test
+//	public void testDoLvls() {
+//		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
+//		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
+//		root.setLevel(1);
+//		root.addChild(child1);
+//		root.addChild(child2);
+//		assertTrue(child1.getLevel() == 2);
+//		assertTrue(child2.getLevel() == 2);
+//	}
+//	
+//	@Test
+//	public void testDoLvlsNoChildren() {
+//
+//	}
+//	
+//	@Test
+//	public void testDoLvls2levelsChildren() {
+//		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
+//		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
+//		root.setLevel(1);
+//		root.addChild(child1);
+//		child1.addChild(child2);
+//		assertTrue(child1.getLevel() == 2);
+//		assertTrue(child2.getLevel() == 3);
+//	}
 
 	@Test
 	public void testToString() {
@@ -234,14 +232,14 @@ public class ShapeTreeNodeTest {
 		child2.setShape(box2);
 		root.addChild(child1);
 		root.addChild(child2);
-		assertTrue(root.getRightEdgeSubTree() == 105);
+		assertTrue(root.getRightEdge() == 105);
 	}
 	
-	//TODO
-	@Test
-	public void testGetRightEdgeSubTreeNoChildren() {
-		assertNull(root.getRightEdgeSubTree());
-	}
+//	//TODO
+//	@Test
+//	public void testGetRightEdgeSubTreeNoChildren() {
+//		assertNull(root.getRightEdge());
+//	}
 
 	@Test
 	public void testGetLeftEdgeSubTree() {
@@ -257,14 +255,14 @@ public class ShapeTreeNodeTest {
 		child2.setShape(box2);
 		root.addChild(child1);
 		root.addChild(child2);
-		assertTrue(root.getLeftEdgeSubTree() == 40);
+		assertTrue(root.getLeftEdge() == 40);
 	}
 	
-	//TODO
-	@Test
-	public void testGetLeftEdgeSubTreeNoChildren() {
-		assertNull(root.getLeftEdgeSubTree());
-	}
+//	//TODO
+//	@Test
+//	public void testGetLeftEdgeSubTreeNoChildren() {
+//		assertNull(root.getLeftEdge());
+//	}
 
 	@Test
 	public void testGetLevel() {

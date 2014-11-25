@@ -66,7 +66,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	 * , these nodes will become the root of a tree.
 	 * Thirdly, the trees will be filled 'depth-first'-like with the remaining nodes.
 	 * 
-	 * @return List of all trees
+	 * @return List of all treesge
 	 */
 	public List<ShapeTree> buildTrees(){
 		HashMap<String, String> map = measureFetcher.getResourceKeysAndNames();
