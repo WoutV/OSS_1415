@@ -47,33 +47,6 @@ public class ShapeTreeNodeTest {
 		ShapeTreeNode root = new ShapeTreeNode("node1", "key1");
 		root.sortAlphabetic();
 	}
-	
-//	@Test
-//	public void testDoLvls() {
-//		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
-//		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
-//		root.setLevel(1);
-//		root.addChild(child1);
-//		root.addChild(child2);
-//		assertTrue(child1.getLevel() == 2);
-//		assertTrue(child2.getLevel() == 2);
-//	}
-//	
-//	@Test
-//	public void testDoLvlsNoChildren() {
-//
-//	}
-//	
-//	@Test
-//	public void testDoLvls2levelsChildren() {
-//		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
-//		ShapeTreeNode child2 = new ShapeTreeNode("node2", "key2");
-//		root.setLevel(1);
-//		root.addChild(child1);
-//		child1.addChild(child2);
-//		assertTrue(child1.getLevel() == 2);
-//		assertTrue(child2.getLevel() == 3);
-//	}
 
 	@Test
 	public void testToString() {
@@ -235,11 +208,14 @@ public class ShapeTreeNodeTest {
 		assertTrue(root.getRightEdge() == 105);
 	}
 	
-//	//TODO
-//	@Test
-//	public void testGetRightEdgeSubTreeNoChildren() {
-//		assertNull(root.getRightEdge());
-//	}
+	@Test
+	public void testGetRightEdgeSubTreeNoChildren() {
+		Shape box1 = new Box();
+		box1.setxPos(50);
+		box1.setWidth(20);
+		root.setShape(box1);
+		assertTrue(root.getRightEdge() == 60);
+	}
 
 	@Test
 	public void testGetLeftEdgeSubTree() {
@@ -258,11 +234,14 @@ public class ShapeTreeNodeTest {
 		assertTrue(root.getLeftEdge() == 40);
 	}
 	
-//	//TODO
-//	@Test
-//	public void testGetLeftEdgeSubTreeNoChildren() {
-//		assertNull(root.getLeftEdge());
-//	}
+	@Test
+	public void testGetLeftEdgeSubTreeNoChildren() {
+		Shape box1 = new Box();
+		box1.setxPos(50);
+		box1.setWidth(20);
+		root.setShape(box1);
+		assertTrue(root.getLeftEdge() == 40);
+	}
 
 	@Test
 	public void testGetLevel() {
@@ -348,8 +327,10 @@ public class ShapeTreeNodeTest {
 	@Test
 	public void testAddChild() {
 		ShapeTreeNode child1 = new ShapeTreeNode("node1", "key1");
+		root.setLevel(0);
 		root.addChild(child1);
 		assertTrue(root.getChildren().contains(child1));
+		assertTrue(root.getChildren().get(0).getLevel() == 1);
 	}
 
 	@Test

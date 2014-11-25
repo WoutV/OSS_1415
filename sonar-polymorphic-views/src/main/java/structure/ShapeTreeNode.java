@@ -126,7 +126,6 @@ public class ShapeTreeNode {
 		}
 	}
 	
-	//TODO wat met tree zonder children? Nullpointer want geen shape
 	/**
 	 * Get the most right edge.
 	 * @return the x-coordinate of the most right edge
@@ -139,7 +138,6 @@ public class ShapeTreeNode {
 		return x;
 	}
 	
-	//TODO wat met tree zonder children? Nullpointer want geen shape
 	/**
 	 * Get the most left edge.
 	 * @return the x-coordinate of the most left edge
