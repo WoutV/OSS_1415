@@ -24,6 +24,7 @@ public class ShapeTree {
 	 * @param heightMargin a margin between levels
 	 */
 	public void layout(int leafMargin, int heightMargin){
+		resetAllPositions();
 		layoutX(leafMargin);
 		layoutY(heightMargin);
 	}

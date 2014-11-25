@@ -43,7 +43,6 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	 */
 	@Override
 	public BufferedImage generateImage() {  
-	    resetAllPositions();
 	    getPositions();
 	    
 	    setSize();
@@ -59,15 +58,6 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		return builder.getImage();
 	}
 	
-	
-	/**
-	 * Resets all positions to zero.
-	 */
-	private void resetAllPositions() {
-		for(ShapeTree tree : dependencyTrees){
-			tree.resetAllPositions();
-		}
-	}
 
 	/**
 	 * This methods is responsible for building the different trees, representing a hierarchy of classes.
