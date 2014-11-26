@@ -191,9 +191,8 @@ public class ShapeTree {
 	 * @return representation in form of a string
 	 */
 	public String toString(){
-		//TODO Lijn mag weg?
-		String result = "";
-		//String result = getRoot().getName();
+		//TODO Root wordt nu dubbel afgeprint.
+		String result = getRoot().getName();
 		for(ShapeTreeNode node : getNodes()){
 			result = result + "\r\n" + node.toString(); 
 		}

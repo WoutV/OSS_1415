@@ -4,9 +4,6 @@ import static org.junit.Assert.*;
 import generators.Box;
 import generators.Shape;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,7 +18,11 @@ public class ShapeTreeTest {
 
 	@Test
 	public void testShapeTree() {
-		fail("Not yet implemented");
+		ShapeTreeNode root = new ShapeTreeNode("root", "rootKey");
+		ShapeTree tree = new ShapeTree(root);
+		assertEquals(tree.getRoot(), root);
+		assertTrue(tree.getNodes().size() == 1);
+		assertTrue(tree.getNodes().contains(root));
 	}
 
 	@Test
@@ -41,17 +42,79 @@ public class ShapeTreeTest {
 
 	@Test
 	public void testShiftTree() {
-		fail("Not yet implemented");
+		ShapeTreeNode root = new ShapeTreeNode("root", "rootKey");
+		ShapeTreeNode node1 = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode node2 = new ShapeTreeNode("node2", "key2");
+		root.addChild(node1);
+		root.addChild(node2);
+		Shape box0 = new Box();
+		box0.setxPos(50);
+		Shape box1 = new Box();
+		box1.setxPos(20);
+		Shape box2 = new Box();
+		box2.setxPos(70);
+		root.setShape(box0);
+		node1.setShape(box1);
+		node2.setShape(box2);
+		ShapeTree tree = new ShapeTree(root);
+		tree.addNode(node1);
+		tree.addNode(node2);
+		tree.shiftTree(30);
+		assertTrue(root.getShape().getxPos() == 80);
+		assertTrue(node1.getShape().getxPos() == 50);
+		assertTrue(node2.getShape().getxPos() == 100);
 	}
 
 	@Test
 	public void testResetAllPositions() {
-		fail("Not yet implemented");
+		ShapeTreeNode root = new ShapeTreeNode("root", "rootKey");
+		ShapeTreeNode node1 = new ShapeTreeNode("node1", "key1");
+		root.addChild(node1);
+		Shape box0 = new Box();
+		box0.setxPos(50);
+		box0.setyPos(10);
+		Shape box1 = new Box();
+		box1.setxPos(20);
+		box1.setyPos(50);
+		root.setShape(box0);
+		node1.setShape(box1);
+		ShapeTree tree = new ShapeTree(root);
+		tree.addNode(node1);
+		tree.resetAllPositions();
+		assertTrue(root.getShape().getxPos() == 0);
+		assertTrue(root.getShape().getyPos() == 0);
+		assertTrue(node1.getShape().getxPos() == 0);
+		assertTrue(node1.getShape().getyPos() == 0);
+		
 	}
 
+	//TODO
 	@Test
 	public void testSortAlphabetic() {
-		fail("Not yet implemented");
+		ShapeTreeNode root = new ShapeTreeNode("root", "rootKey");
+		ShapeTreeNode node1 = new ShapeTreeNode("c", "key1");
+		ShapeTreeNode node2 = new ShapeTreeNode("a", "key2");
+		ShapeTreeNode node3 = new ShapeTreeNode("b", "key3");
+		ShapeTreeNode node4 = new ShapeTreeNode("z", "key4");
+		ShapeTreeNode node5 = new ShapeTreeNode("y", "key5");
+		root.addChild(node1);
+		root.addChild(node2);
+		root.addChild(node3);
+		node2.addChild(node4);
+		node2.addChild(node5);
+		ShapeTree tree = new ShapeTree(root);
+		tree.addNode(node1);
+		tree.addNode(node2);
+		tree.addNode(node3);
+		tree.addNode(node4);
+		tree.addNode(node5);
+		tree.sortAlphabetic();
+		assertEquals(tree.getNodes().get(0), root);
+		assertEquals(tree.getNodes().get(1), node2);
+		assertEquals(tree.getNodes().get(2), node5);
+		assertEquals(tree.getNodes().get(3), node4);
+		assertEquals(tree.getNodes().get(4), node3);
+		assertEquals(tree.getNodes().get(5), node1);
 	}
 
 	@Test
@@ -107,7 +170,6 @@ public class ShapeTreeTest {
 		ShapeTree tree = new ShapeTree(root);
 		tree.addNode(node1);
 		tree.addNode(node2);
-		System.out.println(tree.toString());
 		assertTrue(tree.toString().equals("root\r\nnode1\r\nnode2"));
 	}
 	
@@ -115,18 +177,55 @@ public class ShapeTreeTest {
 	public void testToStringNoOtherNodes() {
 		ShapeTreeNode root = new ShapeTreeNode("root", "rootKey");
 		ShapeTree tree = new ShapeTree(root);
-		System.out.println(tree.toString());
 		assertTrue(tree.toString().equals("root"));
 	}
 	
 	@Test
 	public void testGetRightMostPosition() {
-		fail("Not yet implemented");
+		ShapeTreeNode root = new ShapeTreeNode("root", "rootKey");
+		ShapeTreeNode node1 = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode node2 = new ShapeTreeNode("node2", "key2");
+		node1.setLevel(1);
+		Shape box0 = new Box();
+		box0.setWidth(10);
+		box0.setxPos(10);
+		Shape box1 = new Box();
+		box1.setWidth(20);
+		box1.setxPos(0);
+		Shape box2 = new Box();
+		box2.setWidth(40);
+		box2.setxPos(30);
+		root.setShape(box0);
+		node1.setShape(box1);
+		node2.setShape(box2);
+		ShapeTree tree = new ShapeTree(root);
+		root.addChild(node1);
+		root.addChild(node2);
+		assertTrue(tree.getRightMostPosition() == 50);
 	}
 
 	@Test
 	public void testGetLeftMostPositon() {
-		fail("Not yet implemented");
+		ShapeTreeNode root = new ShapeTreeNode("root", "rootKey");
+		ShapeTreeNode node1 = new ShapeTreeNode("node1", "key1");
+		ShapeTreeNode node2 = new ShapeTreeNode("node2", "key2");
+		node1.setLevel(1);
+		Shape box0 = new Box();
+		box0.setWidth(10);
+		box0.setxPos(10);
+		Shape box1 = new Box();
+		box1.setWidth(20);
+		box1.setxPos(0);
+		Shape box2 = new Box();
+		box2.setWidth(40);
+		box2.setxPos(30);
+		root.setShape(box0);
+		node1.setShape(box1);
+		node2.setShape(box2);
+		ShapeTree tree = new ShapeTree(root);
+		root.addChild(node1);
+		root.addChild(node2);
+		assertTrue(tree.getLeftMostPositon() == -10);
 	}
 
 	@Test
