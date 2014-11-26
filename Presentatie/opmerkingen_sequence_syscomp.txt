@@ -1,0 +1,5 @@
+OPMERKINGEN SEQUENCE DIAGRAM SYSCOMP:
+
+1.5.4: return op zichzelf?
+4:betere benaming?
+algemeen, teveel selfcalls?
