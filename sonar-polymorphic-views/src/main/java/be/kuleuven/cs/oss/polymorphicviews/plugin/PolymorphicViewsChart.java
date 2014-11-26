@@ -51,13 +51,14 @@ public class PolymorphicViewsChart implements Chart {
 		PolymorphicChartParameters polyParams = new PolymorphicChartParameters(params);
 		String type = polyParams.getType();
 		PolymorphicChartGenerator generator = null;
-		switch(type) { 
-		case "scatter" : generator = new ScatterPlotGenerator(polyParams,sonar);
-		break;
-		case "syscomp" : generator = new SystemComplexityGenerator(polyParams,sonar);
-		break;
-		default : generator = new ScatterPlotGenerator(polyParams,sonar);
-		break;
+		if (type.equals("scatter")){
+			generator = new ScatterPlotGenerator(polyParams,sonar);
+		}
+		else if (type.equals("syscomp") && polyParams.getResources().equals("classes")){
+			generator = new SystemComplexityGenerator(polyParams,sonar);
+		}
+		else{
+			generator = new ScatterPlotGenerator(polyParams,sonar);
 		}
 			BufferedImage buff = generator.generateImage();
 			LOG.info("PolymorphicViewsChart generated!");
