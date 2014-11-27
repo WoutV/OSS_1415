@@ -190,14 +190,14 @@ public class ShapeTree {
 	 * Get a textual representation of a tree.
 	 * @return representation in form of a string
 	 */
-	public String toString(){
-		//TODO Root wordt nu dubbel afgeprint.
+	//FIX Root wordt nu dubbel afgeprint.
+/*	public String toString(){
 		String result = getRoot().getName();
 		for(ShapeTreeNode node : getNodes()){
 			result = result + "\r\n" + node.toString(); 
 		}
 		return result;
-	}
+	}*/
 
 	/**
 	 * Gets the most right edge of the tree.
