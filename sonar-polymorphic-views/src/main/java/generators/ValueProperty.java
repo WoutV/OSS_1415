@@ -4,9 +4,8 @@ import be.kuleuven.cs.oss.sonarfacade.Metric;
 
 public class ValueProperty extends Property<Double> {
 	private final String DEFAULT_VALUE;
-	
-	
 	public ValueProperty (String value,String defaultValue, MeasureFetcher measureFetcher) {
+		super(value);
 		this.DEFAULT_VALUE = defaultValue;
 		try {
 			Integer.parseInt(value);
