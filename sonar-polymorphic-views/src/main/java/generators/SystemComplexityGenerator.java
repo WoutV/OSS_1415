@@ -1,16 +1,17 @@
 package generators;
 
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+import structure.ShapeTree;
+import structure.ShapeTreeNode;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import be.kuleuven.cs.oss.sonarfacade.DependencyType;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
-import structure.ShapeTree;
-import structure.ShapeTreeNode;
 
 
 public class SystemComplexityGenerator extends PolymorphicChartGenerator {
@@ -31,7 +32,11 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		super(polyParams,sonar);
 		
 		this.dependencyTrees = buildTrees();
-		ShapeGenerator boxGenerator = new BoxGenerator(measureFetcher,polyParams);
+		
+		Property<Double> width = new ValueProperty(polyParams.getBoxWidth(), PolymorphicChartParameters.DEFAULT_BOXWIDTH, measureFetcher);
+		Property<Double> height = new ValueProperty(polyParams.getBoxHeight(), PolymorphicChartParameters.DEFAULT_BOXHEIGHT, measureFetcher);
+		Property<Color> color = new ColorProperty(polyParams.getBoxColor(), PolymorphicChartParameters.DEFAULT_BOXCOLOR, measureFetcher);
+		ShapeGenerator boxGenerator = new BoxGenerator(measureFetcher,width,height,color);
 		
 		shapes.addAll(Arrays.asList(boxGenerator.getShapes()));
 		addShapesToTree();

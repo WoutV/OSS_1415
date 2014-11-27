@@ -116,5 +116,9 @@ public class MeasureFetcher {
 		}
 		return result;
 	}
+
+	public Metric findMetric(String key) {
+		return sonar.findMetric(key);
+	}
 	
 }
