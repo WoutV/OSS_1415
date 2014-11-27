@@ -1,11 +1,10 @@
 package generatorsTest;
 
-import generators.MeasureFetcher;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import utility.MeasureFetcher;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 import com.google.common.collect.Lists;

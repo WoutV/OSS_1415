@@ -1,10 +1,6 @@
 package be.kuleuven.cs.oss.polymorphicviews.plugin;
 
 
-import generators.PolymorphicChartGenerator;
-import generators.ScatterPlotGenerator;
-import generators.SystemComplexityGenerator;
-
 import java.awt.image.BufferedImage;
 
 import org.jfree.util.Log;
@@ -13,6 +9,9 @@ import org.slf4j.LoggerFactory;
 import org.sonar.api.charts.Chart;
 import org.sonar.api.charts.ChartParameters;
 
+import chartgenerators.PolymorphicChartGenerator;
+import chartgenerators.ScatterPlotGenerator;
+import chartgenerators.SystemComplexityGenerator;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 

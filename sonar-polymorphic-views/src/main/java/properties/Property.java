@@ -1,7 +1,9 @@
-package generators;
+package properties;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import strategies.Strategy;
 
 public abstract class Property<T> {
 	protected Strategy<T> strategy;

@@ -1,4 +1,4 @@
-package generators;
+package shapes;
 
 import chartbuilder.ChartBuilder;
 

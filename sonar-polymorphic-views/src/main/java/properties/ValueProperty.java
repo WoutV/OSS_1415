@@ -1,5 +1,8 @@
-package generators;
+package properties;
 
+import strategies.ConstantStrategy;
+import strategies.SingleMetricStrategy;
+import utility.MeasureFetcher;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 
 public class ValueProperty extends Property<Double> {

@@ -1,4 +1,4 @@
-package generators;
+package strategies;
 
 import java.util.Map;
 

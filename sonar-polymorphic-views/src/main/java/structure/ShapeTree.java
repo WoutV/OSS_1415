@@ -1,9 +1,9 @@
 package structure;
 
-import generators.Shape;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import shapes.Shape;
 
 public class ShapeTree {
 	

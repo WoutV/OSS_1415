@@ -1,4 +1,4 @@
-package generators;
+package shapes;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -9,6 +9,9 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import properties.Property;
+import utility.MeasureFetcher;
+import utility.Util;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 
 /**

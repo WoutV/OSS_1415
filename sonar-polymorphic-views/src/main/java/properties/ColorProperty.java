@@ -1,6 +1,9 @@
-package generators;
+package properties;
 
 import java.awt.Color;
+
+import strategies.ColorStrategy;
+import utility.MeasureFetcher;
 
 public class ColorProperty extends Property<Color> {
 private final String DEFAULT_VALUE;

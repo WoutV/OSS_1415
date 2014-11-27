@@ -1,4 +1,4 @@
-package generators;
+package chartgenerators;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
@@ -7,6 +7,13 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+import properties.ColorProperty;
+import properties.Property;
+import properties.ValueProperty;
+import shapes.BoxGenerator;
+import shapes.Line;
+import shapes.Shape;
+import shapes.ShapeGenerator;
 import structure.ShapeTree;
 import structure.ShapeTreeNode;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;

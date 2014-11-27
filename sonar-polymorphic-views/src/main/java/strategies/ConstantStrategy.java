@@ -1,7 +1,9 @@
-package generators;
+package strategies;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import utility.MeasureFetcher;
 
 public class ConstantStrategy implements Strategy<Double> {
 

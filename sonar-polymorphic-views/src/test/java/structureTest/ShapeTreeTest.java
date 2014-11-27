@@ -1,12 +1,12 @@
 package structureTest;
 
 import static org.junit.Assert.*;
-import generators.Box;
-import generators.Shape;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import shapes.Box;
+import shapes.Shape;
 import structure.ShapeTree;
 import structure.ShapeTreeNode;
 

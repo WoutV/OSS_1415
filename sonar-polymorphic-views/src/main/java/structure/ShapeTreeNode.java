@@ -1,13 +1,13 @@
 package structure;
 
-import generators.Shape;
-
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.TreeSet;
+
+import shapes.Shape;
 
 /**
  * This class represents a tree used in the system complexity view. This tree consists of one super node and a list of children.
