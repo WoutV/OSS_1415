@@ -18,8 +18,8 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 	private final static Logger LOG = LoggerFactory.getLogger(BoxGenerator.class);
-	private String xMetric;
-	private String yMetric;
+	private Property<Double> xMetric;
+	private Property<Double> yMetric;
 	private List<Shape> shapes;
 
 	
@@ -31,10 +31,10 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 	public ScatterPlotGenerator(PolymorphicChartParameters polyParams, SonarFacade sonar) {
 		super(polyParams,sonar);
 		LOG.info("Creating scatterplot...");
-		this.xMetric = polyParams.getXMetric();
-		this.yMetric = polyParams.getYMetric();
+		this.xMetric = new ValueProperty(polyParams.getXMetric(), PolymorphicChartParameters.DEFAULT_BOXWIDTH, measureFetcher);
+		this.yMetric = new ValueProperty(polyParams.getYMetric(), PolymorphicChartParameters.DEFAULT_BOXWIDTH, measureFetcher);
 		this.shapes = new ArrayList<Shape>();
-	
+		
 		parseSize(polyParams.getSize());
 		
 		Property<Double> width = new ValueProperty(polyParams.getBoxWidth(), PolymorphicChartParameters.DEFAULT_BOXWIDTH, measureFetcher);
@@ -46,8 +46,8 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 
 	@Override
 	public BufferedImage generateImage() {
-		Map<String,Double> xPositions = measureFetcher.getMeasureValues(xMetric);
-		Map<String,Double> yPositions = measureFetcher.getMeasureValues(yMetric);
+		Map<String,Double> xPositions = xMetric.getMap();
+		Map<String,Double> yPositions = yMetric.getMap();
 		
 		int minX = Collections.min(xPositions.values(),null).intValue();
 		int maxX = Collections.max(xPositions.values(),null).intValue();
@@ -59,8 +59,8 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 
 		Log.info("Creating axes...");
 	    builder.createCanvas(height, width, BufferedImage.TYPE_INT_RGB);
-	    builder.createXAxis(xMetric, 0, width, 0, minX, maxX); 
-	    builder.createYAxis(yMetric, 0, height, 0, minY, maxY);
+	    builder.createXAxis(xMetric.getName(), 0, width, 0, minX, maxX); 
+	    builder.createYAxis(yMetric.getName(), 0, height, 0, minY, maxY);
 	    
 	    Log.info("Building shapes...");
 		buildShapes(xPositions,yPositions);
