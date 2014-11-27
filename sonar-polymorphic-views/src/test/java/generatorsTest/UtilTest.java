@@ -3,7 +3,6 @@ package generatorsTest;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import generators.Util;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,6 +12,8 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import utility.Util;
 
 public class UtilTest {
 

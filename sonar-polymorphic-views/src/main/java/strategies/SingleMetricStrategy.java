@@ -1,6 +1,8 @@
-package generators;
+package strategies;
 
 import java.util.Map;
+
+import utility.MeasureFetcher;
 
 public class SingleMetricStrategy implements Strategy<Double> {
 

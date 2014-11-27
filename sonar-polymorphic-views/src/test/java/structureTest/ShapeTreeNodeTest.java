@@ -1,8 +1,6 @@
 package structureTest;
 
 import static org.junit.Assert.*;
-import generators.Box;
-import generators.Shape;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +8,8 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import shapes.Box;
+import shapes.Shape;
 import structure.ShapeTreeNode;
 
 public class ShapeTreeNodeTest {

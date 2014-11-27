@@ -1,7 +1,8 @@
-package generators;
+package chartgenerators;
 
 import java.awt.image.BufferedImage;
 
+import utility.MeasureFetcher;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 import chartbuilder.ChartBuilder;

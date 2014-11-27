@@ -1,4 +1,4 @@
-package generators;
+package chartgenerators;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
@@ -12,6 +12,13 @@ import org.jfree.util.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import properties.ColorProperty;
+import properties.Property;
+import properties.ValueProperty;
+import shapes.BoxGenerator;
+import shapes.Shape;
+import shapes.ShapeGenerator;
+import utility.Util;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 

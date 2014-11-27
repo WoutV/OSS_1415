@@ -1,4 +1,4 @@
-package generators;
+package utility;
 
 import java.awt.Color;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package generators;
+package shapes;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -6,6 +6,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import properties.Property;
+import utility.MeasureFetcher;
+import utility.Util;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 
 public abstract class ShapeGenerator {
