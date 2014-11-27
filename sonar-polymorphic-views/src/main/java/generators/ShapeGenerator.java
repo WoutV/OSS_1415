@@ -12,10 +12,15 @@ public abstract class ShapeGenerator {
 	protected MeasureFetcher measureFetcher;
 	protected Shape[] shapes;
 	protected  PolymorphicChartParameters params;
+	private Property<Double> width;
+	private Property<Double> height;
+	private Property<Color> color;
 
-	public ShapeGenerator(MeasureFetcher measureFetcher, PolymorphicChartParameters params) {
+	public ShapeGenerator(MeasureFetcher measureFetcher, Property<Double> width, Property<Double> height, Property<Color> color) {
 		this.measureFetcher=measureFetcher;
-		this.params=params;
+		this.width = width;
+		this.height = height;
+		this.color = color;
 	}
 
 	/**
