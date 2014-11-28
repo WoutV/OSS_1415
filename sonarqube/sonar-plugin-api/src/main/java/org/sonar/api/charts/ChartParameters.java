@@ -19,16 +19,16 @@
  */
 package org.sonar.api.charts;
 
-import org.apache.commons.lang.CharEncoding;
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.text.StrTokenizer;
-import org.sonar.api.utils.SonarException;
-
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+
+import org.apache.commons.lang.CharEncoding;
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.text.StrTokenizer;
+import org.sonar.api.utils.SonarException;
 
 /**
  * The class to hold parameters to configure a chart
@@ -50,7 +50,7 @@ public class ChartParameters {
 
 
   private Map<String, String> params;
-
+  
   /**
    * Creates a ChartParameter based on a list of parameters
    * @param params the list of parameters
@@ -71,6 +71,10 @@ public class ChartParameters {
       String[] keyval = StringUtils.split(group, "=");
       params.put(keyval[0], keyval[1]);
     }
+  }
+
+  public Map<String,String> getParams() { 
+	  return this.params;
   }
 
   /**
@@ -108,7 +112,7 @@ public class ChartParameters {
    *
    * @param key the param key
    * @param delimiter the values delimiter
-   * @return the list of vaalues
+   * @return the list of values
    */
   public String[] getValues(String key, String delimiter) {
     String value = params.get(key);
@@ -157,6 +161,7 @@ public class ChartParameters {
     int height = Integer.parseInt(getValue(PARAM_HEIGHT, "" + DEFAULT_HEIGHT, false));
     return Math.min(height, MAX_HEIGHT);
   }
+  
 
   /**
    * Get the Locale

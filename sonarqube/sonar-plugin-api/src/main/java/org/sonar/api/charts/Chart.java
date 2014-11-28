@@ -19,9 +19,9 @@
  */
 package org.sonar.api.charts;
 
-import org.sonar.api.ServerExtension;
-
 import java.awt.image.BufferedImage;
+
+import org.sonar.api.ServerExtension;
 
 /**
  * An Extension to create charts
