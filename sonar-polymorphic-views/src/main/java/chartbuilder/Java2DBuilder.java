@@ -7,6 +7,7 @@ import java.awt.Polygon;
 import java.awt.Rectangle;
 import java.awt.Stroke;
 import java.awt.geom.AffineTransform;
+import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
 
@@ -269,6 +270,67 @@ public class Java2DBuilder implements ChartBuilder {
 	    graphics.draw(arrowHead);
 		graphics.fill(arrowHead);
 		graphics.setTransform(original);
+	}
+	
+	/**
+	 * This method will draw a right-angled trapezoid with its label.
+	 * 
+	 * @param xPosition The x-coordinate of the center.
+	 * @param yPosition The y-coordinate of the center (the middle of the longest vertical side).
+	 * @param side1 The length of the left vertical side.
+	 * @param side2 The length of bottom side.
+	 * @param side3 The length of the right vertical side.
+	 * @param color The color of the trapezoid.
+	 * @param label The label to be displayed above the trapezoid.
+	 */
+	@Override
+	public void createRightAngledTrapezoid(int xPosition, int yPosition, int side1, int side2, int side3, Color color, String label) {
+		xPosition = scaleX(xPosition);
+		yPosition = scaleY(yPosition);
+		int[] xPoints = {xPosition - side2/2, xPosition - side2/2, xPosition + side2/2, xPosition + side2/2};
+		int nPoints = 4;
+		int[] yPoints = new int[nPoints];
+		int labelY = 0;
+		if(side1 > side3){
+			int[] ys = {yPosition + side1/2, yPosition - side1/2, yPosition + (side2/2) - (side3/2), yPosition + (side1/2)};
+			labelY = yPosition-side1/2 - 1;
+			yPoints = ys;
+		}
+		else{
+			int[] ys = {yPosition + side3/2, yPosition + (side2/2) - (side1/2),yPosition - side3/2, yPosition + (side3/2)};
+			labelY = yPosition-side3/2 - 1;
+			yPoints = ys;
+		}
+		BufferedImage img = getCanvas();
+		Graphics2D graphics = img.createGraphics();
+		graphics.setColor(color);
+		graphics.fillPolygon(xPoints, yPoints, nPoints);
+		graphics.setColor(Color.BLACK);
+		graphics.drawPolygon(xPoints, yPoints, nPoints);
+		drawCenteredString(label, xPosition, labelY);
+	}
+	
+	/**
+	 * This method will draw a circle with its label on the current canvas.
+	 * 
+	 * @param xPosition The x-coordinate of the center.
+	 * @param yPosition The y-coordinate of the center.
+	 * @param diameter The diameter of the circle.
+	 * @param color The color of the circle
+	 * @param label The label above the rectangle.
+	 */
+	@Override
+	public void createCircle(int xPosition, int yPosition, int diameter, Color color, String label){
+		xPosition = scaleX(xPosition);
+		yPosition = scaleY(yPosition);
+		BufferedImage img = getCanvas();
+		Graphics2D graphics = img.createGraphics();
+	    Ellipse2D.Double circle = new Ellipse2D.Double (xPosition-(diameter/2), yPosition-(diameter/2), diameter, diameter);
+	    graphics.setColor(color);
+	    graphics.fill(circle);
+	    graphics.setColor(Color.BLACK);
+	    graphics.draw(circle);
+	    drawCenteredString(label, xPosition, yPosition - diameter/2 - 1);
 	}
 
 	private static Stroke createLineStyleStroke(LineType lineType) {

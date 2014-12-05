@@ -80,4 +80,30 @@ public interface ChartBuilder {
 	 */
 	public void createRectangle(int xPosition, int yPosition, int height, int width, Color color, String label);
 
+	/**
+	 * This method will draw a circle with its label on the current canvas, positioned correctly with respect to the borders of the canvas.
+	 * The circle has a black border and the label will be centered above the circle.
+	 * 
+	 * @param xPosition The x-coordinate of the center.
+	 * @param yPosition The y-coordinate of the center.
+	 * @param diameter The diameter of the circle.
+	 * @param color The color of the circle
+	 * @param label The label above the rectangle.
+	 */
+	public void createCircle(int xPosition, int yPosition, int diameter, Color color, String label);
+
+	/**
+	 * This method will draw a right-angled trapezoid with its label on the current canvas, positioned correctly with respect to the borders of the canvas.
+	 * The trapezoid has a black border and the label will be centered above the trapezoid.
+	 * 
+	 * @param xPosition The x-coordinate of the center.
+	 * @param yPosition The y-coordinate of the center (the middle of the longest vertical side).
+	 * @param side1 The length of the left vertical side.
+	 * @param side2 The length of bottom side.
+	 * @param side3 The length of the right vertical side.
+	 * @param color The color of the trapezoid.
+	 * @param label The label to be displayed above the trapezoid.
+	 */
+	public void createRightAngledTrapezoid(int xPosition, int yPosition, int side1, int side2, int side3, Color color, String label);
+
 }
