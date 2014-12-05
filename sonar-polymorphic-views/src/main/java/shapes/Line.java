@@ -1,7 +1,11 @@
 package shapes;
 
 import chartbuilder.ChartBuilder;
-
+/**
+ * 
+ * @author Maxim
+ *
+ */
 public class Line extends Shape{
 
 

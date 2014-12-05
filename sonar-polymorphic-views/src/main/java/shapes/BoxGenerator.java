@@ -60,7 +60,7 @@ public class BoxGenerator extends ShapeGenerator {
 			boxes[i].setColor(colorList.get(i));
 		}
 	}
-
+	
 
 //	/**
 //	 * This method returns a list with the needed dimensions of the shapes. If

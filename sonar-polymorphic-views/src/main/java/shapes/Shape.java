@@ -12,15 +12,20 @@ import chartbuilder.ChartBuilder;
  */
 public abstract class Shape {
 	
-	//TODO Line moet ook overerven van shape denk ik . dan kunt ge da veel gemakkelijker tekenen, gewoon overerven van draw en buildermeegeven
-	
 	private int xPos;
 	private int yPos;
 	private String name;
 	private Color color;
 	private double width;
 	private double height;
+	private long key;
 	
+	public long getKey() {
+		return key;
+	}
+	public void setKey(long key) {
+		this.key = key;
+	}
 	public double getWidth() {
 		return width;
 	}
