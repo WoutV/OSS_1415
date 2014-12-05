@@ -26,6 +26,30 @@ public class ShapeTreeNode {
 		this.key = key;
 	}
 	
+	public int getX(){
+		return getShape().getxPos();
+	}
+	
+	public void setX(int x){
+		getShape().setxPos(x);
+	}
+	
+	public int getY(){
+		return getShape().getyPos();
+	}
+	
+	public void setY(int y){
+		getShape().setyPos(y);
+	}
+	
+	public int getWidth(){
+		return (int) getShape().getWidth();
+	}
+	
+	public int getHeight(){
+		return (int) getShape().getHeight();
+	}
+	
 	/**
 	 * Tells a node to sort its children. Uses a TreeSet which has the property that it sorts strings alphabetically when added.
 	 */
@@ -66,7 +90,7 @@ public class ShapeTreeNode {
 			int[] pos = getChildrenPosition();
 			int midDistance = (pos[1] - pos[0])/2;
 			int x = pos[0] + midDistance;
-			getShape().setxPos(x);
+			setX(x);
 		}
 	}
 	
@@ -78,7 +102,7 @@ public class ShapeTreeNode {
 	private int getChildrenWidth(){
 		int width = 0;
 		for(ShapeTreeNode node : getChildren()){
-			width += (int) node.getShape().getWidth();
+			width += node.getWidth();
 		}
 		return width;
 	}
@@ -89,10 +113,10 @@ public class ShapeTreeNode {
 	 */
 	private int[] getChildrenPosition(){
 		if(!getChildren().isEmpty()){
-			Shape shape1 = getFirstChild().getShape();
-			int x1 = shape1.getxPos() - (int) shape1.getWidth()/2;
-			Shape shape2 =  getLastChild().getShape();
-			int x2 = shape2.getxPos() + (int) shape2.getWidth()/2;
+			ShapeTreeNode node1 = getFirstChild();
+			int x1 = node1.getX() - node1.getWidth()/2;
+			ShapeTreeNode node2 =  getLastChild();
+			int x2 = node2.getX() + node2.getWidth()/2;
 			int[] result = {x1,x2};
 			return result;
 		}
@@ -107,8 +131,8 @@ public class ShapeTreeNode {
 	public void shakeChildrenX(int margin) {
 		int moved = 0;
 		for(ShapeTreeNode node : getChildren()){
-			node.getShape().setxPos(moved + (int) node.getShape().getWidth()/2); 
-			moved += (int) node.getShape().getWidth() + margin;
+			node.setX(moved + node.getWidth()/2); 
+			moved += node.getWidth() + margin;
 		}
 	}
 	
@@ -118,9 +142,8 @@ public class ShapeTreeNode {
 	 * @param x the amount to shift
 	 */
 	public void shift(int x){
-		Shape shape = this.getShape();
-		int newx = this.getShape().getxPos()+x;
-		shape.setxPos(newx);
+		int newx = getX()+x;
+		setX(newx);
 		for(ShapeTreeNode child : getChildren()){
 			child.shift(x);
 		}
@@ -134,7 +157,7 @@ public class ShapeTreeNode {
 		if(hasChildren()){
 			return getLastChild().getRightEdge();
 		}
-		int x = getShape().getxPos() + (int) (getShape().getWidth()/2);
+		int x = getX() + getWidth()/2;
 		return x;
 	}
 	
@@ -146,7 +169,7 @@ public class ShapeTreeNode {
 		if(hasChildren()){
 			return getFirstChild().getLeftEdge();
 		}
-		int x = getShape().getxPos() - (int) (getShape().getWidth()/2);
+		int x = getX() - getWidth()/2;
 		return x;
 	}
 	
@@ -219,11 +242,11 @@ public class ShapeTreeNode {
 	 * @return the first child
 	 */
 	public ShapeTreeNode getFirstChild(){
-		if(children.isEmpty()){
+		if(getChildren().isEmpty()){
 			return null;
 		}
 		else{
-			return children.get(0);
+			return getChildren().get(0);
 		}
 	}
 	
@@ -232,11 +255,11 @@ public class ShapeTreeNode {
 	 * @return the last child
 	 */
 	public ShapeTreeNode getLastChild(){
-		if(children.isEmpty()){
+		if(getChildren().isEmpty()){
 			return null;
 		}
 		else{
-			return children.get(children.size()-1);
+			return getChildren().get(getChildren().size()-1);
 		}
 	}
 	

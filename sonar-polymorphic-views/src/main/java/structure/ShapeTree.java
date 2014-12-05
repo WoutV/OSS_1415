@@ -52,7 +52,7 @@ public class ShapeTree {
 				if(!checked.isEmpty()){
 					ShapeTreeNode other = checked.get(whichNode-1);
 					positionsNodesRelativeTo(leafMargin, other, node);
-					int difference = node.getShape().getxPos() - (other.getShape().getxPos());
+					int difference = node.getX() - (other.getX());
 					if(difference > maxDistance){
 						maxDistance = difference;
 					}
@@ -74,7 +74,7 @@ public class ShapeTree {
 		ShapeTreeNode previous = null;
 		for(ShapeTreeNode node : nodes){
 			if(previous != null){
-				int currentDistance = node.getShape().getxPos() - previous.getShape().getxPos();
+				int currentDistance = node.getX() - previous.getX();
 				int toMove = maxDistance - currentDistance;
 				node.shift(toMove);
 			}
@@ -118,10 +118,10 @@ public class ShapeTree {
 			List<ShapeTreeNode> level = getLevel(i);
 			double lvlHeight = getMaxHeightOfLvl(i);
 			for(ShapeTreeNode node : level){
-				int y = (int) currentHeight + (int) node.getShape().getHeight()/2;
-				node.getShape().setyPos(y);
+				int y = currentHeight + node.getHeight()/2;
+				node.setY(y);
 			}
-			currentHeight += lvlHeight + heightMargin;
+			currentHeight += (int) lvlHeight + heightMargin;
 		}
 	}
 	
@@ -138,12 +138,9 @@ public class ShapeTree {
 	 * Sets the right level for every node and resets every node's position to (0,0).
 	 */
 	public void resetAllPositions(){
-		Shape shape = getRoot().getShape();
-		shape.setxPos(0);
-		shape.setyPos(0);
 		for(ShapeTreeNode node : getNodes()){
-			node.getShape().setxPos(0);
-			node.getShape().setyPos(0);
+			node.setX(0);
+			node.setY(0);
 		}
 	}
 	
@@ -190,14 +187,13 @@ public class ShapeTree {
 	 * Get a textual representation of a tree.
 	 * @return representation in form of a string
 	 */
-	//FIX Root wordt nu dubbel afgeprint.
-/*	public String toString(){
-		String result = getRoot().getName();
+	public String toString(){
+		String result = "";
 		for(ShapeTreeNode node : getNodes()){
 			result = result + "\r\n" + node.toString(); 
 		}
 		return result;
-	}*/
+	}
 
 	/**
 	 * Gets the most right edge of the tree.
@@ -220,11 +216,11 @@ public class ShapeTree {
 	 * @param x the level
 	 * @return the height of level x
 	 */
-	public double getMaxHeightOfLvl(int x){
-		double maxHeight = 0;
+	public int getMaxHeightOfLvl(int x){
+		int maxHeight = 0;
 		List<ShapeTreeNode> nodes = getLevel(x);
 		for(ShapeTreeNode node : nodes){
-			double height = node.getShape().getHeight();
+			int height = node.getHeight();
 			if(height > maxHeight){
 				maxHeight = height;
 			}
@@ -236,7 +232,7 @@ public class ShapeTree {
 	 * Get the total height of the tree.
 	 * @return height of the tree
 	 */
-	public double getTotalHeight(int heightMargin){
+	public int getTotalHeight(int heightMargin){
 		int temp = 0;
 		for(int i = 0; i < getHighestLevel()+1;i++){
 			temp += getMaxHeightOfLvl(i) + heightMargin;
