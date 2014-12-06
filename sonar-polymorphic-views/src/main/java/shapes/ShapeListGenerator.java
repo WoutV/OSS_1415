@@ -27,13 +27,8 @@ public class ShapeListGenerator {
 	 * @param thresh - String which contains the values that determine which shape should be used (format :25x30 if order contains 3 elements
 	 * @param order - String which containts the order of the shapes separated by a '-'
 	 */
-	public ShapeListGenerator(Property<Double> width, Property<Double> height, Property<Color> color, Property shapeDeterminingMetric, String thresh,String order) {
-		ShapeType[] shapeOrder = convertToShapeType(order.split("-"));
-		String[] thresholds = thresh.split("x");
-		List<Double> widthList = Util.scaleList(width.getValues(),MIN_SIZE,MAX_SIZE);
-		List<Double> heightList = Util.scaleList(height.getValues(),MIN_SIZE,MAX_SIZE);
-		List<Color> colorList = color.getValues();
-
+	public ShapeListGenerator() {
+		//TODO aanpassen
 	}
 
 	public List<Shape> getShapes () {
