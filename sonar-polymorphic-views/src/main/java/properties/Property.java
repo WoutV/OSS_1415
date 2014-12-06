@@ -9,6 +9,7 @@ import strategies.Strategy;
 public abstract class Property<T> {
 	protected Strategy<T> strategy;
 	protected final String value;
+	
 	public Property(String value){
 		this.value=value;
 	}
