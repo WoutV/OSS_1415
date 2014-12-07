@@ -36,7 +36,7 @@ public class CirclesGenerator implements IShapesGenerator {
 	
 	public CirclesGenerator(MeasureFetcher measureFetcher, PolymorphicChartParameters polyParams) {
 		Property<Double> diameter = new ValueProperty(polyParams.getCircleDiam(), PolymorphicChartParameters.DEFAULT_CIRLCEDIAM, measureFetcher);
-		Property<Color> color = new ColorProperty(polyParams.getBoxColor(), PolymorphicChartParameters.DEFAULT_BOXCOLOR, measureFetcher);
+		Property<Color> color = new ColorProperty(polyParams.getCircleColor(), PolymorphicChartParameters.DEFAULT_CIRCLECOLOR, measureFetcher);
 		List<String> names = measureFetcher.getResourceNames();
 		List<String> keys = measureFetcher.getResourceKeys();
 		this.circleFactory = new CircleFactory();

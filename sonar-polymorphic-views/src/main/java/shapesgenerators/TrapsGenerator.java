@@ -30,7 +30,7 @@ public class TrapsGenerator implements IShapesGenerator {
 		Property<Double> width = new ValueProperty(polyParams.getTrapSide1(), PolymorphicChartParameters.DEFAULT_TRAPSIDE1, measureFetcher);
 		Property<Double> height = new ValueProperty(polyParams.getTrapSide2(), PolymorphicChartParameters.DEFAULT_TRAPSIDE2, measureFetcher);
 		Property<Double> height2 = new ValueProperty(polyParams.getTrapSide3(), PolymorphicChartParameters.DEFAULT_TRAPSIDE3, measureFetcher);
-		Property<Color> color = new ColorProperty(polyParams.getBoxColor(), PolymorphicChartParameters.DEFAULT_BOXCOLOR, measureFetcher);
+		Property<Color> color = new ColorProperty(polyParams.getTrapColor(), PolymorphicChartParameters.DEFAULT_TRAPCOLOR, measureFetcher);
 		List<String> names = measureFetcher.getResourceNames();
 		List<String> keys = measureFetcher.getResourceKeys();
 		int numberOfShapes = names.size();
