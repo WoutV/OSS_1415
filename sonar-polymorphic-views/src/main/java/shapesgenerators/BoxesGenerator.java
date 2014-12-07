@@ -51,8 +51,8 @@ public class BoxesGenerator implements IShapesGenerator {
 		List<Double> widthList = Util.scaleList(width.getValues(),MIN_BOX_SIZE,MAX_BOX_SIZE);
 		List<Double> heightList = Util.scaleList(height.getValues(),MIN_BOX_SIZE,MAX_BOX_SIZE);
 		List<Color> colorList = color.getValues();
-		this.shapes = new Shape[names.size()];
-		for(int i = 0;i<names.size();i++) {
+		this.shapes = new Shape[keyList.size()];
+		for(int i = 0;i<keyList.size();i++) {
 			shapes[i] = boxFactory.createShape
 					(heightList.get(i),
 							widthList.get(i), 

@@ -49,7 +49,7 @@ public class CirclesGenerator implements IShapesGenerator {
 	private void initShapes(Property<Double> diameter,Property<Color> color, List<String> names, List<String> keyList) {
 		List<Double> diamList = Util.scaleList(diameter.getValues(),MIN_SIZE,MAX_SIZE);
 		List<Color> colorList = color.getValues();
-		this.shapes = new Shape[names.size()];
+		this.shapes = new Shape[keyList.size()];
 		for(int i = 0;i<shapes.length;i++) {
 			shapes[i] = circleFactory.createShape(diamList.get(i), diamList.get(i), keyList.get(i), names.get(i), colorList.get(i));
 		}

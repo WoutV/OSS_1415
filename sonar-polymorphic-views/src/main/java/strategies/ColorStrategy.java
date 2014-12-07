@@ -81,11 +81,11 @@ public class ColorStrategy implements Strategy<Color> {
 		Map<String, Double> colors = measureFetcher.getMeasureValues(key);
 		Map<String, Double> scaledColors = Util.scaleGrey(colors, min, max);
 		int size = measureFetcher.getNumberOfResources();
-		List<String> names = measureFetcher.getResourceNames();
+		List<String> keys = measureFetcher.getResourceKeys();
 		List<Color> result = new ArrayList<Color>();
 		try{
 			for (int i = 0; i < size; i++) {
-				String name = names.get(i);
+				String name = keys.get(i);
 				int colorValue = scaledColors.get(name).intValue();
 				Color c = new Color(colorValue, colorValue, colorValue);
 				result.add(c);
