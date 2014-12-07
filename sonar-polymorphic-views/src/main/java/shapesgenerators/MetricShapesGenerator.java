@@ -42,10 +42,14 @@ public class MetricShapesGenerator implements IShapesGenerator{
 		Property<Double> shapeDeterminingMetric = new ValueProperty(polyParams.getShapeMetric(),PolymorphicChartParameters.DEFAULT_SHAPEMETRIC, measureFetcher);
 		
 		this.order = convertToShapeType(polyParams.getShapeMetricOrder().split("-"));
-		this.thresh = stringArrayToIntArray(polyParams.getShapeMetricSplit().split("x"));
+		this.thresh = stringArrayToDoubleArray(polyParams.getShapeMetricSplit().split("x"));
 		initShapes(shapeDeterminingMetric);
 		
 	}
+	/**
+	 * Initializes all shapes
+	 * @param shapeDeterminingMetric - Metric that determines which shape will be needed
+	 */
 	private void initShapes(Property<Double> shapeDeterminingMetric){
 		List<Double> metric = shapeDeterminingMetric.getValues();
 		this.shapes = new Shape[metric.size()];
@@ -66,10 +70,16 @@ public class MetricShapesGenerator implements IShapesGenerator{
 		
 	}
 
+
 	public Shape[] getShapes () {
 		return this.shapes;
 	}
 
+	/**
+	 * Based on the given value and thresh and order determines which shapetype is necessary
+	 * @param value
+	 * @return ShapeType determined by the value, order and thresholds
+	 */
 	private ShapeType determineType (double value){
 		for (int i=0;i<thresh.length;i++){
 			if(value <= thresh[i]){
@@ -77,13 +87,17 @@ public class MetricShapesGenerator implements IShapesGenerator{
 				return order[i];
 			}
 		}
-		System.out.println("Value "+value+"above "+ thresh[thresh.length-1] + "type : " + order[order.length-1]);
 
 		return order[order.length-1];
 	}
 	
 	
-	private static double[] stringArrayToIntArray(String[] input) throws IllegalArgumentException{
+	/**
+	 * @param input array of strings which are actually doubles
+	 * @return array of converted doubles
+	 * @throws IllegalArgumentException thrown when the given strings do not represent actual doubles
+	 */
+	private static double[] stringArrayToDoubleArray(String[] input) throws IllegalArgumentException{
 		try{
 			double[] output = new double[input.length];
 			for(int i=0;i<input.length;i++){
@@ -96,6 +110,10 @@ public class MetricShapesGenerator implements IShapesGenerator{
 		}
 	}
 
+	/**
+	 * @param stringTypes array of Strings that correspond to a shapetype
+	 * @return converted array of shapetypes
+	 */
 	public ShapeType[] convertToShapeType (String[] stringTypes){
 		ShapeType[] result = new ShapeType[stringTypes.length];
 		int i = 0;

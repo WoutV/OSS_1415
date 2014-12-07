@@ -45,7 +45,7 @@ public class BoxesGenerator implements IShapesGenerator {
 	
 
 	/**
-	 * This method initializes the list of shapes with "empty" boxes
+	 * This method initializes the list of boxes
 	 */
 	private void initBoxes(Property<Double> width,Property<Double> height,Property<Color> color, List<String> names, List<String> keyList) {
 		List<Double> widthList = Util.scaleList(width.getValues(),MIN_BOX_SIZE,MAX_BOX_SIZE);

@@ -38,7 +38,7 @@ public class TrapsGenerator implements IShapesGenerator {
 		}
 
 	/**
-	 * This method initializes the list of shapes with "empty" boxes
+	 * This method initializes the list of shapes
 	 */
 	private void initShapes(Property<Double> width,Property<Double> height,Property<Double> height2,Property<Color> color, List<String> names, List<String> keyList) {
 		List<Double> widthList = Util.scaleList(width.getValues(),MIN_SIZE,MAX_SIZE);
