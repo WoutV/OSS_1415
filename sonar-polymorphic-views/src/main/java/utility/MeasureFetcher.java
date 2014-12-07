@@ -120,5 +120,13 @@ public class MeasureFetcher {
 	public Metric findMetric(String key) {
 		return sonar.findMetric(key);
 	}
+
+	public List<String> getResourceKeys() {
+		List<String> keys = new ArrayList<String>();
+		for(Resource r: resources){
+			keys.add(r.getKey());
+		}
+		return keys;
+	}
 	
 }

@@ -15,16 +15,16 @@ import org.slf4j.LoggerFactory;
 import properties.ColorProperty;
 import properties.Property;
 import properties.ValueProperty;
-import shapes.BoxGenerator;
 import shapes.Shape;
-import shapes.ShapeGenerator;
+import shapesgenerators.BoxesGenerator;
+import shapesgenerators.IShapesGenerator;
 import utility.Util;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 
 public class ScatterPlotGenerator extends PolymorphicChartGenerator {
-	private final static Logger LOG = LoggerFactory.getLogger(BoxGenerator.class);
+	private final static Logger LOG = LoggerFactory.getLogger(BoxesGenerator.class);
 	private Property<Double> xMetric;
 	private Property<Double> yMetric;
 	private List<Shape> shapes;
@@ -47,7 +47,9 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 		Property<Double> width = new ValueProperty(polyParams.getBoxWidth(), PolymorphicChartParameters.DEFAULT_BOXWIDTH, measureFetcher);
 		Property<Double> height = new ValueProperty(polyParams.getBoxHeight(), PolymorphicChartParameters.DEFAULT_BOXHEIGHT, measureFetcher);
 		Property<Color> color = new ColorProperty(polyParams.getBoxColor(), PolymorphicChartParameters.DEFAULT_BOXCOLOR, measureFetcher);
-		ShapeGenerator boxGenerator = new BoxGenerator(measureFetcher,width,height,color);
+		List<String> names = measureFetcher.getResourceNames();
+		List<String> keys = measureFetcher.getResourceKeys();
+		IShapesGenerator boxGenerator = new BoxesGenerator(names,width,height,color,keys);
 		shapes.addAll(Arrays.asList(boxGenerator.getShapes()));
 	}
 

@@ -25,13 +25,12 @@ public class LineFactory implements ShapeFactory{
 	}
 
 	@Override
-	public Shape createShape(double height, double width, int x, int y,
-			long key, String label, Color color) {
+	public Shape createShape(double height, double width,
+			String key, String label, Color color) {
 		Line line = new Line();
 		line.setHeight(height);
 		line.setWidth(width);
-		line.setxPos(x);
-		line.setyPos(y);
+		
 		line.setName(label);
 		line.setColor(color);
 		return line;

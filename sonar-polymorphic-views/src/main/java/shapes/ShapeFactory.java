@@ -11,7 +11,7 @@ import java.awt.Color;
 public interface ShapeFactory {
 
 
-	public Shape createShape(double height, double width, int x, int y,long key, String label ,Color color)
+	public Shape createShape(double height, double width, String key, String label ,Color color)
 	;//{
 //		Shape shape = new Shape();
 //		shape.setHeight(height);

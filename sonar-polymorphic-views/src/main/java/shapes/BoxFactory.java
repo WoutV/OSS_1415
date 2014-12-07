@@ -16,7 +16,7 @@ public class BoxFactory implements ShapeFactory {
 
 		}
 
-	public Box makeBox(double height, double width, int x, int y, long key, String label, Color color){
+	public Box makeBox(double height, double width, int x, int y, String key, String label, Color color){
 		Box box = new Box();
 		box.setHeight(height);
 		box.setWidth(width);
@@ -29,13 +29,11 @@ public class BoxFactory implements ShapeFactory {
 	}
 
 	@Override
-	public Shape createShape(double height, double width, int x, int y,
-			long key, String label, Color color) {
+	public Shape createShape(double height, double width,
+			String key, String label, Color color) {
 		Box box = new Box();
 		box.setHeight(height);
 		box.setWidth(width);
-		box.setxPos(x);
-		box.setyPos(y);
 		box.setKey(key);
 		box.setName(label);
 		box.setColor(color);

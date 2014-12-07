@@ -18,12 +18,12 @@ public abstract class Shape {
 	private Color color;
 	private double width;
 	private double height;
-	private long key;
+	private String key;
 	
-	public long getKey() {
+	public String getKey() {
 		return key;
 	}
-	public void setKey(long key) {
+	public void setKey(String key) {
 		this.key = key;
 	}
 	public double getWidth() {

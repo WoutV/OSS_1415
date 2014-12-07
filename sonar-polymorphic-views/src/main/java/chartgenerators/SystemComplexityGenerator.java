@@ -10,10 +10,10 @@ import java.util.List;
 import properties.ColorProperty;
 import properties.Property;
 import properties.ValueProperty;
-import shapes.BoxGenerator;
 import shapes.Line;
 import shapes.Shape;
-import shapes.ShapeGenerator;
+import shapesgenerators.BoxesGenerator;
+import shapesgenerators.IShapesGenerator;
 import structure.ShapeTree;
 import structure.ShapeTreeNode;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
@@ -43,8 +43,9 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		Property<Double> width = new ValueProperty(polyParams.getBoxWidth(), PolymorphicChartParameters.DEFAULT_BOXWIDTH, measureFetcher);
 		Property<Double> height = new ValueProperty(polyParams.getBoxHeight(), PolymorphicChartParameters.DEFAULT_BOXHEIGHT, measureFetcher);
 		Property<Color> color = new ColorProperty(polyParams.getBoxColor(), PolymorphicChartParameters.DEFAULT_BOXCOLOR, measureFetcher);
-		ShapeGenerator boxGenerator = new BoxGenerator(measureFetcher,width,height,color);
-		
+		List<String> names = measureFetcher.getResourceNames();
+		List<String> keys = measureFetcher.getResourceKeys();
+		IShapesGenerator boxGenerator = new BoxesGenerator(names,width,height,color,keys);
 		shapes.addAll(Arrays.asList(boxGenerator.getShapes()));
 		addShapesToTree();
 	}
