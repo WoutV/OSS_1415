@@ -14,6 +14,8 @@ public class PolymorphicChartParameters {
 	public static final String PARAM_BOXWIDTH = "boxwidth";
 	public static final String PARAM_BOXHEIGHT = "boxheight";
 	public static final String PARAM_BOXCOLOR = "boxcolor";
+	public static final String PARAM_CIRCLECOLOR = "circlecolor";
+	public static final String PARAM_TRAPCOLOR = "trapcolor";
 	public static final String PARAM_SHAPE = "shape";
 	public static final String PARAM_CIRLCEDIAM = "circlediam";
 	public static final String PARAM_TRAPSIDE1 = "trapside1";
@@ -34,7 +36,9 @@ public class PolymorphicChartParameters {
 	public static final String DEFAULT_TYPE = "scatter"; 
 	public static final String DEFAULT_BOXWIDTH = "13";
 	public static final String DEFAULT_BOXHEIGHT = "13";
-	public static final String DEFAULT_BOXCOLOR = "r255g255b255"; 
+	public static final String DEFAULT_BOXCOLOR = "r255g255b255";
+	public static final String DEFAULT_TRAPCOLOR = "r255g255b255"; 
+	public static final String DEFAULT_CIRCLECOLOR = "r255g255b255"; 
 	public static final String DEFAULT_SIZE = "800x800";
 	
 	public static String DEFAULT_PARENT;
@@ -144,6 +148,16 @@ public class PolymorphicChartParameters {
 	
 	public String getBoxColor(){
 		String result = chartParameters.getValue(PARAM_BOXCOLOR, DEFAULT_BOXCOLOR,false);
+		return result;
+	}
+	
+	public String getTrapColor(){
+		String result = chartParameters.getValue(PARAM_TRAPCOLOR, DEFAULT_TRAPCOLOR,false);
+		return result;
+	}
+	
+	public String getCircleColor(){
+		String result = chartParameters.getValue(PARAM_CIRCLECOLOR, DEFAULT_CIRCLECOLOR,false);
 		return result;
 	}
 
