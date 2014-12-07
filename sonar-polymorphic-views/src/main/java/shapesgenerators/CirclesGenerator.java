@@ -9,7 +9,9 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import properties.ColorProperty;
 import properties.Property;
+import properties.ValueProperty;
 import shapes.Box;
 import shapes.BoxFactory;
 import shapes.CircleFactory;
@@ -32,11 +34,13 @@ public class CirclesGenerator implements IShapesGenerator {
 	private CircleFactory circleFactory;
 	
 	
-	public CirclesGenerator(List<String> names, Property<Double> diameter, Property<Color> color, List<String> keyList) {
-		int numberOfShapes = names.size();
-		this.shapes = new Shape[numberOfShapes];
+	public CirclesGenerator(MeasureFetcher measureFetcher, PolymorphicChartParameters polyParams) {
+		Property<Double> diameter = new ValueProperty(polyParams.getCircleDiam(), PolymorphicChartParameters.DEFAULT_CIRLCEDIAM, measureFetcher);
+		Property<Color> color = new ColorProperty(polyParams.getBoxColor(), PolymorphicChartParameters.DEFAULT_BOXCOLOR, measureFetcher);
+		List<String> names = measureFetcher.getResourceNames();
+		List<String> keys = measureFetcher.getResourceKeys();
 		this.circleFactory = new CircleFactory();
-		initShapes(diameter, color,names,keyList);
+		initShapes(diameter, color,names,keys);
 		}
 
 	/**

@@ -13,7 +13,10 @@ import properties.ValueProperty;
 import shapes.Line;
 import shapes.Shape;
 import shapesgenerators.BoxesGenerator;
+import shapesgenerators.CirclesGenerator;
 import shapesgenerators.IShapesGenerator;
+import shapesgenerators.MetricShapesGenerator;
+import shapesgenerators.TrapsGenerator;
 import structure.ShapeTree;
 import structure.ShapeTreeNode;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
@@ -39,14 +42,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		super(polyParams,sonar);
 		
 		this.dependencyTrees = buildTrees();
-		
-		Property<Double> width = new ValueProperty(polyParams.getBoxWidth(), PolymorphicChartParameters.DEFAULT_BOXWIDTH, measureFetcher);
-		Property<Double> height = new ValueProperty(polyParams.getBoxHeight(), PolymorphicChartParameters.DEFAULT_BOXHEIGHT, measureFetcher);
-		Property<Color> color = new ColorProperty(polyParams.getBoxColor(), PolymorphicChartParameters.DEFAULT_BOXCOLOR, measureFetcher);
-		List<String> names = measureFetcher.getResourceNames();
-		List<String> keys = measureFetcher.getResourceKeys();
-		IShapesGenerator boxGenerator = new BoxesGenerator(names,width,height,color,keys);
-		shapes.addAll(Arrays.asList(boxGenerator.getShapes()));
+		shapes.addAll(Arrays.asList(generator.getShapes()));
 		addShapesToTree();
 	}
 

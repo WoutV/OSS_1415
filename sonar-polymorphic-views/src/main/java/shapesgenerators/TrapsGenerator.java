@@ -1,15 +1,15 @@
 package shapesgenerators;
 
 import java.awt.Color;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
+import properties.ColorProperty;
 import properties.Property;
-
+import properties.ValueProperty;
 import shapes.Shape;
 import shapes.TrapezoidFactory;
+import utility.MeasureFetcher;
 import utility.Util;
 
 /**
@@ -26,11 +26,17 @@ public class TrapsGenerator implements IShapesGenerator {
 	private TrapezoidFactory trapFactory;
 	
 	
-	public TrapsGenerator(List<String> names, Property<Double> width,Property<Double> height1, Property<Double> height2,Property<Color> color, List<String> keyList) {
+	public TrapsGenerator(MeasureFetcher measureFetcher, PolymorphicChartParameters polyParams) {
+		Property<Double> width = new ValueProperty(polyParams.getTrapSide1(), PolymorphicChartParameters.DEFAULT_TRAPSIDE1, measureFetcher);
+		Property<Double> height = new ValueProperty(polyParams.getTrapSide2(), PolymorphicChartParameters.DEFAULT_TRAPSIDE2, measureFetcher);
+		Property<Double> height2 = new ValueProperty(polyParams.getTrapSide3(), PolymorphicChartParameters.DEFAULT_TRAPSIDE3, measureFetcher);
+		Property<Color> color = new ColorProperty(polyParams.getBoxColor(), PolymorphicChartParameters.DEFAULT_BOXCOLOR, measureFetcher);
+		List<String> names = measureFetcher.getResourceNames();
+		List<String> keys = measureFetcher.getResourceKeys();
 		int numberOfShapes = names.size();
 		this.shapes = new Shape[numberOfShapes];
 		this.trapFactory = new TrapezoidFactory();
-		initShapes(width, height1, height2, color,names,keyList);
+		initShapes(width, height, height2, color,names,keys);
 		}
 
 	/**

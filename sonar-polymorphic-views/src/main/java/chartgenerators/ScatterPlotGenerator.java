@@ -17,7 +17,10 @@ import properties.Property;
 import properties.ValueProperty;
 import shapes.Shape;
 import shapesgenerators.BoxesGenerator;
+import shapesgenerators.CirclesGenerator;
 import shapesgenerators.IShapesGenerator;
+import shapesgenerators.MetricShapesGenerator;
+import shapesgenerators.TrapsGenerator;
 import utility.Util;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
@@ -43,14 +46,7 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 		this.shapes = new ArrayList<Shape>();
 		
 		parseSize(polyParams.getSize());
-		
-		Property<Double> width = new ValueProperty(polyParams.getBoxWidth(), PolymorphicChartParameters.DEFAULT_BOXWIDTH, measureFetcher);
-		Property<Double> height = new ValueProperty(polyParams.getBoxHeight(), PolymorphicChartParameters.DEFAULT_BOXHEIGHT, measureFetcher);
-		Property<Color> color = new ColorProperty(polyParams.getBoxColor(), PolymorphicChartParameters.DEFAULT_BOXCOLOR, measureFetcher);
-		List<String> names = measureFetcher.getResourceNames();
-		List<String> keys = measureFetcher.getResourceKeys();
-		IShapesGenerator boxGenerator = new BoxesGenerator(names,width,height,color,keys);
-		shapes.addAll(Arrays.asList(boxGenerator.getShapes()));
+		shapes.addAll(Arrays.asList(generator.getShapes()));
 	}
 
 	@Override

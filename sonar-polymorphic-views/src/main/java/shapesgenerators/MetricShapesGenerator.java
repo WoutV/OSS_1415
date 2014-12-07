@@ -4,13 +4,17 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
+import properties.ColorProperty;
 import properties.Property;
+import properties.ValueProperty;
 import shapes.BoxFactory;
 import shapes.CircleFactory;
 import shapes.Shape;
 import shapes.ShapeFactory;
 import shapes.ShapeType;
 import shapes.TrapezoidFactory;
+import utility.MeasureFetcher;
 import utility.Util;
 
 /**
@@ -37,17 +41,25 @@ public class MetricShapesGenerator implements IShapesGenerator{
 	 * @param thresh - String which contains the values that determine which shape should be used (format :25x30 if order contains 3 elements
 	 * @param order - String which contains the order of the shapes separated by a '-'
 	 */
-	//TODO gigantische constructor hier..
-	public MetricShapesGenerator(Property<Double> height, Property<Double> width, Property<Color> color, List<String> names, Property<Double> shapeDeterminingMetric, List<String> keys, String thresh, String order) {
-		this.order = convertToShapeType(order.split("-"));
-		this.thresh = stringArrayToIntArray(thresh.split("x"));
+	public MetricShapesGenerator(MeasureFetcher measureFetcher, PolymorphicChartParameters polyParams) {
+		//Take default values here
+		Property<Double> width = new ValueProperty(polyParams.getBoxWidth(), PolymorphicChartParameters.DEFAULT_BOXWIDTH, measureFetcher);
+		Property<Double> height = new ValueProperty(polyParams.getBoxHeight(), PolymorphicChartParameters.DEFAULT_BOXHEIGHT, measureFetcher);
+		Property<Color> color = new ColorProperty(polyParams.getBoxColor(), PolymorphicChartParameters.DEFAULT_BOXCOLOR, measureFetcher);
+		
+		Property<Double> shapeDeterminingMetric = new ValueProperty(polyParams.getShapeMetric(),PolymorphicChartParameters.DEFAULT_SHAPEMETRIC, measureFetcher);
+		List<String> names = measureFetcher.getResourceNames();
+		List<String> keys = measureFetcher.getResourceKeys();
+		
+		this.order = convertToShapeType(polyParams.getShapeMetricOrder().split("-"));
+		this.thresh = stringArrayToIntArray(polyParams.getShapeMetricSplit().split("x"));
 		this.trapFactory = new TrapezoidFactory();
 		this.circleFactory = new CircleFactory();
 		this.boxFactory = new BoxFactory();
 		initShapes(height, width, color, names, shapeDeterminingMetric, keys);
 		
 	}
-    // TODO hier ook veel argumenten
+    // TODO hier veel argumenten
 	private void initShapes(Property<Double> height, Property<Double> width, Property<Color> color, List<String> names, Property<Double> shapeDeterminingMetric, List<String> keys){
 		List<Double> widthList = Util.scaleList(width.getValues(),MIN_SIZE,MAX_SIZE);
 		List<Double> heightList = Util.scaleList(height.getValues(),MIN_SIZE,MAX_SIZE);
