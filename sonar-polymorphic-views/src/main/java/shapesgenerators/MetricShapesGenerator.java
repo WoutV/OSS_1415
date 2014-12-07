@@ -27,14 +27,13 @@ import utility.Util;
  */
 public class MetricShapesGenerator implements IShapesGenerator{
 
-	private ShapeFactory trapFactory;
-	private ShapeFactory circleFactory;
-	private ShapeFactory boxFactory;
+
 	private Shape[] shapes;
 	private ShapeType[] order;
 	private double[] thresh;
-	private final static double MIN_SIZE = 5;
-	private final static double MAX_SIZE = 100;
+	private BoxesGenerator bg;
+	private CirclesGenerator cg;
+	private TrapsGenerator tg;
 
 	/**
 	 * @param shapeDeterminingMetric - Property which contains metric values that are used to determine color
@@ -42,46 +41,37 @@ public class MetricShapesGenerator implements IShapesGenerator{
 	 * @param order - String which contains the order of the shapes separated by a '-'
 	 */
 	public MetricShapesGenerator(MeasureFetcher measureFetcher, PolymorphicChartParameters polyParams) {
-		//Take default values here
-		Property<Double> width = new ValueProperty(polyParams.getBoxWidth(), PolymorphicChartParameters.DEFAULT_BOXWIDTH, measureFetcher);
-		Property<Double> height = new ValueProperty(polyParams.getBoxHeight(), PolymorphicChartParameters.DEFAULT_BOXHEIGHT, measureFetcher);
-		Property<Color> color = new ColorProperty(polyParams.getBoxColor(), PolymorphicChartParameters.DEFAULT_BOXCOLOR, measureFetcher);
 		
+		this.bg = new BoxesGenerator(measureFetcher, polyParams);
+		this.cg = new CirclesGenerator(measureFetcher, polyParams);
+		this.tg = new TrapsGenerator(measureFetcher, polyParams);
+	
 		Property<Double> shapeDeterminingMetric = new ValueProperty(polyParams.getShapeMetric(),PolymorphicChartParameters.DEFAULT_SHAPEMETRIC, measureFetcher);
-		List<String> names = measureFetcher.getResourceNames();
-		List<String> keys = measureFetcher.getResourceKeys();
 		
 		this.order = convertToShapeType(polyParams.getShapeMetricOrder().split("-"));
 		this.thresh = stringArrayToIntArray(polyParams.getShapeMetricSplit().split("x"));
-		this.trapFactory = new TrapezoidFactory();
-		this.circleFactory = new CircleFactory();
-		this.boxFactory = new BoxFactory();
-		initShapes(height, width, color, names, shapeDeterminingMetric, keys);
+		initShapes(shapeDeterminingMetric);
 		
 	}
-    // TODO hier veel argumenten
-	private void initShapes(Property<Double> height, Property<Double> width, Property<Color> color, List<String> names, Property<Double> shapeDeterminingMetric, List<String> keys){
-		List<Double> widthList = Util.scaleList(width.getValues(),MIN_SIZE,MAX_SIZE);
-		List<Double> heightList = Util.scaleList(height.getValues(),MIN_SIZE,MAX_SIZE);
-		List<Color> colorList = color.getValues();
+	private void initShapes(Property<Double> shapeDeterminingMetric){
 		List<Double> metric = shapeDeterminingMetric.getValues();
 		for(int i = 0;i<shapes.length;i++) {
 			ShapeType type = determineType (metric.get(i));
-			ShapeFactory sf = null;
+			IShapesGenerator sg = null;
 			if(type.equals(ShapeType.BOX)){
-				sf = this.boxFactory;
+				sg = bg;
 			}
 			else if (type.equals(ShapeType.TRAPEZOID)){
-				sf = this.trapFactory;
+				sg = tg;
 			}
 			else{
-				sf = this.circleFactory;
+				sg = cg;
 			}
-			shapes[i] = sf.createShape(heightList.get(i), widthList.get(i), keys.get(i), names.get(i), colorList.get(i));
+			shapes[i] = sg.getShapes()[i];
 		}
 		
 	}
-		
+
 	public Shape[] getShapes () {
 		return this.shapes;
 	}
