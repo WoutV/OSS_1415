@@ -13,7 +13,7 @@ public enum ShapeType {
 	{
 		@Override
 		public String toString() {
-			return "BOX";
+			return "box";
 		}
 	},
 	
@@ -21,14 +21,14 @@ public enum ShapeType {
 	{
 		@Override
 		public String toString() {
-			return "TRAPEZOID";
+			return "trap";
 		}
 	},
 	
 	CIRCLE{
 		@Override
 		public String toString() {
-			return "CIRCLE";
+			return "circle";
 		}
 	};
 	
@@ -36,17 +36,17 @@ public enum ShapeType {
 	public static ShapeType fromString(String s) {
 		ShapeType result;
 		switch (s) {
-		case "BOX":
+		case "box":
 			result = ShapeType.BOX;
 			break;
-		case "TRAPEZOID":
+		case "trap":
 			result = ShapeType.TRAPEZOID;
 			break;
-		case "CIRCLE":
+		case "circle":
 			result = ShapeType.CIRCLE;
 			break;
 		default:
-			throw new IllegalArgumentException("Unknown dependency type \""+s+"\"");
+			throw new IllegalArgumentException("Unknown shapetype type \""+s+"\"");
 		}
 		return result;
 	}

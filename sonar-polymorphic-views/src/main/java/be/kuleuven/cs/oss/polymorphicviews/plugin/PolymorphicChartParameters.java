@@ -16,7 +16,7 @@ public class PolymorphicChartParameters {
 	public static final String PARAM_BOXCOLOR = "boxcolor";
 	public static final String PARAM_CIRCLECOLOR = "circlecolor";
 	public static final String PARAM_TRAPCOLOR = "trapcolor";
-	public static final String PARAM_SHAPE = "box";
+	public static final String PARAM_SHAPE = "shape";
 	public static final String PARAM_CIRLCEDIAM = "circlediam";
 	public static final String PARAM_TRAPSIDE1 = "trapside1";
 	public static final String PARAM_TRAPSIDE2 = "trapside2";

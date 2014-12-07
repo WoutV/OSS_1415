@@ -38,7 +38,7 @@ public class MeasureFetcher {
 		for(Resource resource:resources){
 			Measure m = sonar.findMeasure(resource, metric);
 			if(m!=null){
-				allValues.put(resource.getName(), m.getValue());
+				allValues.put(resource.getKey(), m.getValue());
 			}
 		}	
 		return allValues;

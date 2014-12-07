@@ -58,7 +58,7 @@ public class ColorStrategy implements Strategy<Color> {
 			List<Color> colorList) {
 		Map<String, Color> result = new HashMap<String, Color>();
 		int i = 0;
-		for (String s : measureFetcher.getResourceNames()) {
+		for (String s : measureFetcher.getResourceKeys()) {
 			result.put(s, colorList.get(i));
 			i++;
 		}

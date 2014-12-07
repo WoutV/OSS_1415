@@ -33,8 +33,6 @@ public class TrapsGenerator implements IShapesGenerator {
 		Property<Color> color = new ColorProperty(polyParams.getTrapColor(), PolymorphicChartParameters.DEFAULT_TRAPCOLOR, measureFetcher);
 		List<String> names = measureFetcher.getResourceNames();
 		List<String> keys = measureFetcher.getResourceKeys();
-		int numberOfShapes = names.size();
-		this.shapes = new Shape[numberOfShapes];
 		this.trapFactory = new TrapezoidFactory();
 		initShapes(width, height, height2, color,names,keys);
 		}
@@ -47,6 +45,7 @@ public class TrapsGenerator implements IShapesGenerator {
 		List<Double> heightList = Util.scaleList(height.getValues(),MIN_SIZE,MAX_SIZE);
 		List<Double> height2List = Util.scaleList(height2.getValues(),MIN_SIZE,MAX_SIZE);
 		List<Color> colorList = color.getValues();
+		this.shapes = new Shape[names.size()];
 		for(int i = 0;i<shapes.length;i++) {
 			shapes[i] = trapFactory.makeTrapezoid(heightList.get(i),widthList.get(i), height2List.get(i), keyList.get(i), names.get(i), colorList.get(i));
 		}

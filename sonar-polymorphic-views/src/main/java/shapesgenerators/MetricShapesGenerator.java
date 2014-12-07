@@ -1,21 +1,14 @@
 package shapesgenerators;
 
-import java.awt.Color;
-import java.util.ArrayList;
+
 import java.util.List;
 
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
-import properties.ColorProperty;
 import properties.Property;
 import properties.ValueProperty;
-import shapes.BoxFactory;
-import shapes.CircleFactory;
 import shapes.Shape;
-import shapes.ShapeFactory;
 import shapes.ShapeType;
-import shapes.TrapezoidFactory;
 import utility.MeasureFetcher;
-import utility.Util;
 
 /**
  * This class is used to generate lists of shapes, based on a set of given
@@ -55,7 +48,8 @@ public class MetricShapesGenerator implements IShapesGenerator{
 	}
 	private void initShapes(Property<Double> shapeDeterminingMetric){
 		List<Double> metric = shapeDeterminingMetric.getValues();
-		for(int i = 0;i<shapes.length;i++) {
+		this.shapes = new Shape[metric.size()];
+		for(int i = 0;i<metric.size();i++) {
 			ShapeType type = determineType (metric.get(i));
 			IShapesGenerator sg = null;
 			if(type.equals(ShapeType.BOX)){
@@ -79,9 +73,12 @@ public class MetricShapesGenerator implements IShapesGenerator{
 	private ShapeType determineType (double value){
 		for (int i=0;i<thresh.length;i++){
 			if(value <= thresh[i]){
+				System.out.println("Value "+value+"below "+ thresh[i] + "type : " + order[i]);
 				return order[i];
 			}
 		}
+		System.out.println("Value "+value+"above "+ thresh[thresh.length-1] + "type : " + order[order.length-1]);
+
 		return order[order.length-1];
 	}
 	

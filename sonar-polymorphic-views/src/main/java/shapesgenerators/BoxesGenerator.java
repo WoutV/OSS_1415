@@ -39,11 +39,10 @@ public class BoxesGenerator implements IShapesGenerator {
 		Property<Color> color = new ColorProperty(polyParams.getBoxColor(), PolymorphicChartParameters.DEFAULT_BOXCOLOR, measureFetcher);
 		List<String> names = measureFetcher.getResourceNames();
 		List<String> keys = measureFetcher.getResourceKeys();
-		int numberOfShapes = names.size();
-		this.shapes = new Shape[numberOfShapes];
 		this.boxFactory = new BoxFactory();
 		initBoxes(width, height,color,names,keys);
-		}
+	}
+	
 
 	/**
 	 * This method initializes the list of shapes with "empty" boxes
@@ -52,8 +51,14 @@ public class BoxesGenerator implements IShapesGenerator {
 		List<Double> widthList = Util.scaleList(width.getValues(),MIN_BOX_SIZE,MAX_BOX_SIZE);
 		List<Double> heightList = Util.scaleList(height.getValues(),MIN_BOX_SIZE,MAX_BOX_SIZE);
 		List<Color> colorList = color.getValues();
-		for(int i = 0;i<shapes.length;i++) {
-			shapes[i] = boxFactory.createShape(heightList.get(i), widthList.get(i), keyList.get(i), names.get(i), colorList.get(i));
+		this.shapes = new Shape[names.size()];
+		for(int i = 0;i<names.size();i++) {
+			shapes[i] = boxFactory.createShape
+					(heightList.get(i),
+							widthList.get(i), 
+							keyList.get(i),
+							names.get(i), 
+							colorList.get(i));
 		}
 	}
 

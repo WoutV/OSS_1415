@@ -79,8 +79,8 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 	 */
 	private void buildShapes(Map<String, Double> xValues, Map<String, Double> yValues) {
 		for(Shape shape : this.shapes){
-			Double xValue = xValues.get(shape.getName());
-			Double yValue = yValues.get(shape.getName());
+			Double xValue = xValues.get(shape.getKey());
+			Double yValue = yValues.get(shape.getKey());
 			shape.setxPos(xValue.intValue());
 			shape.setyPos(yValue.intValue());
 			shape.draw(this.builder);
