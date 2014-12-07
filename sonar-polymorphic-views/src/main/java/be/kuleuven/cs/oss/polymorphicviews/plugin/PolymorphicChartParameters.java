@@ -14,15 +14,33 @@ public class PolymorphicChartParameters {
 	public static final String PARAM_BOXWIDTH = "boxwidth";
 	public static final String PARAM_BOXHEIGHT = "boxheight";
 	public static final String PARAM_BOXCOLOR = "boxcolor";
+	public static final String PARAM_SHAPE = "shape";
+	public static final String PARAM_CIRLCEDIAM = "circlediam";
+	public static final String PARAM_TRAPSIDE1 = "trapside1";
+	public static final String PARAM_TRAPSIDE2 = "trapside2";
+	public static final String PARAM_TRAPSIDE3 = "trapside3";
+	public static final String PARAM_SHAPEMETRIC = "shapemetric";
+	public static final String PARAM_SHAPEMETRICORDER = "shapemetricorder";
+	public static final String PARAM_SHAPEMETRICSPLIT = "shapemetricsplit";
+	
+	public static final String DEFAULT_SHAPEMETRICORDER = "box-circle-trap-circle";
+	public static final String DEFAULT_SHAPEMETRICSPLIT = "20x200x2000";
+	public static final String DEFAULT_TRAPSIDE1 = "13";
+	public static final String DEFAULT_TRAPSIDE2 = "13";
+	public static final String DEFAULT_TRAPSIDE3 = "10";
+	public static final String DEFAULT_CIRLCEDIAM = "13";
+	public static final String DEFAULT_SHAPE = "box";
 	public static final String DEFAULT_RESOURCES = "classes";
 	public static final String DEFAULT_TYPE = "scatter"; 
 	public static final String DEFAULT_BOXWIDTH = "13";
 	public static final String DEFAULT_BOXHEIGHT = "13";
 	public static final String DEFAULT_BOXCOLOR = "r255g255b255"; 
 	public static final String DEFAULT_SIZE = "800x800";
+	
 	public static String DEFAULT_PARENT;
 	public static String DEFAULT_XMETRIC;
 	public static String DEFAULT_YMETRIC;
+	public static String DEFAULT_SHAPEMETRIC = DEFAULT_XMETRIC;
 	private ChartParameters chartParameters;
 
 	
@@ -34,6 +52,20 @@ public class PolymorphicChartParameters {
 		this.chartParameters = p;
 	}
 
+	public String getShapeMetricOrder(){
+		String result = chartParameters.getValue(PARAM_SHAPEMETRICORDER, DEFAULT_SHAPEMETRICORDER,false);
+		return result;
+	}
+	
+	public String getShapeMetricSplit(){
+		String result = chartParameters.getValue(PARAM_SHAPEMETRICSPLIT, DEFAULT_SHAPEMETRICSPLIT,false);
+		return result;
+	}
+	
+	public String getShapeMetric(){
+		String result = chartParameters.getValue(PARAM_SHAPEMETRIC, DEFAULT_SHAPEMETRIC,false);
+		return result;
+	}
 	/**
 	 * @return resources
 	 */
@@ -50,6 +82,30 @@ public class PolymorphicChartParameters {
 		return result;
 	}
 	
+	public String getShape(){
+		String result = chartParameters.getValue(PARAM_SHAPE, DEFAULT_SHAPE,false);
+		return result;
+	}
+	
+	public String getCircleDiam(){
+		String result = chartParameters.getValue(PARAM_CIRLCEDIAM, DEFAULT_CIRLCEDIAM,false);
+		return result;
+	}
+	
+	public String getTrapSide1(){
+		String result = chartParameters.getValue(PARAM_TRAPSIDE1, DEFAULT_TRAPSIDE1,false);
+		return result;
+	}
+	
+	public String getTrapSide2(){
+		String result = chartParameters.getValue(PARAM_TRAPSIDE2, DEFAULT_TRAPSIDE2,false);
+		return result;
+	}
+	
+	public String getTrapSide3(){
+		String result = chartParameters.getValue(PARAM_TRAPSIDE3, DEFAULT_TRAPSIDE3,false);
+		return result;
+	}
 	/**
 	 * @return xmetric
 	 */
