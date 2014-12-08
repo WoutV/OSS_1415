@@ -11,6 +11,7 @@ import properties.ColorProperty;
 import properties.Property;
 import properties.ValueProperty;
 import shapes.Line;
+import shapes.LineFactory;
 import shapes.Shape;
 import shapesgenerators.BoxesGenerator;
 import shapesgenerators.CirclesGenerator;
@@ -201,13 +202,14 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	 * Will create a lines for every parent and its children.
 	 */
 	public void createLines(){
+		LineFactory factory = new LineFactory();
 		for(ShapeTree shapeTree:dependencyTrees){
 			int height = shapeTree.getHighestLevel();
 			for(int i=0; i<height;i++){
 				List<ShapeTreeNode> nodes = shapeTree.getLevel(i);
 				for(ShapeTreeNode root: nodes){
 					for(ShapeTreeNode node: root.getChildren()){
-						createLine(root, node);
+						createLine(root, node, factory);
 					}
 				}
 
@@ -220,20 +222,14 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	 * @param parent The parent
 	 * @param child The child
 	 */
-	public void createLine(ShapeTreeNode parent, ShapeTreeNode child){
+	public void createLine(ShapeTreeNode parent, ShapeTreeNode child, LineFactory factory){
 		Shape parentShape = parent.getShape();
 		int x1 = parentShape.getxPos();
 		int y1 = parentShape.getyPos() - (int) parentShape.getHeight()/2;
 		Shape childShape = child.getShape();
 		int x2 = childShape.getxPos();
 		int y2 = childShape.getyPos() + (int)childShape.getHeight()/2;
-		Shape line= new Line();
-		line.setxPos(x1);
-		line.setyPos(y1);
-		line.setWidth(x2-x1);
-		line.setHeight(y2-y1);
-		
-		shapes.add(line);
+		shapes.add(factory.makeLine(y2-y1, x2-x1, x1, y1, "", Color.BLACK));
 	}
 	
 	/**
