@@ -3,14 +3,15 @@ package shapesgenerators;
 import java.awt.Color;
 import java.util.List;
 
-import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import properties.ColorProperty;
 import properties.Property;
 import properties.ValueProperty;
 import shapes.Shape;
+import shapes.Trapezoid;
 import shapes.TrapezoidFactory;
 import utility.MeasureFetcher;
 import utility.Util;
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 
 /**
  * This class is used to generate lists of boxes with a certain width, height and color.
@@ -47,7 +48,9 @@ public class TrapsGenerator implements IShapesGenerator {
 		List<Color> colorList = color.getValues();
 		this.shapes = new Shape[keyList.size()];
 		for(int i = 0;i<shapes.length;i++) {
-			shapes[i] = trapFactory.makeTrapezoid(heightList.get(i),widthList.get(i), height2List.get(i), keyList.get(i), names.get(i), colorList.get(i));
+			Trapezoid t = trapFactory.createShape(heightList.get(i),widthList.get(i), keyList.get(i), names.get(i), colorList.get(i));
+			t.setSecondHeight(height2List.get(i));
+			shapes[i]=t;
 		}
 	}
 

@@ -18,7 +18,7 @@ public class ConstantStrategy implements Strategy<Double> {
 	@Override
 	public Map<String, Double> execute() {
 		Map<String, Double> result = new HashMap<String, Double>();
-		for (String s : measureFetcher.getResourceNames()) {
+		for (String s : measureFetcher.getResourceKeysAndNames().keySet()) {
 			result.put(s, this.value);
 		}
 		return result;

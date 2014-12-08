@@ -17,7 +17,7 @@ public abstract class Shape {
 	private String name;
 	private Color color;
 	private double width;
-	private double height;
+	protected double height;
 	private String key;
 	
 	public String getKey() {

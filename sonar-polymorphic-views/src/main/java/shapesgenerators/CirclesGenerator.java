@@ -35,23 +35,30 @@ public class CirclesGenerator implements IShapesGenerator {
 	
 	
 	public CirclesGenerator(MeasureFetcher measureFetcher, PolymorphicChartParameters polyParams) {
-		Property<Double> diameter = new ValueProperty(polyParams.getCircleDiam(), PolymorphicChartParameters.DEFAULT_CIRLCEDIAM, measureFetcher);
+		Property<Double> diameter = new ValueProperty(polyParams.getCircleDiam(), PolymorphicChartParameters.DEFAULT_CIRCLEDIAM, measureFetcher);
 		Property<Color> color = new ColorProperty(polyParams.getCircleColor(), PolymorphicChartParameters.DEFAULT_CIRCLECOLOR, measureFetcher);
-		List<String> names = measureFetcher.getResourceNames();
-		List<String> keys = measureFetcher.getResourceKeys();
+		Map<String,String> keysAndNames = measureFetcher.getResourceKeysAndNames();
 		this.circleFactory = new CircleFactory();
-		initShapes(diameter, color,names,keys);
+		initShapes(diameter, color,keysAndNames);
 		}
 
 	/**
 	 * This method initializes the list of shapes
 	 */
-	private void initShapes(Property<Double> diameter,Property<Color> color, List<String> names, List<String> keyList) {
-		List<Double> diamList = Util.scaleList(diameter.getValues(),MIN_SIZE,MAX_SIZE);
-		List<Color> colorList = color.getValues();
-		this.shapes = new Shape[keyList.size()];
-		for(int i = 0;i<shapes.length;i++) {
-			shapes[i] = circleFactory.createShape(diamList.get(i), diamList.get(i), keyList.get(i), names.get(i), colorList.get(i));
+	private void initShapes(Property<Double> diameter,Property<Color> color, Map<String,String> keysAndNames) {
+		this.shapes = new Shape[keysAndNames.size()];
+		Map<String,Double> diamList = Util.scaleMap(diameter.getMap(),MIN_SIZE,MAX_SIZE);
+		Map<String,Color> colorList = color.getMap();
+		this.shapes = new Shape[keysAndNames.size()];
+		int j = 0;
+		for(String i : keysAndNames.keySet()) {
+			shapes[j] = circleFactory.createShape
+					(diamList.get(i),
+							diamList.get(i), 
+							i,
+							keysAndNames.get(i), 
+							colorList.get(i));
+			j++;
 		}
 	}
 

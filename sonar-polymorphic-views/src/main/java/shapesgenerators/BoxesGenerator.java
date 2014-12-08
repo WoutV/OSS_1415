@@ -37,28 +37,29 @@ public class BoxesGenerator implements IShapesGenerator {
 		Property<Double> width = new ValueProperty(polyParams.getBoxWidth(), PolymorphicChartParameters.DEFAULT_BOXWIDTH, measureFetcher);
 		Property<Double> height = new ValueProperty(polyParams.getBoxHeight(), PolymorphicChartParameters.DEFAULT_BOXHEIGHT, measureFetcher);
 		Property<Color> color = new ColorProperty(polyParams.getBoxColor(), PolymorphicChartParameters.DEFAULT_BOXCOLOR, measureFetcher);
-		List<String> names = measureFetcher.getResourceNames();
-		List<String> keys = measureFetcher.getResourceKeys();
+		Map<String,String> names = measureFetcher.getResourceKeysAndNames();
 		this.boxFactory = new BoxFactory();
-		initBoxes(width, height,color,names,keys);
+		initBoxes(width, height,color,names);
 	}
 	
 
 	/**
 	 * This method initializes the list of boxes
 	 */
-	private void initBoxes(Property<Double> width,Property<Double> height,Property<Color> color, List<String> names, List<String> keyList) {
-		List<Double> widthList = Util.scaleList(width.getValues(),MIN_BOX_SIZE,MAX_BOX_SIZE);
-		List<Double> heightList = Util.scaleList(height.getValues(),MIN_BOX_SIZE,MAX_BOX_SIZE);
-		List<Color> colorList = color.getValues();
-		this.shapes = new Shape[keyList.size()];
-		for(int i = 0;i<keyList.size();i++) {
-			shapes[i] = boxFactory.createShape
+	private void initBoxes(Property<Double> width,Property<Double> height,Property<Color> color, Map<String,String> keysAndNames) {
+		Map<String,Double> widthList = Util.scaleMap(width.getMap(),MIN_BOX_SIZE,MAX_BOX_SIZE);
+		Map<String,Double> heightList = Util.scaleMap(height.getMap(),MIN_BOX_SIZE,MAX_BOX_SIZE);
+		Map<String,Color> colorList = color.getMap();
+		this.shapes = new Shape[keysAndNames.size()];
+		int j = 0;
+		for(String i : keysAndNames.keySet()) {
+			shapes[j] = boxFactory.createShape
 					(heightList.get(i),
 							widthList.get(i), 
-							keyList.get(i),
-							names.get(i), 
+							i,
+							keysAndNames.get(i), 
 							colorList.get(i));
+			j++;
 		}
 	}
 

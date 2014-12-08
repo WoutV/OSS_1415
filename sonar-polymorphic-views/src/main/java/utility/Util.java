@@ -44,6 +44,10 @@ public class Util {
 		double min = Collections.min(values.values(),null);
 		double max = Collections.max(values.values(),null);
 		double factor = (b-a)/(max-min);
+		
+		if(min==max) {
+			return values;
+		}
 
 		for(Entry<String, Double> entry :values.entrySet()){
 			double newValue = factor*(entry.getValue()-min)+(a);

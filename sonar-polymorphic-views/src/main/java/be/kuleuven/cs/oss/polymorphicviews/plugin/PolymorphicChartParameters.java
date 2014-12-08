@@ -27,18 +27,18 @@ public class PolymorphicChartParameters {
 	
 	public static final String DEFAULT_SHAPEMETRICORDER = "box-circle-trap-circle";
 	public static final String DEFAULT_SHAPEMETRICSPLIT = "20x200x2000";
-	public static final String DEFAULT_TRAPSIDE1 = "13";
-	public static final String DEFAULT_TRAPSIDE2 = "13";
-	public static final String DEFAULT_TRAPSIDE3 = "10";
-	public static final String DEFAULT_CIRLCEDIAM = "13";
+	public static final String DEFAULT_TRAPSIDE1 = "14";
+	public static final String DEFAULT_TRAPSIDE2 = "15";
+	public static final String DEFAULT_TRAPSIDE3 = "9";
+	public static final String DEFAULT_CIRCLEDIAM = "12";
 	public static final String DEFAULT_SHAPE = "box";
 	public static final String DEFAULT_RESOURCES = "classes";
 	public static final String DEFAULT_TYPE = "scatter"; 
 	public static final String DEFAULT_BOXWIDTH = "13";
 	public static final String DEFAULT_BOXHEIGHT = "13";
-	public static final String DEFAULT_BOXCOLOR = "r255g255b255";
-	public static final String DEFAULT_TRAPCOLOR = "r255g255b255"; 
-	public static final String DEFAULT_CIRCLECOLOR = "r255g255b255"; 
+	public static final String DEFAULT_BOXCOLOR = "r255g0b0";
+	public static final String DEFAULT_TRAPCOLOR = "r0g0b255"; 
+	public static final String DEFAULT_CIRCLECOLOR = "r255g255b0"; 
 	public static final String DEFAULT_SIZE = "800x800";
 	
 	public static String DEFAULT_PARENT;
@@ -92,7 +92,7 @@ public class PolymorphicChartParameters {
 	}
 	
 	public String getCircleDiam(){
-		String result = chartParameters.getValue(PARAM_CIRLCEDIAM, DEFAULT_CIRLCEDIAM,false);
+		String result = chartParameters.getValue(PARAM_CIRLCEDIAM, DEFAULT_CIRCLEDIAM,false);
 		return result;
 	}
 	
