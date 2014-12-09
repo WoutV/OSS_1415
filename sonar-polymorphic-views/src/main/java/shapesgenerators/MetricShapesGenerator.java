@@ -1,13 +1,15 @@
 package shapesgenerators;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
-import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import properties.Property;
 import properties.ValueProperty;
 import shapes.Shape;
 import shapes.ShapeType;
 import utility.MeasureFetcher;
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 
 /**
  * This class is used to generate lists of shapes, based on a set of given
@@ -19,7 +21,7 @@ import utility.MeasureFetcher;
  */
 public class MetricShapesGenerator implements IShapesGenerator {
 
-	private Shape[] shapes;
+	private Map<String,Shape> shapes;
 	private ShapeType[] order;
 	private double[] thresh;
 	private BoxesGenerator bg;
@@ -44,6 +46,7 @@ public class MetricShapesGenerator implements IShapesGenerator {
 		this.cg = new CirclesGenerator(measureFetcher, polyParams);
 		this.tg = new TrapsGenerator(measureFetcher, polyParams);
 
+		Set<String> keys = measureFetcher.getResourceKeysAndNames().keySet();
 		Property<Double> shapeDeterminingMetric = new ValueProperty(
 				polyParams.getShapeMetric(),
 				PolymorphicChartParameters.DEFAULT_SHAPEMETRIC, measureFetcher);
@@ -52,7 +55,7 @@ public class MetricShapesGenerator implements IShapesGenerator {
 				"-"));
 		this.thresh = stringArrayToDoubleArray(polyParams.getShapeMetricSplit()
 				.split("x"));
-		initShapes(shapeDeterminingMetric);
+		initShapes(shapeDeterminingMetric,keys);
 
 	}
 
@@ -62,10 +65,10 @@ public class MetricShapesGenerator implements IShapesGenerator {
 	 * @param shapeDeterminingMetric
 	 *            - Metric that determines which shape will be needed
 	 */
-	private void initShapes(Property<Double> shapeDeterminingMetric) {
-		List<Double> metric = shapeDeterminingMetric.getValues();
-		this.shapes = new Shape[metric.size()];
-		for (int i = 0; i < metric.size(); i++) {
+	private void initShapes(Property<Double> shapeDeterminingMetric,Set<String> keys) {
+		Map<String,Double> metric = shapeDeterminingMetric.getMap();
+		this.shapes = new HashMap<String,Shape>();
+		for (String i : keys) {
 			ShapeType type = determineType(metric.get(i));
 			IShapesGenerator sg = null;
 			if (type.equals(ShapeType.BOX)) {
@@ -75,12 +78,12 @@ public class MetricShapesGenerator implements IShapesGenerator {
 			} else {
 				sg = cg;
 			}
-			shapes[i] = sg.getShapes()[i];
+			shapes.put(i, sg.getShapes()[i]);
 		}
 
 	}
 
-	public Shape[] getShapes() {
+	public Map<String,Shape> getShapes() {
 		return this.shapes;
 	}
 
