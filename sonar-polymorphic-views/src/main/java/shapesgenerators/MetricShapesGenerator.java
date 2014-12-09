@@ -78,7 +78,7 @@ public class MetricShapesGenerator implements IShapesGenerator {
 			} else {
 				sg = cg;
 			}
-			shapes.put(i, sg.getShapes()[i]);
+			shapes.put(i, sg.getShapes().get(i));
 		}
 
 	}
