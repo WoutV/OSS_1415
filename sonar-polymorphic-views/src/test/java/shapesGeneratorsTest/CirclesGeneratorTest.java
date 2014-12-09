@@ -14,12 +14,14 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 import org.sonar.api.charts.ChartParameters;
+import org.sonar.wsclient.services.Metric;
 
 import shapes.Shape;
 import shapesgenerators.CirclesGenerator;
 import utility.MeasureFetcher;
 import utility.Util;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
+import be.kuleuven.cs.oss.sonarfacade.WSMetric;
 
 public class CirclesGeneratorTest {
 	
@@ -27,15 +29,19 @@ public class CirclesGeneratorTest {
 	
 	@Before
 	public void initialize() {
-		measureFetcher = createMockBuilder(MeasureFetcher.class).addMockedMethods("getResourceKeysAndNames", "getNumberOfResources","getMeasureValues","findMetric").createMock();
+		measureFetcher = createMockBuilder(MeasureFetcher.class).addMockedMethods("getResourceKeysAndNames", "getResourceKeys", "getNumberOfResources","getMeasureValues","findMetric").createMock();
 		expect(measureFetcher.getResourceKeysAndNames()).andReturn(new HashMap<String,String>(){{put("resource1","resource1");put("resource2","resource2"); put("resource3","resource3");}}).anyTimes();
+		expect(measureFetcher.getResourceKeys()).andReturn(new ArrayList<String>(){{add("resource1");add("resource2");add("resource3");}}).anyTimes();
 		expect(measureFetcher.getNumberOfResources()).andReturn(3);
 	}
 	
 	@Test
 	public void testNormalUse() {
+		expect(measureFetcher.getMeasureValues("lines")).andReturn(new HashMap<String,Double>(){{put("resource1",20.0);put("resource2",200.0); put("resource3",2000.0);}}).anyTimes();
+		expect(measureFetcher.findMetric("lines")).andReturn(new WSMetric(new Metric())).anyTimes();
 		replay(measureFetcher);
 		Map<String, String> paramMap = new HashMap<String, String>();
+		paramMap.put("shapemetricorder", "circle");
 		paramMap.put("circlecolor", "r255g0b0");
 		paramMap.put("circlediam", "12");
 		
@@ -56,6 +62,8 @@ public class CirclesGeneratorTest {
 
 	@Test
 	public void getShapesDefaultTest() {
+		expect(measureFetcher.getMeasureValues("lines")).andReturn(new HashMap<String,Double>(){{put("resource1",20.0);put("resource2",200.0); put("resource3",2000.0);}}).anyTimes();
+		expect(measureFetcher.findMetric("lines")).andReturn(new WSMetric(new Metric())).anyTimes();
 		replay(measureFetcher);
 		Map<String, String> paramMap = new HashMap<String, String>();
 		
