@@ -3,6 +3,7 @@ package shapesgenerators;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -30,7 +31,7 @@ public class CirclesGenerator implements IShapesGenerator {
 	
 	private final static double MIN_SIZE = 5;
 	private final static double MAX_SIZE = 100;
-	private Shape[] shapes;
+	private Map<String, Shape> shapes;
 	private CircleFactory circleFactory;
 	
 	
@@ -46,24 +47,24 @@ public class CirclesGenerator implements IShapesGenerator {
 	 * This method initializes the list of shapes
 	 */
 	private void initShapes(Property<Double> diameter,Property<Color> color, Map<String,String> keysAndNames) {
-		this.shapes = new Shape[keysAndNames.size()];
+		this.shapes = new HashMap<String, Shape>();
 		Map<String,Double> diamList = Util.scaleMap(diameter.getMap(),MIN_SIZE,MAX_SIZE);
 		Map<String,Color> colorList = color.getMap();
-		this.shapes = new Shape[keysAndNames.size()];
 		int j = 0;
 		for(String i : keysAndNames.keySet()) {
-			shapes[j] = circleFactory.createShape
+			Shape s = circleFactory.createShape
 					(diamList.get(i),
 							diamList.get(i), 
 							i,
 							keysAndNames.get(i), 
 							colorList.get(i));
 			j++;
+			shapes.put(i, s);
 		}
 	}
 
 	@Override
-	public Shape[] getShapes() {
+	public Map<String, Shape> getShapes() {
 		return this.shapes;
 	}
 	
