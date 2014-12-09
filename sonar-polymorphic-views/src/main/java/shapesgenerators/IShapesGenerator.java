@@ -1,7 +1,9 @@
 package shapesgenerators;
 
+import java.util.Map;
+
 import shapes.Shape;
 
 public interface IShapesGenerator {
-	public Shape[] getShapes();
+	public Map<String, Shape> getShapes();
 }

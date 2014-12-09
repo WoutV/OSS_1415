@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -30,7 +31,7 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 	private final static Logger LOG = LoggerFactory.getLogger(BoxesGenerator.class);
 	private Property<Double> xMetric;
 	private Property<Double> yMetric;
-	private List<Shape> shapes;
+	private Map<String, Shape> shapes;
 
 	
 	/**
@@ -41,12 +42,12 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 	public ScatterPlotGenerator(PolymorphicChartParameters polyParams, SonarFacade sonar) {
 		super(polyParams,sonar);
 		LOG.info("Creating scatterplot...");
-		this.xMetric = new ValueProperty(polyParams.getXMetric(), PolymorphicChartParameters.DEFAULT_BOXWIDTH, measureFetcher);
-		this.yMetric = new ValueProperty(polyParams.getYMetric(), PolymorphicChartParameters.DEFAULT_BOXWIDTH, measureFetcher);
-		this.shapes = new ArrayList<Shape>();
+		this.xMetric = new ValueProperty(polyParams.getXMetric(), PolymorphicChartParameters.DEFAULT_XMETRIC, measureFetcher);
+		this.yMetric = new ValueProperty(polyParams.getYMetric(), PolymorphicChartParameters.DEFAULT_YMETRIC, measureFetcher);
+		this.shapes = new HashMap<String, Shape>();
 		
 		parseSize(polyParams.getSize());
-		shapes.addAll(Arrays.asList(generator.getShapes()));
+		shapes = generator.getShapes();
 	}
 
 	@Override
@@ -78,7 +79,7 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 	 * @param yValues values for y position of the boxes
 	 */
 	private void buildShapes(Map<String, Double> xValues, Map<String, Double> yValues) {
-		for(Shape shape : this.shapes){
+		for(Shape shape : this.shapes.values()){
 			Double xValue = xValues.get(shape.getKey());
 			Double yValue = yValues.get(shape.getKey());
 			shape.setxPos(xValue.intValue());

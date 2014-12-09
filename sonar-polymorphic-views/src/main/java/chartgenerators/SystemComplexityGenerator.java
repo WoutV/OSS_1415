@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import properties.ColorProperty;
 import properties.Property;
@@ -27,7 +28,7 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 
-	private List<Shape> shapes = new ArrayList<Shape>();//The collection of shapes, displayed on the view
+	private Map<String, Shape> shapes = new HashMap<String, Shape>();//The collection of shapes, displayed on the view
 	private List<ShapeTree> dependencyTrees;
 	private final static int LEAF_MARGIN = 20;
 	private final static int TREE_MARGIN = 25;
@@ -43,7 +44,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		super(polyParams,sonar);
 		
 		this.dependencyTrees = buildTrees();
-		shapes.addAll(Arrays.asList(generator.getShapes()));
+		shapes = generator.getShapes();
 		addShapesToTree();
 	}
 
@@ -61,7 +62,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	    flipY();
 	    createLines();
 	    
-	    for(Shape shape : this.shapes){
+	    for(Shape shape : this.shapes.values()){
 			shape.draw(this.builder);
 		}
 
@@ -190,7 +191,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	 * @return the shape with the given name
 	 */
 	private Shape getShapeBy(String name){
-		for(Shape shape : shapes){
+		for(Shape shape : shapes.values()){
 			if(shape.getName().equals(name)){
 				return shape;
 			}
@@ -229,7 +230,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		Shape childShape = child.getShape();
 		int x2 = childShape.getxPos();
 		int y2 = childShape.getyPos() + (int)childShape.getHeight()/2;
-		shapes.add(factory.makeLine(y2-y1, x2-x1, x1, y1, "", Color.BLACK));
+		shapes.put(parent.getKey()+child.getKey(), factory.createShape(y2-y1, x2-x1, parent.getKey()+child.getKey(), "", Color.BLACK));
 	}
 	
 	/**
