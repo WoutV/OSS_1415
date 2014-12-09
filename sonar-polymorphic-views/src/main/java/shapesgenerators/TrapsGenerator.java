@@ -2,6 +2,7 @@ package shapesgenerators;
 
 import java.awt.Color;
 import java.util.List;
+import java.util.Map;
 
 import properties.ColorProperty;
 import properties.Property;
@@ -23,7 +24,7 @@ public class TrapsGenerator implements IShapesGenerator {
 	
 	private final static double MIN_SIZE = 5;
 	private final static double MAX_SIZE = 100;
-	private Shape[] shapes;
+	private Map<String,Shape> shapes;
 	private TrapezoidFactory trapFactory;
 	
 	
@@ -32,30 +33,28 @@ public class TrapsGenerator implements IShapesGenerator {
 		Property<Double> height = new ValueProperty(polyParams.getTrapSide2(), PolymorphicChartParameters.DEFAULT_TRAPSIDE2, measureFetcher);
 		Property<Double> height2 = new ValueProperty(polyParams.getTrapSide3(), PolymorphicChartParameters.DEFAULT_TRAPSIDE3, measureFetcher);
 		Property<Color> color = new ColorProperty(polyParams.getTrapColor(), PolymorphicChartParameters.DEFAULT_TRAPCOLOR, measureFetcher);
-		List<String> names = measureFetcher.getResourceNames();
-		List<String> keys = measureFetcher.getResourceKeys();
+		Map<String,String> keysAndNames = measureFetcher.getResourceKeysAndNames();
 		this.trapFactory = new TrapezoidFactory();
-		initShapes(width, height, height2, color,names,keys);
+		initShapes(width, height, height2, color,keysAndNames);
 		}
 
 	/**
 	 * This method initializes the list of shapes
 	 */
-	private void initShapes(Property<Double> width,Property<Double> height,Property<Double> height2,Property<Color> color, List<String> names, List<String> keyList) {
-		List<Double> widthList = Util.scaleList(width.getValues(),MIN_SIZE,MAX_SIZE);
-		List<Double> heightList = Util.scaleList(height.getValues(),MIN_SIZE,MAX_SIZE);
-		List<Double> height2List = Util.scaleList(height2.getValues(),MIN_SIZE,MAX_SIZE);
-		List<Color> colorList = color.getValues();
-		this.shapes = new Shape[keyList.size()];
-		for(int i = 0;i<shapes.length;i++) {
-			Trapezoid t = trapFactory.createShape(heightList.get(i),widthList.get(i), keyList.get(i), names.get(i), colorList.get(i));
+	private void initShapes(Property<Double> width,Property<Double> height,Property<Double> height2,Property<Color> color, Map<String,String> keys) {
+		Map<String,Double> widthList = Util.scaleMap(width.getMap(),MIN_SIZE,MAX_SIZE);
+		Map<String,Double> heightList = Util.scaleMap(height.getMap(),MIN_SIZE,MAX_SIZE);
+		Map<String,Double> height2List = Util.scaleMap(height2.getMap(),MIN_SIZE,MAX_SIZE);
+		Map<String,Color> colorList = color.getMap();
+		for(String i: keys.keySet()) {
+			Trapezoid t = trapFactory.createShape(heightList.get(i),widthList.get(i), i, keys.get(i), colorList.get(i));
 			t.setSecondHeight(height2List.get(i));
-			shapes[i]=t;
+			shapes.put(i,t);
 		}
 	}
 
 	@Override
-	public Shape[] getShapes() {
+	public Map<String,Shape> getShapes() {
 		return this.shapes;
 	}
 	
