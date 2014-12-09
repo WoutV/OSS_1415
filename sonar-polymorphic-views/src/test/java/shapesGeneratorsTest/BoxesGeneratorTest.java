@@ -45,16 +45,16 @@ public class BoxesGeneratorTest {
 		ChartParameters p = new ChartParameters(paramMap); 
 		PolymorphicChartParameters params = new PolymorphicChartParameters(p);
 		BoxesGenerator bg = new BoxesGenerator(measureFetcher, params);
-		Shape[] shapes = bg.getShapes();
+		Map<String, Shape> shapes = bg.getShapes();
 		
-		assertEquals("resource1",shapes[0].getName());
-		assertTrue(shapes[0].getColor().equals(new Color(255,0,0)));
-		assertEquals(12.0,shapes[0].getHeight(),0.001);
-		assertEquals("resource2",shapes[1].getName());
-		assertTrue(shapes[1].getColor().equals(new Color(255,0,0)));
-		assertEquals(8.0,shapes[1].getWidth(),0.001);
-		assertEquals("resource3",shapes[2].getName());;
-		assertTrue(shapes[2].getColor().equals(new Color(255,0,0)));
+		assertEquals("resource1",shapes.get("resource1").getName());
+		assertTrue(shapes.get("resource1").getColor().equals(new Color(255,0,0)));
+		assertEquals(12.0,shapes.get("resource1").getHeight(),0.001);
+		assertEquals("resource2",shapes.get("resource2").getName());
+		assertTrue(shapes.get("resource2").getColor().equals(new Color(255,0,0)));
+		assertEquals(8.0,shapes.get("resource2").getWidth(),0.001);
+		assertEquals("resource3",shapes.get("resource3").getName());;
+		assertTrue(shapes.get("resource3").getColor().equals(new Color(255,0,0)));
 	}
 
 	@Test
@@ -65,16 +65,16 @@ public class BoxesGeneratorTest {
 		ChartParameters p = new ChartParameters(paramMap); 
 		PolymorphicChartParameters params = new PolymorphicChartParameters(p);
 		BoxesGenerator bg = new BoxesGenerator(measureFetcher, params);
-		Shape[] shapes = bg.getShapes();
+		Map<String, Shape> shapes = bg.getShapes();
 		
-		assertTrue(shapes[0].getName().equals("resource3"));
-		assertTrue(shapes[0].getColor().equals(Util.parseColor(PolymorphicChartParameters.DEFAULT_BOXCOLOR)));
-		assertEquals(Double.parseDouble(PolymorphicChartParameters.DEFAULT_BOXHEIGHT),shapes[0].getHeight(),0.001);
-		assertTrue(shapes[1].getName().equals("resource2"));
-		assertTrue(shapes[1].getColor().equals(Util.parseColor(PolymorphicChartParameters.DEFAULT_BOXCOLOR)));
-		assertEquals(Double.parseDouble(PolymorphicChartParameters.DEFAULT_BOXWIDTH),shapes[1].getWidth(),0.001	);
-		assertTrue(shapes[2].getName().equals("resource1"));
-		assertTrue(shapes[2].getColor().equals(Util.parseColor(PolymorphicChartParameters.DEFAULT_BOXCOLOR)));
+		assertTrue(shapes.get("resource3").getName().equals("resource3"));
+		assertTrue(shapes.get("resource3").getColor().equals(Util.parseColor(PolymorphicChartParameters.DEFAULT_BOXCOLOR)));
+		assertEquals(Double.parseDouble(PolymorphicChartParameters.DEFAULT_BOXHEIGHT),shapes.get("resource3").getHeight(),0.001);
+		assertTrue(shapes.get("resource2").getName().equals("resource2"));
+		assertTrue(shapes.get("resource2").getColor().equals(Util.parseColor(PolymorphicChartParameters.DEFAULT_BOXCOLOR)));
+		assertEquals(Double.parseDouble(PolymorphicChartParameters.DEFAULT_BOXWIDTH),shapes.get("resource2").getWidth(),0.001	);
+		assertTrue(shapes.get("resource1").getName().equals("resource1"));
+		assertTrue(shapes.get("resource1").getColor().equals(Util.parseColor(PolymorphicChartParameters.DEFAULT_BOXCOLOR)));
 	}
 	
 	@Test
@@ -92,10 +92,10 @@ public class BoxesGeneratorTest {
 		ChartParameters p = new ChartParameters(paramMap); 
 		PolymorphicChartParameters params = new PolymorphicChartParameters(p);
 		BoxesGenerator bg = new BoxesGenerator(measureFetcher, params);
-		Shape[] shapes = bg.getShapes();
+		Map<String, Shape> shapes = bg.getShapes();
 		
-		assertTrue(shapes[0].getColor().equals(Util.parseColor(PolymorphicChartParameters.DEFAULT_BOXCOLOR)));
-		assertEquals(Double.parseDouble(PolymorphicChartParameters.DEFAULT_BOXHEIGHT),shapes[0].getHeight(),0.001);
+		assertTrue(shapes.get("resource1").getColor().equals(Util.parseColor(PolymorphicChartParameters.DEFAULT_BOXCOLOR)));
+		assertEquals(Double.parseDouble(PolymorphicChartParameters.DEFAULT_BOXHEIGHT),shapes.get("resource1").getHeight(),0.001);
 	}
 	
 	@Test
@@ -110,10 +110,10 @@ public class BoxesGeneratorTest {
 		ChartParameters p = new ChartParameters(paramMap); 
 		PolymorphicChartParameters params = new PolymorphicChartParameters(p);
 		BoxesGenerator bg = new BoxesGenerator(measureFetcher, params);
-		Shape[] shapes = bg.getShapes();
+		Map<String, Shape> shapes = bg.getShapes();
 		
-		assertTrue(shapes[0].getColor().equals(Util.parseColor(PolymorphicChartParameters.DEFAULT_BOXCOLOR)));
-		assertEquals(Double.parseDouble(PolymorphicChartParameters.DEFAULT_BOXHEIGHT),shapes[0].getHeight(),0.001);
+		assertTrue(shapes.get("resource1").getColor().equals(Util.parseColor(PolymorphicChartParameters.DEFAULT_BOXCOLOR)));
+		assertEquals(Double.parseDouble(PolymorphicChartParameters.DEFAULT_BOXHEIGHT),shapes.get("resource1").getHeight(),0.001);
 	}
 
 }
