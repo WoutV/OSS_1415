@@ -1,7 +1,7 @@
 package shapesgenerators;
 
 import java.awt.Color;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
 
 import properties.ColorProperty;
@@ -46,6 +46,7 @@ public class TrapsGenerator implements IShapesGenerator {
 		Map<String,Double> heightList = Util.scaleMap(height.getMap(),MIN_SIZE,MAX_SIZE);
 		Map<String,Double> height2List = Util.scaleMap(height2.getMap(),MIN_SIZE,MAX_SIZE);
 		Map<String,Color> colorList = color.getMap();
+		this.shapes = new HashMap<String,Shape>();
 		for(String i: keys.keySet()) {
 			Trapezoid t = trapFactory.createShape(heightList.get(i),widthList.get(i), i, keys.get(i), colorList.get(i));
 			t.setSecondHeight(height2List.get(i));
