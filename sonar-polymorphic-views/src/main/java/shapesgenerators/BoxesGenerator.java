@@ -1,18 +1,12 @@
 package shapesgenerators;
 
 import java.awt.Color;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import properties.ColorProperty;
 import properties.Property;
 import properties.ValueProperty;
-import shapes.Box;
 import shapes.BoxFactory;
 import shapes.Shape;
 import utility.MeasureFetcher;
@@ -29,7 +23,7 @@ public class BoxesGenerator implements IShapesGenerator {
 	
 	private final static double MIN_BOX_SIZE = 5;
 	private final static double MAX_BOX_SIZE = 100;
-	private Shape[] shapes;
+	private Map<String, Shape> shapes;
 	private BoxFactory boxFactory;
 	
 	
@@ -50,21 +44,22 @@ public class BoxesGenerator implements IShapesGenerator {
 		Map<String,Double> widthList = Util.scaleMap(width.getMap(),MIN_BOX_SIZE,MAX_BOX_SIZE);
 		Map<String,Double> heightList = Util.scaleMap(height.getMap(),MIN_BOX_SIZE,MAX_BOX_SIZE);
 		Map<String,Color> colorList = color.getMap();
-		this.shapes = new Shape[keysAndNames.size()];
+		this.shapes = new HashMap<String,Shape>();
 		int j = 0;
 		for(String i : keysAndNames.keySet()) {
-			shapes[j] = boxFactory.createShape
+			Shape s = boxFactory.createShape
 					(heightList.get(i),
 							widthList.get(i), 
 							i,
 							keysAndNames.get(i), 
 							colorList.get(i));
 			j++;
+			shapes.put(i, s);
 		}
 	}
 
 	@Override
-	public Shape[] getShapes() {
+	public Map<String, Shape> getShapes() {
 		return this.shapes;
 	}
 	
