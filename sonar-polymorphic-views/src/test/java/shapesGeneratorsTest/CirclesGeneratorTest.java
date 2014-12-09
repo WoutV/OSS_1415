@@ -41,17 +41,17 @@ public class CirclesGeneratorTest {
 		
 		ChartParameters p = new ChartParameters(paramMap); 
 		PolymorphicChartParameters params = new PolymorphicChartParameters(p);
-		CirclesGenerator bg = new CirclesGenerator(measureFetcher, params);
-		Shape[] shapes = bg.getShapes();
+		CirclesGenerator cg = new CirclesGenerator(measureFetcher, params);
+		Map<String, Shape> shapes = cg.getShapes();
 		
-		assertTrue(shapes[0].getName().equals("resource1"));
-		assertTrue(shapes[0].getColor().equals(new Color(255,0,0)));
-		assertEquals(12.0,shapes[0].getHeight(),0.001);
-		assertTrue(shapes[1].getName().equals("resource2"));
-		assertTrue(shapes[1].getColor().equals(new Color(255,0,0)));
-		assertEquals(12.0,shapes[1].getWidth(),0.001);
-		assertTrue(shapes[2].getName().equals("resource3"));
-		assertTrue(shapes[2].getColor().equals(new Color(255,0,0)));
+		assertTrue(shapes.get("resource1").getName().equals("resource1"));
+		assertTrue(shapes.get("resource1").getColor().equals(new Color(255,0,0)));
+		assertEquals(12.0,shapes.get("resource1").getHeight(),0.001);
+		assertTrue(shapes.get("resource2").getName().equals("resource2"));
+		assertTrue(shapes.get("resource2").getColor().equals(new Color(255,0,0)));
+		assertEquals(12.0,shapes.get("resource2").getWidth(),0.001);
+		assertTrue(shapes.get("resource3").getName().equals("resource3"));
+		assertTrue(shapes.get("resource3").getColor().equals(new Color(255,0,0)));
 	}
 
 	@Test
@@ -61,17 +61,17 @@ public class CirclesGeneratorTest {
 		
 		ChartParameters p = new ChartParameters(paramMap); 
 		PolymorphicChartParameters params = new PolymorphicChartParameters(p);
-		CirclesGenerator bg = new CirclesGenerator(measureFetcher, params);
-		Shape[] shapes = bg.getShapes();
+		CirclesGenerator cg = new CirclesGenerator(measureFetcher, params);
+		Map<String, Shape> shapes = cg.getShapes();
 		
-		assertTrue(shapes[0].getName().equals("resource1"));
-		assertTrue(shapes[0].getColor().equals(Util.parseColor(PolymorphicChartParameters.DEFAULT_CIRCLECOLOR)));
-		assertEquals(Double.parseDouble(PolymorphicChartParameters.DEFAULT_CIRCLEDIAM),shapes[0].getHeight(),0.001);
-		assertTrue(shapes[1].getName().equals("resource2"));
-		assertTrue(shapes[1].getColor().equals(Util.parseColor(PolymorphicChartParameters.DEFAULT_CIRCLECOLOR)));
-		assertEquals(Double.parseDouble(PolymorphicChartParameters.DEFAULT_CIRCLEDIAM),shapes[1].getWidth(),0.001	);
-		assertTrue(shapes[2].getName().equals("resource3"));
-		assertTrue(shapes[2].getColor().equals(Util.parseColor(PolymorphicChartParameters.DEFAULT_CIRCLECOLOR)));
+		assertTrue(shapes.get("resource1").getName().equals("resource1"));
+		assertTrue(shapes.get("resource1").getColor().equals(Util.parseColor(PolymorphicChartParameters.DEFAULT_CIRCLECOLOR)));
+		assertEquals(Double.parseDouble(PolymorphicChartParameters.DEFAULT_CIRCLEDIAM),shapes.get("resource1").getHeight(),0.001);
+		assertTrue(shapes.get("resource2").getName().equals("resource2"));
+		assertTrue(shapes.get("resource2").getColor().equals(Util.parseColor(PolymorphicChartParameters.DEFAULT_CIRCLECOLOR)));
+		assertEquals(Double.parseDouble(PolymorphicChartParameters.DEFAULT_CIRCLEDIAM),shapes.get("resource2").getWidth(),0.001	);
+		assertTrue(shapes.get("resource3").getName().equals("resource3"));
+		assertTrue(shapes.get("resource3").getColor().equals(Util.parseColor(PolymorphicChartParameters.DEFAULT_CIRCLECOLOR)));
 	}
 
 }
