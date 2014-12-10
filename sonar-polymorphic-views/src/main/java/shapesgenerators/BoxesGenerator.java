@@ -26,7 +26,11 @@ public class BoxesGenerator implements IShapesGenerator {
 	private Map<String, Shape> shapes;
 	private BoxFactory boxFactory;
 	
-	
+	/**
+	* This method creates a boxesgenerator. It extracts the necessary data from the given parameters and initiates its list of boxes.
+	* @param measureFetcher is a connection with the database, used to obtain the names and keys of the resources
+	* @param polyParams the user input which contains the values for all properties of the chart
+	*/
 	public BoxesGenerator(MeasureFetcher measureFetcher, PolymorphicChartParameters polyParams) {
 		Property<Double> width = new ValueProperty(polyParams.getBoxWidth(), PolymorphicChartParameters.DEFAULT_BOXWIDTH, measureFetcher);
 		Property<Double> height = new ValueProperty(polyParams.getBoxHeight(), PolymorphicChartParameters.DEFAULT_BOXHEIGHT, measureFetcher);

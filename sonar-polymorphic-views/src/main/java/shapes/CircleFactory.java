@@ -20,6 +20,4 @@ public class CircleFactory implements ShapeFactory{
 		circle.setColor(color);
 		return circle;
 	}
-
-
 }

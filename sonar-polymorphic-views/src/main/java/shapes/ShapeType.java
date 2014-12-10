@@ -2,10 +2,7 @@ package shapes;
 
 
 /**
- * This enumeration lists all types of dependencies between resources.
- * 
- * @author Pieter Agten <pieter.agten@cs.kuleuven.be>
- *
+ * This enumeration lists all types shapes that are used.
  */
 public enum ShapeType {
 	

@@ -34,7 +34,11 @@ public class CirclesGenerator implements IShapesGenerator {
 	private Map<String, Shape> shapes;
 	private CircleFactory circleFactory;
 	
-	
+	/**
+	* This method creates a circlegenerator. It extracts the necessary data from the given parameters and initiates its list of circles.
+	* @param measureFetcher is a connection with the database, used to obtain the names and keys of the resources
+	* @param polyParams the user input which contains the values for all properties of the chart
+	*/
 	public CirclesGenerator(MeasureFetcher measureFetcher, PolymorphicChartParameters polyParams) {
 		Property<Double> diameter = new ValueProperty(polyParams.getCircleDiam(), PolymorphicChartParameters.DEFAULT_CIRCLEDIAM, measureFetcher);
 		Property<Color> color = new ColorProperty(polyParams.getCircleColor(), PolymorphicChartParameters.DEFAULT_CIRCLECOLOR, measureFetcher);
@@ -44,7 +48,7 @@ public class CirclesGenerator implements IShapesGenerator {
 		}
 
 	/**
-	 * This method initializes the list of shapes
+	 * This method initializes the list of shapes, based on some given properties.
 	 */
 	private void initShapes(Property<Double> diameter,Property<Color> color, Map<String,String> keysAndNames) {
 		this.shapes = new HashMap<String, Shape>();
@@ -67,6 +71,4 @@ public class CirclesGenerator implements IShapesGenerator {
 	public Map<String, Shape> getShapes() {
 		return this.shapes;
 	}
-	
-
 }
