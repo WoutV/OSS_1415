@@ -1,4 +1,4 @@
-package chartbuilder;
+package chartbuilderTest;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
@@ -6,6 +6,9 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+
+import chartbuilder.Java2DBuilder;
+import chartbuilder.LineType;
 
 
 public class BuilderScenario {
