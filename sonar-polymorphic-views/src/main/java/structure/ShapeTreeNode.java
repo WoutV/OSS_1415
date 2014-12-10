@@ -94,7 +94,7 @@ public class ShapeTreeNode {
 		}
 	}
 	
-	//TODO Methode ni gebruikt?
+	//TODO Methode ni gebruikt? WEGGOOIEN
 	/**
 	 * Get the accumulated width of all children.
 	 * @return the total width.
@@ -112,6 +112,7 @@ public class ShapeTreeNode {
 	 * @return {x1,x2} left_edge and right_edge
 	 */
 	private int[] getChildrenPosition(){
+		//TODO hier test ge op getchildren is empty. Dit is een private methode. En de enige plaats waar ge die callt test ge ook op children is empty.
 		if(!getChildren().isEmpty()){
 			ShapeTreeNode node1 = getFirstChild();
 			int x1 = node1.getX() - node1.getWidth()/2;
