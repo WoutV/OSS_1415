@@ -1,9 +1,7 @@
 package utility;
 
 import java.awt.Color;
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -134,30 +132,4 @@ public class Util {
 		return values;
 	}
 
-	/**
-	 * Scales the values of a given list to values between a and b.
-	 * @param values
-	 * @param a the new smallest value
-	 * @param b the new biggest value
-	 * @return
-	 */
-	public static List<Double> scaleList(List<Double> values, double a,
-			double b) {
-		if (values==null || values.isEmpty()){
-			return values;
-		}
-		List<Double> result = new ArrayList<Double>();
-		double min = Collections.min(values,null);
-		double max = Collections.max(values,null);
-		if(min==max){
-			return values;
-		}
-		double factor = (b-a)/(max-min);
-
-		for(double value:values){
-			value = factor*(value-min)+(a);
-			result.add(value);
-		}
-		return result;
-	}
 }

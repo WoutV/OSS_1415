@@ -7,6 +7,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import org.junit.Test;
+
 import chartbuilder.Java2DBuilder;
 import chartbuilder.LineType;
 
@@ -19,24 +21,20 @@ public class BuilderScenario {
 		builder = new Java2DBuilder();
 	}
 	
-	public static void main(String[] args) throws IOException{
-		System.out.println("Working Directory = " + System.getProperty("user.dir"));
-		BuilderScenario scene = new BuilderScenario();
-		scene.testScenarioScatterPlot();
-		scene.testScenarioSystemComplexityView();
-	}
-	
+
+	@Test
 	public void testScenarioScatterPlot() throws IOException{
 		builder.createCanvas(600,600, BufferedImage.TYPE_INT_RGB);
 		builder.createXAxis("Lines of code", 0, 600, 0, 0 , 2000);
 		builder.createYAxis("Number of methods", 0, 600, 0, 0, 50);
 		builder.createRectangle(300, 60, 80, 40, Color.blue, "JAVA2DBUILDER");
 		builder.createCircle(50, 50, 50, Color.green, "CirclesGenerator");
-		builder.createRightAngledTrapezoid(400, 500, 80, 30, 80, Color.orange, "TrapsGenerator");
+		builder.createRightAngledTrapezoid(400, 500, 80, 30, 80, Color.red, "TrapsGenerator");
 		File outputfile = new File("scatterexample.png");
 	    ImageIO.write(builder.getImage(), "png", outputfile);
 	}
 	
+	@Test
 	public void testScenarioSystemComplexityView() throws IOException{
 		builder.createCanvas(600,600, BufferedImage.TYPE_INT_RGB);
 		builder.createLine(300, 600, 50, 300, LineType.SOLID);
