@@ -19,20 +19,33 @@ public class BuilderScenario {
 	public static void main(String[] args) throws IOException{
 		System.out.println("Working Directory = " + System.getProperty("user.dir"));
 		BuilderScenario scene = new BuilderScenario();
-		scene.testScenarioA();
+		scene.testScenarioScatterPlot();
+		scene.testScenarioSystemComplexityView();
 	}
 	
-	public void testScenarioA() throws IOException{
+	public void testScenarioScatterPlot() throws IOException{
 		builder.createCanvas(600,600, BufferedImage.TYPE_INT_RGB);
-		builder.createXAxis("Lines of code", 0, 600, 0, -20 , 300);
-		builder.createYAxis("Number of methods", 0, 600, 0, 800, 1200);
-//		builder.createXAxis("Lines of code", 300, 600, 0, -20 , 300);
-//		builder.createYAxis("Number of methods", 0, 600, 300, 800, 1200);
+		builder.createXAxis("Lines of code", 0, 600, 0, 0 , 2000);
+		builder.createYAxis("Number of methods", 0, 600, 0, 0, 50);
 		builder.createRectangle(300, 60, 80, 40, Color.blue, "JAVA2DBUILDER");
-		builder.createRectangle(500, 150, 30, 47, Color.blue, "PolymorphicViewsChart");
-		builder.createLine(20, 500, 500, 400, null);
-		File outputfile = new File("img.png");
+		builder.createCircle(50, 50, 50, Color.green, "CirclesGenerator");
+		builder.createRightAngledTrapezoid(400, 500, 80, 30, 80, Color.orange, "TrapsGenerator");
+		File outputfile = new File("scatterexample.png");
 	    ImageIO.write(builder.getImage(), "png", outputfile);
 	}
 	
+	public void testScenarioSystemComplexityView() throws IOException{
+		builder.createCanvas(600,600, BufferedImage.TYPE_INT_RGB);
+		builder.createLine(300, 600, 50, 300, LineType.SOLID);
+		builder.createLine(300, 600, 200, 300, LineType.SOLID);
+		builder.createLine(300, 600, 350, 300, null);
+		builder.createLine(300, 600, 500, 300, null);
+		builder.createRectangle(300, 600, 80, 100, Color.blue, "Shape");
+		builder.createCircle(50, 300, 50, Color.green, "Circle");
+		builder.createRightAngledTrapezoid(350, 300, 100, 30, 80, Color.orange, "Trapezoid");
+		builder.createRectangle(200, 300, 130, 70, Color.red, "Box");
+		builder.createRectangle(500, 300, 60, 60, Color.yellow, "Line");
+		File outputfile = new File("syscomexample.png");
+	    ImageIO.write(builder.getImage(), "png", outputfile);
+	}
 }
