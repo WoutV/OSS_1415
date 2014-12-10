@@ -78,9 +78,6 @@ private MeasureFetcher measureFetcher;
 	}
 
 	@Test
-//	public static final String DEFAULT_SHAPEMETRICORDER = "box-circle-trap-circle";
-//	public static final String DEFAULT_SHAPEMETRICSPLIT = "20x200x2000";
-	
 	public void getShapesDefaultTest() {
 		PolymorphicChartParameters.DEFAULT_SHAPEMETRIC = "lines";
 		expect(measureFetcher.getMeasureValues("lines")).andReturn(new HashMap<String,Double>(){{put("resource1",20.0);put("resource2",200.0); put("resource3",2000.0);put("resource4",2001.0);}}).anyTimes();
@@ -109,6 +106,29 @@ private MeasureFetcher measureFetcher;
 		assertTrue(shapes.get("resource4").getColor().equals(Util.parseColor(PolymorphicChartParameters.DEFAULT_CIRCLECOLOR)));
 		assertEquals(Double.parseDouble(PolymorphicChartParameters.DEFAULT_CIRCLEDIAM),shapes.get("resource4").getHeight(),0.001);
 		assertEquals(Double.parseDouble(PolymorphicChartParameters.DEFAULT_CIRCLEDIAM),shapes.get("resource4").getWidth(),0.001);
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testNoNumberUsed() {
+		expect(measureFetcher.getMeasureValues("lines")).andReturn(new HashMap<String,Double>(){{put("resource1",20.0);put("resource2",200.0); put("resource3",2000.0);put("resource4",2001.0);}}).anyTimes();
+		expect(measureFetcher.findMetric("lines")).andReturn(new WSMetric(new Metric())).anyTimes();
+		replay(measureFetcher);
+		Map<String, String> paramMap = new HashMap<String, String>();
+		paramMap.put("shapemetricorder", "circle-box-trap-box");
+		paramMap.put("shapemetricsplit","notanumber");
+		paramMap.put("circlecolor", "r200g0b0");
+		paramMap.put("circlediam", "15");
+		paramMap.put("boxcolor", "r100g0b0");
+		paramMap.put("boxheight", "20");
+		paramMap.put("boxwidth", "25");
+		paramMap.put("trapcolor", "r255g0b0");
+		paramMap.put("trapside1", "12");
+		paramMap.put("trapside2", "2");
+		paramMap.put("trapside3", "9");
+		ChartParameters p = new ChartParameters(paramMap); 
+		PolymorphicChartParameters params = new PolymorphicChartParameters(p);
+		MetricShapesGenerator bg = new MetricShapesGenerator(measureFetcher, params);
+		Map<String, Shape> shapes = bg.getShapes();
 	}
 
 }
