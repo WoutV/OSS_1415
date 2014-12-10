@@ -1,5 +1,7 @@
 package strategies;
 
+import static org.easymock.EasyMock.replay;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,11 +14,16 @@ public class ConstantStrategy implements Strategy<Double> {
 
 	public ConstantStrategy(String value, MeasureFetcher measureFetcher) {
 		this.measureFetcher = measureFetcher;
-		this.value = Double.parseDouble(value);
+		try{
+			this.value = Double.parseDouble(value);}
+		catch(Exception e){
+			this.value=0.0;
+		}
 	}
 
 	@Override
 	public Map<String, Double> execute() {
+		replay(measureFetcher);
 		Map<String, Double> result = new HashMap<String, Double>();
 		for (String s : measureFetcher.getResourceKeysAndNames().keySet()) {
 			result.put(s, this.value);

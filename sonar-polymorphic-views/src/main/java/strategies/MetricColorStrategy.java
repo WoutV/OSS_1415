@@ -10,13 +10,13 @@ import java.util.Map;
 import utility.MeasureFetcher;
 import utility.Util;
 
-public class ColorStrategy implements Strategy<Color> {
-	
-	private String color;
-	private String defaultColor;
-	private MeasureFetcher mf;
+public class MetricColorStrategy implements Strategy<Color> {
 
-	public ColorStrategy(String color, String defaultColor, MeasureFetcher mf) {
+	private String color;
+	private MeasureFetcher mf;
+	private String defaultColor;
+
+	public MetricColorStrategy(String color, String defaultColor, MeasureFetcher mf) {
 		this.mf = mf;
 		this.color = color;
 		this.defaultColor = defaultColor;
@@ -25,20 +25,11 @@ public class ColorStrategy implements Strategy<Color> {
 	@Override
 	public Map<String, Color> execute() {
 		Map<String,Color> colorMap = new HashMap<String,Color>();
-		int size = mf.getNumberOfResources();
-		if(Util.isValidColor(color)){
-			Color rgb = Util.parseColor(color);
-			for(String key : mf.getResourceKeys()){
-				colorMap.put(key, rgb);
-			}
-		} 
-		else{ //the color parsing is invalid and the string should be of the format "min<float>max<float>key<string>"
-			colorMap= createGrayScaledList(size);
-		}
+		colorMap= createGrayScaledList();
 		return colorMap;
 	}
 
-	private Map<String,Color> createGrayScaledList(int size) {
+	private Map<String,Color> createGrayScaledList() {
 		Map<String,Color> colorMap = new HashMap<String,Color>();
 		try{
 			String[] splitted = Util.splitOnDelimiter(color, new String[]{"min","max","key"});
@@ -57,7 +48,7 @@ public class ColorStrategy implements Strategy<Color> {
 		}
 		return colorMap;
 	}
-	
+
 	/**
 	 * This method scales a list of metric values to a new list, with the lowest
 	 * value of the metric scaled to min, and the highest scaled to max.
@@ -71,11 +62,11 @@ public class ColorStrategy implements Strategy<Color> {
 	 * @return a list with the scaled color values
 	 */
 	private Map<String,Color> getGrayScaleColors(Double min, Double max, String key, MeasureFetcher measureFetcher) throws IllegalArgumentException{
-		Map<String, Double> colors = measureFetcher.getMeasureValues(key);
-		Map<String, Double> scaledColors = Util.scaleGrey(colors, min, max);
-		List<String> keys = measureFetcher.getResourceKeys();
-		Map<String,Color> result = new HashMap<String,Color>();
 		try{
+			Map<String, Double> colors = measureFetcher.getMeasureValues(key);
+			Map<String, Double> scaledColors = Util.scaleGrey(colors, min, max);
+			List<String> keys = measureFetcher.getResourceKeys();
+			Map<String,Color> result = new HashMap<String,Color>();
 			for (String i : keys) {
 				int colorValue = scaledColors.get(i).intValue();
 				Color c = new Color(colorValue, colorValue, colorValue);
