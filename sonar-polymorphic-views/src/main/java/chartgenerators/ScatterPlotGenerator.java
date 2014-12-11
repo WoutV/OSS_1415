@@ -32,7 +32,6 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 	private Property<Double> xMetric;
 	private Property<Double> yMetric;
 	private Map<String, Shape> shapes;
-
 	
 	/**
 	 * This constructor creates a new scatterplotgenerator object. 

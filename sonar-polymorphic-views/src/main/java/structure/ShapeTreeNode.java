@@ -93,19 +93,7 @@ public class ShapeTreeNode {
 			setX(x);
 		}
 	}
-	
-	//TODO Methode ni gebruikt? WEGGOOIEN
-	/**
-	 * Get the accumulated width of all children.
-	 * @return the total width.
-	 */
-	private int getChildrenWidth(){
-		int width = 0;
-		for(ShapeTreeNode node : getChildren()){
-			width += node.getWidth();
-		}
-		return width;
-	}
+
 	
 	/**
 	 * Get the x-position of the left edge of the most left child and the x-position of the right edge of the most right child, will return {0,0} otherwise.
@@ -113,16 +101,16 @@ public class ShapeTreeNode {
 	 */
 	private int[] getChildrenPosition(){
 		//TODO hier test ge op getchildren is empty. Dit is een private methode. En de enige plaats waar ge die callt test ge ook op children is empty.
-		if(!getChildren().isEmpty()){
+		//if(!getChildren().isEmpty()){
 			ShapeTreeNode node1 = getFirstChild();
 			int x1 = node1.getX() - node1.getWidth()/2;
 			ShapeTreeNode node2 =  getLastChild();
 			int x2 = node2.getX() + node2.getWidth()/2;
 			int[] result = {x1,x2};
 			return result;
-		}
-		int[] noChildren = {0, 0};
-		return noChildren;
+		//}
+		//int[] noChildren = {0, 0};
+		//return noChildren;
 	}
 	
 	/**

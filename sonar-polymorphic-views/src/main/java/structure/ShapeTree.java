@@ -3,8 +3,6 @@ package structure;
 import java.util.ArrayList;
 import java.util.List;
 
-import shapes.Shape;
-
 public class ShapeTree {
 	
 	private ShapeTreeNode root;
