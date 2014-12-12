@@ -25,32 +25,36 @@ public class ShapeTreeTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		root = new ShapeTreeNode("root", "rootKey");
-		node1 = new ShapeTreeNode("c", "key1");
-		node2 = new ShapeTreeNode("a", "key2");
-		node3 = new ShapeTreeNode("b", "key3");
-		node4 = new ShapeTreeNode("z", "key4");
-		node5 = new ShapeTreeNode("y", "key5");
+		root = new ShapeTreeNode("rootKey");
+		node1 = new ShapeTreeNode("key1");
+		node2 = new ShapeTreeNode("key2");
+		node3 = new ShapeTreeNode("key3");
+		node4 = new ShapeTreeNode("key4");
+		node5 = new ShapeTreeNode("key5");
 		box0 = new Box();
 		box0.setxPos(10);
 		box0.setWidth(20);
 		box0.setyPos(10);
 		box0.setHeight(20);
+		box0.setName("root");
 		box1 = new Box();
 		box1.setxPos(0);
 		box1.setWidth(20);
 		box1.setyPos(50);
 		box1.setHeight(20);
+		box1.setName("node1");
 		box2 = new Box();
 		box2.setxPos(20);
 		box2.setWidth(40);
 		box2.setyPos(50);
 		box2.setHeight(40);
+		box2.setName("node2");
 		box3 = new Box();
 		box3.setxPos(30);
 		box3.setWidth(20);
 		box3.setyPos(50);
 		box3.setHeight(20);
+		box3.setName("node3");
 		root.setShape(box0);
 		node1.setShape(box1);
 		node2.setShape(box2);
@@ -84,7 +88,11 @@ public class ShapeTreeTest {
 		tree.addNode(node3);
 		tree.layoutX(10);
 		//adjustTomiddleOfChildren houdt rekening met meeste linkse en meest rechtse kant van kinderen
-		assertTrue(root.getShape().getxPos() == 25);
+		System.out.println(root.getShape().getxPos() );
+		System.out.println(node1.getShape().getxPos() );
+		System.out.println(node2.getShape().getxPos() );
+		System.out.println(node3.getShape().getxPos() );
+		assertTrue(root.getShape().getxPos() == 35);
 		assertTrue(node1.getShape().getxPos() == 10);
 		assertTrue(node2.getShape().getxPos() == 50);
 		assertTrue(node3.getShape().getxPos() == 10);
@@ -134,6 +142,12 @@ public class ShapeTreeTest {
 
 	@Test
 	public void testSortAlphabetic() {
+		Shape box4 = new Box();
+		box4.setName("node4");
+		node4.setShape(box4);
+		Shape box5 = new Box();
+		box5.setName("node5");
+		node5.setShape(box5);
 		root.addChild(node1);
 		root.addChild(node2);
 		root.addChild(node3);
@@ -146,11 +160,11 @@ public class ShapeTreeTest {
 		tree.addNode(node5);
 		tree.addNode(node4);
 		tree.sortAlphabetic();
-		assertEquals(root.getChildren().get(0), node2);
-		assertEquals(root.getChildren().get(1), node3);
-		assertEquals(root.getChildren().get(2), node1);
-		assertEquals(node2.getChildren().get(0), node5);
-		assertEquals(node2.getChildren().get(1), node4);
+		assertEquals(root.getChildren().get(0), node1);
+		assertEquals(root.getChildren().get(1), node2);
+		assertEquals(root.getChildren().get(2), node3);
+		assertEquals(node2.getChildren().get(0), node4);
+		assertEquals(node2.getChildren().get(1), node5);
 	}
 
 	@Test
@@ -188,24 +202,6 @@ public class ShapeTreeTest {
 		assertTrue(tree.getLevel(1).contains(node2));
 		assertTrue(tree.getLevel(2).contains(node3));
 	}
-
-/*	@Test
-	public void testToString() {
-		ShapeTreeNode root = new ShapeTreeNode("root", "rootKey");
-		ShapeTreeNode node1 = new ShapeTreeNode("node1", "key1");
-		ShapeTreeNode node2 = new ShapeTreeNode("node2", "key2");
-		ShapeTree tree = new ShapeTree(root);
-		tree.addNode(node1);
-		tree.addNode(node2);
-		assertTrue(tree.toString().equals("root\r\nnode1\r\nnode2"));
-	}
-	
-	@Test
-	public void testToStringNoOtherNodes() {
-		ShapeTreeNode root = new ShapeTreeNode("root", "rootKey");
-		ShapeTree tree = new ShapeTree(root);
-		assertTrue(tree.toString().equals("root"));
-	}*/
 	
 	@Test
 	public void testGetRightMostPosition() {

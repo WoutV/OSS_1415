@@ -14,14 +14,12 @@ import shapes.Shape;
  */
 public class ShapeTreeNode {
 
-	private String name;
 	private String key;
 	private Shape shape;
 	private int level;
 	private List<ShapeTreeNode> children = new ArrayList<ShapeTreeNode>();
 
-	public ShapeTreeNode(String name, String key){
-		this.name = name;
+	public ShapeTreeNode(String key){
 		this.key = key;
 	}
 	
@@ -232,15 +230,7 @@ public class ShapeTreeNode {
 	 * @return the name
 	 */
 	public String getName() {
-		return name;
-	}
-	
-	/**
-	 * Set the name of this node
-	 * @param name the name
-	 */
-	public void setName(String name) {
-		this.name = name;
+		return getShape().getName();
 	}
 	
 	/**

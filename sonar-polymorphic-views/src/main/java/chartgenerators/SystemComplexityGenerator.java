@@ -104,7 +104,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	private List<ShapeTreeNode> generateNodes(HashMap<String, String> map) {
 		List<ShapeTreeNode> nodes = new ArrayList<ShapeTreeNode>();
 		for(String key : map.keySet()){
-			ShapeTreeNode node = new ShapeTreeNode(map.get(key), key);
+			ShapeTreeNode node = new ShapeTreeNode(key);
 			nodes.add(node);
 		}
 		return nodes;
@@ -179,7 +179,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	private void addShapesToTree(){
 		for(ShapeTree shapeTree: dependencyTrees){
 			for(ShapeTreeNode node : shapeTree.getNodes()){
-				Shape shape = getShapeBy(node.getName());
+				Shape shape = getShapeBy(node.getKey());
 				node.setShape(shape);
 			}
 		}
@@ -187,12 +187,12 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	
 	/**
 	 * Get a shape by name.
-	 * @param name the name of the shape
-	 * @return the shape with the given name
+	 * @param key the key of the shape
+	 * @return the shape with the given key
 	 */
-	private Shape getShapeBy(String name){
+	private Shape getShapeBy(String key){
 		for(Shape shape : shapes.values()){
-			if(shape.getName().equals(name)){
+			if(shape.getKey().equals(key)){
 				return shape;
 			}
 		}
