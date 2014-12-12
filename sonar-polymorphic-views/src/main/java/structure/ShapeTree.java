@@ -3,6 +3,11 @@ package structure;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class represents a tree used in the system complexity view. This tree consists of one super node and a list of children.
+ * Each node is on a certain level. The root node is on level 0. The children of the root node are on level 1, their children on level 2, ... etc.
+ * 
+ */
 public class ShapeTree {
 	
 	private ShapeTreeNode root;
@@ -31,8 +36,8 @@ public class ShapeTree {
 	 * The the algorithm that will layout the tree's x positions. The tree is sorted bottom-up.
 	 * First the bottom level will be sorted. This level isn't sorted relative to other levels.
 	 * Second, go from bottom to top. At each level, each node will be positioned in the middle of its children.
-	 * Then, each node will be positioned next to the right most point of the subtree to the left.
-	 * After every node in a level is repositioned, this method checks the maximum distance between two nodes at the level. All nodes
+	 * Then, each node (and its subtree) will be positioned next to the right most point of the subtree to the left.
+	 * After every node in a level is repositioned, this method checks the maximum distance between two nodes at the same level. All nodes
 	 * will then be repositioned according to this maximum distance, so that the middle of every node on a level (bottom level not included) 
 	 * is positioned equally far away.
 	 * @param leafMargin a minimum margin between nodes.

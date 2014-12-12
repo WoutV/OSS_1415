@@ -233,7 +233,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		Shape line = factory.createShape(y2-y1, x2-x1, parent.getKey()+child.getKey(), "", Color.BLACK);
 		line.setxPos(x1);
 		line.setyPos(y1);
-		shapes.put(parent.getKey()+child.getKey(), factory.createShape(y2-y1, x2-x1, parent.getKey()+child.getKey(), "", Color.BLACK));
+		shapes.put(parent.getKey()+child.getKey(),line);
 	}
 	
 	/**

@@ -10,7 +10,7 @@ import java.util.TreeSet;
 import shapes.Shape;
 
 /**
- * This class represents a tree used in the system complexity view. This tree consists of one super node and a list of children.
+ * This class represents a node in a ShapeTree. A node is on a certain level and has zero or more children and contains a shape.
  */
 public class ShapeTreeNode {
 
@@ -20,32 +20,55 @@ public class ShapeTreeNode {
 	private int level;
 	private List<ShapeTreeNode> children = new ArrayList<ShapeTreeNode>();
 
-	
 	public ShapeTreeNode(String name, String key){
 		this.name = name;
 		this.key = key;
 	}
 	
+	/**
+	 * Get the x-position.
+	 * @return x The x-coordinate.
+	 */
 	public int getX(){
 		return getShape().getxPos();
 	}
 	
+	/**
+	 * Set the x-position.
+	 * @param x The x-position.
+	 */
 	public void setX(int x){
 		getShape().setxPos(x);
 	}
 	
+	/**
+	 * Get the y-position.
+	 * @return y The y-coordinate.
+	 */
 	public int getY(){
 		return getShape().getyPos();
 	}
 	
+	/**
+	 * Set the y-position.
+	 * @param y The new y-coordinate.
+	 */
 	public void setY(int y){
 		getShape().setyPos(y);
 	}
 	
+	/**
+	 * Get the width.
+	 * @return width The width of the node.
+	 */
 	public int getWidth(){
 		return (int) getShape().getWidth();
 	}
 	
+	/**
+	 * Get the height.
+	 * @return height The height of the node.
+	 */
 	public int getHeight(){
 		return (int) getShape().getHeight();
 	}
@@ -100,17 +123,18 @@ public class ShapeTreeNode {
 	 * @return {x1,x2} left_edge and right_edge
 	 */
 	private int[] getChildrenPosition(){
-		//TODO hier test ge op getchildren is empty. Dit is een private methode. En de enige plaats waar ge die callt test ge ook op children is empty.
-		//if(!getChildren().isEmpty()){
-			ShapeTreeNode node1 = getFirstChild();
+		ShapeTreeNode node1 = getFirstChild();
+		if(node1!=null){
 			int x1 = node1.getX() - node1.getWidth()/2;
 			ShapeTreeNode node2 =  getLastChild();
 			int x2 = node2.getX() + node2.getWidth()/2;
 			int[] result = {x1,x2};
 			return result;
-		//}
-		//int[] noChildren = {0, 0};
-		//return noChildren;
+		}
+		else{
+			int[] result = {0,0};
+			return result;
+		}
 	}
 	
 	/**
@@ -125,16 +149,17 @@ public class ShapeTreeNode {
 		}
 	}
 	
-	//TODO Gevaarlijk voor nullpointer vermits er geen shape in de constructor wordt meegegeven?
 	/**
 	 * Will shift a node and its children by an amount x.
 	 * @param x the amount to shift
 	 */
 	public void shift(int x){
-		int newx = getX()+x;
-		setX(newx);
-		for(ShapeTreeNode child : getChildren()){
-			child.shift(x);
+		if(getShape()!=null){
+			int newx = getX()+x;
+			setX(newx);
+			for(ShapeTreeNode child : getChildren()){
+				child.shift(x);
+			}
 		}
 	}
 	
@@ -254,7 +279,7 @@ public class ShapeTreeNode {
 	
 	/**
 	 * Sets the list of children of this node.
-	 * @param children
+	 * @param children The new children of this node.
 	 */
 	public void setChildren(List<ShapeTreeNode> children) {
 		this.children = children;
@@ -262,7 +287,7 @@ public class ShapeTreeNode {
 
 	/**
 	 * Add a child to this node
-	 * @param node the child to add
+	 * @param node The child to add.
 	 */
 	public void addChild(ShapeTreeNode node){
 		node.setLevel(this.getLevel()+1);
@@ -271,7 +296,7 @@ public class ShapeTreeNode {
 	
 	/**
 	 * Get the key of this node
-	 * @return
+	 * @return key
 	 */
 	public String getKey() {
 		return key;
