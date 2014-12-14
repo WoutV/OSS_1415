@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
 
+import plugin.PolymorphicChartParameters;
 import properties.ColorProperty;
 import properties.Property;
 import properties.ValueProperty;
@@ -11,7 +12,6 @@ import shapes.BoxFactory;
 import shapes.Shape;
 import utility.MeasureFetcher;
 import utility.Util;
-import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 
 /**
  * This class is used to generate lists of boxes with a certain width, height and color.

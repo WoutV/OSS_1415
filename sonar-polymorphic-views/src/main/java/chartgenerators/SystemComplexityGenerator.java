@@ -7,13 +7,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import facade.DependencyType;
+import facade.SonarFacade;
+import plugin.PolymorphicChartParameters;
 import shapes.LineFactory;
 import shapes.Shape;
 import structure.ShapeTree;
 import structure.ShapeTreeNode;
-import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
-import be.kuleuven.cs.oss.sonarfacade.DependencyType;
-import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 
 public class SystemComplexityGenerator extends PolymorphicChartGenerator {
@@ -70,7 +70,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	 * @return List of all trees
 	 */
 	public List<ShapeTree> buildTrees(){
-		HashMap<String, String> map = measureFetcher.getResourceKeysAndNames();
+		Map<String, String> map = measureFetcher.getResourceKeysAndNames();
 		
 		List<ShapeTreeNode> nodes = generateNodes(map);
 		List<ShapeTree> dependencyTrees = findRoots(nodes); 			
@@ -91,7 +91,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	 * @param map containing names and keys of all resources.
 	 * @return a node for every resource
 	 */
-	private List<ShapeTreeNode> generateNodes(HashMap<String, String> map) {
+	private List<ShapeTreeNode> generateNodes(Map<String, String> map) {
 		List<ShapeTreeNode> nodes = new ArrayList<ShapeTreeNode>();
 		for(String key : map.keySet()){
 			ShapeTreeNode node = new ShapeTreeNode(key);

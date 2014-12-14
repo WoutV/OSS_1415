@@ -2,16 +2,16 @@ package chartgenerators;
 
 import java.awt.image.BufferedImage;
 
+import plugin.PolymorphicChartParameters;
 import shapesgenerators.BoxesGenerator;
 import shapesgenerators.CirclesGenerator;
 import shapesgenerators.IShapesGenerator;
 import shapesgenerators.MetricShapesGenerator;
 import shapesgenerators.TrapsGenerator;
 import utility.MeasureFetcher;
-import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
-import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 import chartbuilder.ChartBuilder;
 import chartbuilder.Java2DBuilder;
+import facade.SonarFacade;
 
 /**
  * This class is an abstract superclass for generators that make polymorphic charts. Every generator has a builder,
@@ -53,21 +53,19 @@ public abstract class PolymorphicChartGenerator {
 		}
 	}
 
+	public int getHeight(){
+		return height;
+	}
+	
+	public int getWidth(){
+		return width;
+	}
 	
 	/**
-	 * This method generates a bufferedimage. It uses the builder to do so. 
+	 * This method generates a bufferedimage. It should use the builder to do so.
 	 * @return the generated image
 	 */
 	public abstract BufferedImage generateImage();
 
 
-	/**
-	 * This method splits a String of form IntegerxInteger into two strings, parses them and sets the width and height of the scatterplot.
-	 * @param size
-	 */
-	protected void parseSize(String size) {		
-		String[] sizes = size.split("x");
-		this.width=Integer.parseInt(sizes[0]);
-		this.height=Integer.parseInt(sizes[1]);
-	}
 }

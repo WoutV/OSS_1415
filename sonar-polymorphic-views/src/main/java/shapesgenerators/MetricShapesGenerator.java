@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import plugin.PolymorphicChartParameters;
 import properties.Property;
 import properties.ValueProperty;
 import shapes.Shape;
 import shapes.ShapeType;
 import utility.MeasureFetcher;
-import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 
 /**
  * This class is used to generate lists of shapes, based on a set of given

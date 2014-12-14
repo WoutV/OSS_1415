@@ -21,7 +21,7 @@ import java.awt.image.BufferedImage;
  */
 public class Java2DBuilder implements ChartBuilder {
 	
-	protected BufferedImage canvas;
+	private BufferedImage canvas;
 	private int canvasWidth;
 	private int canvasHeight;
 	private final static double SCALE = 0.8;
@@ -55,8 +55,7 @@ public class Java2DBuilder implements ChartBuilder {
 	 * @return the y value changed to the x-y-coordinate system with the y-axis pointing upwards.
 	 */
 	private double fixY(double y) {
-		double result = getCanvasHeight() - y;
-		return result;
+		return getCanvasHeight() - y;
 	}
 	
 	/**
@@ -66,8 +65,7 @@ public class Java2DBuilder implements ChartBuilder {
 	 * @return The scaled and translated x-value.
 	 */
 	private int scaleX(int x) {
-		int result = (int) (x*SCALE+(1-SCALE)/2*getCanvasWidth());
-		return result;
+		return (int) (x*SCALE+(1-SCALE)/2*getCanvasWidth());
 	}
 	
 	/**
@@ -78,8 +76,7 @@ public class Java2DBuilder implements ChartBuilder {
 	 * @return The fixed, scaled and translated y-value.
 	 */
 	private int scaleY(int y) {
-		int result = (int) (fixY(y)*SCALE+(1-SCALE)/2*getCanvasHeight());
-		return result;
+		return (int) (fixY(y)*SCALE+(1-SCALE)/2*getCanvasHeight());
 	}
 	
 	/**

@@ -16,12 +16,12 @@ import org.junit.Test;
 import org.sonar.api.charts.ChartParameters;
 import org.sonar.wsclient.services.Metric;
 
+import facade.WSMetric;
+import plugin.PolymorphicChartParameters;
 import shapes.Shape;
 import shapesgenerators.MetricShapesGenerator;
 import utility.MeasureFetcher;
 import utility.Util;
-import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
-import be.kuleuven.cs.oss.sonarfacade.WSMetric;
 
 public class MetricShapeGeneratorTest {
 	

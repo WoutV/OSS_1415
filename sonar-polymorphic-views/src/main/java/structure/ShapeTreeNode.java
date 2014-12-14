@@ -169,8 +169,7 @@ public class ShapeTreeNode {
 		if(hasChildren()){
 			return getLastChild().getRightEdge();
 		}
-		int x = getX() + getWidth()/2;
-		return x;
+		return getX() + getWidth()/2;
 	}
 	
 	/**
@@ -181,8 +180,7 @@ public class ShapeTreeNode {
 		if(hasChildren()){
 			return getFirstChild().getLeftEdge();
 		}
-		int x = getX() - getWidth()/2;
-		return x;
+		return getX() - getWidth()/2;
 	}
 	
 	/**

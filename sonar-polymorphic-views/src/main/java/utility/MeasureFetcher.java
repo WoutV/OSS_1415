@@ -5,11 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import be.kuleuven.cs.oss.sonarfacade.Dependency;
-import be.kuleuven.cs.oss.sonarfacade.Measure;
-import be.kuleuven.cs.oss.sonarfacade.Metric;
-import be.kuleuven.cs.oss.sonarfacade.Resource;
-import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
+import facade.Dependency;
+import facade.Measure;
+import facade.Metric;
+import facade.Resource;
+import facade.SonarFacade;
 
 /**
  * @author Thijs&Wout

@@ -1,30 +1,21 @@
 package chartgenerators;
 
-import java.awt.Color;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.jfree.util.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import properties.ColorProperty;
+import facade.SonarFacade;
+import plugin.PolymorphicChartParameters;
 import properties.Property;
 import properties.ValueProperty;
 import shapes.Shape;
 import shapesgenerators.BoxesGenerator;
-import shapesgenerators.CirclesGenerator;
-import shapesgenerators.IShapesGenerator;
-import shapesgenerators.MetricShapesGenerator;
-import shapesgenerators.TrapsGenerator;
 import utility.Util;
-import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
-import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 
 public class ScatterPlotGenerator extends PolymorphicChartGenerator {
@@ -85,5 +76,16 @@ public class ScatterPlotGenerator extends PolymorphicChartGenerator {
 			shape.setyPos(yValue.intValue());
 			shape.draw(this.builder);
 		}
+	}
+	
+
+	/**
+	 * This method splits a String of form IntegerxInteger into two strings, parses them and sets the width and height of the scatterplot.
+	 * @param size
+	 */
+	protected void parseSize(String size) {		
+		String[] sizes = size.split("x");
+		this.width=Integer.parseInt(sizes[0]);
+		this.height=Integer.parseInt(sizes[1]);
 	}
 }

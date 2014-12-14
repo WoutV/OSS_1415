@@ -1,7 +1,5 @@
 package chartbuilder;
 
-import java.awt.BasicStroke;
-import java.awt.Stroke;
 
 /**
  * This enumeration lists all types of lines that can be drawn.

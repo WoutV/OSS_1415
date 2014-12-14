@@ -15,12 +15,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.sonar.api.charts.ChartParameters;
 
+import plugin.PolymorphicChartParameters;
 import shapes.Shape;
 import shapesgenerators.CirclesGenerator;
 import shapesgenerators.TrapsGenerator;
 import utility.MeasureFetcher;
 import utility.Util;
-import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 
 public class TrapezoidsGeneratorTest {
 	

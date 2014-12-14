@@ -1,9 +1,9 @@
 package properties;
 
+import facade.Metric;
 import strategies.ConstantStrategy;
 import strategies.SingleMetricStrategy;
 import utility.MeasureFetcher;
-import be.kuleuven.cs.oss.sonarfacade.Metric;
 
 public class ValueProperty extends Property<Double> {
 	private final String DEFAULT_VALUE;
