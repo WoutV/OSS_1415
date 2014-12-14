@@ -1,7 +1,5 @@
 package properties;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import strategies.Strategy;
@@ -13,13 +11,17 @@ public abstract class Property<T> {
 	public Property(String value){
 		this.value=value;
 	}
-	public List<T> getValues() {
-		return new ArrayList<T>(strategy.execute().values());
-	}
+	/**
+	 * Returns map containing keys and corresponding values of the property for all resources
+	 * @return
+	 */
 	public Map<String,T> getMap(){
 		return strategy.execute();
 	}
-	public String getName() {
+	/**
+	 * @return given value of this property
+	 */
+	public String getPropertyValue() {
 		return this.value;
 	}
 }

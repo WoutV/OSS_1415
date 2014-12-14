@@ -1,20 +1,12 @@
 package shapesgenerators;
 
 import java.awt.Color;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import properties.ColorProperty;
 import properties.Property;
 import properties.ValueProperty;
-import shapes.Box;
-import shapes.BoxFactory;
 import shapes.CircleFactory;
 import shapes.Shape;
 import utility.MeasureFetcher;
@@ -54,7 +46,6 @@ public class CirclesGenerator implements IShapesGenerator {
 		this.shapes = new HashMap<String, Shape>();
 		Map<String,Double> diamList = Util.scaleMap(diameter.getMap(),MIN_SIZE,MAX_SIZE);
 		Map<String,Color> colorList = color.getMap();
-		int j = 0;
 		for(String i : keysAndNames.keySet()) {
 			Shape s = circleFactory.createShape
 					(diamList.get(i),
@@ -62,7 +53,6 @@ public class CirclesGenerator implements IShapesGenerator {
 							i,
 							keysAndNames.get(i), 
 							colorList.get(i));
-			j++;
 			shapes.put(i, s);
 		}
 	}

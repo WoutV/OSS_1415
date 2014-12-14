@@ -1,7 +1,5 @@
 package strategies;
 
-import static org.easymock.EasyMock.replay;
-
 import java.util.HashMap;
 import java.util.Map;
 

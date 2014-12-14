@@ -333,6 +333,10 @@ public class Java2DBuilder implements ChartBuilder {
 	    drawCenteredString(label, xPosition, yPosition - diameter/2 - 1);
 	}
 
+	/**
+	 * @param lineType
+	 * @return corresponding linestylestroke
+	 */
 	private static Stroke createLineStyleStroke(LineType lineType) {
         float[] style = null;
         if (lineType != null) {

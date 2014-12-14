@@ -49,7 +49,6 @@ public class BoxesGenerator implements IShapesGenerator {
 		Map<String,Double> heightList = Util.scaleMap(height.getMap(),MIN_BOX_SIZE,MAX_BOX_SIZE);
 		Map<String,Color> colorList = color.getMap();
 		this.shapes = new HashMap<String,Shape>();
-		int j = 0;
 		for(String i : keysAndNames.keySet()) {
 			Shape s = boxFactory.createShape
 					(heightList.get(i),
@@ -57,7 +56,6 @@ public class BoxesGenerator implements IShapesGenerator {
 							i,
 							keysAndNames.get(i), 
 							colorList.get(i));
-			j++;
 			shapes.put(i, s);
 		}
 	}

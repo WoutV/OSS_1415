@@ -76,6 +76,9 @@ public class MeasureFetcher {
 		return result;
 	}
 	
+	/**
+	 * @return mapp of keys to names for all resources
+	 */
 	public HashMap<String, String> getResourceKeysAndNames(){
 		HashMap<String, String> result = new HashMap<String, String>();
 		for(Resource r : resources) {
@@ -84,10 +87,17 @@ public class MeasureFetcher {
 		return result;
 	}
 	
+	/**
+	 * @return First project sonar can find
+	 */
 	public String getDefaultProject() {
 		return sonar.findProjects().get(0).getKey();
 	}
 	
+	/**
+	 * @param key
+	 * @return Resource for the given key
+	 */
 	private Resource getResource(String key){
 		for(Resource resource : resources){
 			if(resource.getKey().equals(key)){
@@ -97,6 +107,10 @@ public class MeasureFetcher {
 		return null;
 	}
 	
+	/**
+	 * @param resourceKey
+	 * @return all the outgoing dependencies for the given resourcekey
+	 */
 	public List<String[]> findOutgoingDependencies(String resourceKey){
 		List<Dependency> dependencies = sonar.findOutgoingDependencies(getResource(resourceKey));
 		List<String[]> result = new ArrayList<String[]>();
@@ -107,6 +121,10 @@ public class MeasureFetcher {
 		return result;
 	}
 	
+	/**
+	 * @param resourceKey
+	 * @return all the outgoing dependencies for the given resourcekey
+	 */
 	public List<String[]> findIncomingDependencies(String resourceKey){
 		List<Dependency> dependencies = sonar.findIncomingDependencies(getResource(resourceKey));
 		List<String[]> result = new ArrayList<String[]>();
@@ -117,10 +135,17 @@ public class MeasureFetcher {
 		return result;
 	}
 
+	/**
+	 * @param key
+	 * @return Metric for the given key
+	 */
 	public Metric findMetric(String key) {
 		return sonar.findMetric(key);
 	}
 
+	/**
+	 * @return keys from all the resources
+	 */
 	public List<String> getResourceKeys() {
 		List<String> keys = new ArrayList<String>();
 		for(Resource r: resources){

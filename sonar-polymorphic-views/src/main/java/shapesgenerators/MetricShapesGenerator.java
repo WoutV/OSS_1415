@@ -16,7 +16,7 @@ import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
  * properties. Each list returned is used to draw a polymorphic represenation of
  * the analyzed project.
  * 
- * @author wout
+ * @author wout&Thijs
  *
  */
 public class MetricShapesGenerator implements IShapesGenerator {
@@ -88,7 +88,7 @@ public class MetricShapesGenerator implements IShapesGenerator {
 	}
 
 	/**
-	 * Based on the given value and thresh and order determines which shapetype
+	 * Based on the given value, thresh and order determines which shapetype
 	 * is necessary
 	 * 
 	 * @param value
@@ -97,9 +97,6 @@ public class MetricShapesGenerator implements IShapesGenerator {
 	private ShapeType determineType(double value) {
 		for (int i = 0; i < thresh.length; i++) {
 			if (value <= thresh[i]) {
-				System.out.println("Value " + value + "below " + thresh[i]
-						+ "type : " + order[i]);
-				System.out.println();
 				return order[i];
 			}
 		}
