@@ -12,11 +12,14 @@ import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import strategies.MetricColorStrategy;
 import strategies.Strategy;
 import utility.MeasureFetcher;
 
+@RunWith(JUnit4.class)
 public class MetricColorStrategyTest {
 		private MeasureFetcher measureFetcher;
 		@Before

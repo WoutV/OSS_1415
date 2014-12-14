@@ -8,11 +8,13 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import chartbuilder.Java2DBuilder;
 import chartbuilder.LineType;
 
-
+@RunWith(JUnit4.class)
 public class BuilderScenario {
 	
 	public Java2DBuilder builder;

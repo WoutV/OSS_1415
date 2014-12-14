@@ -3,7 +3,6 @@ package strategyTest;
 import static org.easymock.EasyMock.createMockBuilder;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
-
 import static org.junit.Assert.assertEquals;
 
 import java.util.HashMap;
@@ -12,11 +11,14 @@ import java.util.Map;
 import org.easymock.internal.ReplayState;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import strategies.ConstantStrategy;
 import strategies.Strategy;
 import utility.MeasureFetcher;
 
+@RunWith(JUnit4.class)
 public class ConstantStrategyTest {
 
 	private MeasureFetcher measureFetcher;

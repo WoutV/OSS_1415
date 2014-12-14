@@ -10,11 +10,14 @@ import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import strategies.SingleMetricStrategy;
 import strategies.Strategy;
 import utility.MeasureFetcher;
 
+@RunWith(JUnit4.class)
 public class SingleMetricStrategyTest {
 	private MeasureFetcher measureFetcher;
 	@Before
