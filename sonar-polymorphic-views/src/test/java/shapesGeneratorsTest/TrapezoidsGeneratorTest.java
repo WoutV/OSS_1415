@@ -15,7 +15,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.sonar.api.charts.ChartParameters;
 
-import plugin.PolymorphicChartParameters;
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import shapes.Shape;
 import shapesgenerators.CirclesGenerator;
 import shapesgenerators.TrapsGenerator;

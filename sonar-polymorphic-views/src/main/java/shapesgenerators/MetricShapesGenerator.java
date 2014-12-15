@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import plugin.PolymorphicChartParameters;
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import properties.Property;
 import properties.ValueProperty;
 import shapes.Shape;

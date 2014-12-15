@@ -2,7 +2,7 @@ package chartgenerators;
 
 import java.awt.image.BufferedImage;
 
-import plugin.PolymorphicChartParameters;
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import shapesgenerators.BoxesGenerator;
 import shapesgenerators.CirclesGenerator;
 import shapesgenerators.IShapesGenerator;

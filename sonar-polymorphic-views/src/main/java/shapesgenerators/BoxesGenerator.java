@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
 
-import plugin.PolymorphicChartParameters;
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import properties.ColorProperty;
 import properties.Property;
 import properties.ValueProperty;

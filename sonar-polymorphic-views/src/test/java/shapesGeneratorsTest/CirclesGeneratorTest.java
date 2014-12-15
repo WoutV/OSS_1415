@@ -16,8 +16,8 @@ import org.junit.Test;
 import org.sonar.api.charts.ChartParameters;
 import org.sonar.wsclient.services.Metric;
 
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import facade.WSMetric;
-import plugin.PolymorphicChartParameters;
 import shapes.Shape;
 import shapesgenerators.CirclesGenerator;
 import utility.MeasureFetcher;

@@ -1,4 +1,4 @@
-package plugin;
+package be.kuleuven.cs.oss.polymorphicviews.plugin;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.sonar.api.Extension;
 import org.sonar.api.SonarPlugin;
 
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsWidget;
 import facade.WebServiceSonarFacade;
-import plugin.PolymorphicViewsWidget;
 
 /**
  * The plugin class needed to create a Sonar plugin.

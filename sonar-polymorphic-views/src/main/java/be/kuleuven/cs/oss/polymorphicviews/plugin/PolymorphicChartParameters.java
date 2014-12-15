@@ -1,4 +1,4 @@
-package plugin;
+package be.kuleuven.cs.oss.polymorphicviews.plugin;
 
 
 import org.sonar.api.charts.ChartParameters;

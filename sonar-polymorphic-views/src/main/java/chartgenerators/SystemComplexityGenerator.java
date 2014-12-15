@@ -7,11 +7,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import facade.DependencyType;
 import facade.SonarFacade;
-import plugin.PolymorphicChartParameters;
 import shapes.Line;
-import shapes.LineFactory;
 import shapes.Shape;
 import structure.ShapeTree;
 import structure.ShapeTreeNode;

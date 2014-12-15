@@ -43,7 +43,7 @@ public class ShapeTreeTest {
 		box2 = new Box(40,40,"node2","node2",new Color(25,25,25));
 		box2.setxPos(20);
 		box2.setyPos(50);
-		box2 = new Box(20,20,"node3","node3",new Color(25,25,25));
+		box3 = new Box(20,20,"node3","node3",new Color(25,25,25));
 		box3.setxPos(30);
 		box3.setyPos(50);
 		root.setShape(box0);
@@ -78,11 +78,6 @@ public class ShapeTreeTest {
 		tree.addNode(node2);
 		tree.addNode(node3);
 		tree.layoutX(10);
-		//adjustTomiddleOfChildren houdt rekening met meeste linkse en meest rechtse kant van kinderen
-		System.out.println(root.getShape().getxPos() );
-		System.out.println(node1.getShape().getxPos() );
-		System.out.println(node2.getShape().getxPos() );
-		System.out.println(node3.getShape().getxPos() );
 		assertTrue(root.getShape().getxPos() == 35);
 		assertTrue(node1.getShape().getxPos() == 10);
 		assertTrue(node2.getShape().getxPos() == 50);

@@ -10,11 +10,6 @@ import chartbuilder.ChartBuilder;
  */
 public class Trapezoid extends Shape{
 
-	public Trapezoid(double width, double height, String key, String name,
-			Color color) {
-		super(width, height, key, name, color);
-	}
-
 	public Trapezoid(double width, double height, double height2, String key, String name,
 			Color color) {
 		super(width, height, key, name, color);
@@ -27,10 +22,7 @@ public class Trapezoid extends Shape{
 	public double getHeight() {
 		return Math.max(this.height	, secondHeight);
 	}
-	
-	public void setSecondHeight(double height2){
-		this.secondHeight=height2;
-	}
+
 
 	public double getSecondHeight(){
 		return secondHeight;

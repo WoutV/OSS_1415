@@ -9,8 +9,8 @@ import org.jfree.util.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicChartParameters;
 import facade.SonarFacade;
-import plugin.PolymorphicChartParameters;
 import properties.Property;
 import properties.ValueProperty;
 import shapes.Shape;
