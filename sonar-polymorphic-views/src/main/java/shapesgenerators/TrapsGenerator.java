@@ -10,7 +10,6 @@ import properties.Property;
 import properties.ValueProperty;
 import shapes.Shape;
 import shapes.Trapezoid;
-import shapes.TrapezoidFactory;
 import utility.MeasureFetcher;
 import utility.Util;
 
@@ -25,7 +24,6 @@ public class TrapsGenerator implements IShapesGenerator {
 	private final static double MIN_SIZE = 5;
 	private final static double MAX_SIZE = 100;
 	private Map<String,Shape> shapes;
-	private TrapezoidFactory trapFactory;
 	
 	
 	public TrapsGenerator(MeasureFetcher measureFetcher, PolymorphicChartParameters polyParams) {
@@ -34,7 +32,6 @@ public class TrapsGenerator implements IShapesGenerator {
 		Property<Double> height2 = new ValueProperty(polyParams.getTrapSide3(), PolymorphicChartParameters.DEFAULT_TRAPSIDE3, measureFetcher);
 		Property<Color> color = new ColorProperty(polyParams.getTrapColor(), PolymorphicChartParameters.DEFAULT_TRAPCOLOR, measureFetcher);
 		Map<String,String> keysAndNames = measureFetcher.getResourceKeysAndNames();
-		this.trapFactory = new TrapezoidFactory();
 		initShapes(width, height, height2, color,keysAndNames);
 		}
 
@@ -48,9 +45,8 @@ public class TrapsGenerator implements IShapesGenerator {
 		Map<String,Color> colorList = color.getMap();
 		this.shapes = new HashMap<String,Shape>();
 		for(String i: keys.keySet()) {
-			Trapezoid t = trapFactory.createShape(heightList.get(i),widthList.get(i), i, keys.get(i), colorList.get(i));
-			t.setSecondHeight(height2List.get(i));
-			shapes.put(i,t);
+			Shape s = new Trapezoid(widthList.get(i), heightList.get(i), height2List.get(i), i, keys.get(i), colorList.get(i));
+			shapes.put(i, s);
 		}
 	}
 

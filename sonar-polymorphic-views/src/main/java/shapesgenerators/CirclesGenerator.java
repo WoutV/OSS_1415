@@ -8,7 +8,7 @@ import plugin.PolymorphicChartParameters;
 import properties.ColorProperty;
 import properties.Property;
 import properties.ValueProperty;
-import shapes.CircleFactory;
+import shapes.Circle;
 import shapes.Shape;
 import utility.MeasureFetcher;
 import utility.Util;
@@ -24,7 +24,6 @@ public class CirclesGenerator implements IShapesGenerator {
 	private final static double MIN_SIZE = 5;
 	private final static double MAX_SIZE = 100;
 	private Map<String, Shape> shapes;
-	private CircleFactory circleFactory;
 	
 	/**
 	* This method creates a circlegenerator. It extracts the necessary data from the given parameters and initiates its list of circles.
@@ -35,7 +34,6 @@ public class CirclesGenerator implements IShapesGenerator {
 		Property<Double> diameter = new ValueProperty(polyParams.getCircleDiam(), PolymorphicChartParameters.DEFAULT_CIRCLEDIAM, measureFetcher);
 		Property<Color> color = new ColorProperty(polyParams.getCircleColor(), PolymorphicChartParameters.DEFAULT_CIRCLECOLOR, measureFetcher);
 		Map<String,String> keysAndNames = measureFetcher.getResourceKeysAndNames();
-		this.circleFactory = new CircleFactory();
 		initShapes(diameter, color,keysAndNames);
 		}
 
@@ -47,12 +45,7 @@ public class CirclesGenerator implements IShapesGenerator {
 		Map<String,Double> diamList = Util.scaleMap(diameter.getMap(),MIN_SIZE,MAX_SIZE);
 		Map<String,Color> colorList = color.getMap();
 		for(String i : keysAndNames.keySet()) {
-			Shape s = circleFactory.createShape
-					(diamList.get(i),
-							diamList.get(i), 
-							i,
-							keysAndNames.get(i), 
-							colorList.get(i));
+			Shape s = new Circle(diamList.get(i), diamList.get(i), i, keysAndNames.get(i), colorList.get(i));
 			shapes.put(i, s);
 		}
 	}

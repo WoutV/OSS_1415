@@ -8,7 +8,7 @@ import plugin.PolymorphicChartParameters;
 import properties.ColorProperty;
 import properties.Property;
 import properties.ValueProperty;
-import shapes.BoxFactory;
+import shapes.Box;
 import shapes.Shape;
 import utility.MeasureFetcher;
 import utility.Util;
@@ -24,7 +24,6 @@ public class BoxesGenerator implements IShapesGenerator {
 	private final static double MIN_BOX_SIZE = 5;
 	private final static double MAX_BOX_SIZE = 100;
 	private Map<String, Shape> shapes;
-	private BoxFactory boxFactory;
 	
 	/**
 	* This method creates a boxesgenerator. It extracts the necessary data from the given parameters and initiates its list of boxes.
@@ -36,7 +35,6 @@ public class BoxesGenerator implements IShapesGenerator {
 		Property<Double> height = new ValueProperty(polyParams.getBoxHeight(), PolymorphicChartParameters.DEFAULT_BOXHEIGHT, measureFetcher);
 		Property<Color> color = new ColorProperty(polyParams.getBoxColor(), PolymorphicChartParameters.DEFAULT_BOXCOLOR, measureFetcher);
 		Map<String,String> names = measureFetcher.getResourceKeysAndNames();
-		this.boxFactory = new BoxFactory();
 		initBoxes(width, height,color,names);
 	}
 	
@@ -50,13 +48,8 @@ public class BoxesGenerator implements IShapesGenerator {
 		Map<String,Color> colorList = color.getMap();
 		this.shapes = new HashMap<String,Shape>();
 		for(String i : keysAndNames.keySet()) {
-			Shape s = boxFactory.createShape
-					(heightList.get(i),
-							widthList.get(i), 
-							i,
-							keysAndNames.get(i), 
-							colorList.get(i));
-			shapes.put(i, s);
+			Shape s = new Box(widthList.get(i), heightList.get(i), i, keysAndNames.get(i), colorList.get(i));
+			shapes.put(i, s);				
 		}
 	}
 
