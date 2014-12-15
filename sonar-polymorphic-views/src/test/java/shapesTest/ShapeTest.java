@@ -1,5 +1,6 @@
 package shapesTest;
 
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -26,17 +27,13 @@ public class ShapeTest {
 		builder.createCanvas(600,600, BufferedImage.TYPE_INT_RGB);
 		
 		List<Shape> shapes = new ArrayList<Shape>();
-		shapes.add(new Box());
-		shapes.add(new Trapezoid());
-		shapes.add(new Circle());
-		shapes.add(new Line());
+		shapes.add(new Box(20,20,"key1","name1",Color.BLUE));
+		shapes.add(new Trapezoid(40,70,50,"key2","name2",Color.RED));
+		shapes.add(new Circle(40,40,"key3","name3",Color.PINK));
+		shapes.add(new Line(20,70,"key4","name4",Color.BLACK));
 		
 		int i = 2;
 		for(Shape shape : shapes){
-			shape.setHeight(20);
-			shape.setWidth(15);
-			shape.setName("test");
-			shape.setKey("key");
 			shape.setxPos(i);
 			shape.setyPos(i);
 			i+=20;
