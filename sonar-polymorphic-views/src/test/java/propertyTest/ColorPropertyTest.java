@@ -31,24 +31,19 @@ public class ColorPropertyTest {
 	@Test
 	public void testNormalUse() {
 		ColorProperty prop = new ColorProperty("r100g100b100", "r255g0b0", measureFetcher);
-		assertTrue(prop.getName().equals("r100g100b100"));
+		assertTrue(prop.getPropertyValue().equals("r100g100b100"));
 		Map<String, Color> map = prop.getMap();
 		assertTrue(map.get("resource1").equals(new Color(100,100,100)));
 		assertTrue(map.get("resource2").equals(new Color(100,100,100)));
-		assertTrue(prop.getValues().contains(new Color(100,100,100)));
-		assertTrue(prop.getValues().size() == 2);
 	}
 	
 	@Test
 	public void testInvalidValue() {
 		ColorProperty prop = new ColorProperty("NoColor", "r255g0b0", measureFetcher);
-		assertTrue(prop.getName().equals("NoColor"));
+		assertTrue(prop.getPropertyValue().equals("NoColor"));
 		Map<String, Color> map = prop.getMap();
 		assertTrue(map.get("resource1").equals(new Color(255,0,0)));
 		assertTrue(map.get("resource2").equals(new Color(255,0,0)));
-		assertTrue(prop.getValues().contains(new Color(255,0,0)));
-		assertTrue(prop.getValues().size() == 2);
-		
 	}
 
 }

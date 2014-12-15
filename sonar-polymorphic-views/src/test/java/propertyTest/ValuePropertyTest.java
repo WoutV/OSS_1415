@@ -13,7 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.sonar.wsclient.services.Metric;
 
-import be.kuleuven.cs.oss.sonarfacade.WSMetric;
+import facade.WSMetric;
 import properties.ValueProperty;
 import utility.MeasureFetcher;
 
@@ -32,24 +32,20 @@ public class ValuePropertyTest {
 	public void testConstantStrategyValue() {
 		replay(measureFetcher);
 		ValueProperty prop = new ValueProperty("50", "20", measureFetcher);
-		assertTrue(prop.getName().equals("50"));
+		assertTrue(prop.getPropertyValue().equals("50"));
 		Map<String, Double> map = prop.getMap();
 		assertTrue(map.get("resource1") == 50.0);
 		assertTrue(map.get("resource2") == 50.0);
-		assertTrue(prop.getValues().contains(50.0));
-		assertTrue(prop.getValues().size() == 2);
 	}
 	
 	@Test
 	public void testConstantStrategyDefaultValue() {
 		replay(measureFetcher);
 		ValueProperty prop = new ValueProperty("-50", "20", measureFetcher);
-		assertTrue(prop.getName().equals("-50"));
+		assertTrue(prop.getPropertyValue().equals("-50"));
 		Map<String, Double> map = prop.getMap();
 		assertTrue(map.get("resource1") == 20.0);
 		assertTrue(map.get("resource2") == 20.0);
-		assertTrue(prop.getValues().contains(20.0));
-		assertTrue(prop.getValues().size() == 2);
 	}
 	
 	@Test
@@ -59,13 +55,10 @@ public class ValuePropertyTest {
 		replay(measureFetcher);
 		
 		ValueProperty prop = new ValueProperty("lines", "15", measureFetcher);
-		assertTrue(prop.getName().equals("lines"));
+		assertTrue(prop.getPropertyValue().equals("lines"));
 		Map<String, Double> map = prop.getMap();
 		assertTrue(map.get("resource1") == 20.0);
 		assertTrue(map.get("resource2") == 200.0);
-		assertTrue(prop.getValues().contains(20.0));
-		assertTrue(prop.getValues().contains(200.0));
-		assertTrue(prop.getValues().size() == 2);
 	}
 	
 	@Test
@@ -75,12 +68,9 @@ public class ValuePropertyTest {
 		replay(measureFetcher);
 		
 		ValueProperty prop = new ValueProperty("notvalidmetricvalue", "15", measureFetcher);
-		assertTrue(prop.getName().equals("notvalidmetricvalue"));
+		assertTrue(prop.getPropertyValue().equals("notvalidmetricvalue"));
 		Map<String, Double> map = prop.getMap();
-		System.out.println(prop.getValues().get(1));
 		assertTrue(map.get("resource1") == 15.0);
 		assertTrue(map.get("resource2") == 15.0);
-		assertTrue(prop.getValues().contains(15.0));
-		assertTrue(prop.getValues().size() == 2);
 	}
 }
