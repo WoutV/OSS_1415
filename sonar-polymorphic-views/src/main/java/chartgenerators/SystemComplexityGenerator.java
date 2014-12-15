@@ -193,14 +193,13 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	 * Will create a lines for every parent and its children.
 	 */
 	public void createLines(){
-		LineFactory factory = new LineFactory();
 		for(ShapeTree shapeTree:dependencyTrees){
 			int height = shapeTree.getHighestLevel();
 			for(int i=0; i<height;i++){
 				List<ShapeTreeNode> nodes = shapeTree.getLevel(i);
 				for(ShapeTreeNode root: nodes){
 					for(ShapeTreeNode node: root.getChildren()){
-						createLine(root, node, factory);
+						createLine(root, node);
 					}
 				}
 
@@ -213,14 +212,14 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	 * @param parent The parent
 	 * @param child The child
 	 */
-	public void createLine(ShapeTreeNode parent, ShapeTreeNode child, LineFactory factory){
+	public void createLine(ShapeTreeNode parent, ShapeTreeNode child){
 		Shape parentShape = parent.getShape();
 		int x1 = parentShape.getxPos();
 		int y1 = parentShape.getyPos() - (int) parentShape.getHeight()/2;
 		Shape childShape = child.getShape();
 		int x2 = childShape.getxPos();
 		int y2 = childShape.getyPos() + (int)childShape.getHeight()/2;
-		Shape line = factory.createShape(y2-y1, x2-x1, parent.getKey()+child.getKey(), "", Color.BLACK);
+		Shape line = new Line(y2-y1, x2-x1, parent.getKey()+child.getKey(), "", Color.BLACK);
 		line.setxPos(x1);
 		line.setyPos(y1);
 		shapes.put(parent.getKey()+child.getKey(),line);
