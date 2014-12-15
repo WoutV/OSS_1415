@@ -1,5 +1,7 @@
 package shapes;
 
+import java.awt.Color;
+
 import chartbuilder.ChartBuilder;
 
 /**
@@ -9,6 +11,10 @@ import chartbuilder.ChartBuilder;
  */
 public class Box extends Shape {
 	
+
+	public Box(double width, double height, String key, String name, Color color) {
+		super(width, height, key, name, color);
+	}
 
 	@Override
 	public void draw(ChartBuilder builder) {

@@ -12,6 +12,13 @@ import chartbuilder.ChartBuilder;
  */
 public abstract class Shape {
 	
+	public Shape(double width, double height, String key, String name, Color color){
+		this.width = width;
+		this.height = height;
+		this.key=key;
+		this.name=name;
+		this.color=color;
+	}
 	private int xPos;
 	private int yPos;
 	private String name;
@@ -23,20 +30,12 @@ public abstract class Shape {
 	public String getKey() {
 		return key;
 	}
-	public void setKey(String key) {
-		this.key = key;
-	}
 	public double getWidth() {
 		return width;
 	}
-	public void setWidth(double width) {
-		this.width = width;
-	}
+
 	public double getHeight() {
 		return height;
-	}
-	public void setHeight(double height) {
-		this.height = height;
 	}
 	
 	public int getxPos() {
@@ -50,29 +49,14 @@ public abstract class Shape {
 	public int getyPos() {
 		return yPos;
 	}
-
-	public void setyPos(int yPos) {
-		this.yPos = yPos;
-	}
-
-	public Shape() {
-		super();
-	}
 	
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
 
 	public Color getColor() {
 		return color;
-	}
-
-	public void setColor(Color color) {
-		this.color = color;
 	}
 
 	public abstract void draw(ChartBuilder builder);
