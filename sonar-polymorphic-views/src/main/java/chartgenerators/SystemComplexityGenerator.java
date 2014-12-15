@@ -32,10 +32,8 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	 */
 	public SystemComplexityGenerator(PolymorphicChartParameters polyParams, SonarFacade sonar) {
 		super(polyParams,sonar);
-		
-		this.dependencyTrees = buildTrees();
 		shapes = generator.getShapes();
-		addShapesToTree();
+		this.dependencyTrees = buildTrees();
 	}
 
 	/**
@@ -94,7 +92,8 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	private List<ShapeTreeNode> generateNodes(Map<String, String> map) {
 		List<ShapeTreeNode> nodes = new ArrayList<ShapeTreeNode>();
 		for(String key : map.keySet()){
-			ShapeTreeNode node = new ShapeTreeNode(key);
+			Shape shape = this.getShapeBy(key);
+			ShapeTreeNode node = new ShapeTreeNode(shape);
 			nodes.add(node);
 		}
 		return nodes;
@@ -159,18 +158,6 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 			int distance = lastTreePos - leftMost;
 			tree.shiftTree(distance + TREE_MARGIN);
 			lastTreePos = tree.getRightMostPosition();
-		}
-	}
-	
-	/**
-	 * This method will add each shape to a node
-	 */
-	private void addShapesToTree(){
-		for(ShapeTree shapeTree: dependencyTrees){
-			for(ShapeTreeNode node : shapeTree.getNodes()){
-				Shape shape = getShapeBy(node.getKey());
-				node.setShape(shape);
-			}
 		}
 	}
 	

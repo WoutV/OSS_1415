@@ -25,15 +25,11 @@ public class ShapeTreeTest {
 	private Shape box1;
 	private Shape box2;
 	private Shape box3;
+	private Shape box4;
+	private Shape box5;
 	
 	@Before
 	public void setUp() throws Exception {
-		root = new ShapeTreeNode("rootKey");
-		node1 = new ShapeTreeNode("key1");
-		node2 = new ShapeTreeNode("key2");
-		node3 = new ShapeTreeNode("key3");
-		node4 = new ShapeTreeNode("key4");
-		node5 = new ShapeTreeNode("key5");
 		box0 = new Box(20,20,"root","root",new Color(25,25,25));
 		box0.setxPos(10);
 		box0.setyPos(10);
@@ -46,6 +42,18 @@ public class ShapeTreeTest {
 		box3 = new Box(20,20,"node3","node3",new Color(25,25,25));
 		box3.setxPos(30);
 		box3.setyPos(50);
+		box4 = new Box(20,20,"node4","node4",new Color(25,25,25));
+		box4.setxPos(30);
+		box4.setyPos(50);
+		box5 = new Box(20,20,"node5","node5",new Color(25,25,25));
+		box5.setxPos(30);
+		box5.setyPos(50);
+		root = new ShapeTreeNode(box0);
+		node1 = new ShapeTreeNode(box1);
+		node2 = new ShapeTreeNode(box2);
+		node3 = new ShapeTreeNode(box3);
+		node4 = new ShapeTreeNode(box4);
+		node5 = new ShapeTreeNode(box5);
 		root.setShape(box0);
 		node1.setShape(box1);
 		node2.setShape(box2);
