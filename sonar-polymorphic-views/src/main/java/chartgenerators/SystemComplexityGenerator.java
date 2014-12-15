@@ -37,8 +37,8 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	}
 
 	/**
-	 * This method generates the image to be dsisplayed as view
-	 * @return the systemcomplexity view as requested as a BuffereredImage
+	 * This method generates the image to be displayed.
+	 * @return the system complexity view as requested as a BuffereredImage
 	 */
 	@Override
 	public BufferedImage generateImage() {  
@@ -102,10 +102,10 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	/**
 	 * This method will isolate the nodes that have no outgoingDepencies (nodes that do not extend another class).
 	 * These nodes will become the root of a tree.
-	 * @param nodes
+	 * @param nodes The nodes of all resources
 	 */
-	private List<ShapeTree>  findRoots(List<ShapeTreeNode> nodes) {
-		dependencyTrees = new ArrayList<ShapeTree>();
+	private List<ShapeTree> findRoots(List<ShapeTreeNode> nodes) {
+		List<ShapeTree> trees = new ArrayList<ShapeTree>();
 		for(ShapeTreeNode leaf : nodes){
 			List<String[]> outgoingDependencies = measureFetcher.findOutgoingDependencies(leaf.getKey());
 			boolean onlyUses = true;
@@ -116,10 +116,10 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 			}
 			if(onlyUses || outgoingDependencies.isEmpty()){
 				ShapeTree tree = new ShapeTree(leaf);
-				dependencyTrees.add(tree);
+				trees.add(tree);
 			}
 		}
-		return dependencyTrees;
+		return trees;
 	}
 	
 	/**

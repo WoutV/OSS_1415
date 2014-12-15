@@ -46,12 +46,11 @@ public class ShapeTree {
 		sortAlphabetic();
 		layoutBottom(leafMargin);
 		for(int i = getHighestLevel()-1 ; i >= 0 ; i--){
-			int maxDistance = layoutLevel(leafMargin, i);
-			adjustLevelSpacing(i, maxDistance);
+			layoutLevel(leafMargin, i);
 		}
 	}
 
-	private int layoutLevel(int leafMargin, int i) {
+	private void layoutLevel(int leafMargin, int i) {
 		List<ShapeTreeNode> nodes = getLevel(i);
 		List<ShapeTreeNode> checked = new ArrayList<ShapeTreeNode>();
 		int whichNode = 0;
@@ -69,7 +68,7 @@ public class ShapeTree {
 			checked.add(node);
 			whichNode += 1;
 		}
-		return maxDistance;
+		adjustLevelSpacing(i, maxDistance);
 	}
 
 	/**
@@ -189,18 +188,6 @@ public class ShapeTree {
 			}
 		}
 		return list;
-	}
-
-	/**
-	 * Get a textual representation of a tree.
-	 * @return representation in form of a string
-	 */
-	public String toString(){
-		String result = "";
-		for(ShapeTreeNode node : getNodes()){
-			result = result + "\r\n" + node.toString(); 
-		}
-		return result;
 	}
 
 	/**
