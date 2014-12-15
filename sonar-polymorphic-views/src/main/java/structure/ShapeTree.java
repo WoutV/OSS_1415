@@ -46,25 +46,30 @@ public class ShapeTree {
 		sortAlphabetic();
 		layoutBottom(leafMargin);
 		for(int i = getHighestLevel()-1 ; i >= 0 ; i--){
-			List<ShapeTreeNode> nodes = getLevel(i);
-			List<ShapeTreeNode> checked = new ArrayList<ShapeTreeNode>();
-			int whichNode = 0;
-			int maxDistance = 0;
-			for(ShapeTreeNode node : nodes){
-				node.adjustToMiddleOfChildren(); 
-				if(!checked.isEmpty()){
-					ShapeTreeNode other = checked.get(whichNode-1);
-					positionsNodesRelativeTo(leafMargin, other, node);
-					int difference = node.getX() - (other.getX());
-					if(difference > maxDistance){
-						maxDistance = difference;
-					}
-				}
-				checked.add(node);
-				whichNode += 1;
-			}
+			int maxDistance = layoutLevel(leafMargin, i);
 			adjustLevelSpacing(i, maxDistance);
 		}
+	}
+
+	private int layoutLevel(int leafMargin, int i) {
+		List<ShapeTreeNode> nodes = getLevel(i);
+		List<ShapeTreeNode> checked = new ArrayList<ShapeTreeNode>();
+		int whichNode = 0;
+		int maxDistance = 0;
+		for(ShapeTreeNode node : nodes){
+			node.adjustToMiddleOfChildren(); 
+			if(!checked.isEmpty()){
+				ShapeTreeNode other = checked.get(whichNode-1);
+				positionsNodesRelativeTo(leafMargin, other, node);
+				int difference = node.getX() - (other.getX());
+				if(difference > maxDistance){
+					maxDistance = difference;
+				}
+			}
+			checked.add(node);
+			whichNode += 1;
+		}
+		return maxDistance;
 	}
 
 	/**

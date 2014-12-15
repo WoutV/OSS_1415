@@ -14,13 +14,12 @@ import shapes.Shape;
  */
 public class ShapeTreeNode {
 
-	private String key;
 	private Shape shape;
 	private int level;
 	private List<ShapeTreeNode> children = new ArrayList<ShapeTreeNode>();
 
-	public ShapeTreeNode(String key){
-		this.key = key;
+	public ShapeTreeNode(Shape shape){
+		this.shape = shape;
 	}
 	
 	/**
@@ -90,17 +89,6 @@ public class ShapeTreeNode {
 			}
 			setChildren(list);
 		}
-	}
-	
-	/**
-	 * Representation of a node and its children as a string.
-	 */
-	public String toString(){
-		String result = getName();
-		for(ShapeTreeNode node : getChildren()){
-			result = result + "\r\n" + node.getName(); 
-		}
-		return result;
 	}
 
 	/**
@@ -216,14 +204,6 @@ public class ShapeTreeNode {
 	}
 	
 	/**
-	 * Set the shape of this node
-	 * @param shape the shape
-	 */
-	public void setShape(Shape shape) {
-		this.shape = shape;
-	}
-	
-	/**
 	 * Get the name of this node
 	 * @return the name
 	 */
@@ -243,7 +223,7 @@ public class ShapeTreeNode {
 	 * Returns the first child of this node.
 	 * @return the first child
 	 */
-	public ShapeTreeNode getFirstChild(){
+	private ShapeTreeNode getFirstChild(){
 		if(getChildren().isEmpty()){
 			return null;
 		}
@@ -256,7 +236,7 @@ public class ShapeTreeNode {
 	 * Returns the last child of this node.
 	 * @return the last child
 	 */
-	public ShapeTreeNode getLastChild(){
+	private ShapeTreeNode getLastChild(){
 		if(getChildren().isEmpty()){
 			return null;
 		}
@@ -287,14 +267,6 @@ public class ShapeTreeNode {
 	 * @return key
 	 */
 	public String getKey() {
-		return key;
+		return shape.getKey();
 	}
-
-	/**
-	 * Set the key of this node
-	 * @param key
-	 */
-	public void setKey(String key) {
-		this.key = key;
-	}	
 }

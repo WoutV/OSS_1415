@@ -54,10 +54,6 @@ public class ShapeTreeTest {
 		node3 = new ShapeTreeNode(box3);
 		node4 = new ShapeTreeNode(box4);
 		node5 = new ShapeTreeNode(box5);
-		root.setShape(box0);
-		node1.setShape(box1);
-		node2.setShape(box2);
-		node3.setShape(box3);
 	}
 
 	@Test
@@ -136,10 +132,6 @@ public class ShapeTreeTest {
 
 	@Test
 	public void testSortAlphabetic() {
-		Shape box4 = new Box(20,20,"node4","node4",new Color(25,25,25));
-		node4.setShape(box4);
-		Shape box5 = new Box(20,20,"node5","node5",new Color(25,25,25));
-		node5.setShape(box5);
 		root.addChild(node1);
 		root.addChild(node2);
 		root.addChild(node3);
