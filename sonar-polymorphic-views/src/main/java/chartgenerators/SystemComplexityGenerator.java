@@ -10,6 +10,7 @@ import java.util.Map;
 import facade.DependencyType;
 import facade.SonarFacade;
 import plugin.PolymorphicChartParameters;
+import shapes.Line;
 import shapes.LineFactory;
 import shapes.Shape;
 import structure.ShapeTree;
@@ -219,7 +220,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		Shape childShape = child.getShape();
 		int x2 = childShape.getxPos();
 		int y2 = childShape.getyPos() + (int)childShape.getHeight()/2;
-		Shape line = new Line(y2-y1, x2-x1, parent.getKey()+child.getKey(), "", Color.BLACK);
+		Shape line = new Line( x2-x1, y2-y1, parent.getKey()+child.getKey(), "", Color.BLACK);
 		line.setxPos(x1);
 		line.setyPos(y1);
 		shapes.put(parent.getKey()+child.getKey(),line);
