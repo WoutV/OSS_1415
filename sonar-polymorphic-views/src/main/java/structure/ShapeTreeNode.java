@@ -28,7 +28,7 @@ public class ShapeTreeNode {
 	 * @return x The x-coordinate.
 	 */
 	public int getX(){
-		return getShape().getxPos();
+		return shape.getxPos();
 	}
 	
 	/**
@@ -36,7 +36,7 @@ public class ShapeTreeNode {
 	 * @param x The x-position.
 	 */
 	public void setX(int x){
-		getShape().setxPos(x);
+		this.shape.setxPos(x);
 	}
 	
 	/**
@@ -44,7 +44,7 @@ public class ShapeTreeNode {
 	 * @return y The y-coordinate.
 	 */
 	public int getY(){
-		return getShape().getyPos();
+		return this.shape.getyPos();
 	}
 	
 	/**
@@ -52,7 +52,7 @@ public class ShapeTreeNode {
 	 * @param y The new y-coordinate.
 	 */
 	public void setY(int y){
-		getShape().setyPos(y);
+		this.shape.setyPos(y);
 	}
 	
 	/**
@@ -60,7 +60,7 @@ public class ShapeTreeNode {
 	 * @return width The width of the node.
 	 */
 	public int getWidth(){
-		return (int) getShape().getWidth();
+		return (int) this.shape.getWidth();
 	}
 	
 	/**
@@ -68,7 +68,7 @@ public class ShapeTreeNode {
 	 * @return height The height of the node.
 	 */
 	public int getHeight(){
-		return (int) getShape().getHeight();
+		return (int) this.shape.getHeight();
 	}
 	
 	/**
@@ -152,7 +152,7 @@ public class ShapeTreeNode {
 	 * @param x the amount to shift
 	 */
 	public void shift(int x){
-		if(getShape()!=null){
+		if(this.shape!=null){
 			int newx = getX()+x;
 			setX(newx);
 			for(ShapeTreeNode child : getChildren()){
@@ -228,7 +228,7 @@ public class ShapeTreeNode {
 	 * @return the name
 	 */
 	public String getName() {
-		return getShape().getName();
+		return this.shape.getName();
 	}
 	
 	/**
