@@ -79,7 +79,7 @@ public class MeasureFetcher {
 	/**
 	 * @return mapp of keys to names for all resources
 	 */
-	public HashMap<String, String> getResourceKeysAndNames(){
+	public Map<String, String> getResourceKeysAndNames(){
 		HashMap<String, String> result = new HashMap<String, String>();
 		for(Resource r : resources) {
 			result.put(r.getKey(), r.getName());

@@ -73,7 +73,7 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 		Map<String, String> map = measureFetcher.getResourceKeysAndNames();
 		
 		List<ShapeTreeNode> nodes = generateNodes(map);
-		List<ShapeTree> dependencyTrees = findRoots(nodes); 			
+		dependencyTrees = findRoots(nodes); 			
 		
 		for(ShapeTree ent : dependencyTrees){
 			ShapeTreeNode root = ent.getRoot(); 
@@ -103,11 +103,10 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	/**
 	 * This method will isolate the nodes that have no outgoingDepencies (nodes that do not extend another class).
 	 * These nodes will become the root of a tree.
-	 * @param dependencyTrees 
 	 * @param nodes
 	 */
 	private List<ShapeTree>  findRoots(List<ShapeTreeNode> nodes) {
-		List<ShapeTree> dependencyTrees = new ArrayList<ShapeTree>();
+		dependencyTrees = new ArrayList<ShapeTree>();
 		for(ShapeTreeNode leaf : nodes){
 			List<String[]> outgoingDependencies = measureFetcher.findOutgoingDependencies(leaf.getKey());
 			boolean onlyUses = true;
@@ -190,20 +189,28 @@ public class SystemComplexityGenerator extends PolymorphicChartGenerator {
 	}
 	
 	/**
-	 * Will create a lines for every parent and its children.
+	 * Will create a line for every parent and its children.
 	 */
 	public void createLines(){
 		for(ShapeTree shapeTree:dependencyTrees){
 			int height = shapeTree.getHighestLevel();
-			for(int i=0; i<height;i++){
-				List<ShapeTreeNode> nodes = shapeTree.getLevel(i);
-				for(ShapeTreeNode root: nodes){
-					for(ShapeTreeNode node: root.getChildren()){
-						createLine(root, node);
-					}
-				}
+			createLinesForTree(shapeTree, height);	
+		}
+	}
 
-			}	
+	/**
+	 * Creates the lines for the given shapeTree
+	 * @param shapeTree
+	 * @param height
+	 */
+	private void createLinesForTree(ShapeTree shapeTree, int height) {
+		for(int i=0; i<height;i++){
+			List<ShapeTreeNode> nodes = shapeTree.getLevel(i);
+			for(ShapeTreeNode root: nodes){
+				for(ShapeTreeNode node: root.getChildren()){
+					createLine(root, node);
+				}
+			}
 		}
 	}
 	
