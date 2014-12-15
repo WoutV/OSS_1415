@@ -1,6 +1,9 @@
 package structureTest;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.awt.Color;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -31,30 +34,18 @@ public class ShapeTreeTest {
 		node3 = new ShapeTreeNode("key3");
 		node4 = new ShapeTreeNode("key4");
 		node5 = new ShapeTreeNode("key5");
-		box0 = new Box();
+		box0 = new Box(20,20,"root","root",new Color(25,25,25));
 		box0.setxPos(10);
-		box0.setWidth(20);
 		box0.setyPos(10);
-		box0.setHeight(20);
-		box0.setName("root");
-		box1 = new Box();
+		box1 = new Box(20,20,"node1","node1",new Color(25,25,25));
 		box1.setxPos(0);
-		box1.setWidth(20);
 		box1.setyPos(50);
-		box1.setHeight(20);
-		box1.setName("node1");
-		box2 = new Box();
+		box2 = new Box(40,40,"node2","node2",new Color(25,25,25));
 		box2.setxPos(20);
-		box2.setWidth(40);
 		box2.setyPos(50);
-		box2.setHeight(40);
-		box2.setName("node2");
-		box3 = new Box();
+		box2 = new Box(20,20,"node3","node3",new Color(25,25,25));
 		box3.setxPos(30);
-		box3.setWidth(20);
 		box3.setyPos(50);
-		box3.setHeight(20);
-		box3.setName("node3");
 		root.setShape(box0);
 		node1.setShape(box1);
 		node2.setShape(box2);
@@ -142,11 +133,9 @@ public class ShapeTreeTest {
 
 	@Test
 	public void testSortAlphabetic() {
-		Shape box4 = new Box();
-		box4.setName("node4");
+		Shape box4 = new Box(20,20,"node4","node4",new Color(25,25,25));
 		node4.setShape(box4);
-		Shape box5 = new Box();
-		box5.setName("node5");
+		Shape box5 = new Box(20,20,"node5","node5",new Color(25,25,25));
 		node5.setShape(box5);
 		root.addChild(node1);
 		root.addChild(node2);

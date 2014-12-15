@@ -2,6 +2,7 @@ package structureTest;
 
 import static org.junit.Assert.*;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,16 +31,13 @@ public class ShapeTreeNodeTest {
 	@Test
 	public void testSortAlphabetic() {
 		ShapeTreeNode child1 = new ShapeTreeNode("key1");
-		Shape shape1 = new Box();
-		shape1.setName("key1");
+		Shape shape1 = new Box(20,20,"key1","key1",new Color(25,25,25));
 		child1.setShape(shape1);
 		ShapeTreeNode child2 = new ShapeTreeNode("key2");
-		Shape shape2 = new Box();
-		shape2.setName("key2");
+		Shape shape2 = new Box(20,20,"key2","key2",new Color(25,25,25));
 		child2.setShape(shape2);
 		ShapeTreeNode child3 = new ShapeTreeNode("key3");
-		Shape shape3 = new Box();
-		shape3.setName("key3");
+		Shape shape3 = new Box(20,20,"key3","key3",new Color(25,25,25));
 		child3.setShape(shape3);
 		root.addChild(child3);
 		root.addChild(child1);
@@ -60,17 +58,14 @@ public class ShapeTreeNodeTest {
 	public void testAdjustToMiddleOfChildren() {
 		ShapeTreeNode child1 = new ShapeTreeNode("key1");
 		ShapeTreeNode child2 = new ShapeTreeNode("key2");
-		Shape box0 = new Box();
+		Shape box0 = new Box(20,20,"box0","box0",new Color(25,25,25));;
 		box0.setxPos(20);
-		box0.setWidth(20);
 		root.setShape(box0);
-		Shape box1 = new Box();
+		Shape box1 = new Box(20,20,"box1","box1",new Color(25,25,25));
 		box1.setxPos(20);
-		box1.setWidth(20);
 		child1.setShape(box1);
-		Shape box2 = new Box();
+		Shape box2 = new Box(20,20,"box2","box2",new Color(25,25,25));
 		box2.setxPos(100);
-		box2.setWidth(20);
 		child2.setShape(box2);
 		root.addChild(child1);
 		root.addChild(child2);
@@ -81,13 +76,11 @@ public class ShapeTreeNodeTest {
 	@Test
 	public void testAdjustToMiddleOfChildrenWithOneChild() {
 		ShapeTreeNode child1 = new ShapeTreeNode("key1");
-		Shape box0 = new Box();
+		Shape box0 = new Box(20,20,"box0","box0",new Color(25,25,25));
 		box0.setxPos(20);
-		box0.setWidth(20);
 		root.setShape(box0);
-		Shape box1 = new Box();
+		Shape box1 = new Box(20,20,"box1","box1",new Color(25,25,25));
 		box1.setxPos(50);
-		box1.setWidth(20);
 		child1.setShape(box1);
 		root.addChild(child1);
 		root.adjustToMiddleOfChildren();
@@ -96,9 +89,8 @@ public class ShapeTreeNodeTest {
 	
 	@Test
 	public void testAdjustToMiddleOfChildrenWithNoChildren() {
-		Shape box0 = new Box();
+		Shape box0 = new Box(20,20,"box0","box0",new Color(25,25,25));
 		box0.setxPos(20);
-		box0.setWidth(20);
 		root.setShape(box0);
 		root.adjustToMiddleOfChildren();
 		assertTrue(root.getShape().getxPos() == 20);
@@ -109,14 +101,11 @@ public class ShapeTreeNodeTest {
 		ShapeTreeNode child1 = new ShapeTreeNode("key1");
 		ShapeTreeNode child2 = new ShapeTreeNode("key2");
 		ShapeTreeNode child3 = new ShapeTreeNode("key3");
-		Shape box1 = new Box();
-		box1.setWidth(20);
+		Shape box1 = new Box(20,20,"box1","box1",new Color(25,25,25));
 		child1.setShape(box1);
-		Shape box2 = new Box();
-		box2.setWidth(10);
+		Shape box2 = new Box(10,20,"box2","box2",new Color(25,25,25));
 		child2.setShape(box2);
-		Shape box3 = new Box();
-		box3.setWidth(30);
+		Shape box3 = new Box(30,20,"box3","box3",new Color(25,25,25));
 		child3.setShape(box3);
 		root.addChild(child1);
 		root.addChild(child2);
@@ -131,17 +120,14 @@ public class ShapeTreeNodeTest {
 	public void testShift() {
 		ShapeTreeNode child1 = new ShapeTreeNode("key1");
 		ShapeTreeNode child2 = new ShapeTreeNode("key2");
-		Shape box0 = new Box();
+		Shape box0 = new Box(40,20,"box0","box0",new Color(25,25,25));
 		box0.setxPos(10);
-		box0.setWidth(40);
 		root.setShape(box0);
-		Shape box1 = new Box();
+		Shape box1 = new Box(20,20,"box1","box1",new Color(25,25,25));
 		box1.setxPos(50);
-		box1.setWidth(20);
 		child1.setShape(box1);
-		Shape box2 = new Box();
+		Shape box2 = new Box(10,20,"box2","box2",new Color(25,25,25));
 		box2.setxPos(100);
-		box2.setWidth(10);
 		child2.setShape(box2);
 		root.addChild(child1);
 		root.addChild(child2);
@@ -153,9 +139,8 @@ public class ShapeTreeNodeTest {
 	
 	@Test
 	public void testShiftNoChildren() {
-		Shape box0 = new Box();
+		Shape box0 = new Box(40,20,"box0","box0",new Color(25,25,25));
 		box0.setxPos(10);
-		box0.setWidth(40);
 		root.setShape(box0);
 		root.shift(30);
 		assertTrue(root.getShape().getxPos() == 40);
@@ -165,17 +150,14 @@ public class ShapeTreeNodeTest {
 	public void testShift2Levels() {
 		ShapeTreeNode child1 = new ShapeTreeNode("key1");
 		ShapeTreeNode child2 = new ShapeTreeNode("key2");
-		Shape box0 = new Box();
+		Shape box0 = new Box(40,20,"box0","box0",new Color(25,25,25));
 		box0.setxPos(10);
-		box0.setWidth(40);
 		root.setShape(box0);
-		Shape box1 = new Box();
+		Shape box1 = new Box(20,20,"box1","box1",new Color(25,25,25));
 		box1.setxPos(50);
-		box1.setWidth(20);
 		child1.setShape(box1);
-		Shape box2 = new Box();
+		Shape box2 = new Box(10,20,"box2","box2",new Color(25,25,25));
 		box2.setxPos(100);
-		box2.setWidth(10);
 		child2.setShape(box2);
 		root.addChild(child1);
 		child1.addChild(child2);
@@ -189,13 +171,11 @@ public class ShapeTreeNodeTest {
 	public void testGetRightEdgeSubTree() {
 		ShapeTreeNode child1 = new ShapeTreeNode("key1");
 		ShapeTreeNode child2 = new ShapeTreeNode("key2");
-		Shape box1 = new Box();
+		Shape box1 = new Box(20,20,"box0","box0",new Color(25,25,25));
 		box1.setxPos(50);
-		box1.setWidth(20);
 		child1.setShape(box1);
-		Shape box2 = new Box();
+		Shape box2 = new Box(10,20,"box0","box0",new Color(25,25,25));
 		box2.setxPos(100);
-		box2.setWidth(10);
 		child2.setShape(box2);
 		root.addChild(child1);
 		root.addChild(child2);
@@ -204,9 +184,8 @@ public class ShapeTreeNodeTest {
 	
 	@Test
 	public void testGetRightEdgeSubTreeNoChildren() {
-		Shape box1 = new Box();
+		Shape box1 = new Box(20,20,"box1","box1",new Color(25,25,25));
 		box1.setxPos(50);
-		box1.setWidth(20);
 		root.setShape(box1);
 		assertTrue(root.getRightEdge() == 60);
 	}
@@ -215,13 +194,11 @@ public class ShapeTreeNodeTest {
 	public void testGetLeftEdgeSubTree() {
 		ShapeTreeNode child1 = new ShapeTreeNode("key1");
 		ShapeTreeNode child2 = new ShapeTreeNode("key2");
-		Shape box1 = new Box();
+		Shape box1 = new Box(20,20,"box1","box1",new Color(25,25,25));
 		box1.setxPos(50);
-		box1.setWidth(20);
 		child1.setShape(box1);
-		Shape box2 = new Box();
+		Shape box2 = new Box(10,20,"box2","box2",new Color(25,25,25));
 		box2.setxPos(100);
-		box2.setWidth(10);
 		child2.setShape(box2);
 		root.addChild(child1);
 		root.addChild(child2);
@@ -230,9 +207,8 @@ public class ShapeTreeNodeTest {
 	
 	@Test
 	public void testGetLeftEdgeSubTreeNoChildren() {
-		Shape box1 = new Box();
+		Shape box1 = new Box(20,20,"box1","box1",new Color(25,25,25));
 		box1.setxPos(50);
-		box1.setWidth(20);
 		root.setShape(box1);
 		assertTrue(root.getLeftEdge() == 40);
 	}
@@ -253,22 +229,21 @@ public class ShapeTreeNodeTest {
 
 	@Test
 	public void testGetShape() {
-		Shape s = new Box();
+		Shape s = new Box(40,20,"box0","box0",new Color(25,25,25));
 		root.setShape(s);
 		assertEquals(root.getShape(), s);
 	}
 
 	@Test
 	public void testSetShape() {
-		Shape s = new Box();
+		Shape s = new Box(40,20,"box0","box0",new Color(25,25,25));
 		root.setShape(s);
 		assertEquals(root.getShape(), s);
 	}
 
 	@Test
 	public void testGetName() {
-		Shape s = new Box();
-		s.setName("root");
+		Shape s = new Box(40,20,"root","root",new Color(25,25,25));
 		root.setShape(s);
 		assertTrue(root.getName().equals("root"));
 	}

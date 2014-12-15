@@ -50,6 +50,10 @@ public abstract class Shape {
 		return yPos;
 	}
 	
+	public void setyPos(int yPos) {
+		this.yPos = yPos;
+	}
+	
 	public String getName() {
 		return name;
 	}
