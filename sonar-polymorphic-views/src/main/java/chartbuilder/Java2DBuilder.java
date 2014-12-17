@@ -289,12 +289,12 @@ public class Java2DBuilder implements ChartBuilder {
 		int[] yPoints = new int[nPoints];
 		int labelY = 0;
 		if(side1 > side3){
-			int[] ys = {yPosition + side1/2, yPosition - side1/2, yPosition + (side2/2) - (side3/2), yPosition + (side1/2)};
+			int[] ys = {yPosition + side1/2, yPosition - side1/2, yPosition + (side1/2) - (side3/2), yPosition + (side1/2)};
 			labelY = yPosition-side1/2 - 1;
 			yPoints = ys;
 		}
 		else{
-			int[] ys = {yPosition + side3/2, yPosition + (side2/2) - (side1/2),yPosition - side3/2, yPosition + (side3/2)};
+			int[] ys = {yPosition + side3/2, yPosition + (side3/2) - (side1),yPosition - side3/2, yPosition + (side3/2)};
 			labelY = yPosition-side3/2 - 1;
 			yPoints = ys;
 		}
