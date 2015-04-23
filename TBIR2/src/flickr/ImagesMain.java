@@ -26,7 +26,6 @@ public class ImagesMain {
 	 */
 	private static Map<String,String> getOptions(String[] args){
 		HashMap<String, String> result = new HashMap<String, String>();
-		result.put("file", args[0]);
 		int size = args.length;
 		int i;
 		for(i=0;i<size;i++){

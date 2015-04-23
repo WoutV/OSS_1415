@@ -11,11 +11,11 @@ public class Vector {
 		this.values=values;
 	}
 
-	public Vector(String str){
+	public Vector(String str, int start){
 		String[] elements = str.split(" ");
-		double[] result = new double[elements.length-1];
-		for(int i=1;i<elements.length;i++){
-			result[i-1] =  Double.parseDouble(elements[i]);
+		double[] result = new double[elements.length-start];
+		for(int i=start;i<elements.length;i++){
+			result[i-start] =  Double.parseDouble(elements[i]);
 		}
 		this.values=result;
 	}
