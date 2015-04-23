@@ -143,7 +143,7 @@ public class Solver {
 				threadQueries.add(queries.get(j));
 			}
 			System.out.println("Worker starts at "+queriesCovered+" until "+(queriesCovered+nbOfQueries));
-			Worker worker = new Worker(threadQueries, models, trainImages, testImages);
+			Worker worker = new Worker(threadQueries, models, testImages, trainImages);
 			Thread t = new Thread(worker,"worker"+i);
 			t.start();
 			queriesCovered +=queriesPerThread;
