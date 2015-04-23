@@ -53,7 +53,7 @@ public class ImagesMain {
 			}
 			else if ("-images".equals(args[i].toLowerCase())) {
 				i++;
-				result.put("train", args[i]);			
+				result.put("images", args[i]);			
 			}
 			else if ("-names".equals(args[i].toLowerCase())) {
 				i++;

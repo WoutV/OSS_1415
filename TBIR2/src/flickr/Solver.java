@@ -52,9 +52,26 @@ public class Solver {
 		solve(queries,models,images);		
 	}
 
-	private Map<String,Vector> createImages() {
-		// TODO Auto-generated method stub
-		return null;
+
+	private Map<String,Vector> createImages() throws IOException, FileNotFoundException{
+		Map<String, Vector> images = new HashMap<String, Vector>();
+		File names = new File(imageNamesFile);
+		FileReader namesFReader = new FileReader(names);
+		BufferedReader namesReader = new BufferedReader(namesFReader);
+		File vectors = new File(imagesVectorFile);
+		FileReader vectorFReader = new FileReader(vectors);
+		BufferedReader vectorReader = new BufferedReader(vectorFReader);
+		while(true) {
+			String name = namesReader.readLine();
+			if(name == null) {break;}
+			String vectorString = vectorReader.readLine();
+			Vector vector = new Vector(vectorString);
+			images.put(name, vector);
+		}
+		
+		namesReader.close();
+		vectorReader.close();
+		return images;
 	}
 
 
@@ -137,8 +154,8 @@ public class Solver {
 			int i = 0;
 			Model currentModel=null;
 			while((line=br.readLine())!=null){
+				String image = line.split("#")[0];
 				String[] elements = line.split("	");
-				String image = elements[0].split("#")[0];
 				String sentence = elements[1];
 				if(i%5==0){
 					currentModel = createModel(image,vectorsFile);
