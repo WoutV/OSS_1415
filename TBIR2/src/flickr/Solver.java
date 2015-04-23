@@ -1,17 +1,12 @@
 package flickr;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 import logger.Logger;
 import embeddings.Vector;
@@ -57,26 +52,11 @@ public class Solver {
 		solve(queries,models,images);		
 	}
 
-	private Map<String,Vector> createImages() throws IOException, FileNotFoundException{
-		Map<String, Vector> images = new HashMap<String, Vector>();
-		File names = new File(imageNamesFile);
-		FileReader namesFReader = new FileReader(names);
-		BufferedReader namesReader = new BufferedReader(namesFReader);
-		File vectors = new File(imagesVectorFile);
-		FileReader vectorFReader = new FileReader(vectors);
-		BufferedReader vectorReader = new BufferedReader(vectorFReader);
-		while(true) {
-			String name = namesReader.readLine();
-			if(name == null) {break;}
-			String vectorString = vectorReader.readLine();
-			Vector vector = new Vector(vectorString, 0);
-			images.put(name, vector);
-		}
-		
-		namesReader.close();
-		vectorReader.close();
-		return images;
+	private Map<String,Vector> createImages() {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
 
 	/**
 	 * Configures the solver based on the given options.
@@ -136,34 +116,10 @@ public class Solver {
 	/**
 	 * Selects queries out of each model.
 	 * @return 
-	 * @throws IOException 
 	 */
-	private List<Query> createQueries() throws IOException {
-		List<Query> queries = new ArrayList<Query>();
-		File testFile = new File(test);
-		FileReader fr = new FileReader(testFile);
-		BufferedReader br = new BufferedReader(fr);
-		Random r = new Random(System.currentTimeMillis());
-		boolean end = false;
-		while (!end) {
-			String filename = "";
-			Integer i = r.nextInt(5);
-			for (int j = 0; j < 5; j++) {
-				String line = br.readLine();
-				if (line == null) {
-					end = true;
-					break;
-				}
-				String[] splitHash = line.split("#");
-				filename = splitHash[0];
-				String query = line.split(" ", 2)[1];
-				if (splitHash[1].startsWith(i.toString())) {
-					queries.add(new Query(filename, query.toLowerCase()));
-				}
-			}
-		}
-		br.close();
-		return queries;
+	private List<Query> createQueries() {
+		//TODO
+		return null;
 	}
 	
 	/**
