@@ -26,13 +26,15 @@ public class Logger {
 	 * @throws IOException Thrown when an error occurs opening or writing the outputfile.
 	 */
 	public Logger(String vectors, String method, int nbOfQueries, int nbOfThreads) throws IOException{
-		String fileName = ("results/results_images_"+vectors.substring(0, vectors.lastIndexOf('.'))+"_queries"+nbOfQueries+".txt");
+		String[] fileParts = vectors.split("/");
+		String fileN = fileParts[fileParts.length-1];
+		String fileName = ("results/results_images_"+method+"_"+fileN.substring(0, fileN.lastIndexOf('.'))+"_queries"+nbOfQueries+".txt");
 		File file = new File(fileName);
 		file.delete();
 		this.writer = new BufferedWriter(new FileWriter(fileName, true));
 		this.threadsOpen=nbOfThreads;
 		this.log("################################################\nResults for method "+method+" for "+nbOfQueries+" queries on dataset "
-		+vectors.substring(0, vectors.lastIndexOf('.'))+"\n##################################\n");
+		+fileN.substring(0, fileN.lastIndexOf('.'))+"\n##################################\n");
 	}
 	
 	/**
