@@ -21,34 +21,34 @@ public class Worker implements Runnable{
 	private List<Model> models;
 	private List<Query> queries;
 	private Logger logger;
-	private Map<String, Vector> images;
+	private Map<String, Vector> testImages;
+	private Map<String, Vector> trainImages;
 
 
-	public Worker(List<Query> queries, List<Model> models,Map<String,Vector> images) {
+	public Worker(List<Query> queries, List<Model> models,Map<String,Vector> testImages,Map<String,Vector> trainImages) {
 		this.queries=queries;
 		this.models=models;
 		this.logger=Logger.getInstance();
-		this.images=images;
+		this.testImages = testImages;
+		this.trainImages =trainImages;
 	}
 
 
 	private String getBestTraining(Query q) throws IOException{
 		System.out.println("Started Ranking...");
 		String bestImage="";
-		double bestRanking=0;
-		double progress=0.0;
+		double bestRanking=0.0;
 		for(Model m: models){
 			double rank = m.rank(q);
+	//		System.out.println("Rank:"+ rank+" for image "+m.getImage());
 			if(rank>bestRanking){
 				bestRanking=rank;
 				bestImage = m.getImage();
 			}
-			progress++;
-			System.out.println("Ranking training images progress: "+100*(1.0*progress/models.size())+"%");
 		}
-		//System.out.println("#########################");
-		//System.out.println("Query for image "+q.getImage());
-		//ranking.printHighest(5);
+		System.out.println("#########################");
+		System.out.println("Query for image "+q.getImage());
+		System.out.println(bestImage);
 
 		return bestImage;
 	}
@@ -63,15 +63,22 @@ public class Worker implements Runnable{
 			Ranking r=rankings.get(i);
 			Query q=queries.get(i);
 			mmr+=r.reciprocal(q.getImage());
-			if(r.recall(q.getImage(),1)){recall1++;}
-			if(r.recall(q.getImage(),5)){recall5++;}
-			if(r.recall(q.getImage(),10)){recall10++;}
+			if(r.recall(q.getImage(),1)){
+				recall1++;
+				}
+			if(r.recall(q.getImage(),5)){
+				recall5++;
+				}
+			if(r.recall(q.getImage(),10)){
+				recall10++;
+				System.out.println("we komen hier!!!");
+				}
 		}
 		String results = "###################################################\n"+
 						 "MMR: "+mmr+"\n"+
-						 "Recall@1:" +recall1+"\n"+
-						 "Recall@5:" +recall5+"\n"+
-						 "Recall@10:" +recall10;
+						 "Recall@1:" +1.0*recall1/queries.size()+"\n"+
+						 "Recall@5:" +1.0*recall5/queries.size()+"\n"+
+						 "Recall@10:" +1.0*recall10/queries.size();
 		logger.log(results);
 		System.out.println(results);
 	}
@@ -81,12 +88,17 @@ public class Worker implements Runnable{
 	public void run() {
 		try {
 			List<Ranking> rankings = new ArrayList<Ranking>();
+			double progress=0;
 			for(Query q: queries){
+				progress++;
 				String image = getBestTraining(q);
-				Vector best = images.get(image);
-				rankings.add(getClosestImages(best));				
+				System.out.println("Ranking training images progress: "+100*(1.0*progress/queries.size())+"%");
+				Vector best = trainImages.get(image);
+				rankings.add(getClosestImages(best));	
+				System.out.println("Ranking the images progress: "+100*(1.0*progress/queries.size())+"%");
 			}
 				logResults(rankings);
+				logger.close();
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -95,14 +107,12 @@ public class Worker implements Runnable{
 
 	private Ranking getClosestImages(Vector best) {
 		System.out.println("Started Ranking the images...");
-		int progress=0;
 		Ranking ranking = new Ranking();
-		for(Entry<String, Vector> image:images.entrySet()){
+		for(Entry<String, Vector> image:testImages.entrySet()){
 			double rank = image.getValue().cosineDist(best);
 			RankElement el = new RankElement(image.getKey(),rank);
 			ranking.addElement(el);
-			progress++;
-			System.out.println("Ranking the images progress: "+100*(1.0*progress/images.size())+"%");
+			
 		}	
 		return ranking;
 	}
