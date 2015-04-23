@@ -1,12 +1,17 @@
 package flickr;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import logger.Logger;
 import embeddings.Vector;
@@ -133,10 +138,34 @@ public class Solver {
 	/**
 	 * Selects queries out of each model.
 	 * @return 
+	 * @throws IOException, FileNotFoundException 
 	 */
-	private List<Query> createQueries() {
-		//TODO
-		return null;
+	private List<Query> createQueries() throws IOException, FileNotFoundException {
+		List<Query> queries = new ArrayList<Query>();
+		File testFile = new File(test);
+		FileReader fr = new FileReader(testFile);
+		BufferedReader br = new BufferedReader(fr);
+		Random r = new Random(System.currentTimeMillis());
+		boolean end = false;
+		while (!end) {
+			String filename = "";
+			Integer i = r.nextInt(5);
+			for (int j = 0; j < 5; j++) {
+				String line = br.readLine();
+				if (line == null) {
+					end = true;
+					break;
+				}
+				String[] splitHash = line.split("#");
+				filename = splitHash[0];
+				String query = line.split(" ", 2)[1];
+				if (splitHash[1].startsWith(i.toString())) {
+					queries.add(new Query(query.toLowerCase().trim(), filename));
+				}
+			}
+		}
+		br.close();
+		return queries;
 	}
 	
 	/**
