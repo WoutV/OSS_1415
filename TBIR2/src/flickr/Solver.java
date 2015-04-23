@@ -53,10 +53,26 @@ public class Solver {
 		List<Model>models = createModels();
 		List<Query>queries = createQueries();
 		Map<String,Vector>images = createImages();
+		Map<String, Vector> trainImages = getUsedImages(images, train);
+		Map<String, Vector> testImages = getUsedImages(images, test);
 		prepareModels(models);
-		solve(queries,models,images);		
+		solve(queries,models,trainImages, testImages);		
 	}
 
+
+	private Map<String, Vector> getUsedImages(Map<String, Vector> images, String fileName) throws IOException, FileNotFoundException {
+		Map<String, Vector> result = new HashMap<String, Vector>();
+		File training = new File(fileName);
+		FileReader fr = new FileReader(training);
+		BufferedReader br = new BufferedReader(fr);
+		while(true)	{
+			String line = br.readLine();
+			if(line == null) {break;}
+			String filename = line.split("#")[0];
+			result.put(filename, images.get(filename));
+		}
+		return result;
+	}
 
 	private Map<String,Vector> createImages() throws IOException, FileNotFoundException{
 		Map<String, Vector> images = new HashMap<String, Vector>();
@@ -73,7 +89,6 @@ public class Solver {
 			Vector vector = new Vector(vectorString);
 			images.put(name, vector);
 		}
-		
 		namesReader.close();
 		vectorReader.close();
 		return images;
@@ -109,9 +124,10 @@ public class Solver {
 	 * @param images 
 	 * @param models 
 	 * @param queries 
+	 * @param testImages 
 	 * @throws IOException
 	 */
-	public void solve(List<Query> queries, List<Model> models, Map<String,Vector> images) throws IOException {
+	public void solve(List<Query> queries, List<Model> models, Map<String,Vector> trainImages, Map<String, Vector> testImages) throws IOException {
 		int totalQueries = queries.size();
 		int queriesCovered = 0;
 		int queriesPerThread = totalQueries/nbOfThreads;
@@ -127,7 +143,7 @@ public class Solver {
 				threadQueries.add(queries.get(j));
 			}
 			System.out.println("Worker starts at "+queriesCovered+" until "+(queriesCovered+nbOfQueries));
-			Worker worker = new Worker(threadQueries, models, images);
+			Worker worker = new Worker(threadQueries, models, trainImages, testImages);
 			Thread t = new Thread(worker,"worker"+i);
 			t.start();
 			queriesCovered +=queriesPerThread;
@@ -238,7 +254,6 @@ public class Solver {
 			i++;
 			m.generateValues();
 		}
-
 	}
 
 	

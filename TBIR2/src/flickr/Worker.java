@@ -21,14 +21,16 @@ public class Worker implements Runnable{
 	private List<Model> models;
 	private List<Query> queries;
 	private Logger logger;
-	private Map<String, Vector> images;
+	private Map<String, Vector> trainImages;
+	private Map<String, Vector> testImages;
 
 
-	public Worker(List<Query> queries, List<Model> models,Map<String,Vector> images) {
+	public Worker(List<Query> queries, List<Model> models,Map<String,Vector> trainImages, Map<String, Vector> testImages) {
 		this.queries=queries;
 		this.models=models;
 		this.logger=Logger.getInstance();
-		this.images=images;
+		this.trainImages = trainImages;
+		this.testImages = testImages;
 	}
 
 
@@ -83,7 +85,7 @@ public class Worker implements Runnable{
 			List<Ranking> rankings = new ArrayList<Ranking>();
 			for(Query q: queries){
 				String image = getBestTraining(q);
-				Vector best = images.get(image);
+				Vector best = trainImages.get(image);
 				rankings.add(getClosestImages(best));				
 			}
 				logResults(rankings);
@@ -97,12 +99,12 @@ public class Worker implements Runnable{
 		System.out.println("Started Ranking the images...");
 		int progress=0;
 		Ranking ranking = new Ranking();
-		for(Entry<String, Vector> image:images.entrySet()){
+		for(Entry<String, Vector> image:testImages.entrySet()){
 			double rank = image.getValue().cosineDist(best);
 			RankElement el = new RankElement(image.getKey(),rank);
 			ranking.addElement(el);
 			progress++;
-			System.out.println("Ranking the images progress: "+100*(1.0*progress/images.size())+"%");
+			System.out.println("Ranking the images progress: "+100*(1.0*progress/testImages.size())+"%");
 		}	
 		return ranking;
 	}
