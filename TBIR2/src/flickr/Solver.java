@@ -49,7 +49,7 @@ public class Solver {
 	}
 	
 	public void solve() throws IOException{
-		Logger.getInstance(vectorsFile,modelType.toString(),nbOfThreads,nbOfQueries);
+		Logger.getInstance(vectorsFile,modelType.toString(),nbOfQueries,nbOfThreads);
 		List<Model>models = createModels();
 		List<Query>queries = createQueries();
 		Map<String,Vector>images = createImages();

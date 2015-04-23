@@ -71,11 +71,10 @@ public class Worker implements Runnable{
 				}
 			if(r.recall(q.getImage(),10)){
 				recall10++;
-				System.out.println("we komen hier!!!");
 				}
 		}
 		String results = "###################################################\n"+
-						 "MMR: "+mmr+"\n"+
+						 "MMR: "+mmr/queries.size()+"\n"+
 						 "Recall@1:" +1.0*recall1/queries.size()+"\n"+
 						 "Recall@5:" +1.0*recall5/queries.size()+"\n"+
 						 "Recall@10:" +1.0*recall10/queries.size();
