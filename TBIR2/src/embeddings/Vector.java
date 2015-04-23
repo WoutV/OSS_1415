@@ -20,6 +20,15 @@ public class Vector {
 		this.values=result;
 	}
 
+	public Vector(String str) {
+		String[] elements = str.split(",");
+		double[] result = new double[elements.length];
+		for(int i=0;i<elements.length;i++){
+			result[i] =  Double.parseDouble(elements[i]);
+		}
+		this.values=result;
+	}
+
 	/**
 	 * Adds this vector to the given vector v and returns a new vector containing the result.
 	 * @param v Vector with the same size as this vector.

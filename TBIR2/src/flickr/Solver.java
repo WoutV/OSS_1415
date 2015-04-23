@@ -69,7 +69,7 @@ public class Solver {
 			String name = namesReader.readLine();
 			if(name == null) {break;}
 			String vectorString = vectorReader.readLine();
-			Vector vector = new Vector(vectorString, 0);
+			Vector vector = new Vector(vectorString);
 			images.put(name, vector);
 		}
 		
@@ -181,8 +181,8 @@ public class Solver {
 			int i = 0;
 			Model currentModel=null;
 			while((line=br.readLine())!=null){
+				String image = line.split("#")[0];
 				String[] elements = line.split("	");
-				String image = elements[0].split("#")[0];
 				String sentence = elements[1];
 				if(i%5==0){
 					currentModel = createModel(image,vectorsFile);
