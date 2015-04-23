@@ -1,6 +1,5 @@
 package flickr;
 
-import java.awt.Image;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,14 +37,14 @@ public class Worker implements Runnable{
 		String bestImage="";
 		double bestRanking=0;
 		double progress=0.0;
-		progress++;
-		System.out.println("Ranking training images progress: "+100*(1.0*progress/queries.size())+"%");
 		for(Model m: models){
 			double rank = m.rank(q);
 			if(rank>bestRanking){
 				bestRanking=rank;
 				bestImage = m.getImage();
 			}
+			progress++;
+			System.out.println("Ranking training images progress: "+100*(1.0*progress/queries.size())+"%");
 		}
 		//System.out.println("#########################");
 		//System.out.println("Query for image "+q.getImage());
@@ -99,11 +98,11 @@ public class Worker implements Runnable{
 		int progress=0;
 		Ranking ranking = new Ranking();
 		for(Entry<String, Vector> image:images.entrySet()){
-			progress++;
-			System.out.println("Ranking the images progress: "+100*(1.0*progress/images.size())+"%");
 			double rank = image.getValue().cosineDist(best);
 			RankElement el = new RankElement(image.getKey(),rank);
-				ranking.addElement(el);
+			ranking.addElement(el);
+			progress++;
+			System.out.println("Ranking the images progress: "+100*(1.0*progress/images.size())+"%");
 		}	
 		return ranking;
 	}
