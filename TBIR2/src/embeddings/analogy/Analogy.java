@@ -35,7 +35,7 @@ public abstract class Analogy {
 				while((line=br.readLine())!=null){
 					try{
 					String[] elements = line.split(" ");
-					Vector checkVector =  new Vector(line);
+					Vector checkVector =  new Vector(line, 1);
 					double result = computeAnalogy(v1, v2, v3, checkVector);
 						if(result>best && !words.contains(elements[0].toLowerCase())){
 							bestWord = elements[0];

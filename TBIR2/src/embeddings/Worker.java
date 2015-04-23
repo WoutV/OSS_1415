@@ -108,7 +108,7 @@ public class Worker implements Runnable{
 			String[] elements = line.split(" ");
 			if(elements[0].equalsIgnoreCase(word)){
 				br.close();
-				return new Vector(line);
+				return new Vector(line, 1);
 			}
 		}
 		br.close();
