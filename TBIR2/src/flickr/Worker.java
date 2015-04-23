@@ -44,7 +44,7 @@ public class Worker implements Runnable{
 				bestImage = m.getImage();
 			}
 			progress++;
-			System.out.println("Ranking training images progress: "+100*(1.0*progress/queries.size())+"%");
+			System.out.println("Ranking training images progress: "+100*(1.0*progress/models.size())+"%");
 		}
 		//System.out.println("#########################");
 		//System.out.println("Query for image "+q.getImage());
