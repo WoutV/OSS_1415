@@ -56,8 +56,25 @@ public class Worker implements Runnable{
 
 
 	private void logResults(List<Ranking> rankings) {
-		//TODO uitbreiden
-
+		double mmr=0;
+		double recall1=0;
+		double recall5=0;
+		double recall10=0;
+		for(int i=0;i<rankings.size();i++){
+			Ranking r=rankings.get(i);
+			Query q=queries.get(i);
+			mmr+=r.reciprocal(q.getImage());
+			if(r.recall(q.getImage(),1)){recall1++;}
+			if(r.recall(q.getImage(),5)){recall5++;}
+			if(r.recall(q.getImage(),10)){recall10++;}
+		}
+		String results = "###################################################\n"+
+						 "MMR: "+mmr+"\n"+
+						 "Recall@1:" +recall1+"\n"+
+						 "Recall@5:" +recall5+"\n"+
+						 "Recall@10:" +recall10;
+		logger.log(results);
+		System.out.println(results);
 	}
 
 
@@ -65,7 +82,6 @@ public class Worker implements Runnable{
 	public void run() {
 		try {
 			List<Ranking> rankings = new ArrayList<Ranking>();
-			//TODO ranking metrics 
 			for(Query q: queries){
 				String image = getBestTraining(q);
 				Vector best = images.get(image);
